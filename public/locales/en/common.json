@@ -1,0 +1,12 @@
+{
+  "header": {
+    "pinyin": "Pinyin",
+    "hieroglyph": "Hieroglyph",
+    "word": "Words",
+    "profile": "Profile",
+    "menu": {
+      "theme": "Theme",
+      "language": "Language"
+    }
+  }
+}

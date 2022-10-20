@@ -1,0 +1,12 @@
+{
+  "hieroglyph": {
+    "keys": {
+      "title": "Keys",
+      "showPinyin": "Show pinyin",
+      "hidePinyin": "Hide pinyin",
+      "showTranslate": "Show translate",
+      "hideTranslate": "Hide translate",
+      "description": "<h2>214 radicals to rule all characters</h2> \n<p>Knowing 214 radicals will ease your process of learning Chinese. Why? \nBecause when you know the radicals, you can remember more easily how they combine with each other to form more complex characters. \nRadicals can have one of the following functions, or both:</p> \n<ul> \n<li><em>semantic</em>, providing part or whole of the meaning;</li> \n<li><em>phonetics</em>, giving the sound to the character, or something very close to it.</li> \n</ul> \n<h2>The concept of key</h2> \n<p>Every character has one and only one radical with the function of 'key', which allows to find a character into a dictionary. In many cases, the radical on the left or on the top of a character is the key. However, with the increase of the use of digital dictionaries on smartphone, in which you can draw \n the character, knowing keys become less critical.</p> \n"
+    }
+  }
+}
