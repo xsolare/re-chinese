@@ -1,15 +1,12 @@
+import type { FC, PropsWithChildren } from 'react'
 import React, { createContext, useEffect, useState } from 'react'
 import { ThemeProvider as ThemeEmotionProvider } from '@emotion/react'
 import { theme, themeBlue, themeDark } from '#/utils/theme'
 
-import type { Dispatch, ReactNode, SetStateAction } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import type { ThemeTypes } from '#/utils/theme'
 
 import { setCookies, getCookie } from 'cookies-next'
-
-export type ThemeProviderProps = {
-  children: ReactNode
-}
 
 export type ThemeValue = {
   themeContext: ThemeVarious
@@ -28,7 +25,7 @@ export const themes: Record<string, ThemeTypes> = {
 
 // Theme layout provider setup
 //* ------------------------------------------------------------------------------------------ *//
-function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
+const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [themeContext, setThemeContext] = useState<ThemeVarious>(
     (getCookie('__THEME__') ?? 'light') as ThemeVarious
   )

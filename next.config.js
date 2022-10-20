@@ -10,6 +10,7 @@ const withPWA = require('next-pwa')
 dotenvLoad(process.env.NODE_ENV === 'production' ? 'production' : 'development')
 
 const nextConfig = {
+  webpack5: true,
   eslint: {
     dirs: ['.']
   },
