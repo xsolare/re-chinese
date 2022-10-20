@@ -19,7 +19,7 @@
     "lint:staged": "lint-staged --debug",
     "format": "prettier -c \"./**/*.{ts,tsx,json,scss,md}\"",
     "format:fix": "prettier -w \"./**/*.{ts,tsx,json,scss,md}\"",
-    "prepare": "husky install",
+    "prepare": "husky install .husky",
     "clean": "rm -rf .next && rm -rf node_modules && npm i"
   },
   "dependencies": {
@@ -95,13 +95,15 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix"
+    "src/**/*.+(ts,tsx)": [
+      "prettier --write",
+      "eslint --fix",
+      "tsc-files --pretty --noEmit"
     ],
-    "*.scss": [
+    "src/**/*.+(scss)": [
       "stylelint --fix --allow-empty-input"
     ],
-    "*.(ts,tsx,json,scss,md)": [
+    "src/**/*.+(ts,tsx,json,scss,md)": [
       "prettier -c \"./**/*.{ts,tsx,json,scss,md}\""
     ]
   }
