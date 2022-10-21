@@ -1,1 +1,1 @@
-declare module 'next-compose-plugins'
+declare module 'next-compose-plugins';

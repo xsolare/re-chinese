@@ -1,25 +1,18 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
-    "lib": ["dom", "es2017", "es2019"],
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext",
-    "experimentalDecorators": true,
-    "useDefineForClassFields": true,
-    "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsx": "preserve",
     "incremental": true,
 
     "baseUrl": ".",
@@ -28,9 +21,6 @@
       "#/public/*": ["./public/*"]
     }
   },
-  "paths": {
-    "~/*": ["./*"]
-  },
   "exclude": ["./node_modules/**/*", "**/*.test.ts", "cypress"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.js", "jest.config.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.js"]
 }

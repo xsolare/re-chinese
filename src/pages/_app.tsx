@@ -1,15 +1,16 @@
-//TODO import '#/assets/scss/index.scss'
-import type { AppContext, AppInitialProps, AppProps } from 'next/app'
-import React from 'react'
-import { NextComponentType } from 'next'
-import Head from 'next/head'
-import { DefaultSeo } from 'next-seo'
-import nextSeoConfig from 'next-seo.config'
-import Favicon from 'src/components/head/Favicon'
-import { wrapper } from '../store/index'
-import { Provider } from 'react-redux'
-import ThemeProvider from '../contexts/theme'
-import LayoutDefault from '../components/layouts/Default.layout'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import '#/assets/scss/index.scss';
+import type { AppContext, AppInitialProps, AppProps } from 'next/app';
+import React from 'react';
+import type { NextComponentType } from 'next';
+import Head from 'next/head';
+import { DefaultSeo } from 'next-seo';
+import nextSeoConfig from 'next-seo.config';
+import Favicon from 'src/components/head/Favicon';
+import { Provider } from 'react-redux';
+import { wrapper } from '../store/index';
+import ThemeProvider from '../contexts/theme';
+import LayoutDefault from '../components/layouts/Default.layout';
 
 const App: NextComponentType<AppContext, AppInitialProps, AppProps & {}> = ({
   Component,
@@ -23,10 +24,10 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps & {}> = ({
       content:
         'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, viewport-fit=cover'
     }
-  ]
+  ];
 
-  const { store, props = {} } = wrapper.useWrappedStore(rest)
-  const { pageProps } = props
+  const { store, props } = wrapper.useWrappedStore(rest);
+  const { pageProps } = props;
 
   return (
     <>
@@ -45,15 +46,15 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps & {}> = ({
         </ThemeProvider>
       </Provider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 
-const Page = ({ Component, pageProps }) => {
-  const Guard = (Component as any).guard || React.Fragment
-  const Layout = (Component as any).layout || LayoutDefault
-  const SubLayout = (Component as any).subLayout || React.Fragment
+const Page = ({ Component, pageProps }: { Component: any; pageProps: any }) => {
+  const Guard = Component.guard || React.Fragment;
+  const Layout = Component.layout || LayoutDefault;
+  const SubLayout = Component.subLayout || React.Fragment;
 
   return (
     <Guard>
@@ -63,5 +64,5 @@ const Page = ({ Component, pageProps }) => {
         </SubLayout>
       </Layout>
     </Guard>
-  )
-}
+  );
+};
