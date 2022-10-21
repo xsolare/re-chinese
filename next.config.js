@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
-const dotenvLoad = require('dotenv-load')
-// const styledJSX = require(`styled-jsx/webpack`).loader
+const dotenvLoad = require('dotenv-load');
+const styledJSX = require(`styled-jsx/webpack`).loader;
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
-})
-const path = require('path')
-const withPWA = require('next-pwa')
-dotenvLoad(process.env.NODE_ENV === 'production' ? 'production' : 'development')
+});
+const withPWA = require('next-pwa');
+dotenvLoad(process.env.NODE_ENV === 'production' ? 'production' : 'development');
 
 const nextConfig = {
   webpack5: true,
@@ -25,10 +24,6 @@ const nextConfig = {
   devIndicators: {
     autoPrerender: false
   },
-  sassOptions: {
-    prependData: `@import "src/assets/scss/variables.scss";`,
-    includePaths: [path.join(__dirname, 'src')]
-  },
   pwa: {
     disable: process.env.NODE_ENV === 'production' ? false : true,
     dest: 'public',
@@ -38,8 +33,8 @@ const nextConfig = {
 
   webpack: (config, { dev, defaultLoaders }) => {
     if (dev) {
-      config.watchOptions.poll = 1000
-      config.watchOptions.aggregateTimeout = 300
+      config.watchOptions.poll = 1000;
+      config.watchOptions.aggregateTimeout = 300;
       config.module.rules.push({
         test: /\.(ts|tsx|js|jsx)$/,
         enforce: 'pre',
@@ -53,7 +48,7 @@ const nextConfig = {
             }
           }
         ]
-      })
+      });
     }
 
     config.module.rules.push({
@@ -64,7 +59,7 @@ const nextConfig = {
           loader: styledJSX,
           options: {
             type: (fileName, options) => {
-              return options.query.type || 'global'
+              return options.query.type || 'global';
             }
           }
         },
@@ -76,9 +71,9 @@ const nextConfig = {
           loader: 'sass-loader'
         }
       ]
-    })
-    return config
+    });
+    return config;
   }
-}
+};
 
-module.exports = withBundleAnalyzer(withPWA(nextConfig))
+module.exports = withBundleAnalyzer(withPWA(nextConfig));

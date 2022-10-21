@@ -1,5 +1,5 @@
-import type { FC } from 'react'
-import React from 'react'
+import type { FC } from 'react';
+import React from 'react';
 
 const Favicon: FC = () => {
   return (
@@ -22,7 +22,7 @@ const Favicon: FC = () => {
       <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
       <meta name="theme-color" content="#111111" />
     </>
-  )
-}
+  );
+};
 
-export default Favicon
+export default Favicon;

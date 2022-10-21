@@ -43,9 +43,12 @@ module.exports = {
         'plugin:prettier/recommended'
       ],
       rules: {
+        '@typescript-eslint/require-await': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/no-use-before-define': 'off',
+        '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/consistent-type-imports': [
           'error',
           {
@@ -53,6 +56,7 @@ module.exports = {
             disallowTypeAnnotations: false
           }
         ],
+        'react/prop-types': 'off',
         'no-param-reassign': [
           'error',
           {
@@ -118,21 +122,21 @@ module.exports = {
           }
         ]
       }
-    },
-    //* Configuration for Jest test files
-    {
-      files: ['**/*.test.ts', '**/*.test.tsx'],
-      plugins: ['jest', 'jest-formatting', 'testing-library', 'jest-dom'],
-      extends: [
-        'plugin:jest/recommended',
-        'plugin:jest-formatting/recommended',
-        'plugin:testing-library/react',
-        'plugin:jest-dom/recommended'
-      ],
-      rules: {
-        '@typescript-eslint/no-unsafe-call': 'off',
-        'jest-dom/prefer-in-document': 'off'
-      }
     }
+    //* Configuration for Jest test files
+    // {
+    //   files: ['**/*.test.ts', '**/*.test.tsx'],
+    //   plugins: ['jest', 'jest-formatting', 'testing-library', 'jest-dom'],
+    //   extends: [
+    //     'plugin:jest/recommended',
+    //     'plugin:jest-formatting/recommended',
+    //     'plugin:testing-library/react',
+    //     'plugin:jest-dom/recommended'
+    //   ],
+    //   rules: {
+    //     '@typescript-eslint/no-unsafe-call': 'off',
+    //     'jest-dom/prefer-in-document': 'off'
+    //   }
+    // }
   ]
-}
+};
