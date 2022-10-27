@@ -13,15 +13,13 @@ interface IHomeProps {
 //* ------------------------------------------------------------------------------------------ *//
 const Home: NextPage<IHomeProps> = (props) => {
   const state = useSelector(selectProfile);
-
   const { resolvedUrl } = props;
-  console.log('>', resolvedUrl, state);
 
   return (
-    <div>
+    <>
       <NextSeo title="Home" description="Home page" />
-      <div>1</div>
-    </div>
+      <div></div>
+    </>
   );
 };
 

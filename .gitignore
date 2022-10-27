@@ -25,9 +25,11 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 *-lock.yaml
+pnpm-lock.yaml
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
