@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import '#/assets/scss/index.scss';
 import type { AppContext, AppInitialProps, AppProps } from 'next/app';
-import React from 'react';
 import type { NextComponentType } from 'next';
+import React from 'react';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import nextSeoConfig from 'next-seo.config';
