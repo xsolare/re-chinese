@@ -48,7 +48,9 @@ module.exports = {
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/lines-between-class-members': 'off',
         '@typescript-eslint/consistent-type-imports': [
           'error',
           {
@@ -64,14 +66,19 @@ module.exports = {
             ignorePropertyModificationsFor: ['state']
           }
         ],
+        'no-restricted-globals': 'off',
         'no-use-before-define': 'off',
+        'no-return-assign': 'off',
         'no-debugger': 'warn',
+        'no-underscore-dangle': 'off',
         'no-console': 'off',
         'no-useless-escape': 'off',
+        'no-promise-executor-return': 'off',
         'default-param-last': 'off',
         camelcase: 'error',
         'spaced-comment': 'error',
         quotes: ['error', 'single'],
+        'import/order': 'off',
 
         'unused-imports/no-unused-imports-ts': 'error',
         'import/prefer-default-export': 'off',
@@ -103,6 +110,8 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
         'react/display-name': ['off', { ignoreTranspilerName: true }],
+        'react-hooks/exhaustive-deps': 'off',
+        'react-hooks/rules-of-hooks': 'off',
 
         '@emotion/jsx-import': 'error',
         '@emotion/no-vanilla': 'error',

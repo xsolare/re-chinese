@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const dotenvLoad = require('dotenv-load');
-const styledJSX = require(`styled-jsx/webpack`).loader;
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
@@ -31,47 +30,12 @@ const nextConfig = {
     skipWaiting: true
   },
 
-  webpack: (config, { dev, defaultLoaders }) => {
+  webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions.poll = 1000;
       config.watchOptions.aggregateTimeout = 300;
-      config.module.rules.push({
-        test: /\.(ts|tsx|js|jsx)$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'eslint-loader',
-            options: {
-              failOnError: true,
-              emitWarning: true
-            }
-          }
-        ]
-      });
     }
 
-    config.module.rules.push({
-      test: /\.(css|scss|sass)$/,
-      use: [
-        defaultLoaders.babel,
-        {
-          loader: styledJSX,
-          options: {
-            type: (fileName, options) => {
-              return options.query.type || 'global';
-            }
-          }
-        },
-
-        {
-          loader: 'postcss-loader'
-        },
-        {
-          loader: 'sass-loader'
-        }
-      ]
-    });
     return config;
   }
 };

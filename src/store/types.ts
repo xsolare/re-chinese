@@ -1,8 +1,28 @@
-import type { Action, ThunkAction } from '@reduxjs/toolkit';
-import type { makeStore } from '.';
+import type { UrlObject } from 'url';
 
-export type AppStore = ReturnType<typeof makeStore>;
+export declare enum LayoutType {
+  Page,
+  Home,
+  Project,
+  Custom
+}
 
-export type AppState = ReturnType<AppStore['getState']>;
+export interface MenuModel {
+  title: string;
+  type?: keyof typeof LayoutType;
+  path: string;
+  subMenu?: MenuModel[];
+  icon?: JSX.Element | string;
+  as?: string | UrlObject;
+  independent?: boolean;
+}
 
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, unknown, Action>;
+export interface ViewportRecord {
+  w: number;
+  h: number;
+  mobile: boolean;
+  pad: boolean;
+  hpad: boolean;
+  wider: boolean;
+  widest: boolean;
+}

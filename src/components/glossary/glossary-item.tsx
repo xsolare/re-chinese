@@ -1,16 +1,16 @@
 import type { FC } from 'react';
-import type { ILibItem } from '#/models/ILib';
+import type { IGlossaryItem } from '#/types/glossary';
 import Link from 'next/link';
 
-type ILibItemProps = ILibItem;
+type IGlossaryItemProps = IGlossaryItem;
 
 // LibItem
 //* ------------------------------------------------------------------ *//
-const LibItem: FC<ILibItemProps> = (props) => {
+const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
   const { id, icon, hsk, text } = props;
 
   return (
-    <Link href={`/lib/${id}`}>
+    <Link href={`/glossary/${id}`}>
       <div>
         <div>{icon}</div>
         <div>{text}</div>
@@ -20,4 +20,4 @@ const LibItem: FC<ILibItemProps> = (props) => {
   );
 };
 
-export default LibItem;
+export default GlossaryItem;

@@ -1,21 +1,11 @@
-import type { FC, PropsWithChildren, Dispatch, SetStateAction } from 'react';
-import React, { createContext, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import React from 'react';
 import { ThemeProvider as ThemeEmotionProvider } from '@emotion/react';
+import { ThemeProvider as ThemeNextProvider, useTheme } from 'next-themes';
 import { theme, themeBlue, themeDark } from '#/utils/theme';
-
 import type { ThemeTypes } from '#/utils/theme';
 
-import { setCookies, getCookie } from 'cookies-next';
-
-export type ThemeValue = {
-  themeContext: ThemeVarious;
-  setThemeContext: Dispatch<SetStateAction<ThemeVarious>>;
-};
-
 export type ThemeVarious = 'light' | 'dark' | 'blue';
-
-export const ThemeContext = createContext<ThemeValue | null>(null);
-
 export const themes: Record<string, ThemeTypes> = {
   light: theme,
   dark: themeDark,
@@ -25,21 +15,14 @@ export const themes: Record<string, ThemeTypes> = {
 // Theme layout provider setup
 //* ------------------------------------------------------------------------------------------ *//
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [themeContext, setThemeContext] = useState<ThemeVarious>(
-    (getCookie('__THEME__') ?? 'light') as ThemeVarious
-  );
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', themeContext);
-    setCookies('__THEME__', themeContext);
-  }, [themeContext]);
+  const { theme: currentTheme } = useTheme();
 
   return (
-    <ThemeEmotionProvider theme={themes[themeContext]}>
-      <ThemeContext.Provider value={{ themeContext, setThemeContext }}>
+    <ThemeNextProvider attribute="class">
+      <ThemeEmotionProvider theme={themes[(currentTheme ?? 'light') as ThemeVarious]}>
         {children}
-      </ThemeContext.Provider>
-    </ThemeEmotionProvider>
+      </ThemeEmotionProvider>
+    </ThemeNextProvider>
   );
 };
 

@@ -1,15 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { createWrapper } from 'next-redux-wrapper';
-import profileReducer from './slices/profile';
-import type { AppStore } from './types';
+import { store, useRootStore } from '#/contexts/root-store';
 
-export const store = configureStore({
-  reducer: {
-    profile: profileReducer
-  },
-  devTools: true
-});
-
-export const makeStore = () => store;
-
-export const wrapper = createWrapper<AppStore>(makeStore);
+export const useStore = useRootStore;
+export * from './root-store';
+export { store };

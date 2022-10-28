@@ -6,9 +6,11 @@ import { MdNotificationsActive } from 'react-icons/md';
 import { GiBowenKnot } from 'react-icons/gi';
 
 //* Styles
-import S from './Header.module.scss';
+import S from './header.module.scss';
+import Link from 'next/link';
 
-/// ////////////////////////////////////////////////////////////////////////////////////////
+// Header component
+//* ------------------------------------------------------------------------------------------ *//
 const Header: FC = () => {
   return (
     <header className={S.header}>
@@ -16,7 +18,15 @@ const Header: FC = () => {
         <div className={S.headerNavFirst}>
           <ul className={S.headerUl}>
             <li className={S.headerLi}>
-              <GiBowenKnot />
+              <Link href="/">
+                <GiBowenKnot />
+              </Link>
+            </li>
+            <li className={S.headerLi}>
+              <Link href="/glossary">glossary</Link>
+            </li>
+            <li className={S.headerLi}>
+              <Link href="/pinyin">pinyin</Link>
             </li>
           </ul>
         </div>
