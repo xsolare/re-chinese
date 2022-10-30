@@ -4,7 +4,7 @@ import type { NextPageWithLayout } from '../_app';
 import type { IGlossaryItem } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import GlossaryItem from '#/components/glossary/glossary-item';
-import { glossaryItems as gi } from './mock';
+import { glossaryItems as gi } from '../../utils/mock/glossary';
 import PageLayout from '#/components/layouts/page.layout';
 import { GlossaryStyled } from '#/styles/pages/glossary.style';
 

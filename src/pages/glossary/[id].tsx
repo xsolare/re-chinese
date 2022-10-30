@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 import type { IGlossaryContent } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import { GlossaryItemContentStyled, GlossaryItemStyled } from '#/styles/glossary/glossary.style';
-import { glossary as g } from './mock';
+import { glossary as g } from '../../utils/mock/glossary';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 
 interface IGlossaryItemProps {

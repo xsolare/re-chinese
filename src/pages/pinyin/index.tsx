@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
 import PageLayout from '#/components/layouts/page.layout';
-import { mockPinyin } from './mock';
+import { mockPinyin } from '../../utils/mock/pinyin';
 
 interface IPinyinProps {
   pinyinTable: any;
