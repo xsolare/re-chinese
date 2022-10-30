@@ -10,7 +10,6 @@
     "start": "next start",
     "start:ssl": "NODE_ENV=production node server.js",
     "sitemap": "next-sitemap",
-    "postbuild": "npm run next-sitemap",
     "export": "BROWSERSLIST_IGNORE_OLD_DATA=true next export",
     "lint": "pnpm lint:ts && pnpm lint:scss",
     "lint:ts": "eslint \"./**/*.{ts,tsx}\"",
