@@ -1,10 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import type { FC } from 'react';
 import React from 'react';
-
-//* Components
-import { MdNotificationsActive } from 'react-icons/md';
-import { GiBowenKnot } from 'react-icons/gi';
+import { observer } from 'mobx-react-lite';
 
 //* Styles
 import S from './header.module.scss';
@@ -12,10 +9,10 @@ import Link from 'next/link';
 import type { ThemeVarious } from '#/contexts/theme';
 
 //* icons
-import { GiSun, GiNightSleep } from 'react-icons/gi';
+import { MdNotificationsActive } from 'react-icons/md';
+import { GiSun, GiNightSleep, GiBowenKnot } from 'react-icons/gi';
 import { IoMdRainy } from 'react-icons/io';
 import { useStore } from '#/store';
-import { observer } from 'mobx-react-lite';
 
 const themeIcon = new Map<ThemeVarious, JSX.Element>([
   ['light', <GiSun key={1} />],

@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, memo, useMemo } from 'react';
+import { createContext, useMemo } from 'react';
 
 import { useStore } from '../store/index';
 import type { IInitialData } from '#/types/common';
