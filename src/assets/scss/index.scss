@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
 
-$font-family-sans-serif: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue',
-  arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-  'Noto Color Emoji' !default;
+$font-family-sans-serif: Rubik, 'Noto Sans SC', sans-serif, -apple-system, blinkmacsystemfont,
+  'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
 $font-family-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New',
   monospace !default;
 $font-family-base: $font-family-sans-serif !default;
@@ -1083,7 +1083,7 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: 'Noto Sans SC', Rubik, sans-serif;
+  font-family: #{$font-family-base};
   font-size: #{$font-size-base};
 
   color: var(--color-text);

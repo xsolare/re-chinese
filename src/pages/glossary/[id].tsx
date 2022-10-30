@@ -1,9 +1,12 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import type { NextPage } from 'next';
 import type { IGlossaryContent } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import { GlossaryItemContentStyled, GlossaryItemStyled } from '#/styles/glossary/glossary.style';
 import { glossary as g } from './mock';
+import { HieroglyphStyledHTML, PinyinStyledHTML, TranslateStyledHTML } from '#/styles/common';
+import { parseGlossary } from '#/utils/parseTextToHtml';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -18,7 +21,7 @@ const GlossaryItem: NextPage<IGlossaryItemProps> = (props) => {
     <>
       <NextSeo title="Glossary item content" description="Glossary item content page" />
       <GlossaryItemStyled>
-        <GlossaryItemContentStyled>{glossary.text}</GlossaryItemContentStyled>
+        <GlossaryItemContentStyled>{parseGlossary(glossary.text)}</GlossaryItemContentStyled>
       </GlossaryItemStyled>
     </>
   );

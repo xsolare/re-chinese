@@ -8,10 +8,10 @@ import 'dayjs/locale/ru';
 
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
-// import relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(customParseFormat);
-// dayjs.extend(relativeTime)
+dayjs.extend(relativeTime);
 dayjs.extend(LocalizedFormat);
 dayjs.locale('ru');
 

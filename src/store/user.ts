@@ -4,7 +4,6 @@ export interface UserModel {
   username: string;
   avatar: string;
   introduce: string;
-  socialIds: Record<string, string>;
 }
 
 export default class UserStore {

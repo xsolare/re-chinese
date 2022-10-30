@@ -74,6 +74,7 @@ module.exports = {
         'no-console': 'off',
         'no-useless-escape': 'off',
         'no-promise-executor-return': 'off',
+        'consistent-return': 'off',
         'default-param-last': 'off',
         camelcase: 'error',
         'spaced-comment': 'error',

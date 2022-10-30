@@ -6,13 +6,11 @@ import React, { memo, useMemo } from 'react';
 import { InitialContextProvider } from '#/contexts/initial-data';
 import { RootStoreProvider } from '#/contexts/root-store';
 import type { NextComponentType, NextPage } from 'next';
-import type { UserModel } from '#/store/user';
 import DefaultLayout from '#/components/layouts/default.layout';
+import type { ThemeVarious } from '#/contexts/theme';
 import ThemeProvider from '#/contexts/theme';
-
-export interface AppModel {
-  initData: UserModel;
-}
+import { getCookie } from 'cookies-next';
+import type { IInitialData } from '#/types/common';
 
 export type NextPageWithLayout<T = {}> = NextPage<T> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -22,17 +20,22 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+type IAppProps = NextComponentType<
+  AppContext,
+  AppInitialProps,
+  AppPropsWithLayout & { initData: IInitialData }
+>;
+
 // App
 //* ------------------------------------------------------------------------------------------ *//
-const App: NextComponentType<AppContext, AppInitialProps, AppPropsWithLayout & AppModel> = (
-  props
-) => {
+const App: IAppProps = (props) => {
   const { initData, Component, pageProps } = props;
+  const getLayout = Component.getLayout ?? ((page) => page);
 
-  const Inner = useMemo(() => {
-    const getLayout = Component.getLayout ?? ((page) => page);
-    return initData ? getLayout(<Component {...pageProps} />) : <div>NoDataErrorView</div>;
-  }, [Component, pageProps]);
+  const Inner = useMemo(
+    () => (initData ? getLayout(<Component {...pageProps} />) : <div>NoDataErrorView</div>),
+    [Component, pageProps]
+  );
 
   return (
     <RootStoreProvider>
@@ -50,7 +53,9 @@ const AppWrapper: FC<PropsWithChildren> = memo(({ children }) => (
 ));
 
 App.getInitialProps = async (props: AppContext) => {
-  const initialData = {};
+  const initialData = {} as IInitialData;
+
+  initialData.theme = getCookie('_THEME_', { req: props.ctx.req }) as ThemeVarious;
 
   const appProps = await (async () => {
     return NextApp.getInitialProps(props);
@@ -63,3 +68,8 @@ App.getInitialProps = async (props: AppContext) => {
 };
 
 export default App;
+
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   if (process.env.NODE_ENV === 'production') return;
+//   // console.log(metric);
+// }

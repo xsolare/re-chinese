@@ -26,7 +26,7 @@
       "import type { FC } from 'react';",
       "",
       "interface I${1:Component}Props {",
-      "    ",
+      "",
       "}",
       "",
       "// ${1:Component} ",

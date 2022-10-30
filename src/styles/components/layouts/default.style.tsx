@@ -8,4 +8,6 @@ export const DefaultStyled = styled.main`
 
   min-height: 100vh;
   height: 100%;
+
+  background-color: ${({ theme }) => theme.palette.bg.main};
 `;

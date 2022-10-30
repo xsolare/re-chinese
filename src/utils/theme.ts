@@ -8,65 +8,104 @@ const Breakpoints = {
   xxxl: 1920
 };
 
-export const breakpoint = (n: keyof typeof Breakpoints): string =>
-  `@media (min-width: ${Breakpoints[n]}px)`;
+export const breakpoint = (n: keyof typeof Breakpoints, size?: 'min' | 'max'): string =>
+  `@media (${size ?? 'max'}-width: ${Breakpoints[n]}px)`;
 
 export const pxToRem = (pxValue: number, baseFontSize: number): string =>
   `${pxValue / baseFontSize || 16}rem`;
+
+const font = {
+  family: {
+    base: `Rubik, 'Noto Sans SC', sans-serif, -apple-system, blinkmacsystemfont,
+          'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;`,
+    monospace: `
+    "sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New',"
+    `,
+    text: 'Rubik',
+    chn: 'Noto Sans SC'
+  },
+  size: {
+    hieroglyph: '1.1rem',
+    text: '1rem'
+  }
+};
 
 const palette = {
   color: {
     text: '#262728',
     subText: '#535353',
     textInvert: '#e4e4e4',
-    subTextInvert: '#6d6e6f'
+    subTextInvert: '#6d6e6f',
+    hieroglyph: '#262728',
+    translate: '#262728',
+    pinyin: '#262728'
   },
   bg: {
     main: '#eeeeee',
     mainContent: '#e4e4e4',
     modal: '#333',
     modalContent: '#444',
-    highlight: '#6db6ff'
+    highlight: '#6db6ff',
+    hieroglyph: '#8fb2ff52'
+  },
+  border: {
+    hieroglyph: '#8fb2ff63'
   },
   divider: '#cccccc'
 };
 
 const paletteDark = {
+  color: {
+    text: '#e4e4e4',
+    subText: '#888888',
+    textInvert: '#e4e4e4',
+    subTextInvert: '#6d6e6f',
+    hieroglyph: '#262728',
+    translate: '#262728',
+    pinyin: '#262728'
+  },
   bg: {
     main: '#1e1f20',
     mainContent: '#121314',
     modal: '#333',
     modalContent: '#444',
-    highlight: '#f65341'
+    highlight: '#f65341',
+    hieroglyph: '#02000050'
   },
-  color: {
-    text: '#e4e4e4',
-    subText: '#888888',
-    textInvert: '#e4e4e4',
-    subTextInvert: '#6d6e6f'
+  border: {
+    hieroglyph: '#ff496754'
   },
   divider: '#808080'
 };
 
 const paletteBlue = {
+  color: {
+    text: '#e4e4e4',
+    subText: '#6d6e6f',
+    textInvert: '#e4e4e4',
+    subTextInvert: '#6d6e6f',
+    hieroglyph: '#262728',
+    translate: '#262728',
+    pinyin: '#262728'
+  },
   bg: {
     main: '#0d1117',
     mainContent: '#161b22',
     modal: '#1b222c',
     modalContent: '#141d27',
-    highlight: '#6db6ff'
+    highlight: '#6db6ff',
+    hieroglyph: '#182841'
   },
-  color: {
-    text: '#e4e4e4',
-    subText: '#6d6e6f',
-    textInvert: '#e4e4e4',
-    subTextInvert: '#6d6e6f'
+  border: {
+    hieroglyph: '#85e3ff2e'
   },
   divider: '#808080'
 };
 
 export const theme = {
-  palette
+  palette,
+  font
 };
 
 export type ThemeTypes = typeof theme;
