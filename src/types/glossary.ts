@@ -7,5 +7,7 @@ export interface IGlossaryItem {
 
 export interface IGlossaryContent {
   id: string;
+  title: string;
+  hsk: number;
   text: string;
 }

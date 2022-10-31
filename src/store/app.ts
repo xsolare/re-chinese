@@ -1,82 +1,79 @@
-import { makeAutoObservable } from 'mobx';
+import { action, computed, makeObservable, observable } from 'mobx';
 import { isClientSide } from '#/utils/env';
 
-import type { ViewportRecord } from './types';
+import type { ScrollRecord, ViewportRecord } from './types';
 import type { ThemeVarious } from '../contexts/theme';
 import { setCookie } from 'cookies-next';
+import axios from 'axios';
 
-// interface IAppUIStore {
-//   theme: ThemeVarious;
-// }
+interface IAppUIStore {
+  theme: ThemeVarious;
+  scroll: ScrollRecord;
+  viewport: ViewportRecord;
+  mediaType: 'screen' | 'print';
+}
 
 export default class AppUIStore {
-  // state = {
-  //   theme: 'light'
-  // } as IAppUIStore;
+  state = {
+    theme: 'light',
+    scroll: {} as ScrollRecord,
+    viewport: {} as ViewportRecord,
+    mediaType: 'screen'
+  } as IAppUIStore;
 
   constructor() {
-    makeAutoObservable(this);
+    makeObservable(this, {
+      // ~ action
+      setScroll: action,
+      setViewport: action,
+      setTheme: action,
+      // ~ computed
+      headerOpacity: computed,
+      isOverFirstScreenHeight: computed,
+      isOverPostTitleHeight: computed,
+      isPadOrMobile: computed,
+      isNarrowThanLaptop: computed
+    });
+
+    makeObservable(this.state, {
+      theme: observable,
+      mediaType: observable,
+      scroll: observable,
+      viewport: observable
+    });
   }
 
-  private position = 0;
-  theme: ThemeVarious = 'light';
-  viewport: ViewportRecord = {} as ViewportRecord;
-  scrollDirection: 'up' | 'down' | null = null;
-  mediaType: 'screen' | 'print' = 'screen';
-  headerNav = {
-    title: '',
-    meta: '',
-    show: false
-  };
-  shareData: { title: string; text?: string; url: string } | null = null;
-
+  setScroll = (scroll: ScrollRecord): ScrollRecord => (this.state.scroll = scroll);
+  setViewport = (viewport: ViewportRecord): ViewportRecord => (this.state.viewport = viewport);
   setTheme = (themeType: ThemeVarious): ThemeVarious => {
     setCookie('_THEME_', themeType);
-    return (this.theme = themeType);
+    return (this.state.theme = themeType);
   };
 
-  updatePosition(direction: 'up' | 'down' | null, y: number) {
-    if (typeof document !== 'undefined') {
-      this.position = y;
-      this.scrollDirection = direction;
-    }
-  }
+  updateScroll() {
+    const { pageYOffset } = window;
 
-  get headerOpacity() {
-    const threshold = 50;
-    return this.position >= threshold ? 1 : Math.floor((this.position / threshold) * 100) / 100;
-  }
-
-  get isOverFirstScreenHeight(): boolean {
-    if (!isClientSide()) {
-      return false;
-    }
-    return this.position > window.innerHeight || this.position > screen.height;
-  }
-
-  get isOverPostTitleHeight(): boolean {
-    if (!isClientSide()) {
-      return false;
-    }
-
-    return this.position > 126 || this.position > screen.height / 3;
+    this.setScroll({
+      dir: null,
+      pos: pageYOffset
+    });
   }
 
   updateViewport() {
     const { innerHeight } = window;
     const { width } = document.documentElement.getBoundingClientRect();
-    const { hpad, pad, mobile } = this.viewport;
+    const { hpad, pad, mobile, h, w } = this.state.viewport;
 
     if (
-      this.viewport.h &&
+      h &&
       // chrome mobile delta == 56
-      Math.abs(innerHeight - this.viewport.h) < 80 &&
-      width === this.viewport.w &&
+      Math.abs(innerHeight - h) < 80 &&
+      width === w &&
       (hpad || pad || mobile)
     ) {
       return;
     }
-    this.viewport = {
+    this.setViewport({
       w: width,
       h: innerHeight,
       mobile: window.screen.width <= 568 || window.innerWidth <= 568,
@@ -84,17 +81,89 @@ export default class AppUIStore {
       hpad: window.innerWidth <= 1100 && window.innerWidth > 768,
       wider: window.innerWidth > 1100 && window.innerWidth < 1920,
       widest: window.innerWidth >= 1920
-    };
+    });
+  }
+
+  //* Axios
+  addAxiosInterceptors = (): void => {
+    axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        console.log('error');
+
+        if (error?.response?.status === 401) {
+          // const urlCheckRegeExp = new RegExp(
+          //   `/(login)|(${this.settings.NotificationsHubUrl})$`,
+          //   'gi'
+          // );
+          // if (!urlCheckRegeExp.test(error.response.config.url)) {
+          //   this.loginDialogControllerRef.current?.show({
+          //     successLoginCallBack: (userInfo) => {
+          //       this.userInfoControllerRef.current?.setUserInfo(userInfo, true);
+          //       this.startHub();
+          //     }
+          //   });
+          // }
+        } else if (error?.response?.status === 403) {
+          // this.modal?.showError({
+          //   maxWidth: 700,
+          //   message: 'Недостаточно прав доступа.'
+          // });
+        } else {
+          // this.modal?.showError({
+          //   maxWidth: 700,
+          //   message:
+          //     error?.response?.data?.message || error?.response?.data?.detail || error.toString()
+          // });
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    axios.interceptors.request.use(
+      (config) => {
+        config.withCredentials = true;
+        return config;
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+  };
+
+  get headerOpacity() {
+    const { pos } = this.state.scroll;
+    const threshold = 100;
+
+    return pos >= threshold ? 0 : 1 - Math.floor((pos / threshold) * 100) / 100;
+  }
+
+  get isOverFirstScreenHeight(): boolean {
+    const { pos } = this.state.scroll;
+
+    if (!isClientSide()) {
+      return false;
+    }
+    return pos > window.innerHeight || pos > screen.height;
+  }
+
+  get isOverPostTitleHeight(): boolean {
+    const { pos } = this.state.scroll;
+
+    if (!isClientSide()) {
+      return false;
+    }
+
+    return pos > 126 || pos > screen.height / 3;
   }
 
   get isPadOrMobile() {
-    return this.viewport.pad || this.viewport.mobile;
+    const { pad, mobile } = this.state.viewport;
+
+    return pad || mobile;
   }
 
-  /**
-   * < 1100
-   */
   get isNarrowThanLaptop() {
-    return this.isPadOrMobile || this.viewport.hpad;
+    return this.isPadOrMobile || this.state.viewport.hpad;
   }
 }

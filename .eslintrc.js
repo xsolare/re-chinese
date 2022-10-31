@@ -72,6 +72,8 @@ module.exports = {
         'no-debugger': 'warn',
         'no-underscore-dangle': 'off',
         'no-console': 'off',
+        'class-methods-use-this': 'off',
+        'no-param-reassign': 'off',
         'no-useless-escape': 'off',
         'no-promise-executor-return': 'off',
         'consistent-return': 'off',

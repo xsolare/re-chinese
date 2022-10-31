@@ -14,6 +14,10 @@ export const breakpoint = (n: keyof typeof Breakpoints, size?: 'min' | 'max'): s
 export const pxToRem = (pxValue: number, baseFontSize: number): string =>
   `${pxValue / baseFontSize || 16}rem`;
 
+const sizes = {
+  header: { height: '50px' }
+};
+
 const font = {
   family: {
     base: `Rubik, 'Noto Sans SC', sans-serif, -apple-system, blinkmacsystemfont,
@@ -39,7 +43,8 @@ const palette = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728'
+    pinyin: '#262728',
+    header: '#e0e0e0'
   },
   bg: {
     main: '#eeeeee',
@@ -47,9 +52,13 @@ const palette = {
     modal: '#333',
     modalContent: '#444',
     highlight: '#6db6ff',
-    hieroglyph: '#8fb2ff52'
+    hieroglyph: '#8fb2ff52',
+    header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
+    headerBlur: 'rgba(24, 24, 24, 0.7)'
   },
   border: {
+    header: '#7e7e7e',
+    title: '#161b22',
     hieroglyph: '#8fb2ff63'
   },
   divider: '#cccccc'
@@ -63,7 +72,8 @@ const paletteDark = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728'
+    pinyin: '#262728',
+    header: '#e0e0e0'
   },
   bg: {
     main: '#1e1f20',
@@ -71,9 +81,13 @@ const paletteDark = {
     modal: '#333',
     modalContent: '#444',
     highlight: '#f65341',
-    hieroglyph: '#02000050'
+    hieroglyph: '#02000050',
+    header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
+    headerBlur: 'rgba(24, 24, 24, 0.7)'
   },
   border: {
+    header: '#474747',
+    title: '#161b22',
     hieroglyph: '#ff496754'
   },
   divider: '#808080'
@@ -87,7 +101,8 @@ const paletteBlue = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728'
+    pinyin: '#262728',
+    header: '#e0e0e0'
   },
   bg: {
     main: '#0d1117',
@@ -95,9 +110,13 @@ const paletteBlue = {
     modal: '#1b222c',
     modalContent: '#141d27',
     highlight: '#6db6ff',
-    hieroglyph: '#182841'
+    hieroglyph: '#182841',
+    header: 'linear-gradient(to top right,  #161b22, #1d242d, #161b22)',
+    headerBlur: 'rgba(24, 24, 24, 0.7)'
   },
   border: {
+    header: '#161b22',
+    title: '#161b22',
     hieroglyph: '#85e3ff2e'
   },
   divider: '#808080'
@@ -105,7 +124,8 @@ const paletteBlue = {
 
 export const theme = {
   palette,
-  font
+  font,
+  sizes
 };
 
 export type ThemeTypes = typeof theme;

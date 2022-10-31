@@ -1,28 +1,32 @@
 import axios from 'axios';
+import { getCookie } from 'cookies-next';
 
-// interface ApiReturnType {}
+import { GlossaryApi } from './glossary';
 
-export const api = () => {
+export type ApiReturnType = {
+  glossary: ReturnType<typeof GlossaryApi>;
+};
+
+const { JWT_HEADER, API_URL } = process.env;
+
+export const api = (): ApiReturnType => {
   const instance = axios.create({
-    baseURL: 'http://localhost:8888/api/'
-    // headers: {
-    //   [env.JWT_HEADER]: useCookie(env.JWT_HEADER)?.value || ''
-    // }
-    // withCredentials: true,
+    baseURL: `${API_URL ?? ''}/api`,
+    headers: {
+      [JWT_HEADER ?? 'JWT']: getCookie(JWT_HEADER ?? 'JWT')
+    },
+    withCredentials: true
   });
-  //   const apis = {
-  //     user: UserApi,
-  //     word: WordApi,
-  //     hieroglyph: HieroglyphApi,
-  //     pinyin: PinyinApi
-  //   };
+  const apis = {
+    glossary: GlossaryApi
+  };
 
-  //   const result = Object.entries(apis).reduce((prev, [key, f]) => {
-  //     return {
-  //       ...prev,
-  //       [key]: f(instance)
-  //     };
-  //   }, {} as ApiReturnType);
+  const result = Object.entries(apis).reduce((prev, [key, f]) => {
+    return {
+      ...prev,
+      [key]: f(instance)
+    };
+  }, {} as ApiReturnType);
 
-  return instance;
+  return result;
 };

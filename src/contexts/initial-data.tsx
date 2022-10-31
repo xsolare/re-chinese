@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useMemo } from 'react';
+import { useEffect, createContext, useMemo } from 'react';
 
 import { useStore } from '../store/index';
 import type { IInitialData } from '#/types/common';
@@ -14,6 +14,10 @@ export const InitialContextProvider: FC<IInitialContextProvider> = ({ value, chi
   const { userStore, appStore } = useStore();
   userStore.setUser(value.user);
   if (value.theme) appStore.setTheme(value.theme);
+
+  useEffect(() => {
+    appStore.addAxiosInterceptors();
+  }, []);
 
   return (
     <InitialContext.Provider value={useMemo(() => value, [value])}>
