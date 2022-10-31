@@ -13,8 +13,13 @@ import { store } from '#/store';
 const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     store.appStore.updateViewport();
+    store.appStore.updateScroll();
+
     window.onresize = () => {
       store.appStore.updateViewport();
+    };
+    window.onscroll = () => {
+      store.appStore.updateScroll();
     };
   }, []);
 

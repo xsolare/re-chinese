@@ -24,7 +24,7 @@ export const themes: Record<string, ThemeTypes> = {
 //* ------------------------------------------------------------------------------------------ *//
 const ThemeProvider: FC<PropsWithChildren> = observer(({ children }) => {
   const { appStore } = useStore();
-  const { theme: currentTheme } = appStore;
+  const { theme: currentTheme } = appStore.state;
 
   useEffect(
     () => document.documentElement.setAttribute('data-theme', currentTheme),

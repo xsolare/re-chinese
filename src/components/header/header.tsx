@@ -2,9 +2,10 @@
 import type { FC } from 'react';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
+import { HeaderStyled } from '#/styles/components/ui/header.style';
+import { useStore } from '#/store';
 
-//* Styles
-import S from './header.module.scss';
+//* Components
 import Link from 'next/link';
 import type { ThemeVarious } from '#/contexts/theme';
 
@@ -12,7 +13,6 @@ import type { ThemeVarious } from '#/contexts/theme';
 import { MdNotificationsActive } from 'react-icons/md';
 import { GiSun, GiNightSleep, GiBowenKnot } from 'react-icons/gi';
 import { IoMdRainy } from 'react-icons/io';
-import { useStore } from '#/store';
 
 const themeIcon = new Map<ThemeVarious, JSX.Element>([
   ['light', <GiSun key={1} />],
@@ -24,7 +24,11 @@ const themeIcon = new Map<ThemeVarious, JSX.Element>([
 //* ------------------------------------------------------------------------------------------ *//
 const Header: FC = observer(() => {
   const { appStore } = useStore();
-  const { theme, setTheme } = appStore;
+  const {
+    state: { theme },
+    setTheme,
+    headerOpacity
+  } = appStore;
 
   const handleClickTheme = () => {
     const arr: ThemeVarious[] = ['blue', 'light', 'dark'];
@@ -33,39 +37,36 @@ const Header: FC = observer(() => {
   };
 
   return (
-    <header className={S.header}>
-      <nav className={S.headerNav}>
-        <div className={S.headerNavFirst}>
-          <ul className={S.headerUl}>
-            <li className={S.headerLi}>
+    <HeaderStyled opacity={headerOpacity}>
+      <nav>
+        <div>
+          <ul>
+            <li>
               <Link href="/">
                 <GiBowenKnot />
               </Link>
             </li>
-            <li className={S.headerLi}>
+            <li>
               <Link href="/glossary">glossary</Link>
             </li>
-            <li className={S.headerLi}>
+            <li>
               <Link href="/pinyin">pinyin</Link>
             </li>
-            <li className={S.headerLi}>
+            <li>
               <Link href="/hieroglyph">hieroglyph</Link>
             </li>
           </ul>
         </div>
-        <div className={S.headerNavSecond}>
-          <ul className={S.headerUl}>
-            <li className={S.headerLi} onClick={handleClickTheme}>
-              {themeIcon.get(theme)}
-            </li>
-
-            <li className={S.headerLi}>
+        <div>
+          <ul>
+            <li onClick={handleClickTheme}>{themeIcon.get(theme)}</li>
+            <li>
               <MdNotificationsActive />
             </li>
           </ul>
         </div>
       </nav>
-    </header>
+    </HeaderStyled>
   );
 });
 

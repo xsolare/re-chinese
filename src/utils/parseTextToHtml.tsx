@@ -2,45 +2,74 @@ import React from 'react';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
 import type { HTMLReactParserOptions } from 'html-react-parser';
 import {
+  ExampleStyledHTML,
   HieroglyphStyledHTML,
+  HieroglyphTitleStyledHTML,
   PinyinStyledHTML,
   TextTabStyledHTML,
-  TranslateStyledHTML
+  TranslateStyledHTML,
+  WarnStyledHTML
 } from '#/styles/common';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {
-    if (domNode instanceof Element && domNode.name === 'span') {
-      const { type } = attributesToProps(domNode.attribs);
+    if (domNode instanceof Element) {
+      const { name } = domNode;
+      const { type, index } = attributesToProps(domNode.attribs);
 
-      if (type === 'h') {
-        return (
-          <HieroglyphStyledHTML>
-            <span>{domToReact(domNode.children, optionsForGlossary)}</span>
-          </HieroglyphStyledHTML>
-        );
+      if (name === 'span') {
+        if (type === 'h') {
+          return (
+            <HieroglyphStyledHTML>
+              <span>{domToReact(domNode.children, optionsForGlossary)}</span>
+            </HieroglyphStyledHTML>
+          );
+        }
+        if (type === 'p') {
+          return (
+            <PinyinStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</PinyinStyledHTML>
+          );
+        }
+        if (type === 't') {
+          return (
+            <TranslateStyledHTML>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </TranslateStyledHTML>
+          );
+        }
       }
-      if (type === 'p') {
-        return (
-          <PinyinStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</PinyinStyledHTML>
-        );
-      }
-      if (type === 't') {
-        return (
-          <TranslateStyledHTML>
-            {domToReact(domNode.children, optionsForGlossary)}
-          </TranslateStyledHTML>
-        );
-      }
-    }
 
-    if (domNode instanceof Element && domNode.name === 'p') {
-      const { type } = attributesToProps(domNode.attribs);
+      if (name === 'p') {
+        if (type === 'tab') {
+          return (
+            <TextTabStyledHTML>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </TextTabStyledHTML>
+          );
+        }
+        if (type === 'warn') {
+          return (
+            <WarnStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</WarnStyledHTML>
+          );
+        }
+      }
 
-      if (type === 'tab') {
-        return (
-          <TextTabStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</TextTabStyledHTML>
-        );
+      if (name === 'div') {
+        if (type === 'h') {
+          return (
+            <HieroglyphTitleStyledHTML>
+              <span>{index}</span>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </HieroglyphTitleStyledHTML>
+          );
+        }
+        if (type === 'example') {
+          return (
+            <ExampleStyledHTML>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </ExampleStyledHTML>
+          );
+        }
       }
     }
   }

@@ -26,3 +26,8 @@ export interface ViewportRecord {
   wider: boolean;
   widest: boolean;
 }
+
+export interface ScrollRecord {
+  dir: 'up' | 'down' | null;
+  pos: number;
+}
