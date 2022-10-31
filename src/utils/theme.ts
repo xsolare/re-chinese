@@ -67,7 +67,7 @@ const palette = {
 const paletteDark = {
   color: {
     text: '#e4e4e4',
-    subText: '#888888',
+    subText: '#ababab',
     textInvert: '#e4e4e4',
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
@@ -87,7 +87,7 @@ const paletteDark = {
   },
   border: {
     header: '#474747',
-    title: '#161b22',
+    title: '#6c757d',
     hieroglyph: '#ff496754'
   },
   divider: '#808080'
@@ -96,7 +96,7 @@ const paletteDark = {
 const paletteBlue = {
   color: {
     text: '#e4e4e4',
-    subText: '#6d6e6f',
+    subText: '#959595',
     textInvert: '#e4e4e4',
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
@@ -116,7 +116,7 @@ const paletteBlue = {
   },
   border: {
     header: '#161b22',
-    title: '#161b22',
+    title: '#5d6a7e',
     hieroglyph: '#85e3ff2e'
   },
   divider: '#808080'

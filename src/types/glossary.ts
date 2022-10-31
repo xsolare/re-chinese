@@ -1,8 +1,9 @@
 export interface IGlossaryItem {
   id: string;
-  text: string;
+  title: string;
   hsk: string;
   icon: string;
+  badges: string[];
 }
 
 export interface IGlossaryContent {
@@ -10,4 +11,12 @@ export interface IGlossaryContent {
   title: string;
   hsk: number;
   text: string;
+  briefly: IGlossaryBriefly[];
+}
+
+export interface IGlossaryBriefly {
+  id: string;
+  hieroglyph: string;
+  pinyin: string;
+  translate: string;
 }

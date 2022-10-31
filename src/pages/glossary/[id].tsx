@@ -1,16 +1,20 @@
-/* eslint-disable react/no-danger */
-import React from 'react';
+import React, { useMemo } from 'react';
 import type { NextPage } from 'next';
 import type { IGlossaryContent } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import {
-  GlossaryItemContentStyled,
-  GlossaryItemStyled,
+  GlossaryContentStyled,
+  GlossaryStyled,
   GlossaryTitleStyled
-} from '#/styles/glossary/glossary.style';
+} from '#/styles/pages/glossary.style';
 import { glossary as g } from '../../utils/mock/glossary';
 import { parseGlossary } from '#/utils/parseTextToHtml';
-import { SiFurrynetwork } from 'react-icons/si';
+import { CgShortcut } from 'react-icons/cg';
+import GlossaryStore from './store';
+import { observer } from 'mobx-react-lite';
+import { HieroglyphTitleStyledHTML } from '#/styles/common';
+import PageLayout from '#/components/layouts/page.layout';
+import type { NextPageWithLayout } from '../_app';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -18,27 +22,46 @@ interface IGlossaryItemProps {
 
 // Glossary item component
 //* ------------------------------------------------------------------------------------------ *//
-const GlossaryItem: NextPage<IGlossaryItemProps> = (props) => {
+const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) => {
   const { glossary } = props;
+
+  const store = useMemo(() => new GlossaryStore(), []);
+  const { setBriefly, state } = store;
 
   return (
     <>
       <NextSeo title="Glossary item content" description="Glossary item content page" />
-      <GlossaryItemStyled>
-        <GlossaryTitleStyled>
+      <GlossaryStyled>
+        <GlossaryTitleStyled isBriefly={state.isBriefly}>
           <div className="option">
-            <SiFurrynetwork className="icon" />
+            <CgShortcut className="icon" onClick={() => setBriefly(!state.isBriefly)} />
           </div>
           <h1>{glossary.title}</h1>
           <div className="option">
-            <div className="hsk">{`HSK ${glossary.hsk}`}</div>
+            <div className="hsk">{`HSK-${glossary.hsk}`}</div>
           </div>
         </GlossaryTitleStyled>
-        <GlossaryItemContentStyled>{parseGlossary(glossary.text)}</GlossaryItemContentStyled>
-      </GlossaryItemStyled>
+        <GlossaryContentStyled>
+          {/* Full */}
+          {!state.isBriefly && parseGlossary(glossary.text)}
+
+          {/* Briefly */}
+          {state.isBriefly &&
+            glossary.briefly.map((b, index) => (
+              <HieroglyphTitleStyledHTML key={b.id}>
+                <span>{index}</span>
+                <h2>{b.hieroglyph}</h2>
+                <div>
+                  <span>{b.pinyin}</span>
+                  <span>{b.translate}</span>
+                </div>
+              </HieroglyphTitleStyledHTML>
+            ))}
+        </GlossaryContentStyled>
+      </GlossaryStyled>
     </>
   );
-};
+});
 
 GlossaryItem.getInitialProps = async (ctx) => {
   const { query } = ctx;
@@ -49,6 +72,10 @@ GlossaryItem.getInitialProps = async (ctx) => {
   return {
     glossary: glossaryContent
   };
+};
+
+GlossaryItem.getLayout = function getLayout(page: ReactElement) {
+  return <PageLayout>{page}</PageLayout>;
 };
 
 export default GlossaryItem;
