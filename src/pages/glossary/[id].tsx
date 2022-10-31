@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import type { NextPage } from 'next';
+import type { ReactElement } from 'react';
 import type { IGlossaryContent } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import {
