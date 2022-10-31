@@ -24,6 +24,7 @@ specifiers:
   browserslist: ^4.21.4
   classnames: ^2.3.2
   cookies-next: ^2.1.1
+  cross-env: ^7.0.3
   dayjs: ^1.11.6
   dotenv: ^16.0.3
   dotenv-load: ^2.0.1
@@ -50,6 +51,7 @@ specifiers:
   next-images: ^1.8.4
   next-pwa: ^5.6.0
   next-seo: ^5.11.1
+  next-sitemap: ^3.1.29
   nookies: ^2.5.2
   postcss: ^8.4.18
   postcss-flexbugs-fixes: ^5.0.2
@@ -91,6 +93,7 @@ dependencies:
   next-images: 1.8.4
   next-pwa: 5.6.0_next@13.0.0
   next-seo: 5.11.1_r5sq4deac3rmm2d5onhwvomqve
+  next-sitemap: 3.1.29_next@13.0.0
   nookies: 2.5.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -112,6 +115,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.41.0_huremdigmcnkianavgfk3x6iou
   '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
   autoprefixer: 10.4.13_postcss@8.4.18
+  cross-env: 7.0.3
   dotenv: 16.0.3
   eslint: 8.26.0
   eslint-config-airbnb: 19.0.4_43j2huhpnx3hffntymctaqzhgq
@@ -2117,6 +2121,10 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
 
+  /@corex/deepmerge/4.0.29:
+    resolution: {integrity: sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==}
+    dev: false
+
   /@csstools/postcss-cascade-layers/1.1.1_postcss@8.4.18:
     resolution: {integrity: sha512-+KdYrpKC5TgomQr2DlZF4lDEpHcoxnj5IGddYYfBWJAKfj1JtuHUIqMa+E1pJJ+z3kvDViWMqyqPlG4Ja7amQA==}
     engines: {node: ^12 || ^14 || >=16}
@@ -3620,6 +3628,14 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: true
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -6020,6 +6036,19 @@ packages:
       next: 13.0.0_2mygebwfgdyopr3fy2qddu2eli
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /next-sitemap/3.1.29_next@13.0.0:
+    resolution: {integrity: sha512-7UQyfpI7obOdB11aCswWYfqRn5CR0YSmWHo1r/uarrFfZD5PyyAWtQlgP6jNqDW0eX1ZJWERBwmJ2dLjl4nT8Q==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@next/env': '*'
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': 4.0.29
+      minimist: 1.2.7
+      next: 13.0.0_2mygebwfgdyopr3fy2qddu2eli
     dev: false
 
   /next/13.0.0_2mygebwfgdyopr3fy2qddu2eli:
