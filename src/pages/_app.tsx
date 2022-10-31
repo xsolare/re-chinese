@@ -11,6 +11,8 @@ import type { ThemeVarious } from '#/contexts/theme';
 import ThemeProvider from '#/contexts/theme';
 import { getCookie } from 'cookies-next';
 import type { IInitialData } from '#/types/common';
+import { DefaultSeo } from 'next-seo';
+import nextSeoConfig from 'next-seo.config';
 
 export type NextPageWithLayout<T = {}> = NextPage<T> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -38,11 +40,14 @@ const App: IAppProps = (props) => {
   );
 
   return (
-    <RootStoreProvider>
-      <InitialContextProvider value={initData}>
-        <AppWrapper>{Inner}</AppWrapper>
-      </InitialContextProvider>
-    </RootStoreProvider>
+    <>
+      <DefaultSeo {...nextSeoConfig} />
+      <RootStoreProvider>
+        <InitialContextProvider value={initData}>
+          <AppWrapper>{Inner}</AppWrapper>
+        </InitialContextProvider>
+      </RootStoreProvider>
+    </>
   );
 };
 

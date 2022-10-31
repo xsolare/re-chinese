@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 });
 const withPWA = require('next-pwa');
-dotenvLoad(process.env.NODE_ENV === 'production' ? 'production' : 'development');
+dotenvLoad(process.env.NODE_ENV ?? 'development');
 
 const nextConfig = {
   webpack5: true,

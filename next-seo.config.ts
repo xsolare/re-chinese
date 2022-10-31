@@ -1,7 +1,7 @@
 const nextSeoConfig = {
   title: 'ReChinese',
-  titleTemplate: '%s ㅣ ReChinese',
-  description: 'ReChinese',
+  titleTemplate: '%s • ReChinese',
+  description: '🫀 ReChinese',
   openGraph: {
     url: process.env.webUrl,
     type: 'website',
