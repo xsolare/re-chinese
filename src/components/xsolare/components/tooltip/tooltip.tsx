@@ -53,7 +53,7 @@ const PopperedTooltip: FC<IPopperedTooltipProps> = observer((props) => {
 
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
   const { placement } = store.props;
-  const { title } = store.state;
+  const { title, style } = store.state;
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     placement,
     strategy: 'fixed',
