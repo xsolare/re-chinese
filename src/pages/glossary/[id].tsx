@@ -49,7 +49,7 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
           {state.isBriefly &&
             glossary.briefly.map((b, index) => (
               <HieroglyphTitleStyledHTML key={b.id}>
-                <span>{index}</span>
+                <span>{index + 1}</span>
                 <h2>{b.hieroglyph}</h2>
                 <div>
                   <span>{b.pinyin}</span>

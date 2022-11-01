@@ -96,7 +96,6 @@ export const GlossaryTitleStyled = styled.div<IGlossaryTitleStyled>`
 
 export const GlossaryStyled = styled.div`
   position: relative;
-  padding: 10px;
   width: 100%;
   height: 100%;
   margin-top: 25px;

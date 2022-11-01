@@ -1,0 +1,79 @@
+import classNames from 'classnames';
+import type { PropsWithChildren, MutableRefObject, FC } from 'react';
+import type { ITooltipController, ITooltipProps } from './tooltip.store';
+import { useState, useRef } from 'react';
+import { usePopper } from 'react-popper';
+import { observer } from 'mobx-react-lite';
+import { TooltipStore } from './tooltip.store';
+import { TooltipStyled } from './tooltip.style';
+
+export const Tooltip = (
+  props: PropsWithChildren<ITooltipProps> & {
+    controllerRef?: MutableRefObject<ITooltipController | undefined>;
+  }
+): JSX.Element => {
+  const { controllerRef, children, ...restProps } = props;
+
+  const storeRef = useRef<TooltipStore>(new TooltipStore(restProps));
+
+  if (controllerRef) {
+    controllerRef.current = storeRef.current.controller;
+  }
+
+  const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
+
+  return (
+    <TooltipStyled>
+      <div
+        onMouseEnter={storeRef.current.show}
+        onMouseLeave={storeRef.current.hide}
+        ref={setReferenceElement}>
+        {children}
+      </div>
+      <InnerTooltip store={storeRef.current} referenceElement={referenceElement} />
+    </TooltipStyled>
+  );
+};
+
+const InnerTooltip = observer(
+  (props: { store: TooltipStore; referenceElement: HTMLDivElement | null }) => {
+    const { isVisible } = props.store.state;
+
+    return !isVisible ? null : <PopperedTooltip {...props} />;
+  }
+);
+
+interface IPopperedTooltipProps {
+  store: TooltipStore;
+  referenceElement: HTMLDivElement | null;
+}
+
+const PopperedTooltip: FC<IPopperedTooltipProps> = observer((props) => {
+  const { store, referenceElement } = props;
+
+  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
+  const { placement } = store.props;
+  const { title } = store.state;
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    placement,
+    strategy: 'fixed',
+    modifiers: [
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 10]
+        }
+      }
+    ]
+  });
+
+  return (
+    <div
+      className={classNames('tooltip', style)}
+      ref={setPopperElement}
+      style={styles.popper}
+      {...attributes.popper}>
+      {title}
+    </div>
+  );
+});

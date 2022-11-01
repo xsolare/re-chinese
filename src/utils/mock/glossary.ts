@@ -17,11 +17,11 @@ const text = `
     что «я умею/могу плавать», «мне следует плавать». Модальные глаголы в китайском языке почти никогда не объединяются с существительными.
     Появляясь в предложении, они притягивают на себя все внимание и даже становятся сильнее грамматически, чем все остальные члены
     предложения. Так, например, модальные глаголы не удваиваются, не могут употребляться с
-    <span type="h">了</span><span type="h">着</span><span type="h">过</span>. Если мы хотим задать вопрос с помощью повторения глагола,
+    <span type="h" pinyin="le">了</span><span type="h" pinyin="zhe">着</span><span type="h" pinyin="guò">过</span>. Если мы хотим задать вопрос с помощью повторения глагола,
     повторять мы будем именно модальный глагол:
   </p>
-  <span type="h">你想不想看电影</span> <span type="t">Не хочешь посмотреть фильм?</span> <br />
-  <span type="h">这儿可不可以抽烟</span> <span type="t">Можно ли здесь курить?</span> <br />
+  <span type="h" pinyin="nǐ xiǎng bù xiǎng kàn diànyǐng">你想不想看电影</span> <span type="t">Не хочешь посмотреть фильм?</span> <br />
+  <span type="h" pinyin="zhèér kěbùkěyǐ chōuyān">这儿可不可以抽烟</span> <span type="t">Можно ли здесь курить?</span> <br />
 
   <br />
 
@@ -34,26 +34,26 @@ const text = `
   </div>
 
   <div type="example">
-    <span type="h">我想喝咖啡</span> - <span type="t">Я хочу выпить кофе.</span> <br />
-    <span type="h">我想去北京旅游</span> - <span type="t">Я хочу (собираюсь) поехать путешествовать в Пекин.</span> <br />
-    <span type="h">不想</span> - <span type="t">Не хочу.</span> <br />
+    <span type="h" pinyin="wǒ xiǎng hē kāfēi">我想喝咖啡</span> - <span type="t">Я хочу выпить кофе.</span> <br />
+    <span type="h" pinyin="wǒ xiǎng qù běijīng lǚyóu">我想去北京旅游</span> - <span type="t">Я хочу (собираюсь) поехать путешествовать в Пекин.</span> <br />
+    <span type="h" pinyin="bù xiǎng">不想</span> - <span type="t">Не хочу.</span> <br />
   </div>
   <br />
   <p type="warn">
     <em>Не путайте с глаголом «думать, хотеть, скучать»:</em> <br />
-    <span type="h">我想回家</span> - <span type="t"> Я хочу вернуться домой.</span> <span type="h">想</span> -
-    <span type="t"> модальный глагол, после него стоит глагол.</span> <br />
-    <span type="h">我想家</span> - <span type="t"> Я скучаю по дому.</span> <span type="h">想</span> -
+    <span type="h" pinyin="wǒ xiǎng huíjiā">我想回家</span> - <span type="t"> Я хочу вернуться домой.</span> <span type="h" pinyin="xiǎng">想</span> -
+    <span type="t" модальный глагол, после него стоит глагол.</span> <br />
+    <span type="h" pinyin="wǒ xiǎng jiā">我想家</span> - <span type="t"> Я скучаю по дому.</span> <span type="h" pinyin="xiǎng">想</span> -
     <span type="t"> глагол «скучать», после него стоит существительное.</span> <br />
   </p>
   <br />
   <br />
   <p>
-    Кроме того <span type="h">想</span> -прекрасен тем, что перед ним могут стоять слова типа <span type="h">很</span> и
-    <span type="h">真</span>
+    Кроме того <span type="h" pinyin="xiǎng">想</span> -прекрасен тем, что перед ним могут стоять слова типа <span type="h" pinyin="hěn">很</span> и
+    <span type="h" pinyin="zhēn">真</span>
     <span type="t">(Я очень хочу)</span>
   </p>
-  <span type="h">我很想买一件漂亮的衣服</span> - <span type="t"> Я очень хочу купить красивой одежды.</span> <br />
+  <span type="h" pinyin="wǒ hěn xiǎng mǎi yī jiàn piāoliàng de yīfú">我很想买一件漂亮的衣服</span> - <span type="t"> Я очень хочу купить красивой одежды.</span> <br />
 
   <br />
   <br />
@@ -67,55 +67,55 @@ const text = `
     </div>
   </div>
   <p>
-    Первое его значение- также «собираться». Но, в отличие от <span type="h">想</span>, говорящий не просто хочет поехать куда-то, но уже запланировал маршрут и
+    Первое его значение- также «собираться». Но, в отличие от <span type="h" pinyin="xiǎng">想</span>, говорящий не просто хочет поехать куда-то, но уже запланировал маршрут и
     купил билет.
   </p>
   <br />
 
   <div type="example">
-    <span type="h">夏天我想去中国或者法国旅游</span> - <span type="t">Летом я хочу побывать в Китае или во Франции.</span> <br />
-    <span type="h">下个星期我要去北京，不能参加比赛</span> -
+    <span type="h" pinyin="xiàtiān wǒ xiǎng qù zhōngguó huòzhě fǎguó lǚyóu">夏天我想去中国或者法国旅游</span> - <span type="t">Летом я хочу побывать в Китае или во Франции.</span> <br />
+    <span type="h" pinyin="xià gè xīngqī wǒ yào qù běijīng，bùnéng cānjiā bǐsài">下个星期我要去北京，不能参加比赛</span> -
     <span type="t">На следующей неделе я уеду в Пекин, не смогу участвовать в соревнованиях</span> <br />
   </div>
 
   <br />
   <p>
-    Обратите внимание, что часто отрицательные и утвердительные формы модальных глаголов не совпадают по значению. Например,  <span type="h">不要</span>
+    Обратите внимание, что часто отрицательные и утвердительные формы модальных глаголов не совпадают по значению. Например,  <span type="h" pinyin="bùyào">不要</span>
     переводится не «не собираюсь», а жестким запретом «нельзя». Поэтому отрицание «не собираюсь» будет использовать более «мягкие» модальные
-    глаголы — <span type="h">不想，不愿意</span> Второе значение <span type="h">要</span> — нужно, должно. Например, «студенты должны
+    глаголы — <span type="h" pinyin="bù xiǎng，bù yuànyì">不想，不愿意</span> Второе значение <span type="h" pinyin="yào">要</span> — нужно, должно. Например, «студенты должны
     учиться», «в еду надо класть соль».
   </p>
   <div type="example">
-    <span type="h">我不能跟你们去，我要回家</span> - <span type="t">Я не могу с вами пойти, мне надо вернуться домой</span> <br />
+    <span type="h" pinyin="wǒ bùnéng gēn nǐmen qù，wǒ yào huíjiā">我不能跟你们去，我要回家</span> - <span type="t">Я не могу с вами пойти, мне надо вернуться домой</span> <br />
   </div>
 
   <br />
   <p>Сказать «не нужно» можно двумя путями:</p>
   <div type="example">
-    <span type="h">不用</span> - <span type="t">Нет необходимости.</span> <br />
-    <span type="h">不用送我</span> - <span type="t">Не надо меня провожать (спасибо, я и сама дойду).</span> <br />
-    <span type="h">不要／别</span> - <span type="t">Запрет.</span> <br />
-    <span type="h">不要送我</span> - <span type="t">Не провожайте меня (я вас не люблю и вообще боюсь).</span> <br />
+    <span type="h" pinyin="bùyòng">不用</span> - <span type="t">Нет необходимости.</span> <br />
+    <span type="h" pinyin="bùyòng sòng wǒ">不用送我</span> - <span type="t">Не надо меня провожать (спасибо, я и сама дойду).</span> <br />
+    <span type="h" pinyin="bùyào／bié">不要／别</span> - <span type="t">Запрет.</span> <br />
+    <span type="h" pinyin="bùyào sòng wǒ">不要送我</span> - <span type="t">Не провожайте меня (я вас не люблю и вообще боюсь).</span> <br />
   </div>
 
   <br />
   <p type="warn">
     <em>Не путайте с глаголом «просить, заказывать / нуждаться в чем-либо»:</em> <br />
-    <span type="h">我要一盘宫保鸡丁</span> - <span type="t"> Мне одну порцию курицы Гунбао.</span> <span type="h">要</span> -
+    <span type="h" pinyin="wǒ yào yī pán gōngbǎojī dīng">我要一盘宫保鸡丁</span> - <span type="t"> Мне одну порцию курицы Гунбао.</span> <span type="h" pinyin="yào">要</span> -
     <span type="t"> «заказывать», после него стоит существительное.</span> <br />
-    <span type="h">这本汉俄词典我还要，不能还给你</span> -
-    <span type="t"> тот китайско-русский словарь мне еще нужен, не могу тебе вернуть.</span> <span type="h">要</span> -
+    <span type="h" pinyin="zhè běn hàné cídiǎn wǒ huán yào，bùnéng huángěi nǐ">这本汉俄词典我还要，不能还给你</span> -
+    <span type="t"> тот китайско-русский словарь мне еще нужен, не могу тебе вернуть.</span> <span type="h" pinyin="要">要</span> -
     <span type="t"> «необходим», к нему относится существительное «словарь».</span> <br />
   </p>
 
-  <p>В этих значениях «не хочу, не нуждаюсь» будет <span type="h">不要</span></p>
-  <span type="h">我不要咖啡，谢谢</span> - <span type="t">Спасибо, мне не нужно кофе.</span> <br />
+  <p>В этих значениях «не хочу, не нуждаюсь» будет <span type="h" pinyin="bùyào">不要</span></p>
+  <span type="h" pinyin="wǒ bùyào kāfēi，xièxiè">我不要咖啡，谢谢</span> - <span type="t">Спасибо, мне не нужно кофе.</span> <br />
 
   <br />
   <p>
     <em>Сравните с употреблением модального глагола:</em> <br />
-    A: <span type="h">你们大学生要学习数学吗?</span> - <span type="t"> Вы, студенты, должны учить математику?</span> <br />
-    B: <span type="h">我是个外语系的学生，不用上数学课</span> -
+    A: <span type="h" pinyin="nǐmen dàxuéshēng yào xuéxí shùxué mǎ">你们大学生要学习数学吗?</span> - <span type="t"> Вы, студенты, должны учить математику?</span> <br />
+    B: <span type="h" pinyin="wǒ shì gè wàiyǔxì de xuéshēng，bù yòngshàng shùxué kè">我是个外语系的学生，不用上数学课</span> -
     <span type="t"> Я студент факультета иностранных языков, мне не надо учить математику.</span> <br />
   </p>
 </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
 import type { HTMLReactParserOptions } from 'html-react-parser';
+import type { ITooltipProps } from '#/components/xsolare';
 import {
   ExampleStyledHTML,
   HieroglyphStyledHTML,
@@ -10,20 +11,29 @@ import {
   TranslateStyledHTML,
   WarnStyledHTML
 } from '#/styles/common';
+import { Tooltip } from '#/components/xsolare';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {
     if (domNode instanceof Element) {
       const { name } = domNode;
-      const { type, index } = attributesToProps(domNode.attribs);
+      const { type, index, pinyin } = attributesToProps(domNode.attribs);
 
       if (name === 'span') {
         if (type === 'h') {
-          return (
+          const Hieroglyph = (
             <HieroglyphStyledHTML>
               <span>{domToReact(domNode.children, optionsForGlossary)}</span>
             </HieroglyphStyledHTML>
           );
+
+          if (pinyin) {
+            const tooltip: ITooltipProps = { title: pinyin, delay: 100, placement: 'top' };
+
+            return <Tooltip {...tooltip}>{Hieroglyph}</Tooltip>;
+          }
+
+          return Hieroglyph;
         }
         if (type === 'p') {
           return (
