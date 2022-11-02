@@ -1,6 +1,6 @@
 import type { IGlossaryContent } from '#/types/glossary';
 import type { AxiosInstance } from 'axios';
-import { glossary } from '../mock/glossary/1_modalVerb';
+import { glossary } from '../mock/glossary';
 
 ///                                                                                 //
 
