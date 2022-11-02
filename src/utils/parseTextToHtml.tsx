@@ -6,7 +6,7 @@ import {
   ExampleStyledHTML,
   HieroglyphStyledHTML,
   HieroglyphTitleStyledHTML,
-  PinyinStyledHTML,
+  HrStyledHTML,
   TextTabStyledHTML,
   TranslateStyledHTML,
   WarnStyledHTML
@@ -77,6 +77,10 @@ const optionsForGlossary: HTMLReactParserOptions = {
             </ExampleStyledHTML>
           );
         }
+      }
+
+      if (name === 'hr') {
+        return <HrStyledHTML />;
       }
     }
   }

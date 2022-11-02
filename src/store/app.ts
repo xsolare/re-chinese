@@ -135,7 +135,9 @@ export default class AppUIStore {
     const { pos } = this.state.scroll;
     const threshold = 100;
 
-    return (pos >= threshold ? 0 : 1 - Math.floor((pos / threshold) * 100) / 100) ?? 1;
+    const opacity = pos >= threshold ? 0 : 1 - Math.floor((pos / threshold) * 100) / 100;
+
+    return isNaN(opacity) ? 1 : 1;
   }
 
   get isOverFirstScreenHeight(): boolean {

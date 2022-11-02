@@ -118,3 +118,12 @@ export const TextTabStyledHTML = styled.p`
   font-size: 1rem;
   text-indent: 20px;
 `;
+
+export const HrStyledHTML = styled.hr`
+  width: 100%;
+  min-height: 4px;
+  margin: 16px 0 32px 0;
+
+  background: none;
+  background-color: ${({ theme }) => theme.palette.divider};
+`;
