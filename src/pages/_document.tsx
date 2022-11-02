@@ -1,6 +1,8 @@
 import { extractCritical } from '@emotion/server';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document';
+import { Global } from '@emotion/react';
+import { GlobalStyles } from '#/styles/common';
 
 export default class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -22,6 +24,10 @@ export default class MyDocument extends Document<DocumentProps> {
           <link rel="manifest" href="/manifest.json" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+          />
 
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#050709" />
@@ -65,6 +71,7 @@ export default class MyDocument extends Document<DocumentProps> {
           <meta property="og:url" content="https://localhost:3000" />
           {/* <meta property="og:image" content="https://localhost:3000/icons/apple-touch-icon.png" /> */}
         </Head>
+        <Global styles={GlobalStyles} />
         <body>
           <Main />
           <NextScript />

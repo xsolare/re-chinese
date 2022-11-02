@@ -37,9 +37,7 @@ const optionsForGlossary: HTMLReactParserOptions = {
 
           return Hieroglyph;
         }
-      }
 
-      if (name === 'p') {
         if (type === 'tab') {
           return (
             <TextTabStyledHTML>
@@ -47,6 +45,7 @@ const optionsForGlossary: HTMLReactParserOptions = {
             </TextTabStyledHTML>
           );
         }
+
         if (type === 'warn') {
           return (
             <WarnStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</WarnStyledHTML>

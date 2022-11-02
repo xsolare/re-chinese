@@ -30,6 +30,10 @@ const font = {
     chn: 'Noto Sans SC'
   },
   size: {
+    base: '1rem !default',
+    lg: '1.25rem !default',
+    sm: '0.875rem !default',
+
     hieroglyph: '1.1rem',
     text: '1rem'
   }
