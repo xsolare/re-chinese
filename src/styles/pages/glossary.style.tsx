@@ -12,10 +12,21 @@ export const GlossaryContentStyled = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 0 25px;
 
   p {
     margin-bottom: 0;
+  }
+`;
+
+export const GlossaryContentItemStyled = styled.div`
+  width: 33%;
+
+  ${breakpoint('xl')} {
+    width: 50%;
+  }
+
+  ${breakpoint('md')} {
+    width: 100%;
   }
 `;
 

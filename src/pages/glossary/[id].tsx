@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 import type { IGlossaryContent } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import {
+  GlossaryContentItemStyled,
   GlossaryContentStyled,
   GlossaryStyled,
   GlossaryTitleStyled
@@ -48,14 +49,16 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
           {/* Briefly */}
           {state.isBriefly &&
             glossary.briefly.map((b, index) => (
-              <HieroglyphTitleStyledHTML key={b.id}>
-                <span>{index + 1}</span>
-                <h2>{b.hieroglyph}</h2>
-                <div>
-                  <span>{b.pinyin}</span>
-                  <span>{b.translate}</span>
-                </div>
-              </HieroglyphTitleStyledHTML>
+              <GlossaryContentItemStyled key={b.id}>
+                <HieroglyphTitleStyledHTML>
+                  <span>{index + 1}</span>
+                  <h2>{b.hieroglyph}</h2>
+                  <div>
+                    <span>{b.pinyin}</span>
+                    <span>{b.translate}</span>
+                  </div>
+                </HieroglyphTitleStyledHTML>
+              </GlossaryContentItemStyled>
             ))}
         </GlossaryContentStyled>
       </GlossaryStyled>

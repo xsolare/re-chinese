@@ -12,7 +12,7 @@ export const HieroglyphStyledHTML = styled.span`
   margin: 4px 0;
   margin-right: 4px;
 
-  > span {
+  .hieroglyph {
     padding: 1px 4px;
     border-radius: 5px;
     background: ${({ theme }) => theme.palette.bg.hieroglyph};
@@ -26,6 +26,7 @@ export const HieroglyphTitleStyledHTML = styled.div`
   flex-direction: row;
   gap: 10px;
   margin: 15px 0;
+  white-space: nowrap;
 
   > span {
     position: absolute;
@@ -64,6 +65,8 @@ export const HieroglyphTitleStyledHTML = styled.div`
     justify-content: center;
     font-weight: 300;
 
+    overflow: hidden;
+
     > :first-child {
       color: ${({ theme }) => theme.palette.color.subText};
       font-family: ${({ theme }) => theme.font.family.chn};
@@ -72,6 +75,12 @@ export const HieroglyphTitleStyledHTML = styled.div`
     > :last-child {
       color: ${({ theme }) => theme.palette.color.text};
       font-weight: 500;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
     }
   }
 `;
@@ -98,7 +107,7 @@ export const ExampleStyledHTML = styled.div`
 
 export const TranslateStyledHTML = styled.span`
   color: ${({ theme }) => theme.palette.color.text};
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1rem;
 `;
 

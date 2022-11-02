@@ -17,35 +17,25 @@ const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {
     if (domNode instanceof Element) {
       const { name } = domNode;
-      const { type, index, pinyin } = attributesToProps(domNode.attribs);
+      const { type, ...rest } = attributesToProps(domNode.attribs);
 
       if (name === 'span') {
         if (type === 'h') {
+          const { p, t } = rest;
+          const tooltip: ITooltipProps = { title: p ?? '', delay: 100, placement: 'top' };
+
           const Hieroglyph = (
             <HieroglyphStyledHTML>
-              <span>{domToReact(domNode.children, optionsForGlossary)}</span>
+              <Tooltip {...tooltip}>
+                <span className="hieroglyph">
+                  {domToReact(domNode.children, optionsForGlossary)}
+                </span>
+              </Tooltip>
+              {t ? <TranslateStyledHTML> - {t}</TranslateStyledHTML> : null}
             </HieroglyphStyledHTML>
           );
 
-          if (pinyin) {
-            const tooltip: ITooltipProps = { title: pinyin, delay: 100, placement: 'top' };
-
-            return <Tooltip {...tooltip}>{Hieroglyph}</Tooltip>;
-          }
-
           return Hieroglyph;
-        }
-        if (type === 'p') {
-          return (
-            <PinyinStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</PinyinStyledHTML>
-          );
-        }
-        if (type === 't') {
-          return (
-            <TranslateStyledHTML>
-              {domToReact(domNode.children, optionsForGlossary)}
-            </TranslateStyledHTML>
-          );
         }
       }
 
@@ -66,13 +56,20 @@ const optionsForGlossary: HTMLReactParserOptions = {
 
       if (name === 'div') {
         if (type === 'h') {
+          const { index, p, t } = rest;
+
           return (
             <HieroglyphTitleStyledHTML>
               <span>{index}</span>
-              {domToReact(domNode.children, optionsForGlossary)}
+              <h2>{domToReact(domNode.children, optionsForGlossary)}</h2>
+              <div>
+                <span>{p}</span>
+                <span>{t}</span>
+              </div>
             </HieroglyphTitleStyledHTML>
           );
         }
+
         if (type === 'example') {
           return (
             <ExampleStyledHTML>
