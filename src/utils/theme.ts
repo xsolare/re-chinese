@@ -53,6 +53,7 @@ const palette = {
     modalContent: '#444',
     highlight: '#6db6ff',
     hieroglyph: '#8fb2ff52',
+    rule: '#48D1CC',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
     headerBlur: 'rgba(24, 24, 24, 0.7)'
   },
@@ -82,6 +83,7 @@ const paletteDark = {
     modalContent: '#444',
     highlight: '#f65341',
     hieroglyph: '#02000050',
+    rule: '#ff6633',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
     headerBlur: 'rgba(24, 24, 24, 0.7)'
   },
@@ -111,6 +113,7 @@ const paletteBlue = {
     modalContent: '#141d27',
     highlight: '#6db6ff',
     hieroglyph: '#182841',
+    rule: '#8fb2ff52',
     header: 'linear-gradient(to top right,  #161b22, #1d242d, #161b22)',
     headerBlur: 'rgba(24, 24, 24, 0.7)'
   },
