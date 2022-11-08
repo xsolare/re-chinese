@@ -1,4 +1,3 @@
-import '#/assets/scss/index.scss';
 import type { AppContext, AppInitialProps, AppProps } from 'next/app';
 import NextApp from 'next/app';
 import type { FC, PropsWithChildren, ReactNode, ReactElement } from 'react';

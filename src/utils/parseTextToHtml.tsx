@@ -1,19 +1,16 @@
+import type { HTMLReactParserOptions } from 'html-react-parser';
 import React from 'react';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
-import type { HTMLReactParserOptions } from 'html-react-parser';
-import type { ITooltipProps } from '#/components/xsolare';
 import {
   ExampleStyledHTML,
-  HieroglyphStyledHTML,
-  HieroglyphTitleStyledHTML,
   HrStyledHTML,
   TextTabStyledHTML,
-  TextStyledHTML,
-  TranslateStyledHTML,
   WarnStyledHTML,
-  RuleStyledHTML
+  RuleStyledHTML,
+  TextStyledHTML
 } from '#/styles/common';
-import { Tooltip } from '#/components/xsolare';
+import { WordTitle } from '#/components/xsolare/components/word-title/word-title';
+import { Word } from '#/components/xsolare/components/word/word';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {
@@ -24,20 +21,12 @@ const optionsForGlossary: HTMLReactParserOptions = {
       if (name === 'span') {
         if (type === 'h') {
           const { p, t } = rest;
-          const tooltip: ITooltipProps = { title: p ?? '', delay: 100, placement: 'top' };
 
-          const Hieroglyph = (
-            <HieroglyphStyledHTML>
-              <Tooltip {...tooltip}>
-                <span className="hieroglyph">
-                  {domToReact(domNode.children, optionsForGlossary)}
-                </span>
-              </Tooltip>
-              {t ? <TranslateStyledHTML> - {t}</TranslateStyledHTML> : null}
-            </HieroglyphStyledHTML>
+          return (
+            <Word p={p} t={t}>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </Word>
           );
-
-          return Hieroglyph;
         }
 
         if (type === 'tab') {
@@ -72,14 +61,9 @@ const optionsForGlossary: HTMLReactParserOptions = {
           const { index, p, t } = rest;
 
           return (
-            <HieroglyphTitleStyledHTML>
-              <span>{index}</span>
-              <h2>{domToReact(domNode.children, optionsForGlossary)}</h2>
-              <div>
-                <span>{p}</span>
-                <span>{t}</span>
-              </div>
-            </HieroglyphTitleStyledHTML>
+            <WordTitle index={index} p={p} t={t}>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </WordTitle>
           );
         }
 
