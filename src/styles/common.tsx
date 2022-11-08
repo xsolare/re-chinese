@@ -326,6 +326,32 @@ export const HieroglyphTitleStyledHTML = styled.div`
   }
 `;
 
+export const RuleStyledHTML = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin: 15px 0;
+
+  > span {
+    padding: 10px 15px;
+    display: inline-block;
+
+    color: ${({ theme }) => theme.palette.color.text};
+    background-color: ${({ theme }) => theme.palette.bg.mainContent};
+    border: 2px solid ${({ theme }) => theme.palette.border.hieroglyph};
+    box-shadow: inset 0 0 2px ${({ theme }) => theme.palette.bg.hieroglyph};
+    border-radius: 10px;
+
+    font-family: ${({ theme }) => theme.font.family.text};
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  > span > span {
+    margin: 0 4px;
+  }
+`;
+
 export const PinyinStyledHTML = styled.span`
   color: ${({ theme }) => theme.palette.color.subText};
   font-family: ${({ theme }) => theme.font.family.chn};

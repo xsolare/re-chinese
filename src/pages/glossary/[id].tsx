@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import type { ReactElement } from 'react';
 import type { IGlossaryContent } from '#/types/glossary';
+import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
 import {
   GlossaryContentItemStyled,
@@ -8,14 +9,13 @@ import {
   GlossaryStyled,
   GlossaryTitleStyled
 } from '#/styles/pages/glossary.style';
-import { glossary as g } from '../../utils/mock/glossary';
-import { parseGlossary } from '#/utils/parseTextToHtml';
 import { CgShortcut } from 'react-icons/cg';
-import GlossaryStore from './store';
 import { observer } from 'mobx-react-lite';
 import { HieroglyphTitleStyledHTML } from '#/styles/common';
+import { parseGlossary } from '#/utils/parseTextToHtml';
+import { glossary as g } from '#/utils/mock/glossary';
+import GlossaryStore from './store';
 import PageLayout from '#/components/layouts/page.layout';
-import type { NextPageWithLayout } from '../_app';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -27,6 +27,8 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
   const { glossary } = props;
 
   const store = useMemo(() => new GlossaryStore(), []);
+  const GlossaryContent = useMemo(() => parseGlossary(glossary.text), []);
+
   const { setBriefly, state } = store;
 
   return (
@@ -44,7 +46,7 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
         </GlossaryTitleStyled>
         <GlossaryContentStyled>
           {/* Full */}
-          {!state.isBriefly && parseGlossary(glossary.text)}
+          {!state.isBriefly && GlossaryContent}
 
           {/* Briefly */}
           {state.isBriefly &&

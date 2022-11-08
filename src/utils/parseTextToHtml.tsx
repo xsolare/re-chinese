@@ -8,8 +8,10 @@ import {
   HieroglyphTitleStyledHTML,
   HrStyledHTML,
   TextTabStyledHTML,
+  TextStyledHTML,
   TranslateStyledHTML,
-  WarnStyledHTML
+  WarnStyledHTML,
+  RuleStyledHTML
 } from '#/styles/common';
 import { Tooltip } from '#/components/xsolare';
 
@@ -46,9 +48,21 @@ const optionsForGlossary: HTMLReactParserOptions = {
           );
         }
 
+        if (type === 'text') {
+          return (
+            <TextStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</TextStyledHTML>
+          );
+        }
         if (type === 'warn') {
           return (
             <WarnStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</WarnStyledHTML>
+          );
+        }
+        if (type === 'rule') {
+          return (
+            <RuleStyledHTML>
+              <span>{domToReact(domNode.children, optionsForGlossary)}</span>
+            </RuleStyledHTML>
           );
         }
       }
