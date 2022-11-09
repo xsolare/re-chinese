@@ -16,6 +16,19 @@ export const GlossaryContentStyled = styled.div`
   p {
     margin-bottom: 0;
   }
+
+  .wrapper {
+    padding: 15px;
+    width: 33%;
+
+    ${breakpoint('xl')} {
+      width: 50%;
+    }
+
+    ${breakpoint('md')} {
+      width: 100%;
+    }
+  }
 `;
 
 export const GlossaryContentItemStyled = styled.div`
@@ -114,13 +127,4 @@ export const GlossaryStyled = styled.div`
   ${breakpoint('sm')} {
     margin-top: 5px;
   }
-`;
-
-export const GlossaryItemWrapperStyled = styled.div`
-  border: 2px solid ${({ theme }) => theme.palette.border.header};
-  background-color: ${({ theme }) => theme.palette.bg.mainContent};
-  border-radius: 15px;
-  width: 250px;
-  height: 80px;
-  padding: 5px;
 `;

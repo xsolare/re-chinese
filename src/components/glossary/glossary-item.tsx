@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 import type { IGlossaryItem } from '#/types/glossary';
+import { GlossaryItemStyled } from './glossary-item.style';
+import { AiFillFire } from 'react-icons/ai';
 import Link from 'next/link';
-import { GlossaryItemStyled } from '#/styles/components/glossary/glossary.style';
 
 type IGlossaryItemProps = IGlossaryItem;
 
@@ -11,16 +12,22 @@ const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
   const { id, title, hsk, badges } = props;
 
   return (
-    <Link href={`/glossary/${id}`}>
-      <GlossaryItemStyled>
+    <GlossaryItemStyled>
+      {/* <div className="badges-header">
+        {[...badges, `hsk-${hsk}`].map((m) => (
+          <span key={m}>{m}</span>
+        ))}
+      </div> */}
+      <Link href={`/glossary/${id}`}>
         <div className="title">{title}</div>
-        <div className="badges">
-          {[...badges, `hsk-${hsk}`].map((m) => (
-            <span key={m}>{m}</span>
-          ))}
-        </div>
-      </GlossaryItemStyled>
-    </Link>
+      </Link>
+      <div className="badges-footer">
+        <span className="hsk">
+          <AiFillFire />
+          <div>{hsk}</div>
+        </span>
+      </div>
+    </GlossaryItemStyled>
   );
 };
 

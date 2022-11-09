@@ -27,9 +27,9 @@ const Glossary: NextPageWithLayout<IGlossaryProps> = (props) => {
       <GlossaryStyled>
         <GlossaryContentStyled>
           {glossaryItems.map((lib) => (
-            <GlossaryItemWrapperStyled key={lib.id}>
+            <div className="wrapper" key={lib.id}>
               <GlossaryItem {...lib} />
-            </GlossaryItemWrapperStyled>
+            </div>
           ))}
         </GlossaryContentStyled>
       </GlossaryStyled>

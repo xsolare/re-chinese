@@ -90,6 +90,10 @@ export const GlobalStyles = css`
     font-weight: 900;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   a:not([href]) {
     &,
     &:hover {
