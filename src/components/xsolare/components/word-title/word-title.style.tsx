@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const WordTitleStyledHTML = styled.div`
+export const WordTitleStyled = styled.div`
   display: flex;
   position: relative;
   flex-direction: row;

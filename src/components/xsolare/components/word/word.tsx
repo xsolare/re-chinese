@@ -1,26 +1,50 @@
 import type { FC, PropsWithChildren } from 'react';
 import type { ITooltipProps } from '../tooltip/tooltip.store';
 import { observer } from 'mobx-react-lite';
-import { TranslateStyledHTML, WordStyledHTML } from './word.style';
+import { TranslateStyled, WordStyled, PinyinStyled, HieroglyphStyled } from './word.style';
 import { Tooltip } from '../tooltip/tooltip';
 import React from 'react';
 
 interface IWordProps extends PropsWithChildren {
-  p: string;
-  t: string;
+  type?: number;
+  p?: string;
+  t?: string;
 }
 
 export const Word: FC<IWordProps> = observer((props) => {
-  const { children, p, t } = props;
+  const { children, p: pinyin, t: translate, type = 1 } = props;
 
-  const tooltip: ITooltipProps = { title: p ?? '', delay: 100, placement: 'top' };
+  const tooltipTop: ITooltipProps = { title: pinyin ?? '', delay: 100, placement: 'top' };
+  const tooltipBottom: ITooltipProps = { title: translate ?? '', delay: 100, placement: 'bottom' };
 
-  return (
-    <WordStyledHTML>
-      <Tooltip {...tooltip}>
-        <span className="hieroglyph">{children}</span>
+  if (type === 1) {
+    return (
+      <WordStyled type={type}>
+        <Tooltip {...tooltipTop}>
+          <HieroglyphStyled>{children}</HieroglyphStyled>
+        </Tooltip>
+        {translate ? <TranslateStyled> - {translate}</TranslateStyled> : null}
+      </WordStyled>
+    );
+  }
+
+  if (type === 2) {
+    <WordStyled type={type}>
+      {pinyin ? <PinyinStyled> {pinyin}</PinyinStyled> : null}
+      <HieroglyphStyled>{children}</HieroglyphStyled>
+      {translate ? <TranslateStyled> {translate}</TranslateStyled> : null}
+    </WordStyled>;
+  }
+
+  if (type === 3) {
+    <WordStyled type={type}>
+      <Tooltip {...tooltipTop}>
+        <Tooltip {...tooltipBottom}>
+          <HieroglyphStyled>{children}</HieroglyphStyled>
+        </Tooltip>
       </Tooltip>
-      {t ? <TranslateStyledHTML> - {t}</TranslateStyledHTML> : null}
-    </WordStyledHTML>
-  );
+    </WordStyled>;
+  }
+
+  return null;
 });

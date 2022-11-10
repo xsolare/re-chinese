@@ -11,11 +11,12 @@ import {
 } from '#/styles/pages/glossary.style';
 import { CgShortcut } from 'react-icons/cg';
 import { observer } from 'mobx-react-lite';
-import { HieroglyphTitleStyledHTML } from '#/styles/common';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
 import GlossaryStore from './store';
 import PageLayout from '#/components/layouts/page.layout';
+import { WordTitleStyled } from '#/components/xsolare/components/word-title/word-title.style';
+import { useStore } from '../../store/index';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -28,6 +29,9 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
 
   const store = useMemo(() => new GlossaryStore(), []);
   const GlossaryContent = useMemo(() => parseGlossary(glossary.text), []);
+
+  const { wordStore } = useStore();
+  console.log('wordStore', wordStore.state.type);
 
   const { setBriefly, state } = store;
 
@@ -52,14 +56,14 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
           {state.isBriefly &&
             glossary.briefly.map((b, index) => (
               <GlossaryContentItemStyled key={b.id}>
-                <HieroglyphTitleStyledHTML>
+                <WordTitleStyled>
                   <span>{index + 1}</span>
                   <h2>{b.hieroglyph}</h2>
                   <div>
                     <span>{b.pinyin}</span>
                     <span>{b.translate}</span>
                   </div>
-                </HieroglyphTitleStyledHTML>
+                </WordTitleStyled>
               </GlossaryContentItemStyled>
             ))}
         </GlossaryContentStyled>

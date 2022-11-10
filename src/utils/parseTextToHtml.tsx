@@ -36,7 +36,6 @@ const optionsForGlossary: HTMLReactParserOptions = {
             </TextTabStyledHTML>
           );
         }
-
         if (type === 'text') {
           return (
             <TextStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</TextStyledHTML>

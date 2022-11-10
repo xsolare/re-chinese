@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 import type { IGlossaryItem } from '#/types/glossary';
-import { GlossaryItemStyled } from './glossary-item.style';
-import { AiFillFire } from 'react-icons/ai';
+import { GlossaryItemHskStyled, GlossaryItemStyled } from './glossary-item.style';
+import { AiTwotoneFire } from 'react-icons/ai';
+import { Tooltip } from '../xsolare';
 import Link from 'next/link';
 
 type IGlossaryItemProps = IGlossaryItem;
@@ -9,7 +10,7 @@ type IGlossaryItemProps = IGlossaryItem;
 // LibItem
 //* ------------------------------------------------------------------ *//
 const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
-  const { id, title, hsk, badges } = props;
+  const { id, title, hsk } = props;
 
   return (
     <GlossaryItemStyled>
@@ -22,10 +23,15 @@ const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
         <div className="title">{title}</div>
       </Link>
       <div className="badges-footer">
-        <span className="hsk">
-          <AiFillFire />
-          <div>{hsk}</div>
-        </span>
+        {/* <Word p="xiǎng" t="хотеть, собираться">
+          想
+        </Word> */}
+        <Tooltip title="Уровень сложности по шкале HSK (1-9)" placement="bottom" delay={250}>
+          <GlossaryItemHskStyled hsk={hsk}>
+            <AiTwotoneFire />
+            <div>{hsk}</div>
+          </GlossaryItemHskStyled>
+        </Tooltip>
       </div>
     </GlossaryItemStyled>
   );

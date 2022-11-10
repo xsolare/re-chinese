@@ -59,12 +59,14 @@ const palette = {
     hieroglyph: '#8fb2ff52',
     rule: '#48D1CC',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
-    headerBlur: 'rgba(24, 24, 24, 0.7)'
+    headerBlur: 'rgba(24, 24, 24, 0.7)',
+    hsk: '#c8d5ff'
   },
   border: {
     header: '#7e7e7e',
     title: '#161b22',
-    hieroglyph: '#8fb2ff63'
+    hieroglyph: '#8fb2ff63',
+    content: '#7e7e7e'
   },
   divider: '#cccccc'
 };
@@ -89,12 +91,14 @@ const paletteDark = {
     hieroglyph: '#02000050',
     rule: '#ff6633',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
-    headerBlur: 'rgba(24, 24, 24, 0.7)'
+    headerBlur: 'rgba(24, 24, 24, 0.7)',
+    hsk: '#ff8b7f'
   },
   border: {
     header: '#474747',
     title: '#6c757d',
-    hieroglyph: '#ff496754'
+    hieroglyph: '#ff496754',
+    content: '#474747'
   },
   divider: '#808080'
 };
@@ -119,12 +123,14 @@ const paletteBlue = {
     hieroglyph: '#182841',
     rule: '#8fb2ff52',
     header: 'linear-gradient(to top right,  #161b22, #1d242d, #161b22)',
-    headerBlur: 'rgba(24, 24, 24, 0.7)'
+    headerBlur: 'rgba(24, 24, 24, 0.7)',
+    hsk: '#1493bc'
   },
   border: {
     header: '#161b22',
     title: '#5d6a7e',
-    hieroglyph: '#85e3ff2e'
+    hieroglyph: '#85e3ff2e',
+    content: '#161b22'
   },
   divider: '#808080'
 };
