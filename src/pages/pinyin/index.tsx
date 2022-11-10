@@ -2,8 +2,8 @@ import React from 'react';
 import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
-import PageLayout from '#/components/layouts/page.layout';
 import { mockPinyin } from '../../utils/mock/pinyin';
+import PageLayout from '#/components/layouts/page.layout';
 
 interface IPinyinProps {
   pinyinTable: any;

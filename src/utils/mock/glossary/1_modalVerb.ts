@@ -202,7 +202,7 @@ export const mvGlossaryItem1: IGlossaryItem = {
   hsk: '1',
   icon: '1',
   title: 'Модальные глаголы',
-  badges: []
+  badges: ['глаголы']
 };
 
 export const mvGlossary1: IGlossaryContent = {

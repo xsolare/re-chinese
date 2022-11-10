@@ -30,6 +30,10 @@ const font = {
     chn: 'Noto Sans SC'
   },
   size: {
+    base: '1rem !default',
+    lg: '1.25rem !default',
+    sm: '0.875rem !default',
+
     hieroglyph: '1.1rem',
     text: '1rem'
   }
@@ -43,7 +47,7 @@ const palette = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728',
+    pinyin: '#535353',
     header: '#e0e0e0'
   },
   bg: {
@@ -55,12 +59,14 @@ const palette = {
     hieroglyph: '#8fb2ff52',
     rule: '#48D1CC',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
-    headerBlur: 'rgba(24, 24, 24, 0.7)'
+    headerBlur: 'rgba(24, 24, 24, 0.7)',
+    hsk: '#c8d5ff'
   },
   border: {
     header: '#7e7e7e',
     title: '#161b22',
-    hieroglyph: '#8fb2ff63'
+    hieroglyph: '#8fb2ff63',
+    content: '#7e7e7e'
   },
   divider: '#cccccc'
 };
@@ -73,7 +79,7 @@ const paletteDark = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728',
+    pinyin: '#ababab',
     header: '#e0e0e0'
   },
   bg: {
@@ -85,12 +91,14 @@ const paletteDark = {
     hieroglyph: '#02000050',
     rule: '#ff6633',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
-    headerBlur: 'rgba(24, 24, 24, 0.7)'
+    headerBlur: 'rgba(24, 24, 24, 0.7)',
+    hsk: '#ff8b7f'
   },
   border: {
     header: '#474747',
     title: '#6c757d',
-    hieroglyph: '#ff496754'
+    hieroglyph: '#ff496754',
+    content: '#474747'
   },
   divider: '#808080'
 };
@@ -103,7 +111,7 @@ const paletteBlue = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728',
+    pinyin: '#959595',
     header: '#e0e0e0'
   },
   bg: {
@@ -115,12 +123,14 @@ const paletteBlue = {
     hieroglyph: '#182841',
     rule: '#8fb2ff52',
     header: 'linear-gradient(to top right,  #161b22, #1d242d, #161b22)',
-    headerBlur: 'rgba(24, 24, 24, 0.7)'
+    headerBlur: 'rgba(24, 24, 24, 0.7)',
+    hsk: '#1493bc'
   },
   border: {
     header: '#161b22',
     title: '#5d6a7e',
-    hieroglyph: '#85e3ff2e'
+    hieroglyph: '#85e3ff2e',
+    content: '#161b22'
   },
   divider: '#808080'
 };

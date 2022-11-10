@@ -10,8 +10,9 @@ import Link from 'next/link';
 import type { ThemeVarious } from '#/contexts/theme';
 
 //* icons
-import { MdNotificationsActive } from 'react-icons/md';
-import { GiSun, GiNightSleep, GiBowenKnot } from 'react-icons/gi';
+import { SiDungeonsanddragons } from 'react-icons/si';
+import { MdOutlineSettingsSuggest } from 'react-icons/md';
+import { GiSun, GiNightSleep } from 'react-icons/gi';
 import { IoMdRainy } from 'react-icons/io';
 
 const themeIcon = new Map<ThemeVarious, JSX.Element>([
@@ -43,7 +44,7 @@ const Header: FC = observer(() => {
           <ul>
             <li>
               <Link href="/">
-                <GiBowenKnot />
+                <SiDungeonsanddragons />
               </Link>
             </li>
             <li>
@@ -61,11 +62,12 @@ const Header: FC = observer(() => {
           <ul>
             <li onClick={handleClickTheme}>{themeIcon.get(theme)}</li>
             <li>
-              <MdNotificationsActive />
+              <MdOutlineSettingsSuggest />
             </li>
           </ul>
         </div>
       </nav>
+      {/* <Menu /> */}
     </HeaderStyled>
   );
 });

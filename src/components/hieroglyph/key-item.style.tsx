@@ -18,7 +18,7 @@ export const HieroglyphKeysWrapper = styled.div`
 export const HieroglyphKeysItem = styled.div`
   overflow: hidden;
 
-  background-color: var(--color-background-content);
+  background-color: ${({ theme }) => theme.palette.bg.mainContent};
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 5px;
@@ -42,6 +42,13 @@ export const HieroglyphKeysItem = styled.div`
   .pinyin {
     grid-area: pinyin;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: ${({ theme }) => theme.palette.color.pinyin};
+    font-family: ${({ theme }) => theme.font.family.chn};
+    font-weight: 400;
     font-size: 1rem;
   }
 
@@ -49,12 +56,21 @@ export const HieroglyphKeysItem = styled.div`
     grid-area: hieroglyph;
 
     font-size: 2rem;
+    font-weight: 400;
+    font-family: ${({ theme }) => theme.font.family.chn};
+    letter-spacing: 1.5px;
   }
 
   .translate {
     grid-area: translate;
     text-align: center;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: ${({ theme }) => theme.palette.color.text};
+    font-weight: 500;
     font-size: 0.9rem;
   }
 
@@ -70,8 +86,8 @@ export const HieroglyphKeysItem = styled.div`
     left: -4px;
     height: 22px;
     width: 22px;
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
+    background-color: ${({ theme }) => theme.palette.bg.mainContent};
+    border: 1px solid ${({ theme }) => theme.palette.border.content};
     border-radius: 50%;
   }
 
