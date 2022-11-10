@@ -14,7 +14,7 @@ export const WordTitleStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.95rem;
 
     top: -10px;
     left: -10px;
@@ -22,8 +22,8 @@ export const WordTitleStyled = styled.div`
     width: 22px;
     background-color: ${({ theme }) => theme.palette.bg.mainContent};
     border: 1px solid ${({ theme }) => theme.palette.border.hieroglyph};
-    font-family: ${({ theme }) => theme.font.family.chn};
     border-radius: 50%;
+    font-weight: 500;
   }
 
   > h2 {
@@ -50,8 +50,9 @@ export const WordTitleStyled = styled.div`
     overflow: hidden;
 
     > :first-child {
-      color: ${({ theme }) => theme.palette.color.subText};
+      color: ${({ theme }) => theme.palette.color.pinyin};
       font-family: ${({ theme }) => theme.font.family.chn};
+      font-weight: 400;
     }
 
     > :last-child {

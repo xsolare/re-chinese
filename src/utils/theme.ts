@@ -47,7 +47,7 @@ const palette = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728',
+    pinyin: '#535353',
     header: '#e0e0e0'
   },
   bg: {
@@ -79,7 +79,7 @@ const paletteDark = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728',
+    pinyin: '#ababab',
     header: '#e0e0e0'
   },
   bg: {
@@ -111,7 +111,7 @@ const paletteBlue = {
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
     translate: '#262728',
-    pinyin: '#262728',
+    pinyin: '#959595',
     header: '#e0e0e0'
   },
   bg: {

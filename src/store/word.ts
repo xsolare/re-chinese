@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
-export interface 
+export const WordType = [1, 2, 3, 4] as const;
+export type IWordType = keyof typeof WordType;
 
 export interface WordStoreState {
   type: number;

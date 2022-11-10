@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import type { ITooltipProps } from '../tooltip/tooltip.store';
 import { observer } from 'mobx-react-lite';
-import { TranslateStyled, WordStyled, PinyinStyled, HieroglyphStyled } from './word.style';
+import { WordStyled } from './word.style';
 import { Tooltip } from '../tooltip/tooltip';
 import React from 'react';
 
@@ -12,38 +12,73 @@ interface IWordProps extends PropsWithChildren {
 }
 
 export const Word: FC<IWordProps> = observer((props) => {
-  const { children, p: pinyin, t: translate, type = 1 } = props;
+  const { type = 1, children } = props;
+
+  return (
+    <WordStyled type={type}>
+      <WordVarious {...{ ...props, type }}>{children}</WordVarious>
+    </WordStyled>
+  );
+});
+
+const WordVarious: FC<IWordProps> = observer((props) => {
+  const { children, p: pinyin, t: translate, type } = props;
 
   const tooltipTop: ITooltipProps = { title: pinyin ?? '', delay: 100, placement: 'top' };
-  const tooltipBottom: ITooltipProps = { title: translate ?? '', delay: 100, placement: 'bottom' };
+  const tooltipBottom: ITooltipProps = {
+    title: translate ?? '',
+    delay: 100,
+    placement: 'bottom'
+  };
 
   if (type === 1) {
     return (
-      <WordStyled type={type}>
+      <>
         <Tooltip {...tooltipTop}>
-          <HieroglyphStyled>{children}</HieroglyphStyled>
+          <span className="hieroglyph">{children}</span>
         </Tooltip>
-        {translate ? <TranslateStyled> - {translate}</TranslateStyled> : null}
-      </WordStyled>
+        {translate ? <span className="translate"> - {translate}</span> : null}
+      </>
     );
   }
 
   if (type === 2) {
-    <WordStyled type={type}>
-      {pinyin ? <PinyinStyled> {pinyin}</PinyinStyled> : null}
-      <HieroglyphStyled>{children}</HieroglyphStyled>
-      {translate ? <TranslateStyled> {translate}</TranslateStyled> : null}
-    </WordStyled>;
+    return (
+      <>
+        <Tooltip {...tooltipBottom}>
+          <span className="hieroglyph">{children}</span>
+        </Tooltip>
+        {pinyin ? <span className="pinyin">({pinyin})</span> : null}
+      </>
+    );
   }
 
   if (type === 3) {
-    <WordStyled type={type}>
-      <Tooltip {...tooltipTop}>
-        <Tooltip {...tooltipBottom}>
-          <HieroglyphStyled>{children}</HieroglyphStyled>
-        </Tooltip>
-      </Tooltip>
-    </WordStyled>;
+    return (
+      <>
+        {pinyin ? <span className="pinyin"> {pinyin}</span> : null}
+        <span className="hieroglyph">{children}</span>
+        {translate ? <span className="translate"> {translate}</span> : null}
+      </>
+    );
+  }
+
+  if (type === 4) {
+    return (
+      <>
+        {pinyin ? <span className="pinyin"> {pinyin}</span> : null}
+        <span className="hieroglyph">{children}</span>
+        {translate ? <span className="translate"> {translate}</span> : null}
+      </>
+    );
+  }
+
+  if (type === 5) {
+    <>
+      {pinyin ? <span className="pinyin"> {pinyin}</span> : null}
+      <span className="hieroglyph">{children}</span>
+      {translate ? <span className="translate"> {translate}</span> : null}
+    </>;
   }
 
   return null;

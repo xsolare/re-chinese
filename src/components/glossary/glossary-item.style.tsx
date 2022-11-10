@@ -13,14 +13,14 @@ export const GlossaryItemStyled = styled.div`
 
   position: relative;
 
-  height: 60px;
+  height: 62px;
   width: 100%;
   background-color: ${({ theme }) => theme.palette.bg.mainContent};
   border: 1px solid ${({ theme }) => theme.palette.border.content};
   border-radius: 10px;
 
   .title {
-    padding: 0 15px;
+    padding: 0 20px;
     color: ${({ theme }) => theme.palette.color.text};
     font-size: 1rem;
     font-weight: 300;
@@ -39,18 +39,19 @@ export const GlossaryItemStyled = styled.div`
       position: absolute;
       display: flex;
       flex-direction: row;
-      width: calc(100% + 28px);
+      width: calc(100% + 36px);
     }
 
     &-header {
-      top: 0;
-      left: 0;
+      top: -18px;
+      left: -18px;
+      justify-content: space-between;
     }
 
     &-footer {
-      bottom: -14px;
-      right: -14px;
-      justify-content: flex-end;
+      bottom: -18px;
+      right: -18px;
+      justify-content: flex-start;
       align-items: flex-end;
     }
 
@@ -123,5 +124,24 @@ export const GlossaryItemHskStyled = styled.div<IGlossaryItemHskProps>`
       font-size: 1rem;
       top: 2px;
     }
+  }
+`;
+
+//* --- TAGS --- *//
+
+export const GlossaryItemyTagsStyled = styled.div`
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+
+  > span {
+    color: ${({ theme }) => theme.palette.color.subText};
+    border: 1px solid ${({ theme }) => theme.palette.border.content};
+    background-color: ${({ theme }) => theme.palette.bg.mainContent};
+
+    font-size: 0.8rem;
+    border-radius: 15px;
+    padding: 2px 10px;
+    font-family: 'Rubik Bubbles';
   }
 `;

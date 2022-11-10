@@ -38,7 +38,7 @@ export const keyiNengHuiGlossaryItem2: IGlossaryItem = {
   hsk: '1',
   icon: '1',
   title: 'Глаголы 可以 keyi 能 neng 会 hui и их разница',
-  badges: []
+  badges: ['глаголы']
 };
 
 export const keyiNengHuiGlossary2: IGlossaryContent = {

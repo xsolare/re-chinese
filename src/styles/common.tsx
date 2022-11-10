@@ -151,6 +151,18 @@ export const GlobalStyles = css`
     line-height: inherit;
   }
 
+  hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentcolor;
+    border: 0;
+    opacity: 0.25;
+  }
+
+  hr:not([size]) {
+    height: 1px;
+  }
+
   button,
   input {
     overflow: visible;

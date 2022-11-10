@@ -18,7 +18,7 @@ export const GlossaryContentStyled = styled.div`
   }
 
   .wrapper {
-    padding: 15px;
+    padding: 15px 20px;
     width: 33%;
 
     ${breakpoint('xl')} {

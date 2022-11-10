@@ -1,9 +1,6 @@
-import {
-  HieroglyphKeysItem,
-  HieroglyphKeysWrapper
-} from '#/styles/components/hieroglyph/key-item.style';
 import type { IHieroglyph } from '#/types/hieroglyph';
 import type { FC } from 'react';
+import { HieroglyphKeysItem, HieroglyphKeysWrapper } from './key-item.style';
 import React from 'react';
 
 //* Components
@@ -30,8 +27,8 @@ const HieroglyphKey: FC<IHieroglyphKeyProps> = (props) => {
       <HieroglyphKeysItem onClick={handleOnClickShow}>
         {/* <TransitionGroup name="item-transition"> */}
         <div className="index">{id}</div>
-        <div className="pinyin isFullyShowed">{hieroglyph}</div>
-        <div className="hieroglyph">{pinyin}</div>
+        <div className="pinyin isFullyShowed">{pinyin}</div>
+        <div className="hieroglyph">{hieroglyph}</div>
         <div className="translate isFullyShowed">{translate}</div>
         {/* </TransitionGroup> */}
       </HieroglyphKeysItem>
