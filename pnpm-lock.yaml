@@ -71,6 +71,7 @@ specifiers:
   stylelint-config-prettier: ^9.0.3
   stylelint-config-recommended: ^9.0.0
   typescript: 4.8.4
+  uuid: ^9.0.0
 
 dependencies:
   '@emotion/cache': 11.10.5
@@ -105,6 +106,7 @@ dependencies:
   react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
   rehype-raw: 6.1.1
   remark-gfm: 3.0.1
+  uuid: 9.0.0
 
 devDependencies:
   '@babel/eslint-parser': 7.19.1_eslint@8.26.0

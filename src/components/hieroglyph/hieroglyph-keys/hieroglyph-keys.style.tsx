@@ -1,4 +1,3 @@
-import { breakpoint } from '#/utils/theme';
 import styled from '@emotion/styled';
 
 export const HieroglyphKeysList = styled.div`
@@ -12,17 +11,6 @@ export const HieroglyphKeysList = styled.div`
   flex-wrap: wrap;
 `;
 
-export const HieroglyphKeysDescription = styled.div`
-  font-size: 1rem;
-  padding: 5px;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  ${breakpoint('md')} {
-    font-size: 0.9rem;
-  }
-`;
-
 export const HieroglyphKeysControl = styled.div`
   display: flex;
   align-items: center;
@@ -34,32 +22,32 @@ export const HieroglyphKeysControl = styled.div`
   .item {
     position: relative;
 
-    background-color: var(--color-background-content);
-    border: 2px solid var(--color-background-content);
+    background-color: ${({ theme }) => theme.palette.bg.mainContent};
+    border: 2px solid ${({ theme }) => theme.palette.bg.mainContent};
     padding: 5px 10px;
     border-radius: 10px;
-    color: var(--color-text);
+    color: ${({ theme }) => theme.palette.color.text};
     min-width: 160px;
     font-size: 0.9rem;
     text-align: center;
     cursor: pointer;
 
     &.isActive {
-      border: 2px solid var(--color-highlight);
-      box-shadow: 0 0 3px var(--color-highlight);
+      border: 2px solid ${({ theme }) => theme.palette.bg.highlight};
+      box-shadow: 0 0 3px ${({ theme }) => theme.palette.bg.highlight};
 
       .selected {
         opacity: 1;
         transform: scale(1);
-        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        fill: var(--color-highlight);
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.3, 1.275);
+        fill: ${({ theme }) => theme.palette.bg.highlight};
       }
     }
   }
 
   .button {
     cursor: pointer;
-    color: var(--color-text);
+    color: ${({ theme }) => theme.palette.color.text};
   }
 
   .selected {

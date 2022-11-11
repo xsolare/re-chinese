@@ -1,14 +1,14 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { observer } from 'mobx-react-lite';
-import type { IOptionsTabsSlider, ITabsSliderProps } from './tabsSlider.store';
-import { TabsSliderStore } from './tabsSlider.store';
+import type { IOptionsTabsSlider, ITabsSliderProps } from './tabs-slider.store';
+import { TabsSliderStore } from './tabs-slider.store';
 import useIsMounted from '../../hooks/events/useIsMounted';
 import {
   TabsSliderHeaderStyled,
   TabsSliderItemStyled,
   TabsSliderListStyled,
   TabsSliderStyled
-} from './tabsSlider.style';
+} from './tabs-slider.style';
 
 //* - COMPONENT ------------------------------------------------------------------------- *//
 export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {

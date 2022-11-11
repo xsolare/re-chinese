@@ -1,6 +1,699 @@
 import type { IHieroglyph } from '#/types/hieroglyph';
 
 export const mockHieroglyph: IHieroglyph[] = [
+  {
+    id: 1,
+    hieroglyph: '一',
+    traditional: null,
+    pinyin: 'yī',
+    translate: 'единица'
+  },
+  {
+    id: 2,
+    hieroglyph: '丨',
+    traditional: null,
+    pinyin: 'gǔn',
+    translate: 'вертикальная'
+  },
+  {
+    id: 3,
+    hieroglyph: '丶',
+    traditional: null,
+    pinyin: 'zhǔ',
+    translate: 'точка'
+  },
+  {
+    id: 4,
+    hieroglyph: '丿',
+    traditional: null,
+    pinyin: 'piě',
+    translate: 'откидная влево'
+  },
+  {
+    id: 5,
+    hieroglyph: '乙',
+    traditional: '乚',
+    pinyin: 'yǐ',
+    translate: 'второй (цикличный знак)'
+  },
+  {
+    id: 6,
+    hieroglyph: '亅',
+    traditional: null,
+    pinyin: 'jué',
+    translate: 'вертикальная с крюком'
+  },
+  {
+    id: 7,
+    hieroglyph: '二',
+    traditional: null,
+    pinyin: 'èr',
+    translate: 'два'
+  },
+  {
+    id: 8,
+    hieroglyph: '亠',
+    traditional: null,
+    pinyin: 'tóu',
+    translate: 'горизонтальная с точкой'
+  },
+  {
+    id: 9,
+    hieroglyph: '人',
+    traditional: '亻',
+    pinyin: 'rén',
+    translate: 'человек'
+  },
+  {
+    id: 10,
+    hieroglyph: '儿',
+    traditional: null,
+    pinyin: 'ér',
+    translate: 'идущий человек'
+  },
+  {
+    id: 11,
+    hieroglyph: '入',
+    traditional: null,
+    pinyin: 'rù',
+    translate: 'входить'
+  },
+  {
+    id: 12,
+    hieroglyph: '八',
+    traditional: null,
+    pinyin: 'bā',
+    translate: 'восемь; делить'
+  },
+  {
+    id: 13,
+    hieroglyph: '冂',
+    traditional: null,
+    pinyin: 'jiōng',
+    translate: 'границы'
+  },
+  {
+    id: 14,
+    hieroglyph: '冖',
+    traditional: null,
+    pinyin: 'mì',
+    translate: 'крышка'
+  },
+  {
+    id: 15,
+    hieroglyph: '冫',
+    traditional: null,
+    pinyin: 'bīng',
+    translate: 'лёд'
+  },
+  {
+    id: 16,
+    hieroglyph: '几',
+    traditional: null,
+    pinyin: 'jī',
+    translate: 'столик; несколько'
+  },
+  {
+    id: 17,
+    hieroglyph: '凵',
+    traditional: null,
+    pinyin: 'kǎn',
+    translate: 'яма'
+  },
+  {
+    id: 18,
+    hieroglyph: '刀',
+    traditional: '刂',
+    pinyin: 'dāo',
+    translate: 'нож'
+  },
+  {
+    id: 19,
+    hieroglyph: '力',
+    traditional: null,
+    pinyin: 'lì',
+    translate: 'сила'
+  },
+  {
+    id: 20,
+    hieroglyph: '勹',
+    traditional: null,
+    pinyin: 'bāo',
+    translate: 'обёртывать'
+  },
+  {
+    id: 21,
+    hieroglyph: '匕',
+    traditional: null,
+    pinyin: 'bǐ',
+    translate: 'черпак; кинжал'
+  },
+  {
+    id: 22,
+    hieroglyph: '匚',
+    traditional: null,
+    pinyin: 'fāng',
+    translate: 'ящик; короб'
+  },
+  {
+    id: 23,
+    hieroglyph: '匸',
+    traditional: null,
+    pinyin: 'xì',
+    translate: 'прятать'
+  },
+  {
+    id: 24,
+    hieroglyph: '十',
+    traditional: null,
+    pinyin: 'shí',
+    translate: 'десять'
+  },
+  {
+    id: 25,
+    hieroglyph: '卜',
+    traditional: null,
+    pinyin: 'bǔ',
+    translate: 'гадать'
+  },
+  {
+    id: 26,
+    hieroglyph: '卩',
+    traditional: '⺋',
+    pinyin: 'jié',
+    translate: 'печать; власть'
+  },
+  {
+    id: 27,
+    hieroglyph: '厂',
+    traditional: null,
+    pinyin: 'hǎn',
+    translate: 'обрыв; круча'
+  },
+  {
+    id: 28,
+    hieroglyph: '厶',
+    traditional: null,
+    pinyin: 'sī',
+    translate: 'частный; личный'
+  },
+  {
+    id: 29,
+    hieroglyph: '又',
+    traditional: null,
+    pinyin: 'yòu',
+    translate: 'правая рука; опять'
+  },
+  {
+    id: 30,
+    hieroglyph: '口',
+    traditional: null,
+    pinyin: 'kǒu',
+    translate: 'рот'
+  },
+  {
+    id: 31,
+    hieroglyph: '囗',
+    traditional: null,
+    pinyin: 'wéi',
+    translate: 'окружать; ограда'
+  },
+  {
+    id: 32,
+    hieroglyph: '土',
+    traditional: null,
+    pinyin: 'tǔ',
+    translate: 'земля'
+  },
+  {
+    id: 33,
+    hieroglyph: '士',
+    traditional: null,
+    pinyin: 'shì',
+    translate: 'воин'
+  },
+  {
+    id: 34,
+    hieroglyph: '夂',
+    traditional: null,
+    pinyin: 'zhǐ',
+    translate: 'шагать вперед; продвигаться'
+  },
+  {
+    id: 35,
+    hieroglyph: '夊',
+    traditional: null,
+    pinyin: 'suī',
+    translate: 'медленно идти; волочить ноги'
+  },
+  {
+    id: 36,
+    hieroglyph: '夕',
+    traditional: null,
+    pinyin: 'xī',
+    translate: 'вечер'
+  },
+  {
+    id: 37,
+    hieroglyph: '大',
+    traditional: null,
+    pinyin: 'dà',
+    translate: 'большой'
+  },
+  {
+    id: 38,
+    hieroglyph: '女',
+    traditional: null,
+    pinyin: 'nǚ',
+    translate: 'женщина'
+  },
+  {
+    id: 39,
+    hieroglyph: '子',
+    traditional: null,
+    pinyin: 'zǐ',
+    translate: 'ребёнок; сын'
+  },
+  {
+    id: 40,
+    hieroglyph: '宀',
+    traditional: null,
+    pinyin: 'mián',
+    translate: 'крыша с точкой; крыша'
+  },
+  {
+    id: 41,
+    hieroglyph: '寸',
+    traditional: null,
+    pinyin: 'cùn',
+    translate: 'вершок'
+  },
+  {
+    id: 42,
+    hieroglyph: '小',
+    traditional: '⺌',
+    pinyin: 'xiǎo',
+    translate: 'маленький'
+  },
+  {
+    id: 43,
+    hieroglyph: '尢',
+    traditional: '尣',
+    pinyin: 'wāng',
+    translate: 'хромой'
+  },
+  {
+    id: 44,
+    hieroglyph: '尸',
+    traditional: null,
+    pinyin: 'shī',
+    translate: 'труп'
+  },
+  {
+    id: 45,
+    hieroglyph: '屮',
+    traditional: null,
+    pinyin: 'chè',
+    translate: 'росток'
+  },
+  {
+    id: 46,
+    hieroglyph: '山',
+    traditional: null,
+    pinyin: 'shān',
+    translate: 'гора'
+  },
+  {
+    id: 47,
+    hieroglyph: '巛',
+    traditional: '川',
+    pinyin: 'chuān',
+    translate: 'поток; река'
+  },
+  {
+    id: 48,
+    hieroglyph: '工',
+    traditional: null,
+    pinyin: 'gōng',
+    translate: 'работа'
+  },
+  {
+    id: 49,
+    hieroglyph: '己',
+    traditional: '已',
+    pinyin: 'jǐ',
+    translate: 'сам'
+  },
+  {
+    id: 50,
+    hieroglyph: '巾',
+    traditional: null,
+    pinyin: 'jīn',
+    translate: 'полотенце; салфетка'
+  },
+  {
+    id: 51,
+    hieroglyph: '干',
+    traditional: null,
+    pinyin: 'gān',
+    translate: 'щит; вмешиваться'
+  },
+  {
+    id: 52,
+    hieroglyph: '幺',
+    traditional: null,
+    pinyin: 'yāo',
+    translate: 'незрелый; младший'
+  },
+  {
+    id: 53,
+    hieroglyph: '广',
+    traditional: null,
+    pinyin: 'yǎn',
+    translate: 'навес'
+  },
+  {
+    id: 54,
+    hieroglyph: '廴',
+    traditional: null,
+    pinyin: 'yǐn',
+    translate: 'двигаться вперед; тащить'
+  },
+  {
+    id: 55,
+    hieroglyph: '廾',
+    traditional: null,
+    pinyin: 'gǒng',
+    translate: 'соединить руки'
+  },
+  {
+    id: 56,
+    hieroglyph: '弋',
+    traditional: null,
+    pinyin: 'yì',
+    translate: 'стрелять из лука'
+  },
+  {
+    id: 57,
+    hieroglyph: '弓',
+    traditional: null,
+    pinyin: 'gōng',
+    translate: 'лук'
+  },
+  {
+    id: 58,
+    hieroglyph: '彐',
+    traditional: '彑',
+    pinyin: 'jì',
+    translate: 'голова свиньи'
+  },
+  {
+    id: 59,
+    hieroglyph: '彡',
+    traditional: null,
+    pinyin: 'shān',
+    translate: 'перья; длинная шерсть'
+  },
+  {
+    id: 60,
+    hieroglyph: '彳',
+    traditional: null,
+    pinyin: 'chì',
+    translate: 'шаг (левой ногой)'
+  },
+  {
+    id: 61,
+    hieroglyph: '心',
+    traditional: '忄',
+    pinyin: 'xīn',
+    translate: 'сердце'
+  },
+  {
+    id: 62,
+    hieroglyph: '戈',
+    traditional: null,
+    pinyin: 'gē',
+    translate: 'копье; клевец'
+  },
+  {
+    id: 63,
+    hieroglyph: '户',
+    traditional: '戸',
+    pinyin: 'hù',
+    translate: 'двор'
+  },
+  {
+    id: 64,
+    hieroglyph: '手',
+    traditional: '扌',
+    pinyin: 'shǒu',
+    translate: 'рука'
+  },
+  {
+    id: 65,
+    hieroglyph: '支',
+    traditional: null,
+    pinyin: 'zhī',
+    translate: 'ветка'
+  },
+  {
+    id: 66,
+    hieroglyph: '攴',
+    traditional: '攵',
+    pinyin: 'pū',
+    translate: 'бить; ударять'
+  },
+  {
+    id: 67,
+    hieroglyph: '文',
+    traditional: null,
+    pinyin: 'wén',
+    translate: 'текст; письмена'
+  },
+  {
+    id: 68,
+    hieroglyph: '斗',
+    traditional: null,
+    pinyin: 'dǒu',
+    translate: 'ковш; хлебная мерка'
+  },
+  {
+    id: 69,
+    hieroglyph: '斤',
+    traditional: null,
+    pinyin: 'jīn',
+    translate: 'топор'
+  },
+  {
+    id: 70,
+    hieroglyph: '方',
+    traditional: null,
+    pinyin: 'fāng',
+    translate: 'квадрат; сторона'
+  },
+  {
+    id: 71,
+    hieroglyph: '无',
+    traditional: null,
+    pinyin: 'wú',
+    translate: 'не; без'
+  },
+  {
+    id: 72,
+    hieroglyph: '日',
+    traditional: null,
+    pinyin: 'rì',
+    translate: 'солнце'
+  },
+  {
+    id: 73,
+    hieroglyph: '曰',
+    traditional: null,
+    pinyin: 'yuē',
+    translate: 'говорить'
+  },
+  {
+    id: 74,
+    hieroglyph: '月',
+    traditional: null,
+    pinyin: 'yuè',
+    translate: 'луна'
+  },
+  {
+    id: 75,
+    hieroglyph: '木',
+    traditional: null,
+    pinyin: 'mù',
+    translate: 'дерево'
+  },
+  {
+    id: 76,
+    hieroglyph: '欠',
+    traditional: null,
+    pinyin: 'qiàn',
+    translate: 'недоставать'
+  },
+  {
+    id: 77,
+    hieroglyph: '止',
+    traditional: null,
+    pinyin: 'zhǐ',
+    translate: 'стопа; останавливаться'
+  },
+  {
+    id: 78,
+    hieroglyph: '歹',
+    traditional: '歺',
+    pinyin: 'dǎi',
+    translate: 'злой; плохой'
+  },
+  {
+    id: 79,
+    hieroglyph: '殳',
+    traditional: null,
+    pinyin: 'shū',
+    translate: 'бамбуковая пика'
+  },
+  {
+    id: 80,
+    hieroglyph: '毋',
+    traditional: null,
+    pinyin: 'wú',
+    translate: 'нет; нельзя'
+  },
+  {
+    id: 81,
+    hieroglyph: '比',
+    traditional: null,
+    pinyin: 'bǐ',
+    translate: 'сравнивать'
+  },
+  {
+    id: 82,
+    hieroglyph: '毛',
+    traditional: null,
+    pinyin: 'máo',
+    translate: 'шерсть; волосы'
+  },
+  {
+    id: 83,
+    hieroglyph: '氏',
+    traditional: null,
+    pinyin: 'shì',
+    translate: 'род; клан'
+  },
+  {
+    id: 84,
+    hieroglyph: '气',
+    traditional: null,
+    pinyin: 'qì',
+    translate: 'воздух; газ'
+  },
+  {
+    id: 85,
+    hieroglyph: '水',
+    traditional: '氵',
+    pinyin: 'shuǐ',
+    translate: 'вода'
+  },
+  {
+    id: 86,
+    hieroglyph: '火',
+    traditional: '灬',
+    pinyin: 'huǒ',
+    translate: 'огонь'
+  },
+  {
+    id: 87,
+    hieroglyph: '爪',
+    traditional: '爫',
+    pinyin: 'zhǎo',
+    translate: 'когти'
+  },
+  {
+    id: 88,
+    hieroglyph: '父',
+    traditional: null,
+    pinyin: 'fù',
+    translate: 'отец'
+  },
+  {
+    id: 89,
+    hieroglyph: '爻',
+    traditional: null,
+    pinyin: 'yáo',
+    translate: 'воздействие; влияние'
+  },
+  {
+    id: 90,
+    hieroglyph: '爿',
+    traditional: '丬',
+    pinyin: 'qiáng',
+    translate: 'доска; кровать'
+  },
+  {
+    id: 91,
+    hieroglyph: '片',
+    traditional: null,
+    pinyin: 'piàn',
+    translate: 'карточка; щепка'
+  },
+  {
+    id: 92,
+    hieroglyph: '牙',
+    traditional: null,
+    pinyin: 'yá',
+    translate: 'зуб'
+  },
+  {
+    id: 93,
+    hieroglyph: '牛',
+    traditional: '牜',
+    pinyin: 'niú',
+    translate: 'корова; бык'
+  },
+  {
+    id: 94,
+    hieroglyph: '犬',
+    traditional: '犭',
+    pinyin: 'quǎn',
+    translate: 'собака'
+  },
+  {
+    id: 95,
+    hieroglyph: '玄',
+    traditional: null,
+    pinyin: 'xuán',
+    translate: 'темный; тайный'
+  },
+  {
+    id: 96,
+    hieroglyph: '玉',
+    traditional: '⺩',
+    pinyin: 'yù',
+    translate: 'яшма'
+  },
+  {
+    id: 97,
+    hieroglyph: '瓜',
+    traditional: null,
+    pinyin: 'guā',
+    translate: 'дыня; тыква'
+  },
+  {
+    id: 98,
+    hieroglyph: '瓦',
+    traditional: null,
+    pinyin: 'wǎ',
+    translate: 'черепица'
+  },
+  {
+    id: 99,
+    hieroglyph: '甘',
+    traditional: null,
+    pinyin: 'gān',
+    translate: 'сладкий'
+  },
   { id: 100, hieroglyph: '生', traditional: null, pinyin: 'shēng', translate: 'рождаться; сырой' },
   {
     id: 101,
@@ -234,591 +927,3 @@ export const mockHieroglyph: IHieroglyph[] = [
   { id: 213, hieroglyph: '龟', traditional: '龜', pinyin: 'guī', translate: 'черепаха' },
   { id: 214, hieroglyph: '龠', traditional: null, pinyin: 'yuè', translate: 'флейта' }
 ];
-
-// 1
-// 一
-// null
-// yī
-// единица
-
-// 2
-// 丨
-// null
-// gǔn
-// вертикальная
-
-// 3
-// 丶
-// null
-// zhǔ
-// точка
-
-// 4
-// 丿
-// null
-// piě
-// откидная влево
-
-// 5
-// 乙
-// 乚
-// yǐ
-// второй (цикличный знак)
-
-// 6
-// 亅
-// null
-// jué
-// вертикальная с крюком
-
-// 7
-// 二
-// null
-// èr
-// два
-
-// 8
-// 亠
-// null
-// tóu
-// горизонтальная с точкой
-
-// 9
-// 人
-// 亻
-// rén
-// человек
-
-// 10
-// 儿
-// null
-// ér
-// идущий человек
-
-// 11
-// 入
-// null
-// rù
-// входить
-
-// 12
-// 八
-// null
-// bā
-// восемь; делить
-
-// 13
-// 冂
-// null
-// jiōng
-// границы
-
-// 14
-// 冖
-// null
-// mì
-// крышка
-
-// 15
-// 冫
-// null
-// bīng
-// лёд
-
-// 16
-// 几
-// null
-// jī
-// столик; несколько
-
-// 17
-// 凵
-// null
-// kǎn
-// яма
-
-// 18
-// 刀
-// 刂
-// dāo
-// нож
-
-// 19
-// 力
-// null
-// lì
-// сила
-
-// 20
-// 勹
-// null
-// bāo
-// обёртывать
-
-// 21
-// 匕
-// null
-// bǐ
-// черпак; кинжал
-
-// 22
-// 匚
-// null
-// fāng
-// ящик; короб
-
-// 23
-// 匸
-// null
-// xì
-// прятать
-
-// 24
-// 十
-// null
-// shí
-// десять
-
-// 25
-// 卜
-// bǔ
-// гадать
-
-// 26
-// 卩
-// ⺋
-// jié
-// печать; власть
-
-// 27
-// 厂
-// null
-// hǎn
-// обрыв; круча
-
-// 28
-// 厶
-// null
-// sī
-// частный; личный
-
-// 29
-// 又
-// null
-// yòu
-// правая рука; опять
-
-// 30
-// 口
-// null
-// kǒu
-// рот
-
-// 31
-// 囗
-// null
-// wéi
-// окружать; ограда
-
-// 32
-// 土
-// null
-// tǔ
-// земля
-
-// 33
-// 士
-// null
-// shì
-// воин
-
-// 34
-// 夂
-// null
-// zhǐ
-// шагать вперед; продвигаться
-
-// 35
-// 夊
-// null
-// suī
-// медленно идти; волочить ноги
-
-// 36
-// 夕
-// null
-// xī
-// вечер
-
-// 37
-// 大
-// dà
-// большой
-
-// 38
-// 女
-// null
-// nǚ
-// женщина
-
-// 39
-// 子
-// null
-// zǐ
-// ребёнок; сын
-
-// 40
-// 宀
-// null
-// mián
-// крыша с точкой; крыша
-
-// 41
-// 寸
-// null
-// cùn
-// вершок
-
-// 42
-// 小
-// ⺌
-// xiǎo
-// маленький
-
-// 43
-// 尢
-// 尣
-// wāng
-// хромой
-
-// 44
-// 尸
-// null
-// shī
-// труп
-
-// 45
-// 屮
-// null
-// chè
-// росток
-
-// 46
-// 山
-// null
-// shān
-// гора
-
-// 47
-// 巛
-// 川
-// chuān
-// поток; река
-
-// 48
-// 工
-// null
-// gōng
-// работа
-
-// 49
-// 己
-// 已
-// jǐ
-// сам
-
-// 50
-// 巾
-// null
-// jīn
-// полотенце; салфетка
-
-// 51
-// 干
-// null
-// gān
-// щит; вмешиваться
-
-// 52
-// 幺
-// null
-// yāo
-// незрелый; младший
-
-// 53
-// 广
-// null
-// yǎn
-// навес
-
-// 54
-// 廴
-// null
-// yǐn
-// двигаться вперед; тащить
-
-// 55
-// 廾
-// null
-// gǒng
-// соединить руки
-
-// 56
-// 弋
-// null
-// yì
-// стрелять из лука
-
-// 57
-// 弓
-// gōng
-// лук
-
-// 58
-// 彐
-// 彑
-// jì
-// голова свиньи
-
-// 59
-// 彡
-// null
-// shān
-// перья; длинная шерсть
-
-// 60
-// 彳
-// null
-// chì
-// шаг (левой ногой)
-
-// 61
-// 心
-// 忄
-// xīn
-// сердце
-
-// 62
-// 戈
-// null
-// gē
-// копье; клевец
-
-// 63
-// 户
-// 戸
-// hù
-// двор
-
-// 64
-// 手
-// 扌
-// shǒu
-// рука
-
-// 65
-// 支
-// zhī
-// ветка
-
-// 66
-// 攴
-// 攵
-// pū
-// бить; ударять
-
-// 67
-// 文
-// null
-// wén
-// текст; письмена
-
-// 68
-// 斗
-// null
-// dǒu
-// ковш; хлебная мерка
-
-// 69
-// 斤
-// null
-// jīn
-// топор
-
-// 70
-// 方
-// null
-// fāng
-// квадрат; сторона
-
-// 71
-// 无
-// null
-// wú
-// не; без
-
-// 72
-// 日
-// null
-// rì
-// солнце
-
-// 73
-// 曰
-// yuē
-// говорить
-
-// 74
-// 月
-// null
-// yuè
-// луна
-
-// 75
-// 木
-// null
-// mù
-// дерево
-
-// 76
-// 欠
-// null
-// qiàn
-// недоставать
-
-// 77
-// 止
-// null
-// zhǐ
-// стопа; останавливаться
-
-// 78
-// 歹
-// 歺
-// dǎi
-// злой; плохой
-
-// 79
-// 殳
-// null
-// shū
-// бамбуковая пика
-
-// 80
-// 毋
-// wú
-// нет; нельзя
-
-// 81
-// 比
-// null
-// bǐ
-// сравнивать
-
-// 82
-// 毛
-// null
-// máo
-// шерсть; волосы
-
-// 83
-// 氏
-// null
-// shì
-// род; клан
-
-// 84
-// 气
-// null
-// qì
-// воздух; газ
-
-// 85
-// 水
-// 氵
-// shuǐ
-// вода
-
-// 86
-// 火
-// 灬
-// huǒ
-// огонь
-
-// 87
-// 爪
-// 爫
-// zhǎo
-// когти
-
-// 88
-// 父
-// null
-// fù
-// отец
-
-// 89
-// 爻
-// null
-// yáo
-// воздействие; влияние
-
-// 90
-// 爿
-// 丬
-// qiáng
-// доска; кровать
-
-// 91
-// 片
-// null
-// piàn
-// карточка; щепка
-
-// 92
-// 牙
-// null
-// yá
-// зуб
-
-// 93
-// 牛
-// 牜
-// niú
-// корова; бык
-
-// 94
-// 犬
-// 犭
-// quǎn
-// собака
-
-// 95
-// 玄
-// null
-// xuán
-// темный; тайный
-
-// 96
-// 玉
-// ⺩
-// yù
-// яшма
-
-// 97
-// 瓜
-// null
-// guā
-// дыня; тыква
-
-// 98
-// 瓦
-// null
-// wǎ
-// черепица
-
-// 99
-// 甘
-// null
-// gān
-// сладкий

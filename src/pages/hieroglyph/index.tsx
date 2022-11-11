@@ -6,40 +6,31 @@ import { NextSeo } from 'next-seo';
 import { mockHieroglyph } from '../../utils/mock/hieroglyph';
 
 //* Components
+import { TabsSlider } from '#/components/xsolare';
 import PageLayout from '#/components/layouts/page.layout';
-import HieroglyphKey from '#/components/hieroglyph/key-item';
-import {
-  HieroglyphKeysControl,
-  HieroglyphKeysDescription,
-  HieroglyphKeysList
-} from '#/styles/pages/hieroglyph.style';
+import HieroglyphKeys from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys';
 
 interface IPinyinProps {
-  hieroglyph: IHieroglyph[];
+  hieroglyphKeys: IHieroglyph[];
 }
 
 // Pinyin component
 //* ------------------------------------------------------------------------------------------ *//
 const Hieroglyph: NextPageWithLayout<IPinyinProps> = (props) => {
-  const { hieroglyph } = props;
+  const { hieroglyphKeys } = props;
 
   return (
     <>
       <NextSeo title="Hieroglyph" description="Hieroglyph page" />
-      <HieroglyphKeysDescription>1</HieroglyphKeysDescription>
-      <HieroglyphKeysControl>2</HieroglyphKeysControl>
-      <HieroglyphKeysList>
-        {hieroglyph.map((h) => (
-          <HieroglyphKey key={h.id} hieroglyph={h} />
-        ))}
-      </HieroglyphKeysList>
+      <TabsSlider options={[{ value: 'Ключи' }]} headerText="Ключи китайского языка" />
+      <HieroglyphKeys hieroglyphKeys={hieroglyphKeys} />
     </>
   );
 };
 
 Hieroglyph.getInitialProps = async () => {
   return {
-    hieroglyph: mockHieroglyph
+    hieroglyphKeys: mockHieroglyph
   };
 };
 

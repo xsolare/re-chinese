@@ -1,9 +1,9 @@
 //* - tabs slider - *//
-export { TabsSlider } from './components/tabs-slider/tabsSlider';
+export { TabsSlider } from './components/tabs-slider/tabs-slider';
 export type {
   ITabsSliderProps,
   IOptionsTabsSlider
-} from './components/tabs-slider/tabsSlider.store';
+} from './components/tabs-slider/tabs-slider.store';
 
 //* - tooltip - *//
 export { Tooltip } from './components/tooltip/tooltip';
