@@ -4,7 +4,6 @@ import { HieroglyphKeysItem, HieroglyphKeysWrapper } from './key-item.style';
 import React from 'react';
 import { KeyItemStore } from './key-item.store';
 import { observer } from 'mobx-react-lite';
-import type { HieroglyphKeysStore } from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys.store';
 import { useNewStore } from '#/components/xsolare/helpers';
 
 //* Components
