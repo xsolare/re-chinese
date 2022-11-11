@@ -74,11 +74,13 @@ const WordVarious: FC<IWordProps> = observer((props) => {
   }
 
   if (type === 5) {
-    <>
-      {pinyin ? <span className="pinyin"> {pinyin}</span> : null}
-      <span className="hieroglyph">{children}</span>
-      {translate ? <span className="translate"> {translate}</span> : null}
-    </>;
+    return (
+      <>
+        {pinyin ? <span className="pinyin"> {pinyin}</span> : null}
+        <span className="hieroglyph">{children}</span>
+        {translate ? <span className="translate"> {translate}</span> : null}
+      </>
+    );
   }
 
   return null;
