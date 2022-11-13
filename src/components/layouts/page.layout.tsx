@@ -2,7 +2,7 @@ import React from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
 //* Styles
-import { PageStyled } from '#/styles/components/layouts/page.style';
+import { PageStyled } from '#/components/layouts/page.style';
 
 //* Components
 // import { TabsSlider } from '#/xsolare';

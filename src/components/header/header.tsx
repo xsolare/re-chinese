@@ -2,7 +2,7 @@
 import type { FC } from 'react';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { HeaderStyled } from '#/styles/components/ui/header.style';
+import { HeaderStyled } from '#/components/header/header.style';
 import { useStore } from '#/store';
 
 //* Components

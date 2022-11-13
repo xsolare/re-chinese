@@ -19,10 +19,14 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
     value,
     onChange,
     renderOption,
-    headerText
+    headerText,
+    defaultTab
   } = props;
 
-  const store = useMemo(() => new TabsSliderStore<T>({ defaultActiveTab: options[0] }), [options]);
+  const store = useMemo(
+    () => new TabsSliderStore<T>({ defaultActiveTab: options[defaultTab ?? 0] }),
+    [options]
+  );
   const { calculateTabsSize, tipSize, setActiveTab } = store;
 
   const sliderListRef = useRef<HTMLUListElement | null>(null);
@@ -55,7 +59,7 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
               data-id={tab.value}
               key={tab.value}
               isSelected={value === tab}>
-              {renderOption ? renderOption(tab) : tab.value}
+              {renderOption ? renderOption(tab) : <div>{tab.value}</div>}
             </TabsSliderItemStyled>
           );
         })}

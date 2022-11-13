@@ -4,7 +4,8 @@ type TabsSliderStyledTypes = {
   width?: string;
 };
 export const TabsSliderStyled = styled.div<TabsSliderStyledTypes>`
-  width: ${(props) => (props.width ? props.width : 'auto')};
+  max-width: ${(props) => (props.width ? props.width : 'auto')};
+  width: 100%;
   margin: 15px 0;
 `;
 
@@ -48,20 +49,26 @@ type TabsSliderItemStyledTypes = {
 };
 export const TabsSliderItemStyled = styled.li<TabsSliderItemStyledTypes>`
   z-index: 5;
-  padding: 0 16px;
-  padding-top: 4px;
   position: relative;
   z-index: 10;
   min-height: 40px;
   user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   cursor: pointer;
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
   color: ${({ theme }) => theme.palette?.color?.text};
+  list-style: none;
+
+  > :first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6px 16px;
+    height: 100%;
+  }
 `;
 
 export const TabsSliderHeaderStyled = styled.div`

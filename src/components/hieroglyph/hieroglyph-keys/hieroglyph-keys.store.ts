@@ -1,6 +1,7 @@
 import { FormStore } from '#/components/xsolare/components/form/form.store';
 import { setupFormStores } from '#/components/xsolare/helpers';
-import { makeObservable, observable, action } from 'mobx';
+import { isWindowExists } from '#/utils/helpers';
+import { makeObservable, observable } from 'mobx';
 import { CheckboxStore } from '../../xsolare/components/checkbox/checkbox.store';
 
 interface IHieroglyphKeysStoreForm {
@@ -17,34 +18,46 @@ export class HieroglyphKeysStore {
   } as IHieroglyphKeysStoreForm;
 
   constructor() {
+    const isPinyinDefault = isWindowExists()
+      ? localStorage?.getItem('__isPinyin__') !== 'false'
+      : false;
+    const isTranslateDefault = isWindowExists()
+      ? localStorage?.getItem('__isTranslate__') !== 'false'
+      : false;
+
+    this.state = {
+      isPinyin: isPinyinDefault,
+      isTranslate: isTranslateDefault
+    };
+
     const formStores = [
       new CheckboxStore({
         name: 'isPinyin',
         label: 'Показать пиньин',
         labelActive: 'Скрыть пиньин',
-        onClick: () => this.setValues()
+        defaultValue: isPinyinDefault,
+        onClick: () => {
+          this.state.isPinyin = !this.state.isPinyin;
+          localStorage.setItem('__isPinyin__', this.state.isPinyin.toString());
+        }
       }),
       new CheckboxStore({
         name: 'isTranslate',
         label: 'Показать перевод',
         labelActive: 'Скрыть перевод',
-        onClick: () => this.setValues()
+        defaultValue: isTranslateDefault,
+        onClick: () => {
+          this.state.isTranslate = !this.state.isTranslate;
+          localStorage.setItem('__isTranslate__', this.state.isTranslate.toString());
+        }
       })
     ];
 
     setupFormStores(formStores, this.formStore);
-
-    makeObservable(this, {
-      setValues: action
-    });
 
     makeObservable(this.state, {
       isPinyin: observable,
       isTranslate: observable
     });
   }
-
-  setValues = () => {
-    this.state = this.formStore.getValues<IHieroglyphKeysStoreForm>();
-  };
 }

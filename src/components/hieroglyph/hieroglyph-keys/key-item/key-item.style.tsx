@@ -22,8 +22,8 @@ export const HieroglyphKeysWrapper = styled.div`
   }
 
   ${breakpoint('sm')} {
-    width: 95px;
-    height: 95px;
+    width: 90px;
+    height: 90px;
     margin: 5px;
   }
 `;
