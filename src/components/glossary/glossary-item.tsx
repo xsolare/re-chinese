@@ -10,7 +10,7 @@ type IGlossaryItemProps = IGlossaryItem;
 // LibItem
 //* ------------------------------------------------------------------ *//
 const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
-  const { id, title, hsk, badges } = props;
+  const { id, title, hsk } = props;
 
   return (
     <Link href={`/glossary/${id}`}>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
 //* Styles
-import { DefaultStyled } from '#/styles/components/layouts/default.style';
+import { DefaultStyled } from '#/components/layouts/default.style';
 
 //* Components
 import Header from '../header/header';

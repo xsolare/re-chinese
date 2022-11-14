@@ -1,14 +1,14 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { observer } from 'mobx-react-lite';
-import type { IOptionsTabsSlider, ITabsSliderProps } from './tabsSlider.store';
-import { TabsSliderStore } from './tabsSlider.store';
+import type { IOptionsTabsSlider, ITabsSliderProps } from './tabs-slider.store';
+import { TabsSliderStore } from './tabs-slider.store';
 import useIsMounted from '../../hooks/events/useIsMounted';
 import {
   TabsSliderHeaderStyled,
   TabsSliderItemStyled,
   TabsSliderListStyled,
   TabsSliderStyled
-} from './tabsSlider.style';
+} from './tabs-slider.style';
 
 //* - COMPONENT ------------------------------------------------------------------------- *//
 export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
@@ -19,10 +19,14 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
     value,
     onChange,
     renderOption,
-    headerText
+    headerText,
+    defaultTab
   } = props;
 
-  const store = useMemo(() => new TabsSliderStore<T>({ defaultActiveTab: options[0] }), [options]);
+  const store = useMemo(
+    () => new TabsSliderStore<T>({ defaultActiveTab: options[defaultTab ?? 0] }),
+    [options]
+  );
   const { calculateTabsSize, tipSize, setActiveTab } = store;
 
   const sliderListRef = useRef<HTMLUListElement | null>(null);
@@ -36,6 +40,8 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
   useEffect(() => {
     if (sliderListRef.current) calculateTabsSize(options, sliderListRef);
   }, [calculateTabsSize, isMounted, options]);
+
+  console.log('2');
 
   return (
     <TabsSliderStyled width={width}>
@@ -55,7 +61,7 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
               data-id={tab.value}
               key={tab.value}
               isSelected={value === tab}>
-              {renderOption ? renderOption(tab) : tab.value}
+              {renderOption ? renderOption(tab) : <div>{tab.value}</div>}
             </TabsSliderItemStyled>
           );
         })}

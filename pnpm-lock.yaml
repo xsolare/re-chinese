@@ -17,6 +17,7 @@ specifiers:
   '@types/node': 18.11.7
   '@types/react': 18.0.24
   '@types/react-dom': 18.0.8
+  '@types/uuid': ^8.3.4
   '@typescript-eslint/eslint-plugin': ^5.41.0
   '@typescript-eslint/parser': ^5.41.0
   '@xsolare/ui': ^1.1.6
@@ -71,6 +72,7 @@ specifiers:
   stylelint-config-prettier: ^9.0.3
   stylelint-config-recommended: ^9.0.0
   typescript: 4.8.4
+  uuid: ^9.0.0
 
 dependencies:
   '@emotion/cache': 11.10.5
@@ -105,6 +107,7 @@ dependencies:
   react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
   rehype-raw: 6.1.1
   remark-gfm: 3.0.1
+  uuid: 9.0.0
 
 devDependencies:
   '@babel/eslint-parser': 7.19.1_eslint@8.26.0
@@ -116,6 +119,7 @@ devDependencies:
   '@types/node': 18.11.7
   '@types/react': 18.0.24
   '@types/react-dom': 18.0.8
+  '@types/uuid': 8.3.4
   '@typescript-eslint/eslint-plugin': 5.41.0_huremdigmcnkianavgfk3x6iou
   '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
   autoprefixer: 10.4.13_postcss@8.4.18
@@ -2907,6 +2911,10 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
+
+  /@types/uuid/8.3.4:
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
+    dev: true
 
   /@typescript-eslint/eslint-plugin/5.41.0_huremdigmcnkianavgfk3x6iou:
     resolution: {integrity: sha512-DXUS22Y57/LAFSg3x7Vi6RNAuLpTXwxB9S2nIA7msBb/Zt8p7XqMwdpdc1IU7CkOQUPgAqR5fWvxuKCbneKGmA==}

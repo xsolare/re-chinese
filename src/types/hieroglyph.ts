@@ -1,6 +1,7 @@
 export interface IHieroglyph {
-  id: string;
+  id: number;
   hieroglyph: string;
+  traditional: null | string;
   pinyin: string;
   translate: string;
 }

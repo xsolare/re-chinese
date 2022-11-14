@@ -4,18 +4,35 @@ import styled from '@emotion/styled';
 export const HieroglyphKeysWrapper = styled.div`
   cursor: pointer;
   position: relative;
-  margin: 5px;
+  margin: 10px;
 
-  width: 120px;
-  height: 120px;
+  width: 170px;
+  height: 170px;
+
+  user-select: none;
+
+  ${breakpoint('lg')} {
+    width: 150px;
+    height: 150px;
+  }
 
   ${breakpoint('md')} {
+    width: 120px;
+    height: 120px;
+  }
+
+  ${breakpoint('sm')} {
     width: 90px;
     height: 90px;
+    margin: 5px;
   }
 `;
 
-export const HieroglyphKeysItem = styled.div`
+type IHieroglyphKeysItemType = {
+  isPinyin: boolean;
+  isTranslate: boolean;
+};
+export const HieroglyphKeysItem = styled.div<IHieroglyphKeysItemType>`
   overflow: hidden;
 
   background-color: ${({ theme }) => theme.palette.bg.mainContent};
@@ -42,7 +59,7 @@ export const HieroglyphKeysItem = styled.div`
   .pinyin {
     grid-area: pinyin;
 
-    display: flex;
+    display: ${({ isPinyin }) => (isPinyin ? 'flex' : 'none')};
     align-items: center;
     justify-content: center;
 
@@ -50,22 +67,34 @@ export const HieroglyphKeysItem = styled.div`
     font-family: ${({ theme }) => theme.font.family.chn};
     font-weight: 400;
     font-size: 1rem;
+
+    ${breakpoint('md')} {
+      font-size: 0.9rem;
+    }
   }
 
   .hieroglyph {
     grid-area: hieroglyph;
 
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2.5rem;
     font-weight: 400;
     font-family: ${({ theme }) => theme.font.family.chn};
     letter-spacing: 1.5px;
+
+    ${breakpoint('md')} {
+      font-size: 2rem;
+    }
   }
 
   .translate {
     grid-area: translate;
     text-align: center;
 
-    display: flex;
+    display: ${({ isTranslate }) => (isTranslate ? 'flex' : 'none')};
     align-items: center;
     justify-content: center;
 
@@ -82,13 +111,21 @@ export const HieroglyphKeysItem = styled.div`
     justify-content: center;
     font-size: 0.7rem;
 
-    top: -4px;
-    left: -4px;
-    height: 22px;
-    width: 22px;
+    top: -8px;
+    left: -8px;
+    height: 30px;
+    width: 30px;
     background-color: ${({ theme }) => theme.palette.bg.mainContent};
     border: 1px solid ${({ theme }) => theme.palette.border.content};
     border-radius: 50%;
+
+    ${breakpoint('md')} {
+      height: 22px;
+      width: 22px;
+
+      top: -4px;
+      left: -4px;
+    }
   }
 
   ${breakpoint('md')} {

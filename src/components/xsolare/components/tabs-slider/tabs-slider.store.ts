@@ -8,6 +8,7 @@ export interface IOptionsTabsSlider<T> {
 
 export interface ITabsSliderProps<T> {
   tipHight?: string;
+  defaultTab?: number;
   width?: string;
   renderOption?: (option: IOptionsTabsSlider<T>) => React.ReactNode;
   options: IOptionsTabsSlider<T>[];

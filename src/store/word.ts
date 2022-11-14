@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { makeObservable, observable } from 'mobx';
 
 export const WordType = [1, 2, 3, 4] as const;
 export type IWordType = keyof typeof WordType;
@@ -13,6 +13,8 @@ export default class WordStore {
   } as WordStoreState;
 
   constructor() {
-    makeAutoObservable(this.state);
+    makeObservable(this.state, {
+      type: observable
+    });
   }
 }
