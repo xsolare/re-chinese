@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { FC } from 'react';
 import type { IHieroglyph } from '#/types/hieroglyph';
 import { useNewStore } from '../../xsolare/helpers/index';
@@ -26,7 +26,14 @@ const KeysTester: FC<IKeysTesterProps> = (props) => {
   const { hieroglyphKeys } = props;
 
   const store = useNewStore(KeysTesterStore, hieroglyphKeys);
-  const { state, handleAnswer, score, lastAnswer } = store;
+  const { state, handleAnswer, score, lastAnswer, reloadQuestion } = store;
+
+  useEffect(() => {
+    document.addEventListener('mousedown', reloadQuestion);
+    return () => {
+      document.removeEventListener('mousedown', reloadQuestion);
+    };
+  }, []);
 
   return (
     <>

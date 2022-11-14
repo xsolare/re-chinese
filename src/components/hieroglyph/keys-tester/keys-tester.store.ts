@@ -24,7 +24,7 @@ export class KeysTesterStore {
     answers: [],
     answersOptions: [],
     question: {} as IHieroglyph,
-    isAnswered: false
+    isAnswered: true
   } as IKeysTesterState;
 
   constructor(hieroglyphKeys: IHieroglyph[]) {
@@ -48,7 +48,8 @@ export class KeysTesterStore {
   }
 
   reloadQuestion = () => {
-    console.log('reloadQuestion');
+    if (!this.state.isAnswered) return;
+
     this.state.answersOptions = [];
 
     for (let i = 0; i < 4; i += 1) {
@@ -66,7 +67,6 @@ export class KeysTesterStore {
   };
 
   handleAnswer = (givenAnswer: IHieroglyph) => {
-    console.log('handleAnswer');
     if (this.state.isAnswered) return;
 
     this.state.isAnswered = true;
@@ -79,9 +79,9 @@ export class KeysTesterStore {
     };
     this.state.answers.push(answer);
 
-    setTimeout(() => {
-      this.reloadQuestion();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.reloadQuestion();
+    // }, 1000);
   };
 
   get score() {
