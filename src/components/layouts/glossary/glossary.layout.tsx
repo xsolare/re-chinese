@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+import React from 'react';
 import { useRouter } from 'next/router';
 import type { FC, PropsWithChildren } from 'react';
 
@@ -7,35 +8,41 @@ import { GlossaryLayoutStyled } from './glossary.style';
 
 //* Components
 import { TabsSlider } from '#/components/xsolare';
-import { useLayoutEffect, useState } from 'react';
 import { isWindowExists } from '#/utils/helpers';
 
 // Glossary layout
 //* ------------------------------------------------------------------------------------------ *//
 const GlossaryLayout: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
-  const [route, setRoute] = useState<number>(0);
 
-  useLayoutEffect(
-    () => {
-      const { pathname } = window.location;
+  const getDefaultTab = React.useMemo(() => {
+    if (!isWindowExists()) return 0;
 
-      if (pathname === '/glossary') setRoute(0);
-    },
-    isWindowExists() ? [window.location.pathname] : []
+    const { pathname } = window.location;
+
+    if (pathname === '/glossary') return 0;
+  }, []);
+
+  const MemoSlider = React.useMemo(
+    () => (
+      <TabsSlider
+        options={[{ value: '/', additional: '' }]}
+        renderOption={({ value, additional }) => (
+          <div onClick={() => router.push(`/glossary/${(additional as string) ?? ''}`)}>
+            {value}
+          </div>
+        )}
+        defaultTab={getDefaultTab}
+        headerText="Иероглифы китайского языка"
+        width="1000px"
+      />
+    ),
+    []
   );
 
   return (
     <GlossaryLayoutStyled>
-      <TabsSlider
-        options={[{ value: '/', additional: '' }]}
-        renderOption={({ value, additional }) => (
-          <div onClick={() => router.push(`/hieroglyph/${additional ?? ''}`)}>{value}</div>
-        )}
-        defaultTab={route}
-        headerText="Глоссарий"
-        width="1000px"
-      />
+      {MemoSlider}
       {children}
     </GlossaryLayoutStyled>
   );

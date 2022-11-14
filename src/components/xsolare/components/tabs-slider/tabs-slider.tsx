@@ -41,6 +41,8 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
     if (sliderListRef.current) calculateTabsSize(options, sliderListRef);
   }, [calculateTabsSize, isMounted, options]);
 
+  console.log('2');
+
   return (
     <TabsSliderStyled width={width}>
       {headerText && (
