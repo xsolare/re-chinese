@@ -8,7 +8,7 @@ import {
   GlossaryContentStyled,
   GlossaryStyled,
   GlossaryTitleStyled
-} from '#/pages/glossary/glossary.style';
+} from '#/styles/glossary/glossary.style';
 import { CgShortcut } from 'react-icons/cg';
 import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';

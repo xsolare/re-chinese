@@ -5,7 +5,7 @@ import type { IGlossaryItem } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import GlossaryItem from '#/components/glossary/glossary-item';
 import { glossaryItems as gi } from '../../utils/mock/glossary';
-import { GlossaryContentStyled, GlossaryStyled } from '#/pages/glossary/glossary.style';
+import { GlossaryContentStyled, GlossaryStyled } from '#/styles/glossary/glossary.style';
 import GlossaryLayout from '#/components/layouts/glossary/glossary.layout';
 
 interface IGlossaryProps {

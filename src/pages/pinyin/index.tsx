@@ -5,15 +5,18 @@ import { NextSeo } from 'next-seo';
 import { mockPinyin } from '../../utils/mock/pinyin';
 import PageLayout from '#/components/layouts/page.layout';
 
+interface IPinyinTable {
+  id: number;
+  text: string;
+}
+
 interface IPinyinProps {
-  pinyinTable: any;
+  pinyinTable: IPinyinTable[];
 }
 
 // Pinyin component
 //* ------------------------------------------------------------------------------------------ *//
-const Pinyin: NextPageWithLayout<IPinyinProps> = (props) => {
-  // const { pinyinTable } = props;
-
+const Pinyin: NextPageWithLayout<IPinyinProps> = () => {
   return (
     <>
       <NextSeo title="Pinyin" description="Pinyin page" />

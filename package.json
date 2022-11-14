@@ -1,6 +1,6 @@
 {
   "name": "re-chinese",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,7 @@
     "export": "BROWSERSLIST_IGNORE_OLD_DATA=true next export",
     "lint": "pnpm lint:ts && pnpm lint:scss",
     "lint:ts": "eslint \"./**/*.{ts,tsx}\"",
-    "lint:scss": "stylelint \"./**/*.scss --allow-empty-input",
+    "lint:scss": "stylelint \"./**/*.scss\" --allow-empty-input",
     "lint:fix": "eslint --fix \"./**/*.{ts,tsx}\" && stylelint --fix \"./**/*.scss\" --allow-empty-input",
     "lint:staged": "lint-staged --debug",
     "format": "prettier -c \"./**/*.{ts,tsx,json,scss,md}\"",
@@ -71,6 +71,7 @@
     "@types/node": "18.11.7",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "autoprefixer": "^10.4.13",

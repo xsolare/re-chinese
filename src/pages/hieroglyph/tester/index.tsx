@@ -20,7 +20,7 @@ const HieroglyphTester: NextPageWithLayout<IPinyinProps> = (props) => {
   return (
     <>
       <NextSeo title="Иероглифы" description="Иероглифы китайского языка" />
-      <div>1</div>
+      <div>{hieroglyphKeys[0].hieroglyph}</div>
     </>
   );
 };
