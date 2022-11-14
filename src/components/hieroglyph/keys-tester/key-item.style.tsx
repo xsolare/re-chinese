@@ -187,15 +187,10 @@ export const Answer = styled.div<IAnswerProps>`
     width: 40%;
   }
 
-  &:hover {
-    box-shadow: 0 0 5px ${({ theme }) => theme.palette.bg.highlight};
-    border: solid 2px ${({ theme }) => theme.palette.bg.highlight};
-  }
-
   .hieroglyph {
     display: none;
     font-family: ${({ theme }) => theme.font.family.chn};
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
   }
 
@@ -211,6 +206,11 @@ export const Answer = styled.div<IAnswerProps>`
     white-space: nowrap;
   }
 
+  &:hover {
+    box-shadow: 0 0 5px ${({ theme }) => theme.palette.bg.highlight};
+    border: solid 2px ${({ theme }) => theme.palette.bg.highlight};
+  }
+
   ${({ isAnswered, isCorrect, isWrong }) =>
     isAnswered
       ? `
@@ -221,6 +221,7 @@ export const Answer = styled.div<IAnswerProps>`
         background-color: #00db6e68;
         &:hover {
           border: solid 2px transparent;
+          box-shadow: 0 0 5px #00db6e68;
         }
         `
           : ''
@@ -233,6 +234,7 @@ export const Answer = styled.div<IAnswerProps>`
         background-color: #ff634789;
         &:hover {
           border: solid 2px transparent;
+          box-shadow: 0 0 5px #ff634789;
         }
         `
           : ''

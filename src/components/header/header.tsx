@@ -51,9 +51,6 @@ const Header: FC = observer(() => {
               <Link href="/glossary">Глоссарий</Link>
             </li>
             <li>
-              <Link href="/pinyin">Пиньин</Link>
-            </li>
-            <li>
               <Link href="/hieroglyph">Иероглифы</Link>
             </li>
           </ul>
