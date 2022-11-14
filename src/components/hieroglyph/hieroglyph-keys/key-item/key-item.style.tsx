@@ -36,7 +36,7 @@ export const HieroglyphKeysItem = styled.div<IHieroglyphKeysItemType>`
   overflow: hidden;
 
   background-color: ${({ theme }) => theme.palette.bg.mainContent};
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: ${({ theme }) => theme.palette.shadow.itemContent};
   border-radius: 10px;
   padding: 5px;
 

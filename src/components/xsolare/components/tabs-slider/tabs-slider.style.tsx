@@ -75,7 +75,7 @@ export const TabsSliderHeaderStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   > h1 {
     font-weight: 500;
