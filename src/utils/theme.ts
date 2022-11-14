@@ -68,6 +68,9 @@ const palette = {
     hieroglyph: '#8fb2ff63',
     content: '#7e7e7e'
   },
+  shadow: {
+    itemContent: '0 0 5px rgba(0, 0, 0, 0.25)'
+  },
   divider: '#cccccc'
 };
 
@@ -100,6 +103,9 @@ const paletteDark = {
     hieroglyph: '#ff496754',
     content: '#474747'
   },
+  shadow: {
+    itemContent: '0 0 5px rgba(0, 0, 0, 0.25)'
+  },
   divider: '#808080'
 };
 
@@ -131,6 +137,9 @@ const paletteBlue = {
     title: '#5d6a7e',
     hieroglyph: '#85e3ff2e',
     content: '#161b22'
+  },
+  shadow: {
+    itemContent: '0 0 5px rgba(0, 0, 0, 0.25)'
   },
   divider: '#808080'
 };

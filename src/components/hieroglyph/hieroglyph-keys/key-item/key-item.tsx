@@ -31,9 +31,9 @@ const HieroglyphKey: FC<IHieroglyphKeyProps> = (props) => {
         isPinyin={isPinyin || state.isActive}
         isTranslate={isTranslate || state.isActive}>
         <div className="index">{h.id}</div>
-        <div className="pinyin isFullyShowed">{h.pinyin}</div>
+        <div className="pinyin">{h.pinyin}</div>
         <div className="hieroglyph">{h.hieroglyph}</div>
-        <div className="translate isFullyShowed">{h.translate}</div>
+        <div className="translate">{h.translate}</div>
       </HieroglyphKeysItem>
     </HieroglyphKeysWrapper>
   );
