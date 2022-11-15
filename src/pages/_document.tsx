@@ -55,7 +55,7 @@ export default class MyDocument extends Document<DocumentProps> {
           <link rel="shortcut icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://localhost:3000" />
+          <meta name="twitter:url" content="https://rechinese.ru" />
           <meta name="twitter:title" content="ReChinese" />
           <meta name="twitter:description" content="ReChinese app" />
           {/* <meta
@@ -68,7 +68,7 @@ export default class MyDocument extends Document<DocumentProps> {
           <meta property="og:title" content="ReChinese" />
           <meta property="og:description" content="ReChinese app" />
           <meta property="og:site_name" content="ReChinese" />
-          <meta property="og:url" content="https://localhost:3000" />
+          <meta property="og:url" content="https://rechinese.ru" />
           {/* <meta property="og:image" content="https://localhost:3000/icons/apple-touch-icon.png" /> */}
         </Head>
         <Global styles={GlobalStyles} />

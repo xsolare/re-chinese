@@ -18,7 +18,7 @@ const nextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
   env: {
-    NEXT_SITE_URL: process.env.NEXT_SITE_URL || 'https://localhost'
+    NEXT_SITE_URL: process.env.NEXT_SITE_URL || 'https://rechinese.ru'
   },
   devIndicators: {
     autoPrerender: false

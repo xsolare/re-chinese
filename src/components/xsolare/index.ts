@@ -12,3 +12,17 @@ export type {
   ITooltipController,
   ITooltipProps
 } from './components/tooltip/tooltip.store';
+
+//* - word - *//
+export { Word } from './components/word/word';
+
+//* - word title - *//
+export { WordTitle } from './components/word-title/word-title';
+
+//* - checkbox - *//
+export { Checkbox } from './components/checkbox/checkbox';
+export type { CheckboxStore } from './components/checkbox/checkbox.store';
+
+//* - form - *//
+export { Form } from './components/form/form';
+export type { FormStore } from './components/form/form.store';

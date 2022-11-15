@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import type { ReactElement } from 'react';
 import type { IGlossaryContent } from '#/types/glossary';
 import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
@@ -14,7 +13,6 @@ import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
 import GlossaryStore from './store';
-import PageLayout from '#/components/layouts/page.layout';
 import { WordTitleStyled } from '#/components/xsolare/components/word-title/word-title.style';
 import { useStore } from '../../store/index';
 
@@ -81,10 +79,6 @@ GlossaryItem.getInitialProps = async (ctx) => {
   return {
     glossary: glossaryContent
   };
-};
-
-GlossaryItem.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
 };
 
 export default GlossaryItem;

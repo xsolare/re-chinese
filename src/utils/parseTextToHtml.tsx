@@ -9,8 +9,7 @@ import {
   RuleStyledHTML,
   TextStyledHTML
 } from '#/styles/common';
-import { WordTitle } from '#/components/xsolare/components/word-title/word-title';
-import { Word } from '#/components/xsolare/components/word/word';
+import { Word, WordTitle } from '#/components/xsolare';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {

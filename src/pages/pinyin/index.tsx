@@ -1,9 +1,7 @@
 import React from 'react';
-import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
 import { mockPinyin } from '../../utils/mock/pinyin';
-import PageLayout from '#/components/layouts/page.layout';
 
 interface IPinyinTable {
   id: number;
@@ -53,10 +51,6 @@ Pinyin.getInitialProps = async () => {
   return {
     pinyinTable: mockPinyin
   };
-};
-
-Pinyin.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
 };
 
 export default Pinyin;
