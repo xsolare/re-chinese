@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import { IHieroglyph, IHieroglyphTesterLS } from '#/types/hieroglyph';
+import { IHieroglyph } from '#/types/hieroglyph';
 import { randomNum } from '#/utils/helpers';
 import { action, makeObservable, observable, computed } from 'mobx';
 
