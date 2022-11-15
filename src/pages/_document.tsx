@@ -19,7 +19,7 @@ export default class MyDocument extends Document<DocumentProps> {
 
   render() {
     return (
-      <Html>
+      <Html lang="ru">
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
