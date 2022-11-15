@@ -61,7 +61,7 @@ export const GlossaryTitleStyled = styled.div<IGlossaryTitleStyled>`
   max-width: 1250px;
   margin: 0 auto 20px auto;
   padding: 5px 0;
-
+  user-select: none;
   > h1 {
     font-size: 2rem;
     margin: 0;
