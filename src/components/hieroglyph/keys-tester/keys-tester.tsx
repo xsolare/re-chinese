@@ -1,20 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { FC } from 'react';
 import type { IHieroglyph } from '#/types/hieroglyph';
-import { useNewStore } from '../../xsolare/helpers/index';
 import { KeysTesterStore } from './keys-tester.store';
+import { observer } from 'mobx-react-lite';
+import { useNewStore } from '#/components/xsolare/helpers';
 
 //* Components
 
 //* Styles
 import {
+  PageContent,
   Answer,
   HieroglyphKeysAnswers,
   HieroglyphKeysQuestion,
   HieroglyphKeysScore,
   Hr
 } from './key-item.style';
-import { observer } from 'mobx-react-lite';
 
 interface IKeysTesterProps {
   hieroglyphKeys: IHieroglyph[];
@@ -25,18 +26,22 @@ interface IKeysTesterProps {
 const KeysTester: FC<IKeysTesterProps> = (props) => {
   const { hieroglyphKeys } = props;
 
+  const pageRef = useRef<HTMLDivElement>(null);
   const store = useNewStore(KeysTesterStore, hieroglyphKeys);
   const { state, handleAnswer, score, lastAnswer, reloadQuestion } = store;
 
   useEffect(() => {
-    document.addEventListener('mousedown', reloadQuestion);
+    const ref = pageRef.current;
+    if (!ref) return;
+
+    ref.addEventListener('mousedown', reloadQuestion);
     return () => {
-      document.removeEventListener('mousedown', reloadQuestion);
+      ref.removeEventListener('mousedown', reloadQuestion);
     };
-  }, []);
+  }, [pageRef.current]);
 
   return (
-    <>
+    <PageContent ref={pageRef}>
       <HieroglyphKeysScore>
         <div className="correct">{score.correct}</div>
         <div className="wrong">{score.wrong}</div>
@@ -67,7 +72,7 @@ const KeysTester: FC<IKeysTesterProps> = (props) => {
           </Answer>
         ))}
       </HieroglyphKeysAnswers>
-    </>
+    </PageContent>
   );
 };
 

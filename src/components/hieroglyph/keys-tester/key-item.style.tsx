@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { breakpoint } from '../../../utils/theme';
 
+export const PageContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+
 interface IHieroglyphKeysQuestionProps {
   isPinyin: boolean;
   isTranslate: boolean;
@@ -203,7 +211,7 @@ export const Answer = styled.div<IAnswerProps>`
   .translate {
     display: none;
     font-size: 0.7rem;
-    white-space: nowrap;
+    text-align: center;
   }
 
   &:hover {

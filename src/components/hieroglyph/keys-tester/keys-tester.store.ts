@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import { IHieroglyph } from '#/types/hieroglyph';
+import { IHieroglyph, IHieroglyphTesterLS } from '#/types/hieroglyph';
 import { randomNum } from '#/utils/helpers';
 import { action, makeObservable, observable, computed } from 'mobx';
 
@@ -78,11 +78,25 @@ export class KeysTesterStore {
       isCorrect: givenAnswer.id === this.state.question.id
     };
     this.state.answers.push(answer);
-
-    // setTimeout(() => {
-    //   this.reloadQuestion();
-    // }, 1000);
+    this.saveAnswerIntoLocalStorage(answer);
   };
+
+  private saveAnswerIntoLocalStorage(answer: IHieroglyphAnswer): void {
+    const data = JSON.parse(localStorage.getItem('hieroglyphTester') ?? '{}') as {
+      [key in string]: {
+        '+': number;
+        '-': number;
+      };
+    };
+
+    const key = answer.isCorrect ? '+' : '-';
+    const { id } = answer.question;
+
+    if (!data[id]) data[id] = { '+': 0, '-': 0 };
+    data[id][key] += 1;
+
+    localStorage.setItem('hieroglyphTester', JSON.stringify(data));
+  }
 
   get score() {
     return this.state.answers.reduce(

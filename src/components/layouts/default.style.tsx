@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const DefaultStyled = styled.main`
   position: relative;
   z-index: 1;
-  padding-top: ${({ theme }) => theme.sizes.header.height};
 
   min-height: 100vh;
   height: 100%;
@@ -13,4 +12,5 @@ export const DefaultStyled = styled.main`
   color: ${({ theme }) => theme.palette.color.text};
 
   padding: 10px;
+  padding-top: ${({ theme }) => theme.sizes.header.height};
 `;
