@@ -7,7 +7,7 @@ import { NextSeo } from 'next-seo';
 //* Components
 import { mockHieroglyph } from '#/utils/mock/hieroglyph';
 import HieroglyphLayout from '#/components/layouts/hieroglyph/hieroglyph.layout';
-import KeysTester from '../../../components/hieroglyph/keys-tester/keys-tester';
+import KeysTester from '#/components/hieroglyph/keys-tester/keys-tester';
 
 interface IPinyinProps {
   hieroglyphKeys: IHieroglyph[];

@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from '../_app';
 import type { IHieroglyph } from '#/types/hieroglyph';
 import { NextSeo } from 'next-seo';
-import { mockHieroglyph } from '../../utils/mock/hieroglyph';
+import { mockHieroglyph } from '#/utils/mock/hieroglyph';
 
 //* Components
 import HieroglyphKeys from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys';

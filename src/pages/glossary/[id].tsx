@@ -12,9 +12,9 @@ import { CgShortcut } from 'react-icons/cg';
 import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
-import GlossaryStore from './store';
 import { WordTitleStyled } from '#/components/xsolare/components/word-title/word-title.style';
-import { useStore } from '../../store/index';
+import { useStore } from '#/store';
+import GlossaryStore from '#/store/pages/glossary.store';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
