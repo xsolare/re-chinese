@@ -35,6 +35,7 @@ const text = `
 
 export const keyiNengHuiGlossaryItem2: IGlossaryItem = {
   id: '2',
+  url: 'keyiNengHui',
   hsk: '1',
   icon: '1',
   title: 'Глаголы 可以 keyi 能 neng 会 hui и их разница',
@@ -43,8 +44,9 @@ export const keyiNengHuiGlossaryItem2: IGlossaryItem = {
 
 export const keyiNengHuiGlossary2: IGlossaryContent = {
   id: '2',
+  url: 'keyiNengHui',
   title: 'Глаголы 可以 keyi 能 neng 会 hui и их разница',
-  hsk: 1,
+  hsk: '1',
   text,
   briefly: [
     {

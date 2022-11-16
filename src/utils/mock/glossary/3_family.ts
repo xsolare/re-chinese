@@ -4,6 +4,7 @@ const text = '<div>asdasd <span type="h" p="le">家</span></div>';
 
 export const familyGlossaryItem3: IGlossaryItem = {
   id: '3',
+  url: 'family',
   hsk: '1',
   icon: '1',
   title: 'Семья',
@@ -12,8 +13,9 @@ export const familyGlossaryItem3: IGlossaryItem = {
 
 export const familyGlossary3: IGlossaryContent = {
   id: '3',
+  url: 'family',
   title: 'Семья',
-  hsk: 1,
+  hsk: '1',
   text,
   briefly: [
     {

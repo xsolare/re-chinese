@@ -299,6 +299,7 @@ export const WarnStyledHTML = styled.span`
 `;
 
 export const ExampleStyledHTML = styled.div`
+  margin: 10px 0;
   padding-left: 10px;
   border-left: 2px dashed ${({ theme }) => theme.palette.border.hieroglyph};
 `;

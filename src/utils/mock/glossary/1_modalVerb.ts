@@ -199,6 +199,7 @@ const text = `
 
 export const mvGlossaryItem1: IGlossaryItem = {
   id: '1',
+  url: 'modalVerb',
   hsk: '1',
   icon: '1',
   title: 'Модальные глаголы',
@@ -207,8 +208,9 @@ export const mvGlossaryItem1: IGlossaryItem = {
 
 export const mvGlossary1: IGlossaryContent = {
   id: '1',
+  url: 'modalVerb',
   title: 'Модальные глаголы',
-  hsk: 1,
+  hsk: '1',
   text,
   briefly: [
     {

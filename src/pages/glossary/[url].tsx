@@ -13,8 +13,8 @@ import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
 import { WordTitleStyled } from '#/components/xsolare/components/word-title/word-title.style';
-import { useStore } from '#/store';
 import GlossaryStore from '#/store/pages/glossary.store';
+import { useNewStore } from '#/components/xsolare/helpers';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -25,11 +25,8 @@ interface IGlossaryItemProps {
 const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) => {
   const { glossary } = props;
 
-  const store = useMemo(() => new GlossaryStore(), []);
+  const store = useNewStore(GlossaryStore);
   const GlossaryContent = useMemo(() => parseGlossary(glossary.text), []);
-
-  const { wordStore } = useStore();
-  console.log('wordStore', wordStore.state.type);
 
   const { setBriefly, state } = store;
 
@@ -73,7 +70,7 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
 GlossaryItem.getInitialProps = async (ctx) => {
   const { query } = ctx;
   const glossaryContent = await new Promise<IGlossaryContent>((r) =>
-    r(g.find((f) => f.id === query?.id) as IGlossaryContent)
+    r(g.find((f) => f.url === query?.url) as IGlossaryContent)
   );
 
   return {
