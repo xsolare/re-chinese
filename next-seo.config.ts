@@ -7,9 +7,9 @@ const nextSeoConfig = {
     type: 'website',
     images: [
       {
-        url: `${process.env.NEXT_SITE_URL ?? ''}/assets/image/meta.png`,
-        width: 1200,
-        height: 630,
+        url: `${process.env.NEXT_SITE_URL ?? ''}/image/meta.png`,
+        width: 512,
+        height: 512,
         alt: 'Jusang'
       }
     ]

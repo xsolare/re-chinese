@@ -43,27 +43,50 @@ export default class MyDocument extends Document<DocumentProps> {
           <meta name="msapplication-TileColor" content="#050709" />
           <meta name="msapplication-tap-highlight" content="no" />
 
-          <link rel="apple-touch-icon" sizes="128x128" href="/icons/logo-128x128.png" />
-          <link rel="apple-touch-icon" sizes="192x192" href="/icons/logo-192x192.png" />
-          <link rel="apple-touch-icon" sizes="384x384" href="/icons/logo-384x384.png" />
-          <link rel="apple-touch-icon" sizes="512x512" href="/icons/logo-521x512.png" />
+          <link
+            rel="apple-touch-icon"
+            sizes="128x128"
+            href="https://rechinese.ru/icons/logo-128x128.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="192x192"
+            href="https://rechinese.ru/icons/logo-192x192.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="384x384"
+            href="https://rechinese.ru/icons/logo-384x384.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="512x512"
+            href="https://rechinese.ru/icons/logo-521x512.png"
+          />
 
-          <link rel="mask-icon" href="/maskable/maskable_icon_x128.png" color="#d55b5b" />
-          <link rel="icon" type="image/png" sizes="128x128" href="/image/meta.png" />
+          <link
+            rel="mask-icon"
+            href="https://rechinese.ru/maskable/maskable_icon_x128.png"
+            color="#d55b5b"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="128x128"
+            href="https://rechinese.ru/image/meta.png"
+          />
           <link rel="shortcut icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://rechinese.ru" />
           <meta name="twitter:title" content="ReChinese" />
-          <meta name="twitter:image" content="/image/meta.png" />
+          <meta name="twitter:image" content="https://rechinese.ru/image/meta.png" />
           <meta name="twitter:creator" content="@xSolare" />
 
           <meta property="og:type" content="website" />
           <meta property="og:title" content="ReChinese" />
           <meta property="og:description" content="Здесь ненавидят кислород." />
           <meta property="og:site_name" content="ReChinese" />
-          <meta property="og:url" content="https://rechinese.ru" />
-          <meta property="og:image" content="https://rechinese.ru/image/meta.png" />
         </Head>
         <Global styles={GlobalStyles} />
         <body>
