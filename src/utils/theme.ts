@@ -20,14 +20,14 @@ const sizes = {
 
 const font = {
   family: {
-    base: `Rubik, 'Noto Sans SC', sans-serif, -apple-system, blinkmacsystemfont,
-          'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;`,
+    base: 'Rubik, Noto Sans SC, sans-serif',
     monospace: `
-    "sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New',"
+    "sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New'"
     `,
     text: 'Rubik',
-    chn: 'Noto Sans SC'
+    chn: 'Noto Sans SC, sans-serif',
+    pinyin: 'Noto Sans SC, sans-serif'
+    // pinyin: 'Itim'
   },
   size: {
     base: '1rem !default',

@@ -66,8 +66,10 @@ const optionsForGlossary: HTMLReactParserOptions = {
         }
 
         if (type === 'example') {
+          const { row } = rest;
+
           return (
-            <ExampleStyledHTML>
+            <ExampleStyledHTML row={row}>
               {domToReact(domNode.children, optionsForGlossary)}
             </ExampleStyledHTML>
           );

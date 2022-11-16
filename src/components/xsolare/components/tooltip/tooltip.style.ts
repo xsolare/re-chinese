@@ -6,7 +6,6 @@ export const TooltipStyled = styled.div`
   .tooltip {
     border-radius: 6px;
     padding: 8px;
-    font-size: 14px;
     line-height: 1.5;
     z-index: 99999;
     opacity: 0.95;
@@ -14,8 +13,10 @@ export const TooltipStyled = styled.div`
     max-width: 400px;
 
     color: ${({ theme }) => theme.palette.color.textInvert};
-    font-family: ${({ theme }) => theme.font.family.chn};
+    font-family: ${({ theme }) => theme.font.family.pinyin};
+    font-weight: 400;
     font-size: 1rem;
+
     background-color: ${({ theme }) => theme.palette.bg.modal};
   }
 `;

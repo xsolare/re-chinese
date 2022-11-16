@@ -11,13 +11,16 @@ export const WordStyled = styled.div<IWordStyledProps>`
   font-size: ${({ theme }) => theme.font.size.hieroglyph};
   font-family: ${({ theme }) => theme.font.family.chn};
   font-weight: 400;
+
   margin: 4px 0;
   margin-right: 4px;
 
   .pinyin {
     color: ${({ theme }) => theme.palette.color.pinyin};
-    font-weight: 500;
+    font-family: ${({ theme }) => theme.font.family.pinyin};
+    font-weight: 400;
     font-size: 1rem;
+
     letter-spacing: 1px;
   }
 

@@ -3,7 +3,7 @@ import type { IGlossaryItem, IGlossaryContent } from '#/types/glossary';
 const text = `
 <div>
     <span type="text">Чтобы более точно указать местоположение, необходимо после дополнения места использовать послелоги:</span>
-    <div type="example">
+    <div type="example" row="2">
         <span type="h" p="lǐ" t="в, внутри">里</span> <br />      
         <span type="h" p="qián" t="впереди">前</span> <br />      
         <span type="h" p="shàng" t="сверху, на чём-то">上</span> <br />     

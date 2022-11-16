@@ -69,7 +69,7 @@ export const HieroglyphKeysQuestion = styled.div<IHieroglyphKeysQuestionProps>`
       justify-content: center;
 
       color: ${({ theme }) => theme.palette.color.pinyin};
-      font-family: ${({ theme }) => theme.font.family.chn};
+      font-family: ${({ theme }) => theme.font.family.pinyin};
       font-weight: 400;
       font-size: 1rem;
 
@@ -199,12 +199,12 @@ export const Answer = styled.div<IAnswerProps>`
     display: none;
     font-family: ${({ theme }) => theme.font.family.chn};
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .pinyin {
-    font-family: ${({ theme }) => theme.font.family.chn};
-    font-weight: 500;
+    font-family: ${({ theme }) => theme.font.family.pinyin};
+    font-weight: 400;
     font-size: 1rem;
   }
 
