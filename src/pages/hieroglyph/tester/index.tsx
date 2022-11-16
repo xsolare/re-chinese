@@ -18,7 +18,10 @@ interface IPinyinProps {
 const HieroglyphTester: NextPageWithLayout<IPinyinProps> = (props) => {
   return (
     <>
-      <NextSeo title="Иероглифы" description="Иероглифы китайского языка" />
+      <NextSeo
+        title="Карточки китайских ключей"
+        description="Проверка знаний ключей китайского языка"
+      />
       <KeysTester {...props} />
     </>
   );

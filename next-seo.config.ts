@@ -3,14 +3,14 @@ const nextSeoConfig = {
   titleTemplate: '%s • ReChinese',
   description: '🫀 ReChinese',
   openGraph: {
-    url: process.env.webUrl,
+    url: process.env.NEXT_SITE_URL,
     type: 'website',
     images: [
       {
-        url: `${process.env.webUrl ?? ''}/meta/meta-default.jpg`,
+        url: `${process.env.NEXT_SITE_URL ?? ''}/assets/image/meta.png`,
         width: 1200,
         height: 630,
-        alt: 'welcome!'
+        alt: 'Jusang'
       }
     ]
   }

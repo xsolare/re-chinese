@@ -20,7 +20,7 @@ const Hieroglyph: NextPageWithLayout<IPinyinProps> = (props) => {
 
   return (
     <>
-      <NextSeo title="Иероглифы" description="Иероглифы китайского языка" />
+      <NextSeo title="Ключи-иероглифы" description="Ключи китайского языка" />
       <HieroglyphKeys hieroglyphKeys={hieroglyphKeys} />
     </>
   );
