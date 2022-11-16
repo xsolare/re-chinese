@@ -3,6 +3,7 @@ import type { FC, PropsWithChildren, ReactNode, ReactElement } from 'react';
 import type { NextComponentType, NextPage } from 'next';
 import type { ThemeVarious } from '#/contexts/theme';
 import type { IInitialData } from '#/types/common';
+import { Analytics } from '@vercel/analytics/react';
 import { InitialContextProvider } from '#/contexts/initial-data';
 import { RootStoreProvider } from '#/contexts/root-store';
 import { getCookie } from 'cookies-next';
@@ -46,6 +47,7 @@ const App: IAppProps = (props) => {
           <AppWrapper>{Inner}</AppWrapper>
         </InitialContextProvider>
       </RootStoreProvider>
+      <Analytics />
     </>
   );
 };
