@@ -1,15 +1,16 @@
-export interface IGlossaryItem {
+export interface IGlossaryBase {
   id: string;
+  url: string;
   title: string;
   hsk: string;
+}
+
+export interface IGlossaryItem extends IGlossaryBase {
   icon: string;
   badges: string[];
 }
 
-export interface IGlossaryContent {
-  id: string;
-  title: string;
-  hsk: number;
+export interface IGlossaryContent extends IGlossaryBase {
   text: string;
   briefly: IGlossaryBriefly[];
 }
