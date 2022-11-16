@@ -1,4 +1,3 @@
-
 export interface IHieroglyph {
   id: number;
   hieroglyph: string;
