@@ -298,10 +298,36 @@ export const WarnStyledHTML = styled.span`
   border-radius: 4px 10px 10px 4px;
 `;
 
-export const ExampleStyledHTML = styled.div`
+type IExampleStyledHTML = {
+  row?: string;
+};
+export const ExampleStyledHTML = styled.div<IExampleStyledHTML>`
   margin: 10px 0;
   padding-left: 10px;
   border-left: 2px dashed ${({ theme }) => theme.palette.border.hieroglyph};
+
+  ${({ row }) =>
+    row
+      ? `
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    > div {
+      min-width: 50%;
+      margin: 4px 0;
+    }  
+
+    ${breakpoint('md')}{
+      flex-direction: column;
+      
+      > div {
+        min-width: 100%;
+      }  
+    };
+  `
+      : ''}
 `;
 
 export const TextStyledHTML = styled.span`
