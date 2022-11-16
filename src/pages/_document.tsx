@@ -22,12 +22,6 @@ export default class MyDocument extends Document<DocumentProps> {
       <Html lang="ru">
         <Head>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossOrigin" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Rubik+Bubbles&family=Rubik:wght@500;600;700&display=swap"
-            rel="stylesheet"
-          />
 
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#050709" />

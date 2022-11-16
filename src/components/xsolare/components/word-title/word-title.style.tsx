@@ -32,9 +32,10 @@ export const WordTitleStyled = styled.div`
     padding: 8px;
     line-height: 1;
 
-    font-size: 2.5rem;
-    font-weight: 400;
     font-family: ${({ theme }) => theme.font.family.chn};
+    font-weight: 400;
+    font-size: 2.5rem;
+
     letter-spacing: 1.5px;
 
     background: ${({ theme }) => theme.palette.bg.hieroglyph};
@@ -51,7 +52,7 @@ export const WordTitleStyled = styled.div`
 
     > :first-child {
       color: ${({ theme }) => theme.palette.color.pinyin};
-      font-family: ${({ theme }) => theme.font.family.chn};
+      font-family: ${({ theme }) => theme.font.family.pinyin};
       font-weight: 400;
     }
 

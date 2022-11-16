@@ -64,7 +64,8 @@ export const HieroglyphKeysItem = styled.div<IHieroglyphKeysItemType>`
     justify-content: center;
 
     color: ${({ theme }) => theme.palette.color.pinyin};
-    font-family: ${({ theme }) => theme.font.family.chn};
+
+    font-family: ${({ theme }) => theme.font.family.pinyin};
     font-weight: 400;
     font-size: 1rem;
 
@@ -80,9 +81,10 @@ export const HieroglyphKeysItem = styled.div<IHieroglyphKeysItemType>`
     align-items: center;
     justify-content: center;
 
-    font-size: 2.5rem;
-    font-weight: 400;
     font-family: ${({ theme }) => theme.font.family.chn};
+    font-weight: 400;
+    font-size: 2.5rem;
+
     letter-spacing: 1.5px;
 
     ${breakpoint('md')} {
