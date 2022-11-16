@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { breakpoint } from '../../../utils/theme';
+import { breakpoint } from '#/utils/theme';
 
 export const PageContent = styled.div`
   display: flex;

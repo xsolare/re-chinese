@@ -35,7 +35,7 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
 
   return (
     <>
-      <NextSeo title="Glossary item content" description="Glossary item content page" />
+      <NextSeo title="Статья" description="Статья" />
       <GlossaryStyled>
         <GlossaryTitleStyled isBriefly={state.isBriefly}>
           <div className="option">

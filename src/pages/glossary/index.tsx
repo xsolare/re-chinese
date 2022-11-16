@@ -19,7 +19,7 @@ const Glossary: NextPageWithLayout<IGlossaryProps> = (props) => {
 
   return (
     <>
-      <NextSeo title="Glossary" description="Glossary page" />
+      <NextSeo title="Глоссарий" description="Глоссарий китайского языка" />
       <GlossaryStyled>
         <GlossaryContentStyled>
           {glossaryItems.map((lib) => (

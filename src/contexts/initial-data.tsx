@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useEffect, createContext, useMemo } from 'react';
 
-import { useStore } from '../store/index';
+import { useStore } from '#/store/index';
 import type { IInitialData } from '#/types/common';
 
 export const InitialContext = createContext({} as IInitialData);
