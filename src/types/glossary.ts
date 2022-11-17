@@ -11,6 +11,7 @@ export interface IGlossaryItem extends IGlossaryBase {
 }
 
 export interface IGlossaryContent extends IGlossaryBase {
+  description: string;
   text: string;
   briefly: IGlossaryBriefly[];
 }

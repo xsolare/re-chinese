@@ -44,8 +44,9 @@ export const keyiNengHuiGlossaryItem2: IGlossaryItem = {
 
 export const keyiNengHuiGlossary2: IGlossaryContent = {
   id: '2',
+  description: 'Глаголы 可以 keyi 能 neng 会 hui и их разница в китайском языке',
   url: 'keyiNengHui',
-  title: 'Глаголы 可以 keyi 能 neng 会 hui и их разница',
+  title: '可以 keyi 能 neng 会 hui',
   hsk: '1',
   text,
   briefly: [

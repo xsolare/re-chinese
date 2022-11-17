@@ -4,7 +4,7 @@ import { WordTitleStyled } from './word-title.style';
 import React from 'react';
 
 interface IWordTitleProps extends PropsWithChildren {
-  index: string;
+  index: string | number;
   p: string;
   t: string;
 }

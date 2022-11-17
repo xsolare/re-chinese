@@ -208,6 +208,7 @@ export const mvGlossaryItem1: IGlossaryItem = {
 
 export const mvGlossary1: IGlossaryContent = {
   id: '1',
+  description: 'Модальные глаголы в китайском языке',
   url: 'modalVerb',
   title: 'Модальные глаголы',
   hsk: '1',

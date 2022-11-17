@@ -14,10 +14,10 @@ export type {
 } from './components/tooltip/tooltip.store';
 
 //* - word - *//
-export { Word } from './components/word/word';
+export { Word } from './components/content/word/word';
 
 //* - word title - *//
-export { WordTitle } from './components/word-title/word-title';
+export { WordTitle } from './components/content/word-title/word-title';
 
 //* - checkbox - *//
 export { Checkbox } from './components/checkbox/checkbox';

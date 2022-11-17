@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
-import type { ITooltipProps } from '../tooltip/tooltip.store';
+import type { ITooltipProps } from '#/components/xsolare';
 import { observer } from 'mobx-react-lite';
 import { WordStyled } from './word.style';
-import { Tooltip } from '../tooltip/tooltip';
 import React from 'react';
+import { Tooltip } from '#/components/xsolare';
 
 interface IWordProps extends PropsWithChildren {
   type?: number;

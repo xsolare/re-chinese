@@ -1,8 +1,7 @@
 import { setupFormStores } from '#/components/xsolare/helpers';
-import { FormStore } from '#/components/xsolare/components/form/form.store';
 import { isWindowExists } from '#/utils/helpers';
 import { makeObservable, observable } from 'mobx';
-import { CheckboxStore } from '#/components/xsolare';
+import { CheckboxStore, FormStore } from '#/components/xsolare';
 
 interface IHieroglyphKeysStoreForm {
   isPinyin: boolean;

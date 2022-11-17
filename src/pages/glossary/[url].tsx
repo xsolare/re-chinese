@@ -12,9 +12,9 @@ import { CgShortcut } from 'react-icons/cg';
 import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
-import { WordTitleStyled } from '#/components/xsolare/components/word-title/word-title.style';
 import GlossaryStore from '#/store/pages/glossary.store';
 import { useNewStore } from '#/components/xsolare/helpers';
+import { WordTitle } from '#/components/xsolare';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -32,7 +32,7 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
 
   return (
     <>
-      <NextSeo title="Статья" description="Статья" />
+      <NextSeo title={glossary.title} description={glossary.description} />
       <GlossaryStyled>
         <GlossaryTitleStyled isBriefly={state.isBriefly}>
           <div className="option">
@@ -51,14 +51,9 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
           {state.isBriefly &&
             glossary.briefly.map((b, index) => (
               <GlossaryContentItemStyled key={b.id}>
-                <WordTitleStyled>
-                  <span>{index + 1}</span>
-                  <h2>{b.hieroglyph}</h2>
-                  <div>
-                    <span>{b.pinyin}</span>
-                    <span>{b.translate}</span>
-                  </div>
-                </WordTitleStyled>
+                <WordTitle p={b.pinyin} t={b.translate} index={index}>
+                  {b.hieroglyph}
+                </WordTitle>
               </GlossaryContentItemStyled>
             ))}
         </GlossaryContentStyled>

@@ -1,15 +1,10 @@
 import type { HTMLReactParserOptions } from 'html-react-parser';
 import React from 'react';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
-import {
-  ExampleStyledHTML,
-  HrStyledHTML,
-  TextTabStyledHTML,
-  WarnStyledHTML,
-  RuleStyledHTML,
-  TextStyledHTML
-} from '#/styles/common';
+import { HrStyledHTML, TextTabStyledHTML, RuleStyledHTML, TextStyledHTML } from '#/styles/common';
 import { Word, WordTitle } from '#/components/xsolare';
+import { Example } from '#/components/xsolare/components/content/example/example';
+import { Warn } from '#/components/xsolare/components/content/warn/warn';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {
@@ -19,13 +14,7 @@ const optionsForGlossary: HTMLReactParserOptions = {
 
       if (name === 'span') {
         if (type === 'h') {
-          const { p, t } = rest;
-
-          return (
-            <Word p={p} t={t}>
-              {domToReact(domNode.children, optionsForGlossary)}
-            </Word>
-          );
+          return <Word {...rest}>{domToReact(domNode.children, optionsForGlossary)}</Word>;
         }
 
         if (type === 'tab') {
@@ -35,23 +24,21 @@ const optionsForGlossary: HTMLReactParserOptions = {
             </TextTabStyledHTML>
           );
         }
-        if (type === 'text') {
+        if (type === 'text')
           return (
             <TextStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</TextStyledHTML>
           );
-        }
+
         if (type === 'warn') {
-          return (
-            <WarnStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</WarnStyledHTML>
-          );
+          return <Warn>{domToReact(domNode.children, optionsForGlossary)}</Warn>;
         }
-        if (type === 'rule') {
+
+        if (type === 'rule')
           return (
             <RuleStyledHTML>
               <span>{domToReact(domNode.children, optionsForGlossary)}</span>
             </RuleStyledHTML>
           );
-        }
       }
 
       if (name === 'div') {
@@ -66,13 +53,7 @@ const optionsForGlossary: HTMLReactParserOptions = {
         }
 
         if (type === 'example') {
-          const { row } = rest;
-
-          return (
-            <ExampleStyledHTML row={row}>
-              {domToReact(domNode.children, optionsForGlossary)}
-            </ExampleStyledHTML>
-          );
+          return <Example {...rest}>{domToReact(domNode.children, optionsForGlossary)}</Example>;
         }
       }
 

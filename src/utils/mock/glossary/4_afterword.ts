@@ -4,25 +4,33 @@ const text = `
 <div>
     <span type="text">Чтобы более точно указать местоположение, необходимо после дополнения места использовать послелоги:</span>
     <div type="example" row="2">
-        <span type="h" p="lǐ" t="в, внутри">里</span> <br />      
-        <span type="h" p="qián" t="впереди">前</span> <br />      
-        <span type="h" p="shàng" t="сверху, на чём-то">上</span> <br />     
-        <span type="h" p="zhōng" t="внутри, в, между, посреди; среди">中</span> <br />   
-        <span type="h" p="zuǒ" t="слева">左</span> <br />       
-        <span type="h" p="nèi" t="внутри">内</span> <br />       
-        <span type="h" p="xià" t="под чем-то">下</span> <br />       
-        <span type="h" p="yòu" t="справа">右</span> <br />       
-        <span type="h" p="hòu" t="позади, сзади">后</span> <br />    
+        <span type="h" p="lǐ" t="в, внутри">里</span><br/>
+        <span type="h" p="qián" t="впереди">前</span><br/>
+        <span type="h" p="shàng" t="сверху, на чём-то">上</span><br/>
+        <span type="h" p="zhōng" t="внутри, в, между, посреди; среди">中</span><br/>
+        <span type="h" p="zuǒ" t="слева">左</span><br/>
+        <span type="h" p="nèi" t="внутри">内</span><br/>
+        <span type="h" p="xià" t="под чем-то">下</span><br/>
+        <span type="h" p="yòu" t="справа">右</span><br/>
+        <span type="h" p="hòu" t="позади, сзади">后</span><br/>
     </div>
-
     <br />  
+    <span type="warn">
+      Послелоги обычно <strong>не ставятся</strong> после географических названий и мест, а также после слов, обозначающих стороны горизонта:
+      <br/>
+      <span type="h" p="běi" t="Север">北</span>
+      <span type="h" p="nán" t="Юг">南</span>
+      <span type="h" p="xī" t="Запад">西</span>
+      <span type="h" p="dōng" t="Восток">东</span> 
+    </span>
+    <hr />
     <span type="text">Также вместо послелогов можно использовать вспомогательные существительные, чтобы указать местоположение:</span>
     <div type="example">
-        <span type="h" p="zhōngjian" t="посередине, среди">中间</span> <br />   
-        <span type="h" p="duìmian" t="напротив">对面</span> <br />   
-        <span type="h" p="pángbian" t="рядом">旁边</span> <br />   
-        <span type="h" p="zuǒbiān" t="слева">左边</span> <br />   
-        <span type="h" p="yòubiān" t="справа">右边</span> <br />   
+        <span type="h" p="zhōngjian" t="посередине, среди">中间</span><br/>
+        <span type="h" p="duìmian" t="напротив">对面</span><br/>
+        <span type="h" p="pángbian" t="рядом">旁边</span><br/>
+        <span type="h" p="zuǒbiān" t="слева">左边</span><br/>
+        <span type="h" p="yòubiān" t="справа">右边</span><br/>
     </div>
 </div>
 
@@ -40,7 +48,8 @@ export const afterwordGlossaryItem4: IGlossaryItem = {
 export const afterwordGlossary4: IGlossaryContent = {
   id: '4',
   url: 'afterword',
-  title: 'Послеслоги (后置词)',
+  description: 'Послеслоги (后置词 / hòu zhì cí) в китайском языке',
+  title: 'Послеслоги (后置词 / hòu zhì cí)',
   hsk: '1',
   text,
   briefly: [
