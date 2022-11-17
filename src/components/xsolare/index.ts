@@ -14,6 +14,7 @@ export type {
 } from './components/tooltip/tooltip.store';
 
 //* - word - *//
+// eslint-disable-next-line import/no-cycle
 export { Word } from './components/content/word/word';
 
 //* - word title - *//
