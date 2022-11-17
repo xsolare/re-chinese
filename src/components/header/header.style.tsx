@@ -50,7 +50,7 @@ export const HeaderStyled = styled.header<IHeaderStyledProps>`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    gap: 12px;
+    gap: 16px;
 
     margin: 0;
     padding: 0 10px;
@@ -64,6 +64,10 @@ export const HeaderStyled = styled.header<IHeaderStyledProps>`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    span {
+      margin-right: 4px;
+    }
 
     svg {
       min-width: 20px;

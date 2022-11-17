@@ -20,8 +20,7 @@ export const WordStyled = styled.div<IWordStyledProps>`
     font-family: ${({ theme }) => theme.font.family.pinyin};
     font-weight: 400;
     font-size: 1rem;
-
-    letter-spacing: 1px;
+    letter-spacing: 0.2px;
   }
 
   .hieroglyph {
@@ -33,91 +32,60 @@ export const WordStyled = styled.div<IWordStyledProps>`
   }
 
   .translate {
+    font-family: ${({ theme }) => theme.font.family.text};
     color: ${({ theme }) => theme.palette.color.text};
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
   }
 
   ${({ type, theme }) => getWordStyle(type, theme)}
 `;
 
 function getWordStyle(type: number, theme: Theme): string {
-  if (type === 2) {
-    return `
+  switch (type) {
+    case 2:
+      return `
     display: inline-flex;
     gap: 10px;
-    
-    .pinyin {
-      display:flex;
-      align-items: center;
-      color: ${theme.palette.color.pinyin};
+    `;
 
-      font-size: 1rem;
-      letter-spacing:0.2px;
-      font-weight: 400;
-      text-align: center;
-    }
-
+    case 3:
+      return `
     .hieroglyph {
-      grid-area: H;
-      height: 100%;
-      display:flex;
-      align-items: center;
-
-
-      letter-spacing: 1.5px;
-      font-size: 1.2rem;
-    }
-
-    .translate {
-      grid-area: T;
-
-      border-bottom: 1px solid ${theme.palette.border.hieroglyph};
-      border-right: 1px solid ${theme.palette.border.hieroglyph};
-      border-radius: 0 0 5px 0;
-      padding: 2px 10px;
-
-      letter-spacing:0.2px;
-      font-size: 0.8rem;
-      font-weight: 300;
-      font-family: ${theme.font.family.text};
+      margin: 0 5px;
     }
     `;
-  }
 
-  if (type === 4) {
-    return `
+    case 4:
+      return `
     display: inline-flex;
     flex-direction: column;
     border: 1px solid ${theme.palette.border.hieroglyph};
     border-radius: 10px;
-    padding: 5px 10px;
 
     .pinyin {
-      font-size: 1rem;
-      letter-spacing:0.2px;
-      font-weight: 400;
       text-align: center;
-      color: ${theme.palette.color.pinyin};
+      padding: 5px 10px;
     }
 
     .hieroglyph {
       font-size: 1.2rem;
       text-align: center;
+      border-radius: 0px;
+      border: none;
+      border-top: 1px solid ${theme.palette.border.hieroglyph};
+      border-bottom: 1px solid ${theme.palette.border.hieroglyph};
     }
 
     .translate {
-      font-weight: 500;
-      font-size: 1rem;
-      letter-spacing:0.2px;
       text-align: center;
+      padding: 5px 10px;
     }
     `;
-  }
 
-  if (type === 5) {
-    return `
+    case 5:
+      return `
     display: inline-grid;
     grid-template-areas: 
                   "H P"
@@ -126,46 +94,42 @@ function getWordStyle(type: number, theme: Theme): string {
 
     .pinyin {
       grid-area: P;
+      display:flex;
+      align-items: center;
 
-      font-size: 0.8rem;
-      letter-spacing:0.2px;
-      font-weight: 400;
       border-top: 1px solid ${theme.palette.border.hieroglyph};
       border-right: 1px solid ${theme.palette.border.hieroglyph};
       border-bottom: 1px solid ${theme.palette.divider};
-      border-radius: 0 5px 0 0;
+      border-radius: 0 10px 0 0;
       padding: 2px 10px;
-      color: ${theme.palette.color.pinyin};
     }
 
     .hieroglyph {
       grid-area: H;
-      height: 100%;
       display:flex;
       align-items: center;
 
-      border-radius: 5px 0 0 5px;
+      border-radius: 10px 0 0 10px;
       padding: 0 10px;
 
-      letter-spacing: 1.5px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
 
     .translate {
       grid-area: T;
+      display:flex;
+      align-items: center;
 
       border-bottom: 1px solid ${theme.palette.border.hieroglyph};
       border-right: 1px solid ${theme.palette.border.hieroglyph};
-      border-radius: 0 0 5px 0;
+      border-radius: 0 0 10px 0;
       padding: 2px 10px;
 
-      letter-spacing:0.2px;
-      font-size: 0.8rem;
-      font-weight: 300;
-      font-family: ${theme.font.family.text};
+      font-weight: 400;
     }
     `;
-  }
 
-  return '';
+    default:
+      return '';
+  }
 }

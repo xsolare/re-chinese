@@ -12,9 +12,9 @@ import { CgShortcut } from 'react-icons/cg';
 import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
-import GlossaryStore from '#/store/pages/glossary.store';
 import { useNewStore } from '#/components/xsolare/helpers';
 import { WordTitle } from '#/components/xsolare';
+import GlossaryStore from '#/store/pages/glossary.store';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -46,7 +46,6 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
         <GlossaryContentStyled>
           {/* Full */}
           {!state.isBriefly && GlossaryContent}
-
           {/* Briefly */}
           {state.isBriefly &&
             glossary.briefly.map((b, index) => (

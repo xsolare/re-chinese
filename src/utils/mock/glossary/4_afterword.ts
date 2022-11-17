@@ -25,7 +25,7 @@ const text = `
     </span>
     <hr />
     <span type="text">Также вместо послелогов можно использовать вспомогательные существительные, чтобы указать местоположение:</span>
-    <div type="example">
+    <div type="example" row="2">
         <span type="h" p="zhōngjian" t="посередине, среди">中间</span><br/>
         <span type="h" p="duìmian" t="напротив">对面</span><br/>
         <span type="h" p="pángbian" t="рядом">旁边</span><br/>

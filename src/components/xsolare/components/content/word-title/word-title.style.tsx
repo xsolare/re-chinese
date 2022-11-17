@@ -23,7 +23,7 @@ export const WordTitleStyled = styled.div`
     background-color: ${({ theme }) => theme.palette.bg.mainContent};
     border: 1px solid ${({ theme }) => theme.palette.border.hieroglyph};
     border-radius: 50%;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   > h2 {

@@ -27,7 +27,6 @@ const font = {
     text: 'Rubik',
     chn: 'Noto Sans SC, sans-serif',
     pinyin: 'Noto Sans SC, sans-serif'
-    // pinyin: 'Itim'
   },
   size: {
     base: '1rem !default',
