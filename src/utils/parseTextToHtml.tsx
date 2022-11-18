@@ -14,7 +14,13 @@ const optionsForGlossary: HTMLReactParserOptions = {
 
       if (name === 'span') {
         if (type === 'h') {
-          return <Word {...rest}>{domToReact(domNode.children, optionsForGlossary)}</Word>;
+          const { p, t } = rest;
+
+          return (
+            <Word {...rest} pinyin={p} translate={t}>
+              {domToReact(domNode.children, optionsForGlossary)}
+            </Word>
+          );
         }
 
         if (type === 'tab') {
@@ -46,7 +52,7 @@ const optionsForGlossary: HTMLReactParserOptions = {
           const { index, p, t } = rest;
 
           return (
-            <WordTitle index={index} p={p} t={t}>
+            <WordTitle index={index} pinyin={p} translate={t}>
               {domToReact(domNode.children, optionsForGlossary)}
             </WordTitle>
           );
@@ -64,3 +70,13 @@ const optionsForGlossary: HTMLReactParserOptions = {
   }
 };
 export const parseGlossary = (text: string) => parse(text, optionsForGlossary);
+
+const optionsForWord: HTMLReactParserOptions = {
+  replace: (domNode) => {
+    if (domNode instanceof Element) {
+      // const { name } = domNode;
+      // const { type, ...rest } = attributesToProps(domNode.attribs);
+    }
+  }
+};
+export const parseWord = (text: string) => parse(text, optionsForWord);

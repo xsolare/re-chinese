@@ -1,31 +1,35 @@
 import React from 'react';
 import type { FC, PropsWithChildren } from 'react';
 import type { ITooltipProps } from '#/components/xsolare';
+import type { IWordType } from '#/store/word';
 import { observer } from 'mobx-react-lite';
 import { WordStyled } from './word.style';
 import { Tooltip } from '#/components/xsolare';
 import { useStore } from '#/store';
 
 interface IWordProps extends PropsWithChildren {
-  p?: string;
-  t?: string;
+  fixedType?: IWordType;
+  pinyin?: string;
+  translate?: string;
 }
 
 export const Word: FC<IWordProps> = observer((props) => {
-  const { children } = props;
+  const { children, fixedType } = props;
 
   const { wordStore } = useStore();
   const { type } = wordStore.state;
 
+  const resultType = fixedType ?? type ?? 1;
+
   return (
-    <WordStyled type={type} key={type}>
-      <WordVarious {...{ ...props, type }}>{children}</WordVarious>
+    <WordStyled type={resultType} key={resultType as number}>
+      <WordVarious {...{ ...props, type: resultType }}>{children}</WordVarious>
     </WordStyled>
   );
 });
 
-const WordVarious: FC<IWordProps & { type: number }> = observer((props) => {
-  const { children, p: pinyin, t: translate, type } = props;
+const WordVarious: FC<IWordProps & { type: IWordType }> = observer((props) => {
+  const { children, pinyin, translate, type } = props;
 
   const tooltipTop: ITooltipProps = { title: pinyin ?? '', delay: 100, placement: 'top' };
   const tooltipBottom: ITooltipProps = {

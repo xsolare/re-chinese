@@ -1,8 +1,9 @@
+import type { IWordType } from '#/store/word';
 import type { Theme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 interface IWordStyledProps {
-  type: number;
+  type: IWordType;
 }
 export const WordStyled = styled.div<IWordStyledProps>`
   display: inline-block;
@@ -42,7 +43,7 @@ export const WordStyled = styled.div<IWordStyledProps>`
   ${({ type, theme }) => getWordStyle(type, theme)}
 `;
 
-function getWordStyle(type: number, theme: Theme): string {
+function getWordStyle(type: IWordType, theme: Theme): string {
   switch (type) {
     case 2:
       return `

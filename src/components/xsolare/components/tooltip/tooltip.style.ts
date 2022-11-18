@@ -1,3 +1,4 @@
+import { breakpoint } from '#/utils/theme';
 import styled from '@emotion/styled';
 
 export const TooltipStyled = styled.div`
@@ -10,7 +11,7 @@ export const TooltipStyled = styled.div`
     z-index: 99999;
     opacity: 0.95;
     box-shadow: 0px 0px 10px rgba(44, 38, 56, 0.02), 0px 8px 20px rgba(44, 38, 56, 0.04);
-    max-width: 400px;
+    max-width: 600px;
 
     color: ${({ theme }) => theme.palette.color.textInvert};
     font-family: ${({ theme }) => theme.font.family.pinyin};
@@ -18,5 +19,9 @@ export const TooltipStyled = styled.div`
     font-size: 1rem;
 
     background-color: ${({ theme }) => theme.palette.bg.modal};
+
+    ${breakpoint('md')} {
+      max-width: 300px;
+    }
   }
 `;

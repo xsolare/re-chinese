@@ -50,7 +50,7 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
           {state.isBriefly &&
             glossary.briefly.map((b, index) => (
               <GlossaryContentItemStyled key={b.id}>
-                <WordTitle p={b.pinyin} t={b.translate} index={index}>
+                <WordTitle pinyin={b.pinyin} translate={b.translate} index={index}>
                   {b.hieroglyph}
                 </WordTitle>
               </GlossaryContentItemStyled>

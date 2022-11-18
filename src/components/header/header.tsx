@@ -62,6 +62,9 @@ const Header: FC = observer(() => {
             <li>
               <Link href="/hieroglyph">Иероглифы</Link>
             </li>
+            <li>
+              <Link href="/words">Слова</Link>
+            </li>
           </ul>
         </div>
         <div>

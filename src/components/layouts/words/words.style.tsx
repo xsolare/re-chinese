@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 
-export const HieroglyphLayoutStyled = styled.section`
+export const WordsLayoutStyled = styled.section`
   position: relative;
 
   max-width: 1200px;
+  max-height: 100%;
   width: 100%;
-  min-height: calc(100vh - ${({ theme }) => theme.sizes.header.height} - 10px);
+  height: 100%;
 
   margin: 0 auto;
   padding: 10px 0;
@@ -13,5 +14,5 @@ export const HieroglyphLayoutStyled = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex;
+  justify-content: flex-start;
 `;
