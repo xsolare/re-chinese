@@ -2,9 +2,11 @@ import type { IGlossaryItem, IGlossaryContent } from '#/types/glossary';
 
 const text = `
 <div>
+    <span type="tab">Послелоги или 方位词 по своим грамматическим свойствам схожи с существительными места. Всего в китайском языке 14 односложных (состоящих из одного слога) послелогов, четыре из которых географические названия и места.</span>
     <span type="text">Чтобы более точно указать местоположение, необходимо после дополнения места использовать послелоги:</span>
     <div type="example" row="2">
         <span type="h" p="lǐ" t="в, внутри">里</span><br/>
+        <span type="h" p="wài" t="внешний">外</span><br/>
         <span type="h" p="qián" t="впереди">前</span><br/>
         <span type="h" p="shàng" t="сверху, на чём-то">上</span><br/>
         <span type="h" p="zhōng" t="внутри, в, между, посреди; среди">中</span><br/>
@@ -41,15 +43,15 @@ export const afterwordGlossaryItem4: IGlossaryItem = {
   url: 'afterword',
   hsk: '1',
   icon: '1',
-  title: 'Послеслоги (后置词)',
+  title: 'Послеслоги (方位词)',
   badges: ['послеслоги']
 };
 
 export const afterwordGlossary4: IGlossaryContent = {
   id: '4',
   url: 'afterword',
-  description: 'Послеслоги (后置词 / hòu zhì cí) в китайском языке',
-  title: 'Послеслоги (后置词 / hòu zhì cí)',
+  description: 'Послеслоги (方位词 / hòu zhì cí) в китайском языке',
+  title: 'Послеслоги (方位词 / hòu zhì cí)',
   hsk: '1',
   text,
   briefly: [
