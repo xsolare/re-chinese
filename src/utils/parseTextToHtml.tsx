@@ -23,13 +23,6 @@ const optionsForGlossary: HTMLReactParserOptions = {
           );
         }
 
-        if (type === 'tab') {
-          return (
-            <TextTabStyledHTML>
-              {domToReact(domNode.children, optionsForGlossary)}
-            </TextTabStyledHTML>
-          );
-        }
         if (type === 'text')
           return (
             <TextStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</TextStyledHTML>

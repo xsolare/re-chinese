@@ -6,8 +6,11 @@ type IExampleStyled = {
 };
 export const ExampleStyled = styled.div<IExampleStyled>`
   margin: 10px 0;
-  padding-left: 10px;
-  border-left: 2px dashed ${({ theme }) => theme.palette.border.hieroglyph};
+
+  > div {
+    border-left: 2px dashed ${({ theme }) => theme.palette.border.hieroglyph};
+    padding-left: 14px;
+  }
 
   ${({ row }) =>
     row

@@ -360,9 +360,7 @@ export const TextTabStyledHTML = styled.span`
   display: inline-block;
   color: ${({ theme }) => theme.palette.color.text};
   font-weight: 300;
-  line-height: 1.5rem;
   font-size: 1rem;
-  text-indent: 20px;
 `;
 
 export const HrStyledHTML = styled.hr`

@@ -2,7 +2,7 @@ import type { IGlossaryItem, IGlossaryContent } from '#/types/glossary';
 
 const text = `
 <div>
-    <span type="tab">Послелоги или 方位词 по своим грамматическим свойствам схожи с существительными места. Всего в китайском языке 14 односложных (состоящих из одного слога) послелогов, четыре из которых географические названия и места.</span>
+    <span type="text">&nbsp;&nbsp;&nbsp;&nbsp;Послелоги или <span type="h" p="fāngwèi cí" t="">方位词</span> по своим грамматическим свойствам схожи с существительными места. Всего в китайском языке 14 односложных (состоящих из одного слога) послелогов, четыре из которых географические названия и места.</span>
     <span type="text">Чтобы более точно указать местоположение, необходимо после дополнения места использовать послелоги:</span>
     <div type="example" row="2">
         <span type="h" p="lǐ" t="в, внутри">里</span><br/>
@@ -26,7 +26,16 @@ const text = `
       <span type="h" p="dōng" t="Восток">东</span> 
     </span>
     <hr />
-    <span type="text">Также вместо послелогов можно использовать вспомогательные существительные, чтобы указать местоположение:</span>
+    <span type="text">&nbsp;&nbsp;&nbsp;&nbsp;
+      После односложных послелогов можно добавить иероглифы 
+        <span type="h" p="biān" t="сторона, край">边</span>
+        <span type="h" p="miàn" t="поверхность, сторона">面</span>
+        <span type="h" p="tóu"  t="сторона, верхушка">头</span>
+        <span type="h" p="fāng" t="сторона, место">方</span>
+        <span type="h" p="jiān" t="время">间</span>
+      так образуются двусложные послелоги.
+      Также вместо послелогов можно использовать вспомогательные существительные, чтобы указать местоположение:
+    </span>
     <div type="example" row="2">
         <span type="h" p="zhōngjian" t="посередине, среди">中间</span><br/>
         <span type="h" p="duìmian" t="напротив">对面</span><br/>
@@ -34,8 +43,24 @@ const text = `
         <span type="h" p="zuǒbiān" t="слева">左边</span><br/>
         <span type="h" p="yòubiān" t="справа">右边</span><br/>
     </div>
-</div>
 
+    <br/>
+    <span type="text">
+      Также если Вы хотите сказать, что делаете что-то где-то, то используйте <span type="h" p="zài" t="находиться в...">在</span> с послеслогом, чтобы точно указать место совершения действия.
+    </span>
+    <span type="rule">
+      Субъект + <span type="h" p="le">在</span> + Место + Послелог + Глагол + Объект
+    </span>
+    <span type="rule">
+      Подлежащее + <span type="h" p="le">在</span> + Дополнение места + Послелог + Сказуемое + Дополнение
+    </span>
+    <div type="example">
+      <span type="h" p="xuéshēng zài jiàoshì shàngkè" t="Учащиеся занимаются в аудитории">学生在教室上课</span><br/>
+      <span type="h" p="gēgē zài zhèér gōngzuò" t="Старший брат работает здесь">哥哥在这儿工作</span><br/>
+      <span type="h" p="shū zài wǒ zhèér" t="Книга у меня (здесь)">书在我这儿</span><br/>
+      <span type="h" p="bùyào zài chuáng shàng chī dōngxī" t="Не ешь в постели">不要在床上吃东西</span><br/>
+    </div
+</div>
 `;
 
 export const afterwordGlossaryItem4: IGlossaryItem = {
