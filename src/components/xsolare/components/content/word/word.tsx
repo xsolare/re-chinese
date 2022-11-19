@@ -8,18 +8,18 @@ import { Tooltip } from '#/components/xsolare';
 import { useStore } from '#/store';
 
 interface IWordProps extends PropsWithChildren {
-  fixedType?: IWordType;
+  fixed?: IWordType;
   pinyin?: string;
   translate?: string;
 }
 
 export const Word: FC<IWordProps> = observer((props) => {
-  const { children, fixedType } = props;
+  const { children, fixed } = props;
 
   const { wordStore } = useStore();
   const { type } = wordStore.state;
 
-  const resultType = fixedType ?? type ?? 1;
+  const resultType = fixed ?? type ?? 1;
 
   return (
     <WordStyled type={resultType} key={resultType as number}>
@@ -39,6 +39,15 @@ const WordVarious: FC<IWordProps & { type: IWordType }> = observer((props) => {
   };
 
   switch (type) {
+    case 0:
+      return (
+        <Tooltip {...tooltipBottom}>
+          <Tooltip {...tooltipTop}>
+            <span className="hieroglyph">{children}</span>
+          </Tooltip>
+        </Tooltip>
+      );
+
     case 1:
       return (
         <>

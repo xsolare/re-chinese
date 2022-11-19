@@ -64,6 +64,8 @@ function getWordStyle(type: IWordType, theme: Theme): string {
     flex-direction: column;
     border: 1px solid ${theme.palette.border.hieroglyph};
     border-radius: 10px;
+    padding-left: 0px !important;
+
 
     .pinyin {
       text-align: center;

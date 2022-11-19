@@ -1,7 +1,8 @@
 import type { HTMLReactParserOptions } from 'html-react-parser';
+import type { IWordType } from '#/store/word';
 import React from 'react';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
-import { HrStyledHTML, TextTabStyledHTML, RuleStyledHTML, TextStyledHTML } from '#/styles/common';
+import { HrStyledHTML, RuleStyledHTML, TextStyledHTML } from '#/styles/common';
 import { Word, WordTitle } from '#/components/xsolare';
 import { Example } from '#/components/xsolare/components/content/example/example';
 import { Warn } from '#/components/xsolare/components/content/warn/warn';
@@ -14,10 +15,12 @@ const optionsForGlossary: HTMLReactParserOptions = {
 
       if (name === 'span') {
         if (type === 'h') {
-          const { p, t } = rest;
+          const { p, t, fixed } = rest;
+
+          const fixedType = fixed ? (+fixed as IWordType) : undefined;
 
           return (
-            <Word {...rest} pinyin={p} translate={t}>
+            <Word {...rest} pinyin={p} translate={t} fixed={fixedType}>
               {domToReact(domNode.children, optionsForGlossary)}
             </Word>
           );

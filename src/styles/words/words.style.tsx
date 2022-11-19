@@ -17,12 +17,6 @@ export const WordsContentStyled = styled.div`
 
   max-width: 1200px;
 
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 15px; */
-
   columns: 3;
 
   ${breakpoint('lg')} {
@@ -36,6 +30,7 @@ export const WordsContentStyled = styled.div`
   > div {
     margin: 20px auto;
     display: block;
+
     > div {
       padding-right: 10px;
     }

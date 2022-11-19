@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from 'mobx';
 
-export const WordType = [1, 2, 3, 4, 5] as const;
+export const WordType = [0, 1, 2, 3, 4, 5] as const;
 export type IWordType = keyof typeof WordType;
 
 export interface WordStoreState {
