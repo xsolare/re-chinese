@@ -17,7 +17,6 @@ const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
       <GlossaryItemStyled>
         <div className="badges-header">
           <div> </div>
-
           <Tooltip title="Уровень сложности по шкале HSK (1-9)" placement="bottom" delay={250}>
             <GlossaryItemHskStyled hsk={hsk}>
               <AiTwotoneFire />

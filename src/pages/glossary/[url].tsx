@@ -9,6 +9,7 @@ import {
   GlossaryTitleStyled
 } from '#/styles/glossary/glossary.style';
 import { CgShortcut } from 'react-icons/cg';
+import { TbTestPipe } from 'react-icons/tb';
 import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
@@ -25,36 +26,40 @@ interface IGlossaryItemProps {
 const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) => {
   const { glossary } = props;
 
-  const store = useNewStore(GlossaryStore);
   const GlossaryContent = useMemo(() => parseGlossary(glossary.text), []);
 
-  const { setBriefly, state } = store;
+  const store = useNewStore(GlossaryStore);
+  const { setBriefly, setTester, state, isBrieflyPage, isGlossaryPage, isTestPage } = store;
+  const { isBriefly, isTester } = state;
 
   return (
     <>
       <NextSeo title={glossary.title} description={glossary.description} />
       <GlossaryStyled>
-        <GlossaryTitleStyled isBriefly={state.isBriefly}>
-          <div className="option">
-            <CgShortcut className="icon" onClick={() => setBriefly(!state.isBriefly)} />
+        <GlossaryTitleStyled isBriefly={isBriefly} isTester={isTester}>
+          <div className="option left">
+            <CgShortcut className="icon" onClick={() => setBriefly(!isBriefly)} />
+            <TbTestPipe className="icon" onClick={() => setTester(!isTester)} />
           </div>
-          <h1>{glossary.title}</h1>
-          <div className="option">
+          <h1 className="title">{glossary.title}</h1>
+          <div className="option right">
             <div className="hsk">{`HSK-${glossary.hsk}`}</div>
           </div>
         </GlossaryTitleStyled>
         <GlossaryContentStyled>
           {/* Full */}
-          {!state.isBriefly && GlossaryContent}
+          {isGlossaryPage && GlossaryContent}
           {/* Briefly */}
-          {state.isBriefly &&
+          {isBrieflyPage &&
             glossary.briefly.map((b, index) => (
               <GlossaryContentItemStyled key={b.id}>
-                <WordTitle pinyin={b.pinyin} translate={b.translate} index={index}>
+                <WordTitle pinyin={b.pinyin} translate={b.translate} index={index + 1}>
                   {b.hieroglyph}
                 </WordTitle>
               </GlossaryContentItemStyled>
             ))}
+          {/* Test */}
+          {isTestPage && <div>1</div>}
         </GlossaryContentStyled>
       </GlossaryStyled>
     </>

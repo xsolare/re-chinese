@@ -45,6 +45,8 @@ export const keyiNengHuiGlossaryItem2: IGlossaryItem = {
   hsk: '1',
   icon: '1',
   title: 'Глаголы 可以 keyi 能 neng 会 hui и их разница',
+  htmlTitle:
+    '<span>Глаголы <span fixed="0" type="h" p="keyi" t="можно">可以</span>, <span fixed="0" type="h" p="neng" t="мочь">能</span>, <span fixed="0" type="h" p="huihui" t="мочь">会</span></span>',
   badges: ['глаголы']
 };
 
@@ -52,7 +54,9 @@ export const keyiNengHuiGlossary2: IGlossaryContent = {
   id: '2',
   description: 'Глаголы 可以 keyi 能 neng 会 hui и их разница в китайском языке',
   url: 'keyi-neng-hui',
-  title: '可以 keyi 能 neng 会 hui',
+  title: 'Глаголы 可以 keyi 能 neng 会 hui',
+  htmlTitle:
+    '<span>Глаголы <span fixed="0" type="h" p="keyi" t="можно">可以</span>, <span fixed="0" type="h" p="neng" t="мочь">能</span>, <span fixed="0" type="h" p="huihui" t="мочь">会</span></span>',
   hsk: '1',
   text,
   briefly: [

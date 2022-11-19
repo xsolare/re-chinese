@@ -244,6 +244,15 @@ export const GlobalStyles = css`
     border-style: none;
   }
 
+  h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
   input[type='date'],
   input[type='time'],
   input[type='datetime-local'],

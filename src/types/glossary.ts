@@ -2,6 +2,7 @@ export interface IGlossaryBase {
   id: string;
   url: string;
   title: string;
+  htmlTitle?: string;
   hsk: string;
 }
 

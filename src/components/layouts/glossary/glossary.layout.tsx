@@ -33,7 +33,7 @@ const GlossaryLayout: FC<PropsWithChildren> = ({ children }) => {
           </div>
         )}
         defaultTab={getDefaultTab}
-        headerText="Иероглифы китайского языка"
+        headerText="Глоссарий китайского языка"
         width="1000px"
       />
     ),

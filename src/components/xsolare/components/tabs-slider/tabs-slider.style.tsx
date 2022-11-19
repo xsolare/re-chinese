@@ -83,5 +83,6 @@ export const TabsSliderHeaderStyled = styled.div`
     font-size: 1.5rem;
     margin: 0;
     color: ${({ theme }) => theme.palette?.color?.text};
+    text-align: center;
   }
 `;

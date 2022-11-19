@@ -70,15 +70,19 @@ export const afterwordGlossaryItem4: IGlossaryItem = {
   url: 'afterword',
   hsk: '1',
   icon: '1',
-  title: 'Послеслоги (方位词)',
+  title: 'Послеслоги ( 方位词 )',
+  htmlTitle:
+    '<span>Послеслоги <span fixed="0" type="h" p="hòu zhì cí" t="послеслоги">方位词</span></span>',
   badges: ['послеслоги']
 };
 
 export const afterwordGlossary4: IGlossaryContent = {
   id: '4',
   url: 'afterword',
-  description: 'Послеслоги (方位词 / hòu zhì cí) в китайском языке',
-  title: 'Послеслоги (方位词 / hòu zhì cí)',
+  description: 'Послеслоги ( 方位词 / hòu zhì cí ) в китайском языке',
+  title: 'Послеслоги ( 方位词 / hòu zhì cí )',
+  htmlTitle:
+    '<span>Послеслоги <span fixed="0" type="h" p="hòu zhì cí" t="послеслоги">方位词</span></span>',
   hsk: '1',
   text,
   briefly: [

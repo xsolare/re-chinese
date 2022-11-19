@@ -13,8 +13,10 @@ const text = `
     Если мы хотим задать вопрос с помощью повторения глагола,
     повторять мы будем именно модальный глагол:
   </span>
-  <span type="h" p="nǐ xiǎng bù xiǎng kàn diànyǐng" t="Не хочешь посмотреть фильм?">你想不想看电影</span> <br />
-  <span type="h" p="zhèér kěbùkěyǐ chōuyān" t="Можно ли здесь курить?">这儿可不可以抽烟</span> <br />
+  <div type="example">
+    <span type="h" p="nǐ xiǎng bù xiǎng kàn diànyǐng" t="Не хочешь посмотреть фильм?">你想不想看电影</span> <br />
+    <span type="h" p="zhèér kěbùkěyǐ chōuyān" t="Можно ли здесь курить?">这儿可不可以抽烟</span> <br />
+  </div>
 
   <br />
 
