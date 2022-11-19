@@ -2,7 +2,6 @@ import React from 'react';
 import type { HSK } from '#/types/word';
 import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from '../_app';
-import type { IWordType } from '#/store/word';
 import { NextSeo } from 'next-seo';
 import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style';
 import { HSK1 } from '#/utils/mock/words/hsk1';
