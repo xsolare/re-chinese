@@ -75,4 +75,5 @@ const optionsForWord: HTMLReactParserOptions = {
     }
   }
 };
+
 export const parseWord = (text: string) => parse(text, optionsForWord);

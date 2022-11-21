@@ -2,8 +2,15 @@ import type { IGlossaryItem, IGlossaryContent } from '#/types/glossary';
 
 const text = `
 <div>
-    <span type="text">&nbsp;&nbsp;&nbsp;&nbsp;Послелоги или <span fixed="0" type="h" p="fāngwèi cí" t="послелоги">方位词</span> по своим грамматическим свойствам схожи с существительными места. Всего в китайском языке 14 односложных (состоящих из одного слога) послелогов, четыре из которых географические названия и места.</span>
-    <span type="text">Чтобы более точно указать местоположение, необходимо после дополнения места использовать послелоги:</span>
+    <span type="text">
+      &nbsp;&nbsp;&nbsp;&nbsp;Послелоги или 
+      <span fixed="0" type="h" p="fāngwèi cí" t="послелоги">方位词</span> 
+      по своим грамматическим свойствам схожи с существительными места. 
+      Всего в китайском языке 14 односложных (состоящих из одного слога) послелогов, четыре из которых географические названия и места.
+    </span>
+    <span type="text">
+      Чтобы более точно указать местоположение в пространстве, необходимо после дополнения места использовать послелогиЖ
+    </span>
     <div type="example" row="2">
         <span type="h" p="lǐ" t="в, внутри">里</span><br/>
         <span type="h" p="wài" t="внешний">外</span><br/>
@@ -46,6 +53,30 @@ const text = `
 
     <br/>
     <span type="text">
+      И, конечно, не стоит забывать, что послелоги ставятся не <em>перед</em>, а <em>после</em> места нахождения.
+    </span>
+    <div type="example">
+      <span type="h" p="zhuōzi xiàbiān" t="под столом">桌子下边</span><br/>
+      <span type="h" p="kètīng lǐ biàn" t="в гостиной">客厅里便</span><br/>
+      <span type="h" p="wǒ pángbiān" t="рядом со мной">我旁边</span><br/>
+      <span type="h" p="yínxíng hé xuéyuàn zhōngjiān" t="между банком и колледжем">银行和学院中间</span><br/>
+    </div
+    <br />  
+    <span type="warn">
+      Во фразах, у слов 
+      <span fixed="0" type="h" p="shàngbiān" t="наверху">上边</span>, 
+      <span fixed="0" type="h" p="xiàgbiān" t="внизу">下边</span>, 
+      <span fixed="0" type="h" p="lǐbiān" t="внутри">里边</span> и 
+      <span fixed="0" type="h" p="wàibiān" t="снаружи">外边</span>
+      второй слог 
+      <span fixed="0" type="h" p="biān" t="Север">边</span>
+      может опускаться:<br/>
+      <span type="h" p="zhuōzi xià" t="Под столом">桌子下</span><br/>
+      <span type="h" p="kètīng lǐ" t="В гостиной">客厅里</span>
+    </span>
+    <br />  
+    <hr />
+    <span type="text">&nbsp;&nbsp;&nbsp;&nbsp;
       Также если Вы хотите сказать, что делаете что-то где-то, то используйте 
       <span fixed="0" type="h" p="zài" t="находиться в...">在</span> 
       с послеслогом, чтобы точно указать место совершения действия.
