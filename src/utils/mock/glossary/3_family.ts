@@ -2,7 +2,7 @@ import type { IGlossaryItem, IGlossaryContent } from '#/types/glossary';
 
 const text = `<div>
   <span type="text">
-    "Семья" по-китайски - это <span fixed="0" type="h" p="jiā">家</span> Этот иероглиф можно перевести как «семья» или «дом».
+    &nbsp;&nbsp;&nbsp;&nbsp; "Семья" по-китайски - это <span fixed="0" type="h" p="jiā">家</span> Этот иероглиф можно перевести как «семья» или «дом».
     Но истинное значение этого слова гораздо глубже.
     Иероглиф «семья» – <span fixed="0" type="h" p="jiā">家</span> – обозначает как место, где живет семья, так и людей, которые ее составляют.
     В верхней части символа находится <span fixed="0" type="h" p="mián">宀</span>, что означает «дом»;
@@ -16,9 +16,9 @@ const text = `<div>
   <span type="warn">
     <em>Интересный факт</em> <br /> <br /> 
     <span type="text">В китайской культуре страна называется:</span> <br />
-    <span type="h" p="guó jiā" t="Государственная семья.">国家</span>  <br /> <br />
+    <span type="h" p="guó jiā" t="Государственная семья">国家</span>  <br /> <br />
     <span type="text">Конфуцианство:</span> <br />
-    <span type="h" p="ru jiā" t="конфуцианская семья.">儒家</span>  <br />
+    <span type="h" p="ru jiā" t="конфуцианская семья">儒家</span>  <br />
   </span>
 
   <hr />
