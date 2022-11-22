@@ -1,16 +1,11 @@
 import type { HTMLReactParserOptions } from 'html-react-parser';
+import type { IWordType } from '#/store/word';
 import React from 'react';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
-import {
-  ExampleStyledHTML,
-  HrStyledHTML,
-  TextTabStyledHTML,
-  WarnStyledHTML,
-  RuleStyledHTML,
-  TextStyledHTML
-} from '#/styles/common';
-import { WordTitle } from '#/components/xsolare/components/word-title/word-title';
-import { Word } from '#/components/xsolare/components/word/word';
+import { HrStyledHTML, RuleStyledHTML, TextStyledHTML } from '#/styles/common';
+import { Word, WordTitle } from '#/components/xsolare';
+import { Example } from '#/components/xsolare/components/content/example/example';
+import { Warn } from '#/components/xsolare/components/content/warn/warn';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {
@@ -20,39 +15,32 @@ const optionsForGlossary: HTMLReactParserOptions = {
 
       if (name === 'span') {
         if (type === 'h') {
-          const { p, t } = rest;
+          const { p, t, fixed } = rest;
+
+          const fixedType = fixed ? (+fixed as IWordType) : undefined;
 
           return (
-            <Word p={p} t={t}>
+            <Word {...rest} pinyin={p} translate={t} fixed={fixedType}>
               {domToReact(domNode.children, optionsForGlossary)}
             </Word>
           );
         }
 
-        if (type === 'tab') {
-          return (
-            <TextTabStyledHTML>
-              {domToReact(domNode.children, optionsForGlossary)}
-            </TextTabStyledHTML>
-          );
-        }
-        if (type === 'text') {
+        if (type === 'text')
           return (
             <TextStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</TextStyledHTML>
           );
-        }
+
         if (type === 'warn') {
-          return (
-            <WarnStyledHTML>{domToReact(domNode.children, optionsForGlossary)}</WarnStyledHTML>
-          );
+          return <Warn>{domToReact(domNode.children, optionsForGlossary)}</Warn>;
         }
-        if (type === 'rule') {
+
+        if (type === 'rule')
           return (
             <RuleStyledHTML>
               <span>{domToReact(domNode.children, optionsForGlossary)}</span>
             </RuleStyledHTML>
           );
-        }
       }
 
       if (name === 'div') {
@@ -60,18 +48,14 @@ const optionsForGlossary: HTMLReactParserOptions = {
           const { index, p, t } = rest;
 
           return (
-            <WordTitle index={index} p={p} t={t}>
+            <WordTitle index={index} pinyin={p} translate={t}>
               {domToReact(domNode.children, optionsForGlossary)}
             </WordTitle>
           );
         }
 
         if (type === 'example') {
-          return (
-            <ExampleStyledHTML>
-              {domToReact(domNode.children, optionsForGlossary)}
-            </ExampleStyledHTML>
-          );
+          return <Example {...rest}>{domToReact(domNode.children, optionsForGlossary)}</Example>;
         }
       }
 
@@ -82,3 +66,14 @@ const optionsForGlossary: HTMLReactParserOptions = {
   }
 };
 export const parseGlossary = (text: string) => parse(text, optionsForGlossary);
+
+const optionsForWord: HTMLReactParserOptions = {
+  replace: (domNode) => {
+    if (domNode instanceof Element) {
+      // const { name } = domNode;
+      // const { type, ...rest } = attributesToProps(domNode.attribs);
+    }
+  }
+};
+
+export const parseWord = (text: string) => parse(text, optionsForWord);

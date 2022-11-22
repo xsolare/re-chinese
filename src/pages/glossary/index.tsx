@@ -4,7 +4,7 @@ import type { NextPageWithLayout } from '../_app';
 import type { IGlossaryItem } from '#/types/glossary';
 import { NextSeo } from 'next-seo';
 import GlossaryItem from '#/components/glossary/glossary-item';
-import { glossaryItems as gi } from '../../utils/mock/glossary';
+import { glossaryItems as gi } from '#/utils/mock/glossary';
 import { GlossaryContentStyled, GlossaryStyled } from '#/styles/glossary/glossary.style';
 import GlossaryLayout from '#/components/layouts/glossary/glossary.layout';
 
@@ -19,7 +19,7 @@ const Glossary: NextPageWithLayout<IGlossaryProps> = (props) => {
 
   return (
     <>
-      <NextSeo title="Glossary" description="Glossary page" />
+      <NextSeo title="Глоссарий" description="Глоссарий китайского языка" />
       <GlossaryStyled>
         <GlossaryContentStyled>
           {glossaryItems.map((lib) => (

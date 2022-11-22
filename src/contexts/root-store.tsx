@@ -5,7 +5,7 @@ import { enableStaticRendering } from 'mobx-react-lite';
 import type { ReactNode } from 'react';
 import React, { createContext, useContext } from 'react';
 import { isClientSide, isDev, isServerSide } from '#/utils/env';
-import { RootStore } from '../store/root-store';
+import { RootStore } from '#/store/root-store';
 
 enableStaticRendering(isServerSide());
 

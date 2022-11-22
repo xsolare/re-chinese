@@ -9,7 +9,7 @@ export const GlossaryLayoutStyled = styled.section`
   height: 100%;
 
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 0;
 
   display: flex;
   flex-direction: column;

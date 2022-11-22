@@ -13,6 +13,10 @@ export const GlossaryContentStyled = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
 
+  .title {
+    font-weight: 500;
+  }
+
   p {
     margin-bottom: 0;
   }
@@ -45,29 +49,53 @@ export const GlossaryContentItemStyled = styled.div`
 
 interface IGlossaryTitleStyled {
   isBriefly: boolean;
+  isTester: boolean;
 }
-
 export const GlossaryTitleStyled = styled.div<IGlossaryTitleStyled>`
   position: relative;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: 'L T R';
 
   border-bottom: 1px solid ${({ theme }) => theme.palette.border.title};
   max-width: 1250px;
   margin: 0 auto 20px auto;
   padding: 5px 0;
   user-select: none;
-  > h1 {
+
+  .title {
+    grid-area: T;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
     font-size: 2rem;
     margin: 0;
   }
 
   .option {
+    &.left {
+      grid-area: L;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    &.right {
+      grid-area: R;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
     width: 100px;
     display: flex;
     flex-direction: row;
@@ -93,27 +121,33 @@ export const GlossaryTitleStyled = styled.div<IGlossaryTitleStyled>`
       height: 30px;
       cursor: pointer;
 
-      color: ${({ theme, isBriefly }) => theme.palette.bg[isBriefly ? 'highlight' : 'hieroglyph']};
+      :first-child {
+        color: ${({ theme, isBriefly }) =>
+          theme.palette.bg[isBriefly ? 'highlight' : 'hieroglyph']};
+      }
+      :last-child {
+        color: ${({ theme, isTester }) => theme.palette.bg[isTester ? 'highlight' : 'hieroglyph']};
+      }
     }
   }
 
-  ${breakpoint('sm')} {
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0 auto 10px auto;
+  ${breakpoint('lg')} {
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'L R'
+      'T T';
 
-    .option {
-      &:first-child {
-        width: auto;
-      }
-      &:last-child {
-        width: auto;
-        margin-left: auto;
-      }
+    padding: 0;
+
+    .title {
+      font-size: 1.5rem;
     }
 
-    > h1 {
-      font-size: 1.5rem;
+    .option {
+      padding: 5px 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid ${({ theme }) => theme.palette.border.title};
     }
   }
 `;
@@ -122,9 +156,9 @@ export const GlossaryStyled = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: 25px;
+  margin-top: 20px;
 
   ${breakpoint('sm')} {
-    margin-top: 5px;
+    margin-top: 10px;
   }
 `;

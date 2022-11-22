@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import type { ReactElement } from 'react';
 import type { IGlossaryContent } from '#/types/glossary';
 import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
@@ -10,13 +9,13 @@ import {
   GlossaryTitleStyled
 } from '#/styles/glossary/glossary.style';
 import { CgShortcut } from 'react-icons/cg';
+import { TbTestPipe } from 'react-icons/tb';
 import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
-import GlossaryStore from './store';
-import PageLayout from '#/components/layouts/page.layout';
-import { WordTitleStyled } from '#/components/xsolare/components/word-title/word-title.style';
-import { useStore } from '../../store/index';
+import { useNewStore } from '#/components/xsolare/helpers';
+import { WordTitle } from '#/components/xsolare';
+import GlossaryStore from '#/store/pages/glossary.store';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -27,45 +26,40 @@ interface IGlossaryItemProps {
 const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) => {
   const { glossary } = props;
 
-  const store = useMemo(() => new GlossaryStore(), []);
   const GlossaryContent = useMemo(() => parseGlossary(glossary.text), []);
 
-  const { wordStore } = useStore();
-  console.log('wordStore', wordStore.state.type);
-
-  const { setBriefly, state } = store;
+  const store = useNewStore(GlossaryStore);
+  const { setBriefly, setTester, state, isBrieflyPage, isGlossaryPage, isTestPage } = store;
+  const { isBriefly, isTester } = state;
 
   return (
     <>
-      <NextSeo title="Glossary item content" description="Glossary item content page" />
+      <NextSeo title={glossary.title} description={glossary.description} />
       <GlossaryStyled>
-        <GlossaryTitleStyled isBriefly={state.isBriefly}>
-          <div className="option">
-            <CgShortcut className="icon" onClick={() => setBriefly(!state.isBriefly)} />
+        <GlossaryTitleStyled isBriefly={isBriefly} isTester={isTester}>
+          <div className="option left">
+            <CgShortcut className="icon" onClick={() => setBriefly(!isBriefly)} />
+            <TbTestPipe className="icon" onClick={() => setTester(!isTester)} />
           </div>
-          <h1>{glossary.title}</h1>
-          <div className="option">
+          <h1 className="title">{glossary.title}</h1>
+          <div className="option right">
             <div className="hsk">{`HSK-${glossary.hsk}`}</div>
           </div>
         </GlossaryTitleStyled>
         <GlossaryContentStyled>
           {/* Full */}
-          {!state.isBriefly && GlossaryContent}
-
+          {isGlossaryPage && GlossaryContent}
           {/* Briefly */}
-          {state.isBriefly &&
+          {isBrieflyPage &&
             glossary.briefly.map((b, index) => (
               <GlossaryContentItemStyled key={b.id}>
-                <WordTitleStyled>
-                  <span>{index + 1}</span>
-                  <h2>{b.hieroglyph}</h2>
-                  <div>
-                    <span>{b.pinyin}</span>
-                    <span>{b.translate}</span>
-                  </div>
-                </WordTitleStyled>
+                <WordTitle pinyin={b.pinyin} translate={b.translate} index={index + 1}>
+                  {b.hieroglyph}
+                </WordTitle>
               </GlossaryContentItemStyled>
             ))}
+          {/* Test */}
+          {isTestPage && <div>1</div>}
         </GlossaryContentStyled>
       </GlossaryStyled>
     </>
@@ -75,16 +69,12 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
 GlossaryItem.getInitialProps = async (ctx) => {
   const { query } = ctx;
   const glossaryContent = await new Promise<IGlossaryContent>((r) =>
-    r(g.find((f) => f.id === query?.id) as IGlossaryContent)
+    r(g.find((f) => f.url === query?.url) as IGlossaryContent)
   );
 
   return {
     glossary: glossaryContent
   };
-};
-
-GlossaryItem.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
 };
 
 export default GlossaryItem;

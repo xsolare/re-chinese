@@ -25,6 +25,10 @@ export const GlossaryItemStyled = styled.div`
     font-size: 1rem;
     font-weight: 300;
 
+    height: 100%;
+    width: 100%;
+    line-height: 62px;
+
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: none;

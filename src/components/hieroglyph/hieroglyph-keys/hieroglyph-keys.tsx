@@ -1,13 +1,13 @@
 import type { IHieroglyph } from '#/types/hieroglyph';
 import type { FC } from 'react';
-import type { CheckboxStore } from '#/components/xsolare/components/checkbox/checkbox.store';
+import type { CheckboxStore } from '#/components/xsolare';
 import { observer } from 'mobx-react-lite';
 import { HieroglyphKeysStore } from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys.store';
 import { HieroglyphKeysControl, HieroglyphKeysList } from './hieroglyph-keys.style';
-import { Checkbox } from '#/components/xsolare/components/checkbox/checkbox';
 import { useNewStore } from '#/components/xsolare/helpers';
 import HieroglyphKey from './key-item/key-item';
 import React from 'react';
+import { Checkbox } from '#/components/xsolare';
 
 //* Components
 

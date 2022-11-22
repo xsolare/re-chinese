@@ -1,27 +1,22 @@
 import type { FC } from 'react';
 import type { IGlossaryItem } from '#/types/glossary';
-import Link from 'next/link';
-import { Tooltip } from '../xsolare';
 import { GlossaryItemHskStyled, GlossaryItemStyled } from './glossary-item.style';
 import { AiTwotoneFire } from 'react-icons/ai';
+import { Tooltip } from '#/components/xsolare';
+import Link from 'next/link';
 
 type IGlossaryItemProps = IGlossaryItem;
 
-// LibItem
+// Glossary item
 //* ------------------------------------------------------------------ *//
 const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
-  const { id, title, hsk } = props;
+  const { url, title, hsk } = props;
 
   return (
-    <Link href={`/glossary/${id}`}>
+    <Link href={`/glossary/${url}`}>
       <GlossaryItemStyled>
         <div className="badges-header">
           <div> </div>
-          {/* <GlossaryItemyTagsStyled>
-            {badges.map((m) => (
-              <span key={m}>{m}</span>
-            ))}
-          </GlossaryItemyTagsStyled> */}
           <Tooltip title="Уровень сложности по шкале HSK (1-9)" placement="bottom" delay={250}>
             <GlossaryItemHskStyled hsk={hsk}>
               <AiTwotoneFire />
@@ -29,14 +24,7 @@ const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
             </GlossaryItemHskStyled>
           </Tooltip>
         </div>
-        <Link href={`/glossary/${id}`}>
-          <div className="title">{title}</div>
-        </Link>
-        {/* <div className="badges-footer">
-          <Word p="xiǎng" t="хотеть, собираться">
-            想
-          </Word>
-        </div> */}
+        <div className="title">{title}</div>
       </GlossaryItemStyled>
     </Link>
   );

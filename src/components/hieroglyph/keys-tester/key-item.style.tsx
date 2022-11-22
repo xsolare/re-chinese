@@ -1,5 +1,13 @@
 import styled from '@emotion/styled';
-import { breakpoint } from '../../../utils/theme';
+import { breakpoint } from '#/utils/theme';
+
+export const PageContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
 
 interface IHieroglyphKeysQuestionProps {
   isPinyin: boolean;
@@ -61,7 +69,7 @@ export const HieroglyphKeysQuestion = styled.div<IHieroglyphKeysQuestionProps>`
       justify-content: center;
 
       color: ${({ theme }) => theme.palette.color.pinyin};
-      font-family: ${({ theme }) => theme.font.family.chn};
+      font-family: ${({ theme }) => theme.font.family.pinyin};
       font-weight: 400;
       font-size: 1rem;
 
@@ -187,28 +195,28 @@ export const Answer = styled.div<IAnswerProps>`
     width: 40%;
   }
 
-  &:hover {
-    box-shadow: 0 0 5px ${({ theme }) => theme.palette.bg.highlight};
-    border: solid 2px ${({ theme }) => theme.palette.bg.highlight};
-  }
-
   .hieroglyph {
     display: none;
     font-family: ${({ theme }) => theme.font.family.chn};
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 400;
   }
 
   .pinyin {
-    font-family: ${({ theme }) => theme.font.family.chn};
-    font-weight: 500;
+    font-family: ${({ theme }) => theme.font.family.pinyin};
+    font-weight: 400;
     font-size: 1rem;
   }
 
   .translate {
     display: none;
     font-size: 0.7rem;
-    white-space: nowrap;
+    text-align: center;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px ${({ theme }) => theme.palette.bg.highlight};
+    border: solid 2px ${({ theme }) => theme.palette.bg.highlight};
   }
 
   ${({ isAnswered, isCorrect, isWrong }) =>
@@ -221,6 +229,7 @@ export const Answer = styled.div<IAnswerProps>`
         background-color: #00db6e68;
         &:hover {
           border: solid 2px transparent;
+          box-shadow: 0 0 5px #00db6e68;
         }
         `
           : ''
@@ -233,6 +242,7 @@ export const Answer = styled.div<IAnswerProps>`
         background-color: #ff634789;
         &:hover {
           border: solid 2px transparent;
+          box-shadow: 0 0 5px #ff634789;
         }
         `
           : ''

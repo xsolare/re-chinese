@@ -3,6 +3,67 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const GlobalStyles = css`
+  /* noto-sans-sc-regular - latin_chinese-simplified */
+  @font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+      url('/fonts/NotoSansSC/noto-sans-sc-v26-latin_chinese-simplified-regular.woff2')
+        format('woff2');
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* noto-sans-sc-500 - latin_chinese-simplified */
+  @font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+      url('/fonts/NotoSansSC/noto-sans-sc-v26-latin_chinese-simplified-500.woff2') format('woff2');
+  }
+  /* rubik-300 - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''), url('/fonts/Rubik/rubik-v21-latin_cyrillic-300.woff2') format('woff2');
+  }
+  /* rubik-regular - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('/fonts/Rubik/rubik-v21-latin_cyrillic-regular.woff2') format('woff2');
+  }
+  /* rubik-500 - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''), url('/fonts/Rubik/rubik-v21-latin_cyrillic-500.woff2') format('woff2');
+  }
+  /* rubik-600 - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''), url('/fonts/Rubik/rubik-v21-latin_cyrillic-600.woff2') format('woff2');
+  }
+  /* rubik-700 - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''), url('/fonts/Rubik/rubik-v21-latin_cyrillic-700.woff2') format('woff2');
+  }
+  /* rubik-800 - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''), url('/fonts/Rubik/rubik-v21-latin_cyrillic-800.woff2') format('woff2');
+  }
+
   html {
     font-size: 18px;
 
@@ -17,16 +78,14 @@ export const GlobalStyles = css`
     margin: 0;
     border: none;
 
-    font-family: Rubik, 'Noto Sans SC', sans-serif, -apple-system, blinkmacsystemfont, 'Segoe UI',
-      roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    font-weight: 300;
-
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+
+    font-family: Rubik, 'Noto Sans SC', sans-serif;
+    font-weight: 400;
 
     *,
     *::before,
@@ -185,6 +244,15 @@ export const GlobalStyles = css`
     border-style: none;
   }
 
+  h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
   input[type='date'],
   input[type='time'],
   input[type='datetime-local'],
@@ -285,22 +353,9 @@ export const RuleStyledHTML = styled.div`
 
 export const PinyinStyledHTML = styled.span`
   color: ${({ theme }) => theme.palette.color.subText};
-  font-family: ${({ theme }) => theme.font.family.chn};
-  font-weight: 500;
+  font-family: ${({ theme }) => theme.font.family.pinyin};
+  font-weight: 400;
   font-size: 1rem;
-`;
-
-export const WarnStyledHTML = styled.span`
-  display: inline-block;
-  padding: 10px;
-  background: ${({ theme }) => theme.palette.bg.mainContent};
-  border-left: 2px solid ${({ theme }) => theme.palette.bg.highlight};
-  border-radius: 4px 10px 10px 4px;
-`;
-
-export const ExampleStyledHTML = styled.div`
-  padding-left: 10px;
-  border-left: 2px dashed ${({ theme }) => theme.palette.border.hieroglyph};
 `;
 
 export const TextStyledHTML = styled.span`
@@ -314,15 +369,13 @@ export const TextTabStyledHTML = styled.span`
   display: inline-block;
   color: ${({ theme }) => theme.palette.color.text};
   font-weight: 300;
-  line-height: 1.5rem;
   font-size: 1rem;
-  text-indent: 20px;
 `;
 
 export const HrStyledHTML = styled.hr`
   width: 100%;
   min-height: 4px;
-  margin: 16px 0 32px 0;
+  margin: 24px 0 32px 0;
 
   background: none;
   background-color: ${({ theme }) => theme.palette.divider};
