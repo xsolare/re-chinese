@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import type { PropsWithChildren, MutableRefObject, FC } from 'react';
 import type { ITooltipController, ITooltipProps } from './tooltip.store';
 import { useState, useRef } from 'react';
@@ -6,12 +5,13 @@ import { usePopper } from 'react-popper';
 import { observer } from 'mobx-react-lite';
 import { TooltipStore } from './tooltip.store';
 import { TooltipStyled } from './tooltip.style';
+import cn from 'classnames';
 
-export const Tooltip = (
-  props: PropsWithChildren<ITooltipProps> & {
+export const Tooltip: FC<
+  PropsWithChildren<ITooltipProps> & {
     controllerRef?: MutableRefObject<ITooltipController | undefined>;
   }
-): JSX.Element => {
+> = (props) => {
   const { controllerRef, children, ...restProps } = props;
 
   const storeRef = useRef<TooltipStore>(new TooltipStore(restProps));
@@ -21,6 +21,8 @@ export const Tooltip = (
   }
 
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
+
+  if (!restProps.title) return null;
 
   return (
     <TooltipStyled>
@@ -69,7 +71,7 @@ const PopperedTooltip: FC<IPopperedTooltipProps> = observer((props) => {
 
   return (
     <div
-      className={classNames('tooltip', style)}
+      className={cn('tooltip', style)}
       ref={setPopperElement}
       style={styles.popper}
       {...attributes.popper}>
