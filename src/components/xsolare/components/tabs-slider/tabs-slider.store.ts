@@ -16,6 +16,7 @@ export interface ITabsSliderProps<T> {
   onChange?: (value: IOptionsTabsSlider<T>) => void;
   headerText?: string;
 }
+
 export interface ITabsSliderTipProps {
   width: number;
   left: number;
