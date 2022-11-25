@@ -27,3 +27,7 @@ export { CheckboxStore } from './components/checkbox/checkbox.store';
 //* - form - *//
 export { Form } from './components/form/form';
 export { FormStore } from './components/form/form.store';
+
+//* - dialog - *//
+export { Dialog } from './components/dialog/dialog';
+export { BaseDialogStore } from './components/dialog/dialog.store';
