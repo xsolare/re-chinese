@@ -73,6 +73,7 @@
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "autoprefixer": "^10.4.13",
+    "commit-message-validator": "^1.0.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "eslint": "8.28.0",
@@ -117,5 +118,11 @@
     "src/**/*.+(ts,tsx,json,scss,md)": [
       "prettier -c \"./**/*.{ts,tsx,json,scss,md}\""
     ]
+  },
+  "config": {
+    "commit-message-validator": {
+      "pattern": "(feat|fix|fix-r|refactor)?:",
+      "errorMessage": "Invalid commit message"
+    }
   }
 }
