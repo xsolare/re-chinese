@@ -22,7 +22,7 @@ export const Tooltip: FC<
 
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
 
-  if (!restProps.title) return null;
+  if (!restProps.title) return <>{children}</>;
 
   return (
     <TooltipStyled>
