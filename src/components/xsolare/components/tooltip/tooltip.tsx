@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import type { PropsWithChildren, MutableRefObject, FC } from 'react';
 import type { ITooltipController, ITooltipProps } from './tooltip.store';
-import { useState, useRef } from 'react';
 import { usePopper } from 'react-popper';
 import { observer } from 'mobx-react-lite';
 import { TooltipStore } from './tooltip.store';
