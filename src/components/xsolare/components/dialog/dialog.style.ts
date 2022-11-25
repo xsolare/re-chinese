@@ -1,4 +1,3 @@
-import { breakpoint } from '#/utils/theme';
 import styled from '@emotion/styled';
 
 interface IDialogWrapperStyle {
@@ -8,21 +7,21 @@ interface IDialogWrapperStyle {
 }
 
 export const DialogWrapperStyle = styled.div<IDialogWrapperStyle>`
-    &:before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -10;
-        background: rgba(0, 0, 0, 0.15);
-        width: 100%;
-        height: 100%;
-    }
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    background: rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: 100%;
+  }
 
-    ${({ isVisible, isNotAnimate }) =>
-      isNotAnimate || !isVisible
-        ? ''
-        : `
+  ${({ isVisible, isNotAnimate }) =>
+    isNotAnimate || !isVisible
+      ? ''
+      : `
         &:before {
             animation: dialog-open-before 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
@@ -32,10 +31,10 @@ export const DialogWrapperStyle = styled.div<IDialogWrapperStyle>`
         }
     `}
 
-    ${({ isLock, isNotAnimate }) =>
-      isNotAnimate || !isLock
-        ? ''
-        : `
+  ${({ isLock, isNotAnimate }) =>
+    isNotAnimate || !isLock
+      ? ''
+      : `
         &:before {
             animation: dialog-close-before 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
         }

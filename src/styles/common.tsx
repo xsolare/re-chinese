@@ -325,49 +325,49 @@ export const GlobalStyles = css`
   }
 
   @keyframes dialog-open {
-        0% {
-            transform: scale(0.9);
-        }
-
-        100% {
-            transform: scale(1);
-        }
+    0% {
+      transform: scale(0.9);
     }
 
+    100% {
+      transform: scale(1);
+    }
+  }
+
   @keyframes dialog-close {
-      0% {
-          opacity: 1;
-          transform: scale(1);
-      }
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
 
-      70% {
-          opacity: 0;
-      }
+    70% {
+      opacity: 0;
+    }
 
-      100% {
-          transform: scale(0.9);
-          opacity: 0;
-      }
+    100% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
   }
 
   @keyframes dialog-open-before {
-      0% {
-          opacity: 0;
-      }
+    0% {
+      opacity: 0;
+    }
 
-      100% {
-          opacity: 1;
-      }
+    100% {
+      opacity: 1;
+    }
   }
 
   @keyframes dialog-close-before {
-      0% {
-          opacity: 1;
-      }
+    0% {
+      opacity: 1;
+    }
 
-      100% {
-          opacity: 0;
-      }
+    100% {
+      opacity: 0;
+    }
   }
 `;
 

@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
+import type { BaseDialogStore } from './dialog.store';
 import { observer } from 'mobx-react-lite';
-import { BaseDialogStore } from './dialog.store';
 import { DialogWrapperStyle } from './dialog.style';
 import cn from 'classnames';
 
