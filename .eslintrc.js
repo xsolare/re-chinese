@@ -115,6 +115,8 @@ module.exports = {
         'react/display-name': ['off', { ignoreTranspilerName: true }],
         'react-hooks/exhaustive-deps': 'off',
         'react-hooks/rules-of-hooks': 'off',
+        'react/jsx-no-useless-fragment':'off',
+
 
         '@emotion/jsx-import': 'error',
         '@emotion/no-vanilla': 'error',
