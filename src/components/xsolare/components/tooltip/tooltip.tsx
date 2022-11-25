@@ -1,3 +1,4 @@
+import React from 'react';
 import type { PropsWithChildren, MutableRefObject, FC } from 'react';
 import type { ITooltipController, ITooltipProps } from './tooltip.store';
 import { useState, useRef } from 'react';
