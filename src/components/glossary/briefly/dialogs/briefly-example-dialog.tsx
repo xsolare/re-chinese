@@ -5,6 +5,7 @@ import { Dialog } from '#/components/xsolare';
 import { setController, useNewStore } from '#/components/xsolare/helpers';
 import { observer } from 'mobx-react-lite';
 import { BrieflyDialogStore } from './briefly-example-dialog.store';
+import { BrieflyExampleDialogStyled } from './briefly-example-dialog.style';
 
 interface IBrieflyDialogProps {
   controllerRef: TControllerRef<IBrieflyDialogStoreController>;
@@ -17,8 +18,8 @@ const BrieflyDialog: FC<IBrieflyDialogProps> = (props) => {
   const controller = setController(store, controllerRef);
 
   return (
-    <Dialog store={store} className="assign-logist">
-      <div>none</div>
+    <Dialog store={store} className="briefly-dialog">
+      <BrieflyExampleDialogStyled>none</BrieflyExampleDialogStyled>
     </Dialog>
   );
 };

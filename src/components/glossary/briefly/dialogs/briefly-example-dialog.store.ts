@@ -1,7 +1,7 @@
 import { BaseDialogStore } from '#/components/xsolare';
 
 export interface IBrieflyDialogStoreShowParams {
-  exmples: unknown[];
+  examples: unknown[];
 }
 
 export interface IBrieflyDialogStoreController {

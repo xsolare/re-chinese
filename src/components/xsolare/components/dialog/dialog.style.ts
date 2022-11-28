@@ -7,7 +7,18 @@ interface IDialogWrapperStyle {
 }
 
 export const DialogWrapperStyle = styled.div<IDialogWrapperStyle>`
-  &:before {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
     content: '';
     position: fixed;
     top: 0;

@@ -14,12 +14,19 @@ export const Dialog: FC<IDialogProps> = observer((props) => {
   const {
     isDialogHidden,
     isNotAnimate,
-    state: { isLock, isVisible }
+    state: { isLock, isVisible },
+    hideDialog
   } = store;
 
   return isDialogHidden ? null : (
-    <DialogWrapperStyle isNotAnimate={isNotAnimate} isVisible={isVisible} isLock={isLock}>
-      <div className={cn('dialog', className)}>{children}</div>
+    <DialogWrapperStyle
+      onMouseDown={() => hideDialog()}
+      isNotAnimate={isNotAnimate}
+      isVisible={isVisible}
+      isLock={isLock}>
+      <div onMouseDown={(e) => e.stopPropagation()} className={cn('dialog', className)}>
+        {children}
+      </div>
     </DialogWrapperStyle>
   );
 });
