@@ -77,5 +77,5 @@ export default App;
 
 // export function reportWebVitals(metric: NextWebVitalsMetric) {
 //   if (process.env.NODE_ENV === 'production') return;
-//   // console.log(metric);
+//   console.log(metric);
 // }

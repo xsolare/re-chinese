@@ -36,6 +36,11 @@ export const GlossaryContentStyled = styled.div`
 `;
 
 export const GlossaryContentItemStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+
   width: 33%;
 
   ${breakpoint('xl')} {
@@ -44,6 +49,20 @@ export const GlossaryContentItemStyled = styled.div`
 
   ${breakpoint('md')} {
     width: 100%;
+  }
+
+  &:hover {
+    > svg {
+      opacity: 0.8;
+    }
+  }
+
+  > svg {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.1s ease-in;
   }
 `;
 

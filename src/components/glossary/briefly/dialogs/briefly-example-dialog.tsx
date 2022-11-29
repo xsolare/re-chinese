@@ -15,11 +15,16 @@ const BrieflyDialog: FC<IBrieflyDialogProps> = (props) => {
   const { controllerRef } = props;
 
   const store = useNewStore(BrieflyDialogStore);
-  const controller = setController(store, controllerRef);
+  setController(store, controllerRef);
+  const { examples } = store.showParams;
 
   return (
-    <Dialog store={store} className="briefly-dialog">
-      <BrieflyExampleDialogStyled>none</BrieflyExampleDialogStyled>
+    <Dialog store={store}>
+      <BrieflyExampleDialogStyled>
+        {examples.map((example) => (
+          <div key={example}>{example}</div>
+        ))}
+      </BrieflyExampleDialogStyled>
     </Dialog>
   );
 };

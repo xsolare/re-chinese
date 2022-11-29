@@ -1,7 +1,8 @@
 import { BaseDialogStore } from '#/components/xsolare';
+import { action, makeAutoObservable, makeObservable } from 'mobx';
 
 export interface IBrieflyDialogStoreShowParams {
-  examples: unknown[];
+  examples: string[];
 }
 
 export interface IBrieflyDialogStoreController {
@@ -10,13 +11,27 @@ export interface IBrieflyDialogStoreController {
 }
 
 export class BrieflyDialogStore extends BaseDialogStore {
-  showParams = {} as IBrieflyDialogStoreShowParams;
+  showParams = {
+    examples: []
+  } as IBrieflyDialogStoreShowParams;
 
   controller = {
     show: (params) => {
-      this.showParams = params;
+      this.setExamples(params);
       this.showDialog();
     },
     hide: () => this.hideDialog()
   } as IBrieflyDialogStoreController;
+
+  constructor() {
+    super();
+
+    makeAutoObservable(this.showParams);
+    makeObservable(this, {
+      setExamples: action
+    });
+  }
+
+  setExamples = (params: IBrieflyDialogStoreShowParams) =>
+    (this.showParams.examples = params.examples);
 }

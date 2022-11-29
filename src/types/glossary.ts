@@ -22,4 +22,5 @@ export interface IGlossaryBriefly {
   hieroglyph: string;
   pinyin: string;
   translate: string;
+  examples: string[];
 }
