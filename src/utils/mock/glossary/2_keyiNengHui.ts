@@ -64,7 +64,8 @@ export const keyiNengHuiGlossary2: IGlossaryContent = {
       id: '1',
       hieroglyph: '可以',
       pinyin: 'kěyǐ',
-      translate: 'мочь, можно'
+      translate: 'мочь, можно',
+      examples: []
     }
   ]
 };

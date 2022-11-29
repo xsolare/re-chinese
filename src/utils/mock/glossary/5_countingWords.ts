@@ -37,7 +37,7 @@ const text = `<div>
 
   <span type="text">
     А вот в китайском языке существует явление переходности слов. Слово может быть и существительным и глаголом, и прилагательным 
-    (<span fixed="0" type="h" t="учёба, учиться, учебный" p="xué xí">学习</span>). Такая переходность слов касается и числа- практически <b>все существительные</b> в китайском языке не имеют точно числа, 
+    <span fixed="0" type="h" t="учёба, учиться, учебный" p="xué xí">学习</span>. Такая переходность слов касается и числа- практически <b>все существительные</b> в китайском языке не имеют точно числа, 
     <b>являются</b> и множественным, и единственным числом, а определить конкретное количество и число "штук" можно только с помощью специальных средств , 
     в числе которых просто указать количество с помощью конструкции "количество + классификатор + существительное".
   </span>
@@ -339,115 +339,134 @@ export const countingWordsGlossary5: IGlossaryContent = {
       id: '1',
       hieroglyph: '个',
       pinyin: 'ge',
-      translate: 'Штука'
+      translate: 'Штука',
+      examples: ['<span type="h" p="yī ge rén" t="Один человек">一个人</span> <br />']
     },
     {
       id: '2',
       hieroglyph: '位',
       pinyin: 'wèi',
-      translate: 'Персона'
+      translate: 'Персона',
+      examples: []
     },
     {
       id: '3',
       hieroglyph: '口',
       pinyin: 'kǒu',
-      translate: 'Рот'
+      translate: 'Рот',
+      examples: []
     },
     {
       id: '4',
       hieroglyph: '只',
       pinyin: 'zhī',
-      translate: 'Единица'
+      translate: 'Единица',
+      examples: []
     },
     {
       id: '5',
       hieroglyph: '条',
       pinyin: 'tiáo',
-      translate: 'Полоска, ветка'
+      translate: 'Полоска, ветка',
+      examples: []
     },
     {
       id: '6',
       hieroglyph: '双',
       pinyin: 'shuāng',
-      translate: 'Пара двух предметов'
+      translate: 'Пара двух предметов',
+      examples: []
     },
     {
       id: '7',
       hieroglyph: '辆',
       pinyin: 'liàng',
-      translate: 'Повозка, экипаж'
+      translate: 'Повозка, экипаж',
+      examples: []
     },
     {
       id: '8',
       hieroglyph: '张',
       pinyin: 'zhāng',
-      translate: 'Лист'
+      translate: 'Лист',
+      examples: []
     },
     {
       id: '9',
       hieroglyph: '本',
       pinyin: 'běn',
-      translate: 'Корешёк'
+      translate: 'Корешёк',
+      examples: []
     },
     {
       id: '10',
       hieroglyph: '家',
       pinyin: 'jiā',
-      translate: 'Семья'
+      translate: 'Семья',
+      examples: []
     },
     {
       id: '11',
       hieroglyph: '件',
       pinyin: 'jiàn',
-      translate: 'Предмет, вещь'
+      translate: 'Предмет, вещь',
+      examples: []
     },
     {
       id: '12',
       hieroglyph: '块',
       pinyin: 'kuài',
-      translate: 'Кусок'
+      translate: 'Кусок',
+      examples: []
     },
     {
       id: '13',
       hieroglyph: '节',
       pinyin: 'jié',
-      translate: 'Сегмент'
+      translate: 'Сегмент',
+      examples: []
     },
     {
       id: '14',
       hieroglyph: '台',
       pinyin: 'tái',
-      translate: 'Платформа, единица'
+      translate: 'Платформа, единица',
+      examples: []
     },
     {
       id: '15',
       hieroglyph: '把',
       pinyin: 'bǎ',
-      translate: 'Рукоятка, пучок'
+      translate: 'Рукоятка, пучок',
+      examples: []
     },
     {
       id: '16',
       hieroglyph: '座',
       pinyin: 'zuò',
-      translate: 'Штука'
+      translate: 'Штука',
+      examples: []
     },
     {
       id: '17',
       hieroglyph: '种',
       pinyin: 'zhǒng',
-      translate: 'Вид'
+      translate: 'Вид',
+      examples: []
     },
     {
       id: '18',
       hieroglyph: '句',
       pinyin: 'jù',
-      translate: 'Фраза'
+      translate: 'Фраза',
+      examples: []
     },
     {
       id: '19',
       hieroglyph: '套',
       pinyin: 'tào',
-      translate: 'Набор'
+      translate: 'Набор',
+      examples: []
     }
   ]
 };

@@ -3,7 +3,6 @@ import type { IGlossaryContent } from '#/types/glossary';
 import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
 import {
-  GlossaryContentItemStyled,
   GlossaryContentStyled,
   GlossaryStyled,
   GlossaryTitleStyled
@@ -14,8 +13,8 @@ import { observer } from 'mobx-react-lite';
 import { parseGlossary } from '#/utils/parseTextToHtml';
 import { glossary as g } from '#/utils/mock/glossary';
 import { useNewStore } from '#/components/xsolare/helpers';
-import { WordTitle } from '#/components/xsolare';
 import GlossaryStore from '#/store/pages/glossary.store';
+import GlossaryBriefly from '#/components/glossary/briefly/glossary-briefly';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;
@@ -50,16 +49,9 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
           {/* Full */}
           {isGlossaryPage && GlossaryContent}
           {/* Briefly */}
-          {isBrieflyPage &&
-            glossary.briefly.map((b, index) => (
-              <GlossaryContentItemStyled key={b.id}>
-                <WordTitle pinyin={b.pinyin} translate={b.translate} index={index + 1}>
-                  {b.hieroglyph}
-                </WordTitle>
-              </GlossaryContentItemStyled>
-            ))}
+          {isBrieflyPage && <GlossaryBriefly content={glossary.briefly} />}
           {/* Test */}
-          {isTestPage && <div>1</div>}
+          {isTestPage && <div>NOT IMPLEMENTED</div>}
         </GlossaryContentStyled>
       </GlossaryStyled>
     </>
