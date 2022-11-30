@@ -4,11 +4,12 @@ import styled from '@emotion/styled';
 
 interface IWordStyledProps {
   type: IWordType;
+  styleInvert: boolean;
 }
 export const WordStyled = styled.div<IWordStyledProps>`
   display: inline-block;
 
-  color: ${({ theme }) => theme.palette.color.text};
+  color: ${({ theme, styleInvert }) => theme.palette.color[styleInvert ? 'textInvert' : 'text']};
   font-size: ${({ theme }) => theme.font.size.hieroglyph};
   font-family: ${({ theme }) => theme.font.family.chn};
   font-weight: 400;
@@ -17,7 +18,8 @@ export const WordStyled = styled.div<IWordStyledProps>`
   margin-right: 4px;
 
   .pinyin {
-    color: ${({ theme }) => theme.palette.color.pinyin};
+    color: ${({ theme, styleInvert }) =>
+      theme.palette.color[styleInvert ? 'pinyinInvert' : 'pinyin']};
     font-family: ${({ theme }) => theme.font.family.pinyin};
     font-weight: 400;
     font-size: 1rem;
@@ -34,7 +36,7 @@ export const WordStyled = styled.div<IWordStyledProps>`
 
   .translate {
     font-family: ${({ theme }) => theme.font.family.text};
-    color: ${({ theme }) => theme.palette.color.text};
+    color: ${({ theme, styleInvert }) => theme.palette.color[styleInvert ? 'textInvert' : 'text']};
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.2px;

@@ -4,13 +4,16 @@ import styled from '@emotion/styled';
 export const BrieflyExampleDialogStyled = styled.div`
   position: relative;
 
-  width: 90vw;
+  display: flex;
+  flex-direction: column;
+
+  width: auto;
   max-width: 1000px;
   min-width: 300px;
 
   min-height: 500px;
   height: auto;
-  padding: 15px;
+  padding: 15px 25px;
   color: ${({ theme }) => theme.palette.color.textInvert};
 
   background-color: ${({ theme }) => theme.palette.bg.modal};

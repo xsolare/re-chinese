@@ -11,10 +11,11 @@ interface IWordProps extends PropsWithChildren {
   fixed?: IWordType;
   pinyin?: string;
   translate?: string;
+  styleInvert?: boolean;
 }
 
 export const Word: FC<IWordProps> = observer((props) => {
-  const { children, fixed } = props;
+  const { children, fixed, styleInvert = false } = props;
 
   const { wordStore } = useStore();
   const { type } = wordStore.state;
@@ -22,7 +23,7 @@ export const Word: FC<IWordProps> = observer((props) => {
   const resultType = fixed ?? type ?? 1;
 
   return (
-    <WordStyled type={resultType} key={resultType as number}>
+    <WordStyled type={resultType} key={resultType as number} styleInvert={styleInvert}>
       <WordVarious {...{ ...props, type: resultType }}>{children}</WordVarious>
     </WordStyled>
   );

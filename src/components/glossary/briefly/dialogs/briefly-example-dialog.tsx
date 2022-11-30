@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { TControllerRef } from '#/components/xsolare/helpers';
 import type { IBrieflyDialogStoreController } from './briefly-example-dialog.store';
-import { Dialog } from '#/components/xsolare';
+import { Dialog, Word } from '#/components/xsolare';
 import { setController, useNewStore } from '#/components/xsolare/helpers';
 import { observer } from 'mobx-react-lite';
 import { BrieflyDialogStore } from './briefly-example-dialog.store';
@@ -16,13 +16,21 @@ const BrieflyDialog: FC<IBrieflyDialogProps> = (props) => {
 
   const store = useNewStore(BrieflyDialogStore);
   setController(store, controllerRef);
-  const { examples } = store.showParams;
+  const { examples, hieroglyph } = store.showParams;
 
   return (
     <Dialog store={store}>
       <BrieflyExampleDialogStyled>
+        <h2>
+          Примеры предложений с{' '}
+          <Word {...hieroglyph} styleInvert fixed={0}>
+            {hieroglyph.hieroglyph}
+          </Word>
+        </h2>
         {examples.map((example) => (
-          <div key={example}>{example}</div>
+          <Word key={example.hieroglyph} {...example} styleInvert>
+            {example.hieroglyph}
+          </Word>
         ))}
       </BrieflyExampleDialogStyled>
     </Dialog>

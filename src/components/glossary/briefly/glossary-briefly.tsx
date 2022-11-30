@@ -31,7 +31,12 @@ const GlossaryBriefly: FC<IGlossaryBrieflyProps> = (props) => {
           {!!examples?.length && (
             <BiShowAlt
               type="button"
-              onClick={() => controllerBrieflyDialogRef.current?.show({ examples })}
+              onClick={() =>
+                controllerBrieflyDialogRef.current?.show({
+                  examples,
+                  hieroglyph: { id, hieroglyph, pinyin, translate }
+                })
+              }
             />
           )}
         </GlossaryContentItemStyled>

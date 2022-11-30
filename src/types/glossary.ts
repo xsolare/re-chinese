@@ -1,3 +1,5 @@
+import type { IHieroglyph } from '#/types/hieroglyph';
+
 export interface IGlossaryBase {
   id: string;
   url: string;
@@ -17,10 +19,7 @@ export interface IGlossaryContent extends IGlossaryBase {
   briefly: IGlossaryBriefly[];
 }
 
-export interface IGlossaryBriefly {
-  id: string;
-  hieroglyph: string;
-  pinyin: string;
-  translate: string;
-  examples: string[];
+export type IGlossaryBrieflyExample = Omit<IHieroglyph, 'id' | 'traditional'>;
+export interface IGlossaryBriefly extends IHieroglyph {
+  examples: IGlossaryBrieflyExample[];
 }
