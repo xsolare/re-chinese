@@ -340,7 +340,28 @@ export const countingWordsGlossary5: IGlossaryContent = {
       hieroglyph: '个',
       pinyin: 'ge',
       translate: 'Штука',
-      examples: ['<span type="h" p="yī ge rén" t="Один человек">一个人</span> <br />']
+      examples: [
+        {
+          hieroglyph: '一个人',
+          pinyin: 'yī ge rén',
+          translate: 'Один человек'
+        },
+        {
+          hieroglyph: '三个老外',
+          pinyin: 'sān ge lǎo wài',
+          translate: 'Три инострашки'
+        },
+        {
+          hieroglyph: '个美女',
+          pinyin: 'nàge měinǚ',
+          translate: 'Та красавица'
+        },
+        {
+          hieroglyph: '十个学生',
+          pinyin: 'shí ge xué shēng',
+          translate: '10 сутдентов'
+        }
+      ]
     },
     {
       id: '2',

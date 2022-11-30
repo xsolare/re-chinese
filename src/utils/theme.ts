@@ -45,8 +45,11 @@ const palette = {
     textInvert: '#e4e4e4',
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
+    hieroglyphInvert: '#535353',
     translate: '#262728',
+    translateInvert: '#e8e8e8',
     pinyin: '#535353',
+    pinyinInvert: '#dbd0d0',
     header: '#e0e0e0'
   },
   bg: {
@@ -55,7 +58,7 @@ const palette = {
     modal: '#333',
     modalContent: '#444',
     highlight: '#6db6ff',
-    hieroglyph: '#8fb2ff52',
+    hieroglyph: '#8fb2ff40',
     rule: '#48D1CC',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
     headerBlur: 'rgba(24, 24, 24, 0.7)',
@@ -80,8 +83,11 @@ const paletteDark = {
     textInvert: '#e4e4e4',
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
+    hieroglyphInvert: '#535353',
     translate: '#262728',
+    translateInvert: '#e8e8e8',
     pinyin: '#ababab',
+    pinyinInvert: '#dbd0d0',
     header: '#e0e0e0'
   },
   bg: {
@@ -90,7 +96,7 @@ const paletteDark = {
     modal: '#333',
     modalContent: '#444',
     highlight: '#f65341',
-    hieroglyph: '#02000050',
+    hieroglyph: '#02000040',
     rule: '#ff6633',
     header: 'linear-gradient(to top right,  #232325, #292929, #232325)',
     headerBlur: 'rgba(24, 24, 24, 0.7)',
@@ -115,8 +121,11 @@ const paletteBlue = {
     textInvert: '#e4e4e4',
     subTextInvert: '#6d6e6f',
     hieroglyph: '#262728',
+    hieroglyphInvert: '#535353',
     translate: '#262728',
+    translateInvert: '#e8e8e8',
     pinyin: '#959595',
+    pinyinInvert: '#dbd0d0',
     header: '#e0e0e0'
   },
   bg: {
@@ -125,7 +134,7 @@ const paletteBlue = {
     modal: '#1b222c',
     modalContent: '#141d27',
     highlight: '#6db6ff',
-    hieroglyph: '#182841',
+    hieroglyph: '#182840',
     rule: '#8fb2ff52',
     header: 'linear-gradient(to top right,  #161b22, #1d242d, #161b22)',
     headerBlur: 'rgba(24, 24, 24, 0.7)',
