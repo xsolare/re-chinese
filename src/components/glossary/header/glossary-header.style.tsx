@@ -11,7 +11,7 @@ export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: 'L T R';
+  grid-template-areas: 'LEFT_OPTION TITLE RIGHT_OPTION';
 
   border-bottom: 1px solid ${({ theme }) => theme.palette.border.title};
   max-width: 1250px;
@@ -20,7 +20,7 @@ export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
   user-select: none;
 
   .title {
-    grid-area: T;
+    grid-area: TITLE;
 
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@ export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
 
   .option {
     &.left {
-      grid-area: L;
+      grid-area: LEFT_OPTION;
 
       display: flex;
       align-items: center;
@@ -42,7 +42,7 @@ export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
     }
 
     &.right {
-      grid-area: R;
+      grid-area: RIGHT_OPTION;
 
       display: flex;
       align-items: center;
@@ -89,8 +89,8 @@ export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
     grid-template-rows: 1fr 1.5fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      'L R'
-      'T T';
+      'LEFT_OPTION RIGHT_OPTION'
+      'TITLE TITLE';
 
     padding: 0;
 
