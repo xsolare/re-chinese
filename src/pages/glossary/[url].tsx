@@ -47,11 +47,15 @@ const GlossaryItem: NextPageWithLayout<IGlossaryItemProps> = observer((props) =>
         </GlossaryTitleStyled>
         <GlossaryContentStyled>
           {/* Full */}
-          {isGlossaryPage && GlossaryContent}
+          {isGlossaryPage ? GlossaryContent : 'Текст не найден'}
           {/* Briefly */}
-          {isBrieflyPage && <GlossaryBriefly content={glossary.briefly} />}
+          {isBrieflyPage ? (
+            <GlossaryBriefly content={glossary.briefly} />
+          ) : (
+            'Краткое содержание не найдено'
+          )}
           {/* Test */}
-          {isTestPage && <div>NOT IMPLEMENTED</div>}
+          {isTestPage ? <div>NOT IMPLEMENTED</div> : 'Тесты для данной статьи не найдены'}
         </GlossaryContentStyled>
       </GlossaryStyled>
     </>
