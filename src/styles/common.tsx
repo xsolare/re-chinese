@@ -369,6 +369,16 @@ export const GlobalStyles = css`
       opacity: 0;
     }
   }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const RuleStyledHTML = styled.div`

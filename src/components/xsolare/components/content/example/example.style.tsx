@@ -15,8 +15,8 @@ export const ExampleStyled = styled.div<IExampleStyled>`
   ${({ row }) =>
     row
       ? `
-    columns: 2;
-    
+    s: 2;
+    column
     ${breakpoint('md')}{
       columns: 1;
     };
