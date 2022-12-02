@@ -5,17 +5,10 @@ import { GlossarySectionStyled } from '../section.style';
 
 interface IGlossaryTextProps {
   content: string;
-  isHidden?: boolean;
 }
 
-const GlossaryText: FC<IGlossaryTextProps> = (props) => {
-  const { content, isHidden } = props;
-
+const GlossaryText: FC<IGlossaryTextProps> = ({ content }) => {
   const GlossaryContent = useMemo(() => parseGlossary(content), []);
-
-  if (isHidden) {
-    return null;
-  }
 
   return (
     <GlossarySectionStyled>

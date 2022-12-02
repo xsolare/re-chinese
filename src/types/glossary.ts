@@ -3,6 +3,7 @@ import type { IHieroglyph } from '#/types/hieroglyph';
 export interface IGlossaryBase {
   id: string;
   url: string;
+  description: string;
   title: string;
   htmlTitle?: string;
   hsk: string;
@@ -14,9 +15,9 @@ export interface IGlossaryItem extends IGlossaryBase {
 }
 
 export interface IGlossaryContent extends IGlossaryBase {
-  description: string;
   text: string;
   briefly: IGlossaryBriefly[];
+  tester: unknown[];
 }
 
 export type IGlossaryBrieflyExample = Omit<IHieroglyph, 'id' | 'traditional'>;

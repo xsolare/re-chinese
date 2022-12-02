@@ -1,59 +1,44 @@
-import type { IGlossaryContent } from '#/types/glossary';
-import { action, computed, makeObservable, observable } from 'mobx';
+import type { IGlossaryBase } from '#/types/glossary';
+import { action, makeObservable, observable } from 'mobx';
 
-interface IGlossaryStoreState {
-  isBriefly: boolean;
-  isTester: boolean;
+export enum Sections {
+  Main = '',
+  Briefly = 'briefly',
+  Tester = 'tester'
 }
 
-export default class GlossaryStore {
-  glossary: IGlossaryContent;
+interface IGlossaryStoreState {
+  section: Sections;
+  glossaryBase: IGlossaryBase;
+}
 
+//* --- Store --------------------------------------------------------------------------------- *//
+export default class GlossaryStore {
   state = {
-    isBriefly: false,
-    isTester: false
+    section: '',
+    glossaryBase: {} as IGlossaryBase
   } as IGlossaryStoreState;
 
-  constructor(glossary: IGlossaryContent) {
-    this.glossary = glossary;
-
+  constructor() {
     makeObservable(this, {
       // ~ action
-      setBriefly: action,
-      setTester: action,
-      isBrieflyPage: computed,
-      isTestPage: computed,
-      isGlossaryPage: computed
+      setOnceGlossaryBase: action,
+      setSection: action
     });
 
     makeObservable(this.state, {
       // ~ observable
-      isBriefly: observable,
-      isTester: observable
+      glossaryBase: observable,
+      section: observable
     });
   }
 
-  setBriefly = (status: boolean) => {
-    this.state.isBriefly = status;
-    this.state.isTester = false;
+  setSection = (section: Sections) => (this.state.section = section);
+
+  setOnceGlossaryBase = (glossaryBase: IGlossaryBase, url: Sections) => {
+    if (!this.state.glossaryBase?.id) {
+      this.state.glossaryBase = glossaryBase;
+      this.setSection(url);
+    }
   };
-
-  setTester = (status: boolean) => {
-    this.state.isBriefly = false;
-    this.state.isTester = status;
-  };
-
-  get isBrieflyPage(): boolean {
-    return this.state.isBriefly;
-  }
-
-  get isTestPage(): boolean {
-    return this.state.isTester;
-  }
-
-  get isGlossaryPage(): boolean {
-    const { isBriefly, isTester } = this.state;
-
-    return !isBriefly && !isTester;
-  }
 }
