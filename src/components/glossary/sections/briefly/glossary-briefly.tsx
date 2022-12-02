@@ -5,7 +5,7 @@ import type { IBrieflyDialogStoreController } from './dialogs/briefly-example-di
 import { GlossaryContentItemStyled } from '#/styles/glossary/glossary.style';
 import { WordTitle } from '#/components/xsolare';
 import { BiShowAlt } from 'react-icons/bi';
-import { GlossaryPageStyled } from '../glossary.style';
+import { GlossaryPageStyled } from '../sections/section.style';
 import BrieflyDialog from './dialogs/briefly-example-dialog';
 
 interface IGlossaryBrieflyProps {

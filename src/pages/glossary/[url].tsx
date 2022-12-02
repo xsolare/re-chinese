@@ -7,10 +7,8 @@ import { observer } from 'mobx-react-lite';
 import { glossary as g } from '#/utils/mock/glossary';
 import { useNewStore } from '#/components/xsolare/helpers';
 import GlossaryStore from '#/store/pages/glossary.store';
-import GlossaryBriefly from '#/components/glossary/briefly/glossary-briefly';
-import GlossaryTester from '#/components/glossary/tester/glossary-tester';
-import GlossaryText from '#/components/glossary/text/glossary-text';
 import GlossaryHeader from '#/components/glossary/header/glossary-header';
+import { GlossaryText, GlossaryBriefly, GlossaryTester } from '#/components/glossary/sections/';
 
 interface IGlossaryItemProps {
   glossary: IGlossaryContent;

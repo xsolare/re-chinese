@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React, { useMemo } from 'react';
 import { parseGlossary } from '#/utils/parseTextToHtml';
-import { GlossaryPageStyled } from '../glossary.style';
+import { GlossarySectionStyled } from '../section.style';
 
 interface IGlossaryTextProps {
   content: string;
@@ -18,7 +18,9 @@ const GlossaryText: FC<IGlossaryTextProps> = (props) => {
   }
 
   return (
-    <GlossaryPageStyled>{content ? GlossaryContent : <h2>Текст не найден</h2>}</GlossaryPageStyled>
+    <GlossarySectionStyled>
+      {content ? GlossaryContent : <h2>Текст не найден</h2>}
+    </GlossarySectionStyled>
   );
 };
 

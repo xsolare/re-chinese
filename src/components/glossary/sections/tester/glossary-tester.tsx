@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import { GlossaryTesterStore } from './glossary-tester.store';
 import { useNewStore } from '#/components/xsolare/helpers';
-import { GlossaryPageStyled } from '../glossary.style';
+import { GlossaryPageStyled } from '../sections/section.style';
 
 interface IGlossaryTesterProps {
   isHidden?: boolean;

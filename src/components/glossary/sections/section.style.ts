@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const GlossaryPageStyled = styled.div`
+export const GlossarySectionStyled = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
