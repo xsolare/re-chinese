@@ -1,3 +1,4 @@
+import type { IGlossaryContent } from '#/types/glossary';
 import { action, computed, makeObservable, observable } from 'mobx';
 
 interface IGlossaryStoreState {
@@ -6,12 +7,16 @@ interface IGlossaryStoreState {
 }
 
 export default class GlossaryStore {
+  glossary: IGlossaryContent;
+
   state = {
     isBriefly: false,
     isTester: false
   } as IGlossaryStoreState;
 
-  constructor() {
+  constructor(glossary: IGlossaryContent) {
+    this.glossary = glossary;
+
     makeObservable(this, {
       // ~ action
       setBriefly: action,
