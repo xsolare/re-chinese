@@ -5,17 +5,11 @@ import { useNewStore } from '#/components/xsolare/helpers';
 import { GlossarySectionStyled } from '../section.style';
 
 interface IGlossaryTesterProps {
-  isHidden?: boolean;
+  content: unknown[];
 }
 
-const GlossaryTester: FC<IGlossaryTesterProps> = (props) => {
-  const { isHidden } = props;
-
+const GlossaryTester: FC<IGlossaryTesterProps> = ({ content }) => {
   useNewStore(GlossaryTesterStore);
-
-  if (isHidden) {
-    return null;
-  }
 
   return <GlossarySectionStyled>NOT IMPLEMENTED</GlossarySectionStyled>;
 };

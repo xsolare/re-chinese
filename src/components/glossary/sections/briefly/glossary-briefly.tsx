@@ -10,19 +10,12 @@ import BrieflyDialog from './dialogs/briefly-example-dialog';
 
 interface IGlossaryBrieflyProps {
   content: IGlossaryBriefly[];
-  isHidden?: boolean;
 }
 
 // Glossary briefly
 //* ------------------------------------------------------------------ *//
-const GlossaryBriefly: FC<IGlossaryBrieflyProps> = (props) => {
-  const { content, isHidden } = props;
-
+const GlossaryBriefly: FC<IGlossaryBrieflyProps> = ({ content }) => {
   const controllerBrieflyDialogRef = useRef<IBrieflyDialogStoreController>();
-
-  if (isHidden) {
-    return null;
-  }
 
   return (
     <GlossarySectionStyled>
