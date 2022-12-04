@@ -23,3 +23,20 @@ export const mvGlossary1: IGlossaryContent = {
   briefly,
   tester
 };
+
+//* --- Text --- *//
+export const mvText1: IGlossaryContent = {
+  ...base,
+  text
+};
+
+//* --- Briefly --- *//
+export const mvBriefly1: IGlossaryContent = {
+  ...base,
+  briefly
+};
+
+//* --- Tester --- *//
+export const mvTester1: IGlossaryContent = {
+  ...base
+};

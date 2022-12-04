@@ -20,7 +20,16 @@ export interface IGlossaryContent extends IGlossaryBase {
   tester: unknown[];
 }
 
+//* --- Text --- *//
+export interface IGlossaryText {
+  text: string;
+}
+
+//* --- Briefly --- *//
 export type IGlossaryBrieflyExample = Omit<IHieroglyph, 'id' | 'traditional'>;
 export interface IGlossaryBriefly extends IHieroglyph {
   examples: IGlossaryBrieflyExample[];
 }
+
+//* --- Tester --- *//
+export type IGlossaryTester = IGlossaryBase;
