@@ -11,16 +11,16 @@ const base = {
   hsk: '2'
 } as IGlossaryBase;
 
-export const leGlossary6: IGlossaryContent {
-    ...base,
-    text,
-    briefly,
-    tester
+export const leGlossary6: IGlossaryContent = {
+  ...base,
+  text,
+  briefly,
+  tester
 };
 
-export const leGlossaryItem6: IGlossaryItem {
-    ...base,
-    icon: '1',
-    title: 'Частица 了(le)',
-    badges: ['модальные глаголы']
-}
+export const leGlossaryItem6: IGlossaryItem = {
+  ...base,
+  icon: '1',
+  title: 'Частица 了(le)',
+  badges: ['модальные глаголы']
+};
