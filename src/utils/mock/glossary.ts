@@ -4,18 +4,21 @@ import { keyiNengHuiGlossaryItem2, keyiNengHuiGlossary2 } from './glossary/2_key
 import { familyGlossaryItem3, familyGlossary3 } from './glossary/3_family';
 import { afterwordGlossaryItem4, afterwordGlossary4 } from './glossary/4_afterword';
 import { countingWordsGlossaryItem5, countingWordsGlossary5 } from './glossary/5_countingWords';
+import { leGlossaryItem6, leGlossary6 } from './glossary/6_le';
 
 export const glossaryItems: IGlossaryItem[] = [
   mvGlossaryItem1,
   keyiNengHuiGlossaryItem2,
   familyGlossaryItem3,
   afterwordGlossaryItem4,
-  countingWordsGlossaryItem5
+  countingWordsGlossaryItem5,
+  leGlossaryItem6
 ];
 export const glossary: IGlossaryContent[] = [
   mvGlossary1,
   keyiNengHuiGlossary2,
   familyGlossary3,
   afterwordGlossary4,
-  countingWordsGlossary5
+  countingWordsGlossary5,
+  leGlossary6
 ];
