@@ -1,10 +1,9 @@
+import type { ThemeVarious } from '#/contexts/theme';
+import type { ScrollRecord, ViewportRecord } from './types';
+import axios from 'axios';
+import { setCookie } from 'cookies-next';
 import { action, computed, makeObservable, observable } from 'mobx';
 import { isClientSide } from '#/utils/env';
-
-import type { ScrollRecord, ViewportRecord } from './types';
-import type { ThemeVarious } from '../contexts/theme';
-import { setCookie } from 'cookies-next';
-import axios from 'axios';
 
 interface IAppUIStore {
   theme: ThemeVarious;

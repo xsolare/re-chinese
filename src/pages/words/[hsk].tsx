@@ -1,13 +1,13 @@
-import React from 'react';
+import type { NextPageWithLayout } from '#/pages/_app';
 import type { HSK } from '#/types/word';
 import type { ReactElement } from 'react';
-import type { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
+import React from 'react';
+import WordsLayout from '#/components/layouts/words/words.layout';
+import { Word } from '#/components/xsolare';
 import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style';
 import { HSK1 } from '#/utils/mock/words/hsk1';
-import { Word } from '#/components/xsolare';
 import { parseWord } from '#/utils/parseTextToHtml';
-import WordsLayout from '#/components/layouts/words/words.layout';
 
 interface IWordsHSKProps {
   words: HSK[];

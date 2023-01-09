@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { observer } from 'mobx-react-lite';
-import { WordTitleStyled } from './word-title.style';
 import React from 'react';
+import { WordTitleStyled } from './word-title.style';
 
 interface IWordTitleProps extends PropsWithChildren {
   index: string | number;

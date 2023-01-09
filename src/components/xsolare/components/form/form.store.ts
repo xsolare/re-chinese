@@ -1,6 +1,10 @@
-﻿import type { IBaseParams, IBaseStoreParams, IBaseValidator } from '../base.store';
-import { BaseStore } from '../base.store';
-import { ControlStore } from '../control.store';
+﻿import type {
+  IBaseParams,
+  IBaseStoreParams,
+  IBaseValidator
+} from '#/components/xsolare/components/base.store';
+import { BaseStore } from '#/components/xsolare/components/base.store';
+import { ControlStore } from '#/components/xsolare/components/control.store';
 
 export interface IFormValidatorExtended extends IBaseValidator {
   func?: (store: FormStore) => boolean;

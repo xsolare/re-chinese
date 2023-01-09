@@ -1,11 +1,11 @@
-import React from 'react';
-import type { FC, PropsWithChildren } from 'react';
 import type { ITooltipProps } from '#/components/xsolare';
 import type { IWordType } from '#/store/word';
+import type { FC, PropsWithChildren } from 'react';
 import { observer } from 'mobx-react-lite';
-import { WordStyled } from './word.style';
+import React from 'react';
 import { Tooltip } from '#/components/xsolare';
 import { useStore } from '#/store';
+import { WordStyled } from './word.style';
 
 interface IWordProps extends PropsWithChildren {
   fixed?: IWordType;

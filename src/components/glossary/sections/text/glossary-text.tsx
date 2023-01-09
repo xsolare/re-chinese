@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React, { useMemo } from 'react';
+import { GlossarySectionStyled } from '#/components/glossary/sections/section.style';
 import { parseGlossary } from '#/utils/parseTextToHtml';
-import { GlossarySectionStyled } from '../section.style';
 
 interface IGlossaryTextProps {
   content: string;

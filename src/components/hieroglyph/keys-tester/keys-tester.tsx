@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import type { FC } from 'react';
 import type { IHieroglyph } from '#/types/hieroglyph';
-import { KeysTesterStore } from './keys-tester.store';
+import type { FC } from 'react';
 import { observer } from 'mobx-react-lite';
+import React, { useEffect, useRef } from 'react';
 import { useNewStore } from '#/components/xsolare/helpers';
 
 //* Components
@@ -16,6 +15,7 @@ import {
   HieroglyphKeysScore,
   Hr
 } from './key-item.style';
+import { KeysTesterStore } from './keys-tester.store';
 
 interface IKeysTesterProps {
   hieroglyphKeys: IHieroglyph[];

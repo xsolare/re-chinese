@@ -1,6 +1,6 @@
-import { breakpoint } from '#/utils/theme';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { breakpoint } from '#/utils/theme';
 
 export const GlobalStyles = css`
   /* noto-sans-sc-regular - latin_chinese-simplified */

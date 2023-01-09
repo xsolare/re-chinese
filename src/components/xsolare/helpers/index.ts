@@ -1,8 +1,8 @@
-import type { FormStore } from '../components/form/form.store';
-import type { ControlStore } from '../components/control.store';
+import type { ControlStore } from '#/components/xsolare/components/control.store';
+import type { FormStore } from '#/components/xsolare/components/form/form.store';
 import type { MutableRefObject } from 'react';
-import { v4 } from 'uuid';
 import { useEffect, useMemo, useRef } from 'react';
+import { v4 } from 'uuid';
 
 export type TControllerRef<T> = MutableRefObject<T | undefined>;
 export type Size = 's' | 'm' | 'l';

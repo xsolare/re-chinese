@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
-import type { FC } from 'react';
 import type { IGlossaryBriefly } from '#/types/glossary';
 import type { IBrieflyDialogStoreController } from './dialogs/briefly-example-dialog.store';
-import { GlossaryContentItemStyled } from '#/styles/glossary/glossary.style';
-import { WordTitle } from '#/components/xsolare';
+import type { FC } from 'react';
+import React, { useRef } from 'react';
 import { BiShowAlt } from 'react-icons/bi';
-import { GlossarySectionStyled } from '../section.style';
+import { GlossarySectionStyled } from '#/components/glossary/sections/section.style';
+import { WordTitle } from '#/components/xsolare';
+import { GlossaryContentItemStyled } from '#/styles/glossary/glossary.style';
 import BrieflyDialog from './dialogs/briefly-example-dialog';
 
 interface IGlossaryBrieflyProps {

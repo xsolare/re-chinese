@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import React from 'react';
 import type { FC, PropsWithChildren } from 'react';
 import { useRouter } from 'next/router';
+import React from 'react';
 
 //* Styles
-import { WordsLayoutStyled } from './words.style';
 
 //* Components
 import { TabsSlider } from '#/components/xsolare';
 import { isWindowExists } from '#/utils/helpers';
+import { WordsLayoutStyled } from './words.style';
 
 // Words layout
 //* ------------------------------------------------------------------------------------------ *//

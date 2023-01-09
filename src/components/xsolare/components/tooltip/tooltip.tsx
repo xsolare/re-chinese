@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
-import type { PropsWithChildren, MutableRefObject, FC } from 'react';
 import type { ITooltipController, ITooltipProps } from './tooltip.store';
-import { usePopper } from 'react-popper';
+import type { PropsWithChildren, MutableRefObject, FC } from 'react';
+import cn from 'classnames';
 import { observer } from 'mobx-react-lite';
+import React, { useState, useRef } from 'react';
+import { usePopper } from 'react-popper';
 import { TooltipStore } from './tooltip.store';
 import { TooltipStyled } from './tooltip.style';
-import cn from 'classnames';
 
 export const Tooltip: FC<
   PropsWithChildren<ITooltipProps> & {

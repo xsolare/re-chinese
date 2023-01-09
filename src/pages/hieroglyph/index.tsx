@@ -1,13 +1,13 @@
-import React from 'react';
-import type { ReactElement } from 'react';
-import type { NextPageWithLayout } from '../_app';
+import type { NextPageWithLayout } from '#/pages/_app';
 import type { IHieroglyph } from '#/types/hieroglyph';
+import type { ReactElement } from 'react';
 import { NextSeo } from 'next-seo';
-import { mockHieroglyph } from '#/utils/mock/hieroglyph';
+import React from 'react';
 
 //* Components
 import HieroglyphKeys from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys';
 import HieroglyphLayout from '#/components/layouts/hieroglyph/hieroglyph.layout';
+import { mockHieroglyph } from '#/utils/mock/hieroglyph';
 
 interface IPinyinProps {
   hieroglyphKeys: IHieroglyph[];

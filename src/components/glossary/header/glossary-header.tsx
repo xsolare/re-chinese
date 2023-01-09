@@ -1,15 +1,14 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import type { FC } from 'react';
-import { Sections } from '#/store/pages/glossary.store';
-import { GlossaryHeaderStyled } from './glossary-header.style';
-
-import { TbTestPipe } from 'react-icons/tb';
-import { CgShortcut } from 'react-icons/cg';
-import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider';
+import cn from 'classnames';
 import { observer } from 'mobx-react-lite';
 import { useRouter } from 'next/router';
-import cn from 'classnames';
+import { CgShortcut } from 'react-icons/cg';
+import { TbTestPipe } from 'react-icons/tb';
+import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider';
+import { Sections } from '#/store/pages/glossary.store';
+import { GlossaryHeaderStyled } from './glossary-header.style';
 
 // Glossary header
 //* ------------------------------------------------------------------ *//

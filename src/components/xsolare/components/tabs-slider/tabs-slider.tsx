@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useRef } from 'react';
-import { observer } from 'mobx-react-lite';
 import type { IOptionsTabsSlider, ITabsSliderProps } from './tabs-slider.store';
+import { observer } from 'mobx-react-lite';
+import React, { useEffect, useMemo, useRef } from 'react';
+import useIsMounted from '#/components/xsolare/hooks/events/useIsMounted';
 import { TabsSliderStore } from './tabs-slider.store';
-import useIsMounted from '../../hooks/events/useIsMounted';
 import {
   TabsSliderHeaderStyled,
   TabsSliderItemStyled,

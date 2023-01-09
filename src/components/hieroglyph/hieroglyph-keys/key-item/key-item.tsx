@@ -1,10 +1,10 @@
 import type { IHieroglyph } from '#/types/hieroglyph';
 import type { FC } from 'react';
-import { HieroglyphKeysItem, HieroglyphKeysWrapper } from './key-item.style';
-import React from 'react';
-import { KeyItemStore } from './key-item.store';
 import { observer } from 'mobx-react-lite';
+import React from 'react';
 import { useNewStore } from '#/components/xsolare/helpers';
+import { KeyItemStore } from './key-item.store';
+import { HieroglyphKeysItem, HieroglyphKeysWrapper } from './key-item.style';
 
 //* Components
 

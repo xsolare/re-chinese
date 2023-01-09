@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import React from 'react';
-import { useRouter } from 'next/router';
 import type { FC, PropsWithChildren } from 'react';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 //* Styles
-import { GlossaryLayoutStyled } from './glossary.style';
 
 //* Components
 import { TabsSlider } from '#/components/xsolare';
 import { isWindowExists } from '#/utils/helpers';
+import { GlossaryLayoutStyled } from './glossary.style';
 
 // Glossary layout
 //* ------------------------------------------------------------------------------------------ *//

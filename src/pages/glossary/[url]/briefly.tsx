@@ -1,13 +1,13 @@
-import React from 'react';
-import type { IGlossaryContent } from '#/types/glossary';
 import type { NextPageWithLayout } from '#/pages/_app';
-import { NextSeo } from 'next-seo';
+import type { IGlossaryContent } from '#/types/glossary';
 import { observer } from 'mobx-react-lite';
+import { NextSeo } from 'next-seo';
+import React from 'react';
 import { GlossaryBriefly } from '#/components/glossary/sections';
-import { glossary as g } from '#/utils/mock/glossary';
-import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider';
 import GlossaryUrlLayout from '#/components/layouts/glossary/url/glossary-url.layout';
+import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider';
 import { Sections } from '#/store/pages/glossary.store';
+import { glossary as g } from '#/utils/mock/glossary';
 
 interface IGlossaryBrieflyProps {
   glossary: IGlossaryContent;

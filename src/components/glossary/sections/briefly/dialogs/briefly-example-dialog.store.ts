@@ -1,7 +1,7 @@
 import type { IGlossaryBrieflyExample } from '#/types/glossary';
 import type { IHieroglyph } from '#/types/hieroglyph';
-import { BaseDialogStore } from '#/components/xsolare';
 import { action, makeAutoObservable, makeObservable } from 'mobx';
+import { BaseDialogStore } from '#/components/xsolare';
 
 export interface IBrieflyDialogStoreShowParams {
   hieroglyph: IHieroglyph;

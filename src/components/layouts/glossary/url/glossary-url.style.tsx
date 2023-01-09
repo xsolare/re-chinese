@@ -1,5 +1,5 @@
-import { breakpoint } from '#/utils';
 import styled from '@emotion/styled';
+import { breakpoint } from '#/utils';
 
 export const GlossaryUrlLayoutStyled = styled.section`
   width: 100%;

@@ -1,6 +1,6 @@
-import type { FC, PropsWithChildren } from 'react';
-import type { IGlossaryBase } from '#/types/glossary';
 import type { Sections } from '#/store/pages/glossary.store';
+import type { IGlossaryBase } from '#/types/glossary';
+import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect } from 'react';
 import { useNewStore } from '#/components/xsolare/helpers';
 import GlossaryStore from '#/store/pages/glossary.store';

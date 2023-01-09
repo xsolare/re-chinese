@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import { ThemeProvider as ThemeEmotionProvider } from '@emotion/react';
-import { theme, themeBlue, themeDark } from '#/utils/theme';
-
-import type { Dispatch, PropsWithChildren, SetStateAction, FC } from 'react';
 import type { ThemeTypes } from '#/utils/theme';
-import { useStore } from '#/store';
+import type { Dispatch, PropsWithChildren, SetStateAction, FC } from 'react';
+import { ThemeProvider as ThemeEmotionProvider } from '@emotion/react';
 import { observer } from 'mobx-react-lite';
+import React, { useEffect } from 'react';
+import { useStore } from '#/store';
+import { theme, themeBlue, themeDark } from '#/utils/theme';
 
 export type ThemeValue = {
   themeContext: ThemeVarious;

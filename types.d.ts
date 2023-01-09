@@ -1,5 +1,5 @@
-import type { FC } from 'react';
 import type { InitialDataType } from '#/contexts/initial-data';
+import type { FC } from 'react';
 import 'react-dom/next';
 
 declare global {

@@ -1,11 +1,11 @@
-import type { HTMLReactParserOptions } from 'html-react-parser';
 import type { IWordType } from '#/store/word';
-import React from 'react';
+import type { HTMLReactParserOptions } from 'html-react-parser';
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser';
-import { HrStyledHTML, RuleStyledHTML, TextStyledHTML } from '#/styles/common';
+import React from 'react';
 import { Word, WordTitle } from '#/components/xsolare';
 import { Example } from '#/components/xsolare/components/content/example/example';
 import { Warn } from '#/components/xsolare/components/content/warn/warn';
+import { HrStyledHTML, RuleStyledHTML, TextStyledHTML } from '#/styles/common';
 
 const optionsForGlossary: HTMLReactParserOptions = {
   replace: (domNode) => {

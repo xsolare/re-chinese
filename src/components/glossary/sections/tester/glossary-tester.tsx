@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { observer } from 'mobx-react-lite';
-import { GlossaryTesterStore } from './glossary-tester.store';
+import { GlossarySectionStyled } from '#/components/glossary/sections/section.style';
 import { useNewStore } from '#/components/xsolare/helpers';
-import { GlossarySectionStyled } from '../section.style';
+import { GlossaryTesterStore } from './glossary-tester.store';
 
 interface IGlossaryTesterProps {
   content: unknown[];

@@ -1,6 +1,6 @@
 import type { IGlossaryContent } from '#/types/glossary';
 import type { AxiosInstance } from 'axios';
-import { glossary } from '../mock/glossary';
+import { glossary } from '#/utils/mock/glossary';
 
 ///                                                                                 //
 

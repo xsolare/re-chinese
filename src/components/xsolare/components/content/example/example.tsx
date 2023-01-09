@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { observer } from 'mobx-react-lite';
-import { ExampleStyled } from './example.style';
 import React from 'react';
+import { ExampleStyled } from './example.style';
 
 interface IExampleProps extends PropsWithChildren {
   row?: string;

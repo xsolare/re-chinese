@@ -1,8 +1,8 @@
 import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document';
-import { extractCritical } from '@emotion/server';
 import { Global } from '@emotion/react';
-import { GlobalStyles } from '#/styles/common';
+import { extractCritical } from '@emotion/server';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { GlobalStyles } from '#/styles/common';
 
 export default class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {

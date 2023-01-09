@@ -1,10 +1,10 @@
-import React from 'react';
-import type { ReactElement } from 'react';
-import type { NextPageWithLayout } from '../_app';
+import type { NextPageWithLayout } from '#/pages/_app';
 import type { IGlossaryItem } from '#/types/glossary';
+import type { ReactElement } from 'react';
 import { NextSeo } from 'next-seo';
-import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style';
+import React from 'react';
 import WordsLayout from '#/components/layouts/words/words.layout';
+import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style';
 
 interface IWordsProps {
   words: IGlossaryItem[];

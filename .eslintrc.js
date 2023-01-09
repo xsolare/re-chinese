@@ -67,7 +67,7 @@ module.exports = {
         ],
         'react/prop-types': 'off',
         'no-param-reassign': [
-          'error',
+          'warn',
           {
             props: true,
             ignorePropertyModificationsFor: ['state']

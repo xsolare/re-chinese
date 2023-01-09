@@ -1,5 +1,5 @@
-import { breakpoint } from '#/utils/theme';
 import styled from '@emotion/styled';
+import { breakpoint } from '#/utils/theme';
 
 export const HieroglyphKeysWrapper = styled.div`
   cursor: pointer;

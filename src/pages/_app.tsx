@@ -1,18 +1,18 @@
-import type { AppContext, AppInitialProps, AppProps } from 'next/app';
-import type { FC, PropsWithChildren, ReactNode, ReactElement } from 'react';
-import type { NextComponentType, NextPage } from 'next';
 import type { ThemeVarious } from '#/contexts/theme';
 import type { IInitialData } from '#/types/common';
+import type { NextComponentType, NextPage } from 'next';
+import type { AppContext, AppInitialProps, AppProps } from 'next/app';
+import type { FC, PropsWithChildren, ReactNode, ReactElement } from 'react';
 import { Analytics } from '@vercel/analytics/react';
-import { InitialContextProvider } from '#/contexts/initial-data';
-import { RootStoreProvider } from '#/contexts/root-store';
 import { getCookie } from 'cookies-next';
 import { DefaultSeo } from 'next-seo';
+import NextApp from 'next/app';
 import React, { memo, useMemo } from 'react';
 import DefaultLayout from '#/components/layouts/default.layout';
+import { InitialContextProvider } from '#/contexts/initial-data';
+import { RootStoreProvider } from '#/contexts/root-store';
 import ThemeProvider from '#/contexts/theme';
 import nextSeoConfig from 'next-seo.config';
-import NextApp from 'next/app';
 
 export type NextPageWithLayout<T = {}> = NextPage<T> & {
   getLayout?: (page: ReactElement) => ReactNode;

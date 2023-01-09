@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import { IHieroglyph } from '#/types/hieroglyph';
-import { randomNum } from '#/utils/helpers';
+import type { IHieroglyph } from '#/types/hieroglyph';
 import { action, makeObservable, observable, computed } from 'mobx';
+import { randomNum } from '#/utils/helpers';
 
 interface IKeysTesterState {
   answers: IHieroglyphAnswer[];

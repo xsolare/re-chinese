@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
 import type { FC, PropsWithChildren } from 'react';
+import React, { useEffect } from 'react';
 
 //* Styles
+import Header from '#/components/header/header';
 import { DefaultStyled } from '#/components/layouts/default.style';
 
 //* Components
-import Header from '../header/header';
 import { store } from '#/store';
 
 // Default layout

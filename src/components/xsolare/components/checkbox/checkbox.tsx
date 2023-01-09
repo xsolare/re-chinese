@@ -2,8 +2,8 @@ import type { CheckboxStore, ICheckboxStoreParams } from './checkbox.store';
 import type { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useRef, useEffect } from 'react';
-import { getId } from '../../helpers';
 import { HiFingerPrint } from 'react-icons/hi';
+import { getId } from '#/components/xsolare/helpers';
 import { CheckboxStyled } from './checkbox.style';
 
 export const Checkbox: FC<{ store?: CheckboxStore }> = observer(({ store }) => {

@@ -1,5 +1,5 @@
-﻿import type { IControlStoreParams } from '../control.store';
-import { ControlStore } from '../control.store';
+﻿import type { IControlStoreParams } from '#/components/xsolare/components/control.store';
+import { ControlStore } from '#/components/xsolare/components/control.store';
 
 export interface ICheckboxStoreParams extends IControlStoreParams<boolean> {
   className?: string;

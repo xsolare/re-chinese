@@ -1,9 +1,9 @@
-import type { FC } from 'react';
 import type { IGlossaryItem } from '#/types/glossary';
-import { GlossaryItemHskStyled, GlossaryItemStyled } from './glossary-item.style';
+import type { FC } from 'react';
+import Link from 'next/link';
 import { AiTwotoneFire } from 'react-icons/ai';
 import { Tooltip } from '#/components/xsolare';
-import Link from 'next/link';
+import { GlossaryItemHskStyled, GlossaryItemStyled } from './glossary-item.style';
 
 type IGlossaryItemProps = IGlossaryItem;
 

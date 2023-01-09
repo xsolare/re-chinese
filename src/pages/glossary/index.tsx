@@ -1,12 +1,12 @@
-import React from 'react';
-import type { ReactElement } from 'react';
-import type { NextPageWithLayout } from '../_app';
+import type { NextPageWithLayout } from '#/pages/_app';
 import type { IGlossaryItem } from '#/types/glossary';
+import type { ReactElement } from 'react';
 import { NextSeo } from 'next-seo';
-import { glossaryItems as gi } from '#/utils/mock/glossary';
-import { GlossaryContentStyled, GlossaryStyled } from '#/styles/glossary/glossary.style';
-import GlossaryLayout from '#/components/layouts/glossary/glossary.layout';
+import React from 'react';
 import GlossaryItem from '#/components/glossary/item/glossary-item';
+import GlossaryLayout from '#/components/layouts/glossary/glossary.layout';
+import { GlossaryContentStyled, GlossaryStyled } from '#/styles/glossary/glossary.style';
+import { glossaryItems as gi } from '#/utils/mock/glossary';
 
 interface IGlossaryProps {
   glossaryItems: IGlossaryItem[];

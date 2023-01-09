@@ -1,13 +1,13 @@
-import React from 'react';
 import type { FC, PropsWithChildren } from 'react';
+import React from 'react';
 
 //* Styles
-import { GlossaryUrlLayoutStyled } from './glossary-url.style';
+import GlossaryHeader from '#/components/glossary/header/glossary-header';
 import { GlossaryContentStyled } from '#/styles/glossary/glossary.style';
 
 //* Components
-import GlossaryHeader from '#/components/glossary/header/glossary-header';
 import { GlossaryUrlProvider } from './glossary-url.provider';
+import { GlossaryUrlLayoutStyled } from './glossary-url.style';
 
 // Glossary url layout
 //* ------------------------------------------------------------------------------------------ *//
