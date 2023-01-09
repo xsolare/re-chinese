@@ -70,6 +70,7 @@
     "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "@xsolare/eslint-plugin": "^1.0.1",
     "autoprefixer": "^10.4.13",
     "commit-message-validator": "^1.0.2",
     "cross-env": "^7.0.3",

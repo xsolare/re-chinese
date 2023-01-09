@@ -11,10 +11,11 @@
     "**/.settings": true,
     "**/.factorypath": true,
     ".next": true,
-    ".github": true,
     ".husky": true,
     "node_modules": true,
-    ".vscode": true
+    ".vscode": true,
+    ".github/workflows": true,
+    ".github": true
   },
-  "hide-files.files": [".next", ".github", ".husky", "node_modules", ".vscode"]
+  "hide-files.files": [".next", ".husky", "node_modules", ".vscode", ".github/workflows", ".github"]
 }

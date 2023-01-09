@@ -3,7 +3,7 @@ import type { IGlossaryContent } from '#/types/glossary';
 import type { NextPageWithLayout } from '#/pages/_app';
 import { NextSeo } from 'next-seo';
 import { observer } from 'mobx-react-lite';
-import { GlossaryTester } from '#/components/glossary/sections';
+import { GlossaryTester } from "#/components/glossary/sections';
 import { glossary as g } from '#/utils/mock/glossary';
 import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider';
 import GlossaryUrlLayout from '#/components/layouts/glossary/url/glossary-url.layout';

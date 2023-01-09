@@ -23,7 +23,14 @@ module.exports = {
       parserOptions: {
         project: ['./tsconfig.json']
       },
-      plugins: ['react', 'react-hooks', '@typescript-eslint', 'unused-imports', '@emotion'],
+      plugins: [
+        'react',
+        'react-hooks',
+        '@typescript-eslint',
+        'unused-imports',
+        '@emotion',
+        '@xsolare'
+      ],
       extends: [
         'airbnb',
         'airbnb/hooks',
@@ -73,7 +80,6 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'no-console': 'off',
         'class-methods-use-this': 'off',
-        'no-param-reassign': 'off',
         'no-useless-escape': 'off',
         'no-promise-executor-return': 'off',
         'consistent-return': 'off',
@@ -81,7 +87,6 @@ module.exports = {
         camelcase: 'error',
         'spaced-comment': 'error',
         quotes: ['error', 'single'],
-        'import/order': 'off',
 
         'unused-imports/no-unused-imports-ts': 'error',
         'import/prefer-default-export': 'off',
@@ -115,8 +120,7 @@ module.exports = {
         'react/display-name': ['off', { ignoreTranspilerName: true }],
         'react-hooks/exhaustive-deps': 'off',
         'react-hooks/rules-of-hooks': 'off',
-        'react/jsx-no-useless-fragment':'off',
-
+        'react/jsx-no-useless-fragment': 'off',
 
         '@emotion/jsx-import': 'error',
         '@emotion/no-vanilla': 'error',
@@ -134,6 +138,30 @@ module.exports = {
             bracketSameLine: true,
             endOfLine: 'auto'
           }
+        ],
+
+        'import/order': [
+          'warn',
+          {
+            groups: [
+              'type',
+              'builtin',
+              'external',
+              'internal',
+              'unknown',
+              'parent',
+              'sibling',
+              'index',
+              'object'
+            ],
+            alphabetize: { order: 'asc', caseInsensitive: true }
+          }
+        ],
+        'react/self-closing-comp': ['error', { component: true }],
+        'react/jsx-boolean-value': ['error'],
+        '@xsolare/no-none-root-import-paths': [
+          'warn',
+          { allowSameFolder: true, rootDir: 'src', prefix: '#' }
         ]
       }
     }

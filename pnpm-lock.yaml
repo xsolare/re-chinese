@@ -19,6 +19,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.48.0
   '@typescript-eslint/parser': ^5.48.0
   '@vercel/analytics': ^0.1.6
+  '@xsolare/eslint-plugin': ^1.0.1
   '@xsolare/ui': ^1.1.6
   autoprefixer: ^10.4.13
   axios: ^1.2.2
@@ -116,6 +117,7 @@ devDependencies:
   '@types/uuid': 9.0.0
   '@typescript-eslint/eslint-plugin': 5.48.0_k73wpmdolxikpyqun3p36akaaq
   '@typescript-eslint/parser': 5.48.0_iukboom6ndih5an6iafl45j2fe
+  '@xsolare/eslint-plugin': 1.0.1
   autoprefixer: 10.4.13_postcss@8.4.21
   commit-message-validator: 1.0.2
   cross-env: 7.0.3
@@ -2361,6 +2363,11 @@ packages:
     dependencies:
       '@webassemblyjs/ast': 1.11.1
       '@xtuc/long': 4.2.2
+
+  /@xsolare/eslint-plugin/1.0.1:
+    resolution: {integrity: sha512-1P+fZwSZrMYm2nmauDmsTWzWdFlbiEP3rduz5b36iaIWozmUGEJFpouIDdpJFlcYx4Vm0ZSTPG1hsHvECCnZtA==}
+    requiresBuild: true
+    dev: true
 
   /@xsolare/ui/1.1.6_l4wmzyfecaqdvyrxgh5436qxyu:
     resolution: {integrity: sha512-UJONDs6v1IjPeQfwHIi2mySYPZNUUZNjwKNqE3PgPpoAS6CUeo1wI9Ul6DGFWvhLNJnAgv3GoFHuGB7+HMOHtw==}
