@@ -1,11 +1,7 @@
 import { breakpoint } from '#/utils/theme';
 import styled from '@emotion/styled';
 
-interface IGlossaryHeaderStyled {
-  isBriefly: boolean;
-  isTester: boolean;
-}
-export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
+export const GlossaryHeaderStyled = styled.div`
   position: relative;
 
   display: grid;
@@ -74,13 +70,10 @@ export const GlossaryHeaderStyled = styled.div<IGlossaryHeaderStyled>`
       width: 30px;
       height: 30px;
       cursor: pointer;
+      color: ${({ theme }) => theme.palette.bg.hieroglyph};
 
-      :first-child {
-        color: ${({ theme, isBriefly }) =>
-          theme.palette.bg[isBriefly ? 'highlight' : 'hieroglyph']};
-      }
-      :last-child {
-        color: ${({ theme, isTester }) => theme.palette.bg[isTester ? 'highlight' : 'hieroglyph']};
+      &.isActive {
+        color: ${({ theme }) => theme.palette.bg.highlight};
       }
     }
   }

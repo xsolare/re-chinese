@@ -9,7 +9,12 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    ".next": true,
+    ".github": true,
+    ".husky": true,
+    "node_modules": true,
+    ".vscode": true
   },
-  "hide-files.files": []
+  "hide-files.files": [".next", ".github", ".husky", "node_modules", ".vscode"]
 }
