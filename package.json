@@ -101,22 +101,22 @@
     "typescript": "4.9.4",
     "webpack": "^5.75.0"
   },
+  "packageManager": "pnpm@7.18.2",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.+(ts,tsx)": [
-      "prettier --write",
-      "eslint --fix",
-      "tsc-files --pretty --noEmit"
+    "src/**/*.+(js|jsx|ts|tsx)": [
+      "eslint --fix"
     ],
     "src/**/*.+(scss)": [
       "stylelint --fix --allow-empty-input"
     ],
-    "src/**/*.+(ts,tsx,json,scss,md)": [
-      "prettier -c \"./**/*.{ts,tsx,json,scss,md}\""
+    "src/**/*.+(js|jsx|ts|tsx|json|scss|md)": [
+      "prettier --write",
+      "prettier -c"
     ]
   },
   "config": {
