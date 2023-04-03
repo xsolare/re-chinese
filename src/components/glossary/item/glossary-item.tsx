@@ -1,16 +1,16 @@
-import type { IGlossaryItem } from '#/types/glossary';
-import type { FC } from 'react';
-import Link from 'next/link';
-import { AiTwotoneFire } from 'react-icons/ai';
-import { Tooltip } from '#/components/xsolare';
-import { GlossaryItemHskStyled, GlossaryItemStyled } from './glossary-item.style';
+import type { IGlossaryItem } from '#/types/glossary'
+import type { FC } from 'react'
+import Link from 'next/link'
+import { AiTwotoneFire } from 'react-icons/ai'
+import { Tooltip } from '#/components/xsolare'
+import { GlossaryItemHskStyled, GlossaryItemStyled } from './glossary-item.style'
 
-type IGlossaryItemProps = IGlossaryItem;
+type IGlossaryItemProps = IGlossaryItem
 
 // Glossary item
 //* ------------------------------------------------------------------ *//
 const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
-  const { url, title, hsk } = props;
+  const { url, title, hsk } = props
 
   return (
     <Link href={`/glossary/${url}`}>
@@ -27,7 +27,7 @@ const GlossaryItem: FC<IGlossaryItemProps> = (props) => {
         <div className="title">{title}</div>
       </GlossaryItemStyled>
     </Link>
-  );
-};
+  )
+}
 
-export default GlossaryItem;
+export default GlossaryItem

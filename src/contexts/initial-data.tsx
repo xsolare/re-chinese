@@ -1,27 +1,27 @@
-import type { IInitialData } from '#/types/common';
-import type { FC, PropsWithChildren } from 'react';
-import { useEffect, createContext, useMemo } from 'react';
+import type { IInitialData } from '#/types/common'
+import type { FC, PropsWithChildren } from 'react'
+import { useEffect, createContext, useMemo } from 'react'
 
-import { useStore } from '#/store/index';
+import { useStore } from '#/store/index'
 
-export const InitialContext = createContext({} as IInitialData);
+export const InitialContext = createContext({} as IInitialData)
 
-type IInitialContextProvider = { value: IInitialData } & PropsWithChildren;
+type IInitialContextProvider = { value: IInitialData } & PropsWithChildren
 
 // Initial context provider setup
 //* ------------------------------------------------------------------------------------------ *//
 export const InitialContextProvider: FC<IInitialContextProvider> = ({ value, children }) => {
-  const { userStore, appStore } = useStore();
-  userStore.setUser(value.user);
-  if (value.theme) appStore.setTheme(value.theme);
+  const { userStore, appStore } = useStore()
+  userStore.setUser(value.user)
+  if (value.theme) appStore.setTheme(value.theme)
 
   useEffect(() => {
-    appStore.addAxiosInterceptors();
-  }, []);
+    appStore.addAxiosInterceptors()
+  }, [])
 
   return (
     <InitialContext.Provider value={useMemo(() => value, [value])}>
       {children}
     </InitialContext.Provider>
-  );
-};
+  )
+}

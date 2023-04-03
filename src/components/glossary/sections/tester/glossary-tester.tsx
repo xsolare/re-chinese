@@ -1,17 +1,17 @@
-import type { FC } from 'react';
-import { observer } from 'mobx-react-lite';
-import { GlossarySectionStyled } from '#/components/glossary/sections/section.style';
-import { useNewStore } from '#/components/xsolare/helpers';
-import { GlossaryTesterStore } from './glossary-tester.store';
+import type { FC } from 'react'
+import { observer } from 'mobx-react-lite'
+import { GlossarySectionStyled } from '#/components/glossary/sections/section.style'
+import { useNewStore } from '#/components/xsolare/helpers'
+import { GlossaryTesterStore } from './glossary-tester.store'
 
 interface IGlossaryTesterProps {
-  content: unknown[];
+  content: unknown[]
 }
 
 const GlossaryTester: FC<IGlossaryTesterProps> = ({ content }) => {
-  useNewStore(GlossaryTesterStore);
+  useNewStore(GlossaryTesterStore)
 
-  return <GlossarySectionStyled>NOT IMPLEMENTED</GlossarySectionStyled>;
-};
+  return <GlossarySectionStyled>NOT IMPLEMENTED</GlossarySectionStyled>
+}
 
-export default observer(GlossaryTester);
+export default observer(GlossaryTester)

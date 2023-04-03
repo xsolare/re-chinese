@@ -1,28 +1,28 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import type { FC, PropsWithChildren } from 'react';
-import { useRouter } from 'next/router';
-import React from 'react';
+import type { FC, PropsWithChildren } from 'react'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 //* Styles
 
 //* Components
-import { TabsSlider } from '#/components/xsolare';
-import { isWindowExists } from '#/utils/helpers';
-import { WordsLayoutStyled } from './words.style';
+import { TabsSlider } from '#/components/xsolare'
+import { isWindowExists } from '#/utils/helpers'
+import { WordsLayoutStyled } from './words.style'
 
 // Words layout
 //* ------------------------------------------------------------------------------------------ *//
 const WordsLayout: FC<PropsWithChildren> = ({ children }) => {
-  const router = useRouter();
+  const router = useRouter()
 
   const getDefaultTab = React.useMemo(() => {
-    if (!isWindowExists()) return 0;
+    if (!isWindowExists()) return 0
 
-    const { pathname } = window.location;
+    const { pathname } = window.location
 
-    if (pathname === '/words/') return 0;
-    if (pathname === '/words/hsk-1') return 1;
-  }, []);
+    if (pathname === '/words/') return 0
+    if (pathname === '/words/hsk-1') return 1
+  }, [])
 
   const MemoSlider = React.useMemo(
     () => (
@@ -40,13 +40,13 @@ const WordsLayout: FC<PropsWithChildren> = ({ children }) => {
       />
     ),
     []
-  );
+  )
 
   return (
     <WordsLayoutStyled>
       {MemoSlider}
       {children}
     </WordsLayoutStyled>
-  );
-};
-export default WordsLayout;
+  )
+}
+export default WordsLayout

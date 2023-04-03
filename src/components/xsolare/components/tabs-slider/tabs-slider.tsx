@@ -1,14 +1,14 @@
-import type { IOptionsTabsSlider, ITabsSliderProps } from './tabs-slider.store';
-import { observer } from 'mobx-react-lite';
-import React, { useEffect, useMemo, useRef } from 'react';
-import useIsMounted from '#/components/xsolare/hooks/events/useIsMounted';
-import { TabsSliderStore } from './tabs-slider.store';
+import type { IOptionsTabsSlider, ITabsSliderProps } from './tabs-slider.store'
+import { observer } from 'mobx-react-lite'
+import React, { useEffect, useMemo, useRef } from 'react'
+import useIsMounted from '#/components/xsolare/hooks/events/useIsMounted'
+import { TabsSliderStore } from './tabs-slider.store'
 import {
   TabsSliderHeaderStyled,
   TabsSliderItemStyled,
   TabsSliderListStyled,
   TabsSliderStyled
-} from './tabs-slider.style';
+} from './tabs-slider.style'
 
 //* - COMPONENT ------------------------------------------------------------------------- *//
 export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
@@ -21,25 +21,25 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
     renderOption,
     headerText,
     defaultTab
-  } = props;
+  } = props
 
   const store = useMemo(
     () => new TabsSliderStore<T>({ defaultActiveTab: options[defaultTab ?? 0] }),
     [options]
-  );
-  const { calculateTabsSize, tipSize, setActiveTab } = store;
+  )
+  const { calculateTabsSize, tipSize, setActiveTab } = store
 
-  const sliderListRef = useRef<HTMLUListElement | null>(null);
+  const sliderListRef = useRef<HTMLUListElement | null>(null)
 
   const handleOnClick = (tab: IOptionsTabsSlider<T>) => () => {
-    if (onChange) onChange(tab);
-    setActiveTab(tab);
-  };
+    if (onChange) onChange(tab)
+    setActiveTab(tab)
+  }
 
-  const isMounted = useIsMounted();
+  const isMounted = useIsMounted()
   useEffect(() => {
-    if (sliderListRef.current) calculateTabsSize(options, sliderListRef);
-  }, [calculateTabsSize, isMounted, options]);
+    if (sliderListRef.current) calculateTabsSize(options, sliderListRef)
+  }, [calculateTabsSize, isMounted, options])
 
   return (
     <TabsSliderStyled width={width}>
@@ -61,9 +61,9 @@ export const TabsSlider = observer(<T,>(props: ITabsSliderProps<T>) => {
               isSelected={value === tab}>
               {renderOption ? renderOption(tab) : <div>{tab.value}</div>}
             </TabsSliderItemStyled>
-          );
+          )
         })}
       </TabsSliderListStyled>
     </TabsSliderStyled>
-  );
-});
+  )
+})

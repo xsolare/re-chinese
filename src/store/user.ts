@@ -1,27 +1,27 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from 'mobx'
 
 export interface UserModel {
-  username: string;
-  avatar: string;
-  introduce: string;
+  username: string
+  avatar: string
+  introduce: string
 }
 
 export default class UserStore {
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this)
   }
 
-  master: Partial<UserModel> | null = null;
+  master: Partial<UserModel> | null = null
 
   setUser(model: UserModel) {
-    this.master = model;
+    this.master = model
   }
 
   get username() {
-    return this.master?.username || '';
+    return this.master?.username || ''
   }
 
   get introduce() {
-    return this.master?.introduce || null;
+    return this.master?.introduce || null
   }
 }

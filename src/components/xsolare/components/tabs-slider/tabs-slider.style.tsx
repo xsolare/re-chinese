@@ -1,17 +1,17 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 type TabsSliderStyledTypes = {
-  width?: string;
-};
+  width?: string
+}
 export const TabsSliderStyled = styled.div<TabsSliderStyledTypes>`
   max-width: ${(props) => (props.width ? props.width : 'auto')};
   width: 100%;
   margin: 15px 0;
-`;
+`
 
 type TabsSliderListStyledTypes = {
-  tipHight?: string;
-};
+  tipHight?: string
+}
 export const TabsSliderListStyled = styled.ul<TabsSliderListStyledTypes>`
   margin: 0;
   padding: 0;
@@ -42,11 +42,11 @@ export const TabsSliderListStyled = styled.ul<TabsSliderListStyledTypes>`
     height: 2px;
     width: 100%;
   }
-`;
+`
 
 type TabsSliderItemStyledTypes = {
-  isSelected: boolean;
-};
+  isSelected: boolean
+}
 export const TabsSliderItemStyled = styled.li<TabsSliderItemStyledTypes>`
   z-index: 5;
   position: relative;
@@ -69,7 +69,7 @@ export const TabsSliderItemStyled = styled.li<TabsSliderItemStyledTypes>`
     padding: 6px 16px;
     height: 100%;
   }
-`;
+`
 
 export const TabsSliderHeaderStyled = styled.div`
   display: flex;
@@ -85,4 +85,4 @@ export const TabsSliderHeaderStyled = styled.div`
     color: ${({ theme }) => theme.palette?.color?.text};
     text-align: center;
   }
-`;
+`

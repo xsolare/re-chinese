@@ -314,4 +314,4 @@ export const text = `<div>
     Link ',:)
   </a>
 
-</div>`;
+</div>`

@@ -2,16 +2,16 @@
   IBaseParams,
   IBaseStoreParams,
   IBaseValidator
-} from '#/components/xsolare/components/base.store';
-import { BaseStore } from '#/components/xsolare/components/base.store';
-import { ControlStore } from '#/components/xsolare/components/control.store';
+} from '#/components/xsolare/components/base.store'
+import { BaseStore } from '#/components/xsolare/components/base.store'
+import { ControlStore } from '#/components/xsolare/components/control.store'
 
 export interface IFormValidatorExtended extends IBaseValidator {
-  func?: (store: FormStore) => boolean;
+  func?: (store: FormStore) => boolean
 }
 
 interface IFormStoreParamsExtended {
-  validators?: IFormValidatorExtended[];
+  validators?: IFormValidatorExtended[]
 }
 
 export interface IFormStoreParams
@@ -20,29 +20,29 @@ export interface IFormStoreParams
 
 export class FormStore extends BaseStore {
   constructor(props: IFormStoreParams) {
-    super(props as IBaseStoreParams);
+    super(props as IBaseStoreParams)
   }
 
   setValues = <T>(values: T): void => {
     Array.from(this._childStores.values()).forEach((_store) => {
-      const store = _store as ControlStore<unknown>;
-      store.setValue?.(values[store.name]);
-    });
-  };
+      const store = _store as ControlStore<unknown>
+      store.setValue?.(values[store.name])
+    })
+  }
 
   getValues = <T>(): T => {
-    const values = {};
+    const values = {}
     this._childStores.forEach((value, key) => {
       if (value instanceof ControlStore) {
-        const storeValue = (value as ControlStore<unknown>).getValue();
+        const storeValue = (value as ControlStore<unknown>).getValue()
         if (storeValue !== undefined) {
-          values[key] = storeValue;
+          values[key] = storeValue
         }
       }
-    });
-    return values as T;
-  };
+    })
+    return values as T
+  }
 
   getControlStores = (): BaseStore[] =>
-    Array.from(this._childStores.values()).filter((store) => store instanceof ControlStore);
+    Array.from(this._childStores.values()).filter((store) => store instanceof ControlStore)
 }

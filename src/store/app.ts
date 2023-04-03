@@ -1,15 +1,15 @@
-import type { ThemeVarious } from '#/contexts/theme';
-import type { ScrollRecord, ViewportRecord } from './types';
-import axios from 'axios';
-import { setCookie } from 'cookies-next';
-import { action, computed, makeObservable, observable } from 'mobx';
-import { isClientSide } from '#/utils/env';
+import type { ThemeVarious } from '#/contexts/theme'
+import type { ScrollRecord, ViewportRecord } from './types'
+import axios from 'axios'
+import { setCookie } from 'cookies-next'
+import { action, computed, makeObservable, observable } from 'mobx'
+import { isClientSide } from '#/utils/env'
 
 interface IAppUIStore {
-  theme: ThemeVarious;
-  scroll: ScrollRecord;
-  viewport: ViewportRecord;
-  mediaType: 'screen' | 'print';
+  theme: ThemeVarious
+  scroll: ScrollRecord
+  viewport: ViewportRecord
+  mediaType: 'screen' | 'print'
 }
 
 export default class AppUIStore {
@@ -18,7 +18,7 @@ export default class AppUIStore {
     scroll: {} as ScrollRecord,
     viewport: {} as ViewportRecord,
     mediaType: 'screen'
-  } as IAppUIStore;
+  } as IAppUIStore
 
   constructor() {
     makeObservable(this, {
@@ -32,36 +32,36 @@ export default class AppUIStore {
       isOverPostTitleHeight: computed,
       isPadOrMobile: computed,
       isNarrowThanLaptop: computed
-    });
+    })
 
     makeObservable(this.state, {
       theme: observable,
       mediaType: observable,
       scroll: observable,
       viewport: observable
-    });
+    })
   }
 
-  setScroll = (scroll: ScrollRecord): ScrollRecord => (this.state.scroll = scroll);
-  setViewport = (viewport: ViewportRecord): ViewportRecord => (this.state.viewport = viewport);
+  setScroll = (scroll: ScrollRecord): ScrollRecord => (this.state.scroll = scroll)
+  setViewport = (viewport: ViewportRecord): ViewportRecord => (this.state.viewport = viewport)
   setTheme = (themeType: ThemeVarious): ThemeVarious => {
-    setCookie('_THEME_', themeType);
-    return (this.state.theme = themeType);
-  };
+    setCookie('_THEME_', themeType)
+    return (this.state.theme = themeType)
+  }
 
   updateScroll() {
-    const { pageYOffset } = window;
+    const { pageYOffset } = window
 
     this.setScroll({
       dir: null,
       pos: pageYOffset
-    });
+    })
   }
 
   updateViewport() {
-    const { innerHeight } = window;
-    const { width } = document.documentElement.getBoundingClientRect();
-    const { hpad, pad, mobile, h, w } = this.state.viewport;
+    const { innerHeight } = window
+    const { width } = document.documentElement.getBoundingClientRect()
+    const { hpad, pad, mobile, h, w } = this.state.viewport
 
     if (
       h &&
@@ -70,7 +70,7 @@ export default class AppUIStore {
       width === w &&
       (hpad || pad || mobile)
     ) {
-      return;
+      return
     }
     this.setViewport({
       w: width,
@@ -80,7 +80,7 @@ export default class AppUIStore {
       hpad: window.innerWidth <= 1100 && window.innerWidth > 768,
       wider: window.innerWidth > 1100 && window.innerWidth < 1920,
       widest: window.innerWidth >= 1920
-    });
+    })
   }
 
   //* Axios
@@ -88,7 +88,7 @@ export default class AppUIStore {
     axios.interceptors.response.use(
       (response) => response,
       (error) => {
-        console.log('error');
+        console.log('error')
 
         if (error?.response?.status === 401) {
           // const urlCheckRegeExp = new RegExp(
@@ -115,56 +115,56 @@ export default class AppUIStore {
           //     error?.response?.data?.message || error?.response?.data?.detail || error.toString()
           // });
         }
-        return Promise.reject(error);
+        return Promise.reject(error)
       }
-    );
+    )
 
     axios.interceptors.request.use(
       (config) => {
-        config.withCredentials = true;
-        return config;
+        config.withCredentials = true
+        return config
       },
       (error) => {
-        return Promise.reject(error);
+        return Promise.reject(error)
       }
-    );
-  };
+    )
+  }
 
   get headerOpacity() {
-    const { pos } = this.state.scroll;
-    const threshold = 100;
+    const { pos } = this.state.scroll
+    const threshold = 100
 
-    const opacity = pos >= threshold ? 0 : 1 - Math.floor((pos / threshold) * 100) / 100;
+    const opacity = pos >= threshold ? 0 : 1 - Math.floor((pos / threshold) * 100) / 100
 
-    return isNaN(opacity) ? 1 : opacity;
+    return isNaN(opacity) ? 1 : opacity
   }
 
   get isOverFirstScreenHeight(): boolean {
-    const { pos } = this.state.scroll;
+    const { pos } = this.state.scroll
 
     if (!isClientSide()) {
-      return false;
+      return false
     }
-    return pos > window.innerHeight || pos > screen.height;
+    return pos > window.innerHeight || pos > screen.height
   }
 
   get isOverPostTitleHeight(): boolean {
-    const { pos } = this.state.scroll;
+    const { pos } = this.state.scroll
 
     if (!isClientSide()) {
-      return false;
+      return false
     }
 
-    return pos > 126 || pos > screen.height / 3;
+    return pos > 126 || pos > screen.height / 3
   }
 
   get isPadOrMobile() {
-    const { pad, mobile } = this.state.viewport;
+    const { pad, mobile } = this.state.viewport
 
-    return pad || mobile;
+    return pad || mobile
   }
 
   get isNarrowThanLaptop() {
-    return this.isPadOrMobile || this.state.viewport.hpad;
+    return this.isPadOrMobile || this.state.viewport.hpad
   }
 }

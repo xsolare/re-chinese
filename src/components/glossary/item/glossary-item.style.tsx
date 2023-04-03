@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme'
 
 //* --- ITEM --- *//
 export const GlossaryItemStyled = styled.div`
@@ -63,11 +63,11 @@ export const GlossaryItemStyled = styled.div`
     font-size: 1rem;
     font-weight: 300;
   }
-`;
+`
 
 //* --- HSK --- *//
 interface IGlossaryItemHskProps {
-  hsk: string;
+  hsk: string
 }
 export const GlossaryItemHskStyled = styled.div<IGlossaryItemHskProps>`
   position: relative;
@@ -129,7 +129,7 @@ export const GlossaryItemHskStyled = styled.div<IGlossaryItemHskProps>`
       top: 2px;
     }
   }
-`;
+`
 
 //* --- TAGS --- *//
 
@@ -148,4 +148,4 @@ export const GlossaryItemyTagsStyled = styled.div`
     padding: 2px 10px;
     font-family: 'Rubik Bubbles';
   }
-`;
+`

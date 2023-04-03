@@ -1,4 +1,4 @@
-import type { IHieroglyph } from '#/types/hieroglyph';
+import type { IHieroglyph } from '#/types/hieroglyph'
 
 export const mockHieroglyph: IHieroglyph[] = [
   {
@@ -926,4 +926,4 @@ export const mockHieroglyph: IHieroglyph[] = [
   { id: 212, hieroglyph: '龙', traditional: '龍', pinyin: 'lóng', translate: 'дракон' },
   { id: 213, hieroglyph: '龟', traditional: '龜', pinyin: 'guī', translate: 'черепаха' },
   { id: 214, hieroglyph: '龠', traditional: null, pinyin: 'yuè', translate: 'флейта' }
-];
+]

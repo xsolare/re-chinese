@@ -1,8 +1,8 @@
-import type { IHieroglyph } from '#/types/hieroglyph';
-import type { FC } from 'react';
-import { observer } from 'mobx-react-lite';
-import React, { useEffect, useRef } from 'react';
-import { useNewStore } from '#/components/xsolare/helpers';
+import type { IHieroglyph } from '#/types/hieroglyph'
+import type { FC } from 'react'
+import { observer } from 'mobx-react-lite'
+import React, { useEffect, useRef } from 'react'
+import { useNewStore } from '#/components/xsolare/helpers'
 
 //* Components
 
@@ -14,31 +14,31 @@ import {
   HieroglyphKeysQuestion,
   HieroglyphKeysScore,
   Hr
-} from './key-item.style';
-import { KeysTesterStore } from './keys-tester.store';
+} from './key-item.style'
+import { KeysTesterStore } from './keys-tester.store'
 
 interface IKeysTesterProps {
-  hieroglyphKeys: IHieroglyph[];
+  hieroglyphKeys: IHieroglyph[]
 }
 
 // KeysTester component
 //* ------------------------------------------------------------------------------------------ *//
 const KeysTester: FC<IKeysTesterProps> = (props) => {
-  const { hieroglyphKeys } = props;
+  const { hieroglyphKeys } = props
 
-  const pageRef = useRef<HTMLDivElement>(null);
-  const store = useNewStore(KeysTesterStore, hieroglyphKeys);
-  const { state, handleAnswer, score, lastAnswer, reloadQuestion } = store;
+  const pageRef = useRef<HTMLDivElement>(null)
+  const store = useNewStore(KeysTesterStore, hieroglyphKeys)
+  const { state, handleAnswer, score, lastAnswer, reloadQuestion } = store
 
   useEffect(() => {
-    const ref = pageRef.current;
-    if (!ref) return;
+    const ref = pageRef.current
+    if (!ref) return
 
-    ref.addEventListener('mousedown', reloadQuestion);
+    ref.addEventListener('mousedown', reloadQuestion)
     return () => {
-      ref.removeEventListener('mousedown', reloadQuestion);
-    };
-  }, [pageRef.current]);
+      ref.removeEventListener('mousedown', reloadQuestion)
+    }
+  }, [pageRef.current])
 
   return (
     <PageContent ref={pageRef}>
@@ -73,7 +73,7 @@ const KeysTester: FC<IKeysTesterProps> = (props) => {
         ))}
       </HieroglyphKeysAnswers>
     </PageContent>
-  );
-};
+  )
+}
 
-export default observer(KeysTester);
+export default observer(KeysTester)

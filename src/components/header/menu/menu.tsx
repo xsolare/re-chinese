@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-import { observer } from 'mobx-react-lite';
-import React from 'react';
+import type { FC } from 'react'
+import { observer } from 'mobx-react-lite'
+import React from 'react'
 
 //* Components
 
@@ -9,7 +9,7 @@ import React from 'react';
 // Menu component
 //* ------------------------------------------------------------------------------------------ *//
 const Menu: FC = observer(() => {
-  return <div> </div>;
-});
+  return <div> </div>
+})
 
-export default Menu;
+export default Menu

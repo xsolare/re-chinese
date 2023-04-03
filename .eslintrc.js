@@ -1,6 +1,6 @@
 module.exports = {
   //* Configuration for JavaScript files (global)
-  extends: ['airbnb', 'next/core-web-vitals', 'plugin:prettier/recommended'],
+  extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -9,7 +9,7 @@ module.exports = {
         trailingComma: 'none',
         printWidth: 100,
         tabWidth: 2,
-        semi: true,
+        semi: false,
         bracketSameLine: true,
         endOfLine: 'auto'
       }
@@ -23,29 +23,12 @@ module.exports = {
       parserOptions: {
         project: ['./tsconfig.json']
       },
-      plugins: [
-        'react',
-        'react-hooks',
-        '@typescript-eslint',
-        'unused-imports',
-        '@emotion',
-        '@xsolare'
-      ],
+      plugins: ['react', 'react-hooks', '@typescript-eslint', 'import', '@emotion', '@xsolare'],
       extends: [
-        'airbnb',
-        'airbnb/hooks',
         'next/core-web-vitals',
-        'airbnb-typescript',
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:jsx-a11y/recommended',
-        'plugin:import/recommended',
-        'plugin:import/typescript',
-
         'prettier',
         'plugin:prettier/recommended'
       ],
@@ -66,6 +49,7 @@ module.exports = {
           }
         ],
         'react/prop-types': 'off',
+        'no-unused-vars': 'off',
         'no-param-reassign': [
           'warn',
           {
@@ -87,8 +71,8 @@ module.exports = {
         camelcase: 'error',
         'spaced-comment': 'error',
         quotes: ['error', 'single'],
+        'no-undef': 'off',
 
-        'unused-imports/no-unused-imports-ts': 'error',
         'import/prefer-default-export': 'off',
         'import/no-unresolved': 'off',
         'import/extensions': [
@@ -99,17 +83,6 @@ module.exports = {
             scss: 'off'
           }
         ],
-        semi: ['error', 'always'],
-        'jsx-a11y/anchor-is-valid': [
-          'error',
-          {
-            components: ['Link'],
-            specialLink: ['hrefLeft', 'hrefRight'],
-            aspects: ['invalidHref', 'preferButton']
-          }
-        ],
-        'jsx-a11y/click-events-have-key-events': 'off',
-        'jsx-a11y/no-static-element-interactions': 'off',
         'react/jsx-no-constructed-context-values': 'off',
 
         'react/function-component-definition': 'off',
@@ -134,7 +107,7 @@ module.exports = {
             trailingComma: 'none',
             printWidth: 100,
             tabWidth: 2,
-            semi: true,
+            semi: false,
             bracketSameLine: true,
             endOfLine: 'auto'
           }
@@ -181,4 +154,4 @@ module.exports = {
     //   }
     // }
   ]
-};
+}

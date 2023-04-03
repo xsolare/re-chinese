@@ -36,4 +36,4 @@ export const text = `<div>
     <span fixed="1" type="h" p="qī zi" t="Жена">妻子</span> <br />
     <span fixed="1" type="h" p="zhàng fū" t="Муж">丈夫</span> <br />
   </div>
-</div>`;
+</div>`

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const HieroglyphLayoutStyled = styled.section`
   position: relative;
@@ -14,4 +14,4 @@ export const HieroglyphLayoutStyled = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: flex;
-`;
+`

@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme'
 
 export const GlossaryContentStyled = styled.div`
   position: relative;
@@ -32,7 +32,7 @@ export const GlossaryContentStyled = styled.div`
       width: 100%;
     }
   }
-`;
+`
 
 export const GlossaryContentItemStyled = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ export const GlossaryContentItemStyled = styled.div`
     opacity: 0;
     transition: all 0.1s ease-in;
   }
-`;
+`
 
 export const GlossaryStyled = styled.div`
   width: 100%;
@@ -73,4 +73,4 @@ export const GlossaryStyled = styled.div`
   ${breakpoint('sm')} {
     margin-top: 10px;
   }
-`;
+`

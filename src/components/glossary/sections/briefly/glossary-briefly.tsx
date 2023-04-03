@@ -1,21 +1,21 @@
-import type { IGlossaryBriefly } from '#/types/glossary';
-import type { IBrieflyDialogStoreController } from './dialogs/briefly-example-dialog.store';
-import type { FC } from 'react';
-import React, { useRef } from 'react';
-import { BiShowAlt } from 'react-icons/bi';
-import { GlossarySectionStyled } from '#/components/glossary/sections/section.style';
-import { WordTitle } from '#/components/xsolare';
-import { GlossaryContentItemStyled } from '#/styles/glossary/glossary.style';
-import BrieflyDialog from './dialogs/briefly-example-dialog';
+import type { IGlossaryBriefly } from '#/types/glossary'
+import type { IBrieflyDialogStoreController } from './dialogs/briefly-example-dialog.store'
+import type { FC } from 'react'
+import React, { useRef } from 'react'
+import { BiShowAlt } from 'react-icons/bi'
+import { GlossarySectionStyled } from '#/components/glossary/sections/section.style'
+import { WordTitle } from '#/components/xsolare'
+import { GlossaryContentItemStyled } from '#/styles/glossary/glossary.style'
+import BrieflyDialog from './dialogs/briefly-example-dialog'
 
 interface IGlossaryBrieflyProps {
-  content: IGlossaryBriefly[];
+  content: IGlossaryBriefly[]
 }
 
 // Glossary briefly
 //* ------------------------------------------------------------------ *//
 const GlossaryBriefly: FC<IGlossaryBrieflyProps> = ({ content }) => {
-  const controllerBrieflyDialogRef = useRef<IBrieflyDialogStoreController>();
+  const controllerBrieflyDialogRef = useRef<IBrieflyDialogStoreController>()
 
   return (
     <GlossarySectionStyled>
@@ -43,7 +43,7 @@ const GlossaryBriefly: FC<IGlossaryBrieflyProps> = ({ content }) => {
       )}
       <BrieflyDialog controllerRef={controllerBrieflyDialogRef} />
     </GlossarySectionStyled>
-  );
-};
+  )
+}
 
-export default GlossaryBriefly;
+export default GlossaryBriefly

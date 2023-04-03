@@ -1,28 +1,28 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import type { FC, PropsWithChildren } from 'react';
-import { useRouter } from 'next/router';
-import React from 'react';
+import type { FC, PropsWithChildren } from 'react'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 //* Styles
 
 //* Components
-import { TabsSlider } from '#/components/xsolare';
-import { isWindowExists } from '#/utils/helpers';
-import { HieroglyphLayoutStyled } from './hieroglyph.style';
+import { TabsSlider } from '#/components/xsolare'
+import { isWindowExists } from '#/utils/helpers'
+import { HieroglyphLayoutStyled } from './hieroglyph.style'
 
 // Default layout
 //* ------------------------------------------------------------------------------------------ *//
 const HieroglyphLayout: FC<PropsWithChildren> = ({ children }) => {
-  const router = useRouter();
+  const router = useRouter()
 
   const getDefaultTab = React.useMemo(() => {
-    if (!isWindowExists()) return 0;
+    if (!isWindowExists()) return 0
 
-    const { pathname } = window.location;
+    const { pathname } = window.location
 
-    if (pathname === '/hieroglyph') return 0;
-    if (pathname === '/hieroglyph/tester') return 1;
-  }, []);
+    if (pathname === '/hieroglyph') return 0
+    if (pathname === '/hieroglyph/tester') return 1
+  }, [])
 
   const MemoSlider = React.useMemo(
     () => (
@@ -42,13 +42,13 @@ const HieroglyphLayout: FC<PropsWithChildren> = ({ children }) => {
       />
     ),
     []
-  );
+  )
 
   return (
     <HieroglyphLayoutStyled>
       {MemoSlider}
       {children}
     </HieroglyphLayoutStyled>
-  );
-};
-export default HieroglyphLayout;
+  )
+}
+export default HieroglyphLayout

@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 interface IHeaderStyledProps {
-  opacity: number;
+  opacity: number
 }
 
 export const HeaderStyled = styled.header<IHeaderStyledProps>`
@@ -80,4 +80,4 @@ export const HeaderStyled = styled.header<IHeaderStyledProps>`
     color: ${({ theme }) => theme.palette.color.header};
     font-size: 1rem;
   }
-`;
+`

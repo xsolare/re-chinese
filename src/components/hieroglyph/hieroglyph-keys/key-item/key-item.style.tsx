@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme'
 
 export const HieroglyphKeysWrapper = styled.div`
   cursor: pointer;
@@ -26,12 +26,12 @@ export const HieroglyphKeysWrapper = styled.div`
     height: 90px;
     margin: 5px;
   }
-`;
+`
 
 type IHieroglyphKeysItemType = {
-  isPinyin: boolean;
-  isTranslate: boolean;
-};
+  isPinyin: boolean
+  isTranslate: boolean
+}
 export const HieroglyphKeysItem = styled.div<IHieroglyphKeysItemType>`
   overflow: hidden;
 
@@ -152,4 +152,4 @@ export const HieroglyphKeysItem = styled.div<IHieroglyphKeysItemType>`
       letter-spacing: 0px;
     }
   }
-`;
+`

@@ -1,27 +1,27 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import type { FC, PropsWithChildren } from 'react';
-import { useRouter } from 'next/router';
-import React from 'react';
+import type { FC, PropsWithChildren } from 'react'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 //* Styles
 
 //* Components
-import { TabsSlider } from '#/components/xsolare';
-import { isWindowExists } from '#/utils/helpers';
-import { GlossaryLayoutStyled } from './glossary.style';
+import { TabsSlider } from '#/components/xsolare'
+import { isWindowExists } from '#/utils/helpers'
+import { GlossaryLayoutStyled } from './glossary.style'
 
 // Glossary layout
 //* ------------------------------------------------------------------------------------------ *//
 const GlossaryLayout: FC<PropsWithChildren> = ({ children }) => {
-  const router = useRouter();
+  const router = useRouter()
 
   const getDefaultTab = React.useMemo(() => {
-    if (!isWindowExists()) return 0;
+    if (!isWindowExists()) return 0
 
-    const { pathname } = window.location;
+    const { pathname } = window.location
 
-    if (pathname === '/glossary') return 0;
-  }, []);
+    if (pathname === '/glossary') return 0
+  }, [])
 
   const MemoSlider = React.useMemo(
     () => (
@@ -38,13 +38,13 @@ const GlossaryLayout: FC<PropsWithChildren> = ({ children }) => {
       />
     ),
     []
-  );
+  )
 
   return (
     <GlossaryLayoutStyled>
       {MemoSlider}
       {children}
     </GlossaryLayoutStyled>
-  );
-};
-export default GlossaryLayout;
+  )
+}
+export default GlossaryLayout

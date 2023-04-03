@@ -1,4 +1,4 @@
-import type { IGlossaryBriefly } from '#/types/glossary';
+import type { IGlossaryBriefly } from '#/types/glossary'
 
 export const briefly: IGlossaryBriefly[] = [
   {
@@ -316,4 +316,4 @@ export const briefly: IGlossaryBriefly[] = [
       }
     ]
   }
-];
+]

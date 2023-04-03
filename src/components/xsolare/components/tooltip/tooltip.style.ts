@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme'
 
 export const TooltipStyled = styled.div`
   display: inline-block;
@@ -24,4 +24,4 @@ export const TooltipStyled = styled.div`
       max-width: 300px;
     }
   }
-`;
+`

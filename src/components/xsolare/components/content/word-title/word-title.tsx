@@ -1,16 +1,16 @@
-import type { FC, PropsWithChildren } from 'react';
-import { observer } from 'mobx-react-lite';
-import React from 'react';
-import { WordTitleStyled } from './word-title.style';
+import type { FC, PropsWithChildren } from 'react'
+import { observer } from 'mobx-react-lite'
+import React from 'react'
+import { WordTitleStyled } from './word-title.style'
 
 interface IWordTitleProps extends PropsWithChildren {
-  index: string | number;
-  pinyin: string;
-  translate: string;
+  index: string | number
+  pinyin: string
+  translate: string
 }
 
 export const WordTitle: FC<IWordTitleProps> = observer((props) => {
-  const { children, index, pinyin, translate } = props;
+  const { children, index, pinyin, translate } = props
 
   return (
     <WordTitleStyled>
@@ -21,5 +21,5 @@ export const WordTitle: FC<IWordTitleProps> = observer((props) => {
         <span>{translate}</span>
       </div>
     </WordTitleStyled>
-  );
-});
+  )
+})

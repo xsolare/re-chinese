@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 type ICheckboxStyledTypes = {
-  isActive?: boolean;
-};
+  isActive?: boolean
+}
 export const CheckboxStyled = styled.div<ICheckboxStyledTypes>`
   position: relative;
   background-color: ${({ theme }) => theme.palette.bg.mainContent};
@@ -51,4 +51,4 @@ export const CheckboxStyled = styled.div<ICheckboxStyledTypes>`
         fill: ${theme.palette.bg.highlight};
       }
     `}
-`;
+`

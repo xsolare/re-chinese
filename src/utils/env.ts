@@ -1,8 +1,8 @@
 export const isClientSide = () => {
-  return typeof window !== 'undefined';
-};
+  return typeof window !== 'undefined'
+}
 export const isServerSide = () => {
-  return !isClientSide();
-};
+  return !isClientSide()
+}
 
-export const isDev = process.env.NODE_ENV === 'development';
+export const isDev = process.env.NODE_ENV === 'development'

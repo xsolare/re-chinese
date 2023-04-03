@@ -1,10 +1,10 @@
-import type { IGlossaryContent, IGlossaryItem } from '#/types/glossary';
-import { mvGlossaryItem1, mvGlossary1 } from './glossary/1_modalVerb';
-import { keyiNengHuiGlossaryItem2, keyiNengHuiGlossary2 } from './glossary/2_keyiNengHui';
-import { familyGlossaryItem3, familyGlossary3 } from './glossary/3_family';
-import { afterwordGlossaryItem4, afterwordGlossary4 } from './glossary/4_afterword';
-import { countingWordsGlossaryItem5, countingWordsGlossary5 } from './glossary/5_countingWords';
-import { leGlossaryItem6, leGlossary6 } from './glossary/6_le';
+import type { IGlossaryContent, IGlossaryItem } from '#/types/glossary'
+import { mvGlossaryItem1, mvGlossary1 } from './glossary/1_modalVerb'
+import { keyiNengHuiGlossaryItem2, keyiNengHuiGlossary2 } from './glossary/2_keyiNengHui'
+import { familyGlossaryItem3, familyGlossary3 } from './glossary/3_family'
+import { afterwordGlossaryItem4, afterwordGlossary4 } from './glossary/4_afterword'
+import { countingWordsGlossaryItem5, countingWordsGlossary5 } from './glossary/5_countingWords'
+import { leGlossaryItem6, leGlossary6 } from './glossary/6_le'
 
 export const glossaryItems: IGlossaryItem[] = [
   mvGlossaryItem1,
@@ -13,7 +13,7 @@ export const glossaryItems: IGlossaryItem[] = [
   afterwordGlossaryItem4,
   countingWordsGlossaryItem5,
   leGlossaryItem6
-];
+]
 export const glossary: IGlossaryContent[] = [
   mvGlossary1,
   keyiNengHuiGlossary2,
@@ -21,4 +21,4 @@ export const glossary: IGlossaryContent[] = [
   afterwordGlossary4,
   countingWordsGlossary5,
   leGlossary6
-];
+]
