@@ -11,7 +11,7 @@ interface IGlossaryTesterProps {
 const GlossaryTester: FC<IGlossaryTesterProps> = ({ content }) => {
   useNewStore(GlossaryTesterStore)
 
-  return <GlossarySectionStyled>NOT IMPLEMENTED</GlossarySectionStyled>
+  return <GlossarySectionStyled>NOT IMPLEMENTED {content.length}</GlossarySectionStyled>
 }
 
 export default observer(GlossaryTester)

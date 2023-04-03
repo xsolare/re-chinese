@@ -48,7 +48,7 @@ const KeysTester: FC<IKeysTesterProps> = (props) => {
       </HieroglyphKeysScore>
       <Hr className="upper" />
       <HieroglyphKeysQuestion isPinyin={state.isAnswered} isTranslate={state.isAnswered}>
-        <div onClick={() => {}}>
+        <div>
           <div className="pinyin">{state.question.pinyin}</div>
           <div className="hieroglyph">{state.question.hieroglyph}</div>
           <div className="translate">{state.question.translate}</div>

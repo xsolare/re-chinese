@@ -19,6 +19,7 @@ export const GlossaryUrlProvider: FC<PropsWithChildren> = ({ children }) => {
   const { setOnceGlossaryBase } = pageStore
 
   const setupGlossaryBase = (glossary: IGlossaryBase, url: Sections) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       setOnceGlossaryBase(glossary, url)
     }, [])

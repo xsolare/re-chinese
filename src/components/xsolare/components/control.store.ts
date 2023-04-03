@@ -1,5 +1,4 @@
 ﻿import type { Size } from '#/components/xsolare/helpers'
-// eslint-disable-next-line import/no-cycle
 import type {
   IBaseParams,
   IBaseState,
