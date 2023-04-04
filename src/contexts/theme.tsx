@@ -1,7 +1,7 @@
 import type { ThemeTypes } from '#/utils/theme/emotion-theme'
 import type { Dispatch, PropsWithChildren, SetStateAction, FC } from 'react'
 import { ThemeProvider as ThemeEmotionProvider } from '@emotion/react'
-import { ConfigProvider as ThemeAntdProvider, } from 'antd'
+import { ConfigProvider as ThemeAntdProvider } from 'antd'
 import { observer } from 'mobx-react-lite'
 import React, { useEffect } from 'react'
 import { useStore } from '#/store'

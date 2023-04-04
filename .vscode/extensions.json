@@ -1,6 +1,8 @@
 {
   "recommendations": [
-    "roonie007.hide-files",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "aaron-bond.better-comments",
     "usernamehw.errorlens",
     "styled-components.vscode-styled-components",
     "loiane.ts-extension-pack",
