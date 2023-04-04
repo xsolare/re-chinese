@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme/emotion-theme'
 
 export const WordsStyled = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ export const WordsStyled = styled.div`
   ${breakpoint('sm')} {
     margin-top: 5px;
   }
-`;
+`
 
 export const WordsContentStyled = styled.div`
   position: relative;
@@ -35,4 +35,4 @@ export const WordsContentStyled = styled.div`
       padding-right: 10px;
     }
   }
-`;
+`

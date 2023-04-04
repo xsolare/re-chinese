@@ -14,6 +14,6 @@ const nextSeoConfig = {
       }
     ]
   }
-};
+}
 
-export default nextSeoConfig;
+export default nextSeoConfig

@@ -1,36 +1,36 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import type { FC } from 'react';
-import cn from 'classnames';
-import { observer } from 'mobx-react-lite';
-import { useRouter } from 'next/router';
-import { CgShortcut } from 'react-icons/cg';
-import { TbTestPipe } from 'react-icons/tb';
-import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider';
-import { Sections } from '#/store/pages/glossary.store';
-import { GlossaryHeaderStyled } from './glossary-header.style';
+import type { FC } from 'react'
+import cn from 'classnames'
+import { observer } from 'mobx-react-lite'
+import { useRouter } from 'next/router'
+import { CgShortcut } from 'react-icons/cg'
+import { TbTestPipe } from 'react-icons/tb'
+import { useGlossaryUrlContext } from '#/components/layouts/glossary/url/glossary-url.provider'
+import { Sections } from '#/store/pages/glossary.store'
+import { GlossaryHeaderStyled } from './glossary-header.style'
 
 // Glossary header
 //* ------------------------------------------------------------------ *//
 const GlossaryHeader: FC = () => {
-  const router = useRouter();
-  const navigateTo = (value: string) => router.push(`/glossary/${glossaryBase.url}/${value}`);
+  const router = useRouter()
+  const navigateTo = (value: string) => router.push(`/glossary/${glossaryBase.url}/${value}`)
 
-  const { pageStore } = useGlossaryUrlContext();
+  const { pageStore } = useGlossaryUrlContext()
   const {
     state: { glossaryBase, section },
     setSection
-  } = pageStore;
+  } = pageStore
 
   const changeSection = (value: Sections) => () => {
     if (section === value) {
-      navigateTo(Sections.Main);
-      setSection(Sections.Main);
+      navigateTo(Sections.Main)
+      setSection(Sections.Main)
     } else {
-      navigateTo(value);
-      setSection(value);
+      navigateTo(value)
+      setSection(value)
     }
-  };
+  }
 
   return (
     <GlossaryHeaderStyled>
@@ -49,7 +49,7 @@ const GlossaryHeader: FC = () => {
         <div className="hsk">{`HSK-${glossaryBase?.hsk}`}</div>
       </div>
     </GlossaryHeaderStyled>
-  );
-};
+  )
+}
 
-export default observer(GlossaryHeader);
+export default observer(GlossaryHeader)

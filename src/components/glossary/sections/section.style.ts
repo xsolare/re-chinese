@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const GlossarySectionStyled = styled.div`
   display: flex;
@@ -9,4 +9,4 @@ export const GlossarySectionStyled = styled.div`
   height: 100%;
 
   animation: fade 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-`;
+`

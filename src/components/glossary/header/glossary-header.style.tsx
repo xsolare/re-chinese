@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme/emotion-theme'
 
 export const GlossaryHeaderStyled = styled.div`
   position: relative;
@@ -97,4 +97,4 @@ export const GlossaryHeaderStyled = styled.div`
       border-bottom: 1px solid ${({ theme }) => theme.palette.border.title};
     }
   }
-`;
+`

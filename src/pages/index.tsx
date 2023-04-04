@@ -1,11 +1,11 @@
-import type { NextPageWithLayout } from './_app';
-import React from 'react';
+import type { NextPageWithLayout } from './_app'
+import React from 'react'
 
 // Home component
 //* ------------------------------------------------------------------------------------------ *//
 const Home: NextPageWithLayout = () => {
-  return <div>blank</div>;
-};
+  return <div>blank</div>
+}
 
 export async function getServerSideProps() {
   return {
@@ -13,7 +13,7 @@ export async function getServerSideProps() {
       permanent: true,
       destination: '/glossary'
     }
-  };
+  }
 }
 
-export default Home;
+export default Home

@@ -6,17 +6,17 @@ const Breakpoints = {
   xl: 1200,
   xxl: 1440,
   xxxl: 1920
-};
+}
 
 export const breakpoint = (n: keyof typeof Breakpoints, size?: 'min' | 'max'): string =>
-  `@media (${size ?? 'max'}-width: ${Breakpoints[n]}px)`;
+  `@media (${size ?? 'max'}-width: ${Breakpoints[n]}px)`
 
 export const pxToRem = (pxValue: number, baseFontSize: number): string =>
-  `${pxValue / baseFontSize || 16}rem`;
+  `${pxValue / baseFontSize || 16}rem`
 
 const sizes = {
   header: { height: '50px' }
-};
+}
 
 const font = {
   family: {
@@ -36,7 +36,7 @@ const font = {
     hieroglyph: '1.1rem',
     text: '1rem'
   }
-};
+}
 
 const palette = {
   color: {
@@ -74,7 +74,7 @@ const palette = {
     itemContent: '0 0 5px rgba(0, 0, 0, 0.25)'
   },
   divider: '#cccccc'
-};
+}
 
 const paletteDark = {
   color: {
@@ -112,7 +112,7 @@ const paletteDark = {
     itemContent: '0 0 5px rgba(0, 0, 0, 0.25)'
   },
   divider: '#808080'
-};
+}
 
 const paletteBlue = {
   color: {
@@ -150,15 +150,15 @@ const paletteBlue = {
     itemContent: '0 0 5px rgba(0, 0, 0, 0.25)'
   },
   divider: '#808080'
-};
+}
 
 export const theme = {
   palette,
   font,
   sizes
-};
+}
 
-export type ThemeTypes = typeof theme;
+export type ThemeTypes = typeof theme
 
 export const themeDark: ThemeTypes = {
   ...theme,
@@ -166,7 +166,7 @@ export const themeDark: ThemeTypes = {
     ...theme.palette,
     ...paletteDark
   }
-};
+}
 
 export const themeBlue: ThemeTypes = {
   ...theme,
@@ -174,4 +174,4 @@ export const themeBlue: ThemeTypes = {
     ...theme.palette,
     ...paletteBlue
   }
-};
+}

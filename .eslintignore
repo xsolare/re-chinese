@@ -40,3 +40,4 @@ next.config.js
 postcss.config.js
 public
 README.md
+/src/pages/server-sitemap.xml/*

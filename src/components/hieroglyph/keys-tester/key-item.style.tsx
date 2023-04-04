@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme/emotion-theme'
 
 export const PageContent = styled.div`
   display: flex;
@@ -7,11 +7,11 @@ export const PageContent = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-`;
+`
 
 interface IHieroglyphKeysQuestionProps {
-  isPinyin: boolean;
-  isTranslate: boolean;
+  isPinyin: boolean
+  isTranslate: boolean
 }
 export const HieroglyphKeysQuestion = styled.div<IHieroglyphKeysQuestionProps>`
   position: relative;
@@ -122,7 +122,7 @@ export const HieroglyphKeysQuestion = styled.div<IHieroglyphKeysQuestionProps>`
       }
     }
   }
-`;
+`
 
 export const HieroglyphKeysScore = styled.div`
   margin-top: 25px;
@@ -156,7 +156,7 @@ export const HieroglyphKeysScore = styled.div`
     background-color: #ff634789;
     box-shadow: ${({ theme }) => theme.palette.shadow.itemContent};
   }
-`;
+`
 
 export const HieroglyphKeysAnswers = styled.div`
   width: 100%;
@@ -167,12 +167,12 @@ export const HieroglyphKeysAnswers = styled.div`
   align-items: center;
   justify-content: center;
   gap: 25px;
-`;
+`
 
 interface IAnswerProps {
-  isAnswered: boolean;
-  isCorrect: boolean;
-  isWrong: boolean;
+  isAnswered: boolean
+  isCorrect: boolean
+  isWrong: boolean
 }
 export const Answer = styled.div<IAnswerProps>`
   cursor: pointer;
@@ -257,7 +257,7 @@ export const Answer = styled.div<IAnswerProps>`
       }
       `
       : ''}
-`;
+`
 
 export const Hr = styled.hr`
   min-height: 4px;
@@ -288,4 +288,4 @@ export const Hr = styled.hr`
       min-width: 320px;
     }
   }
-`;
+`

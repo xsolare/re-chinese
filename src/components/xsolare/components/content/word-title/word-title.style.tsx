@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const WordTitleStyled = styled.div`
   display: flex;
@@ -67,4 +67,4 @@ export const WordTitleStyled = styled.div`
       -webkit-line-clamp: 1;
     }
   }
-`;
+`

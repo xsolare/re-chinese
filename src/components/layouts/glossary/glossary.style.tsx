@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const GlossaryLayoutStyled = styled.section`
   position: relative;
@@ -15,4 +15,4 @@ export const GlossaryLayoutStyled = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-`;
+`

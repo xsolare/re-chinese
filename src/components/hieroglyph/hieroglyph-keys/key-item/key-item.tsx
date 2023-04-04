@@ -1,28 +1,28 @@
-import type { IHieroglyph } from '#/types/hieroglyph';
-import type { FC } from 'react';
-import { observer } from 'mobx-react-lite';
-import React from 'react';
-import { useNewStore } from '#/components/xsolare/helpers';
-import { KeyItemStore } from './key-item.store';
-import { HieroglyphKeysItem, HieroglyphKeysWrapper } from './key-item.style';
+import type { IHieroglyph } from '#/types/hieroglyph'
+import type { FC } from 'react'
+import { observer } from 'mobx-react-lite'
+import React from 'react'
+import { useNewStore } from '#/components/xsolare/helpers'
+import { KeyItemStore } from './key-item.store'
+import { HieroglyphKeysItem, HieroglyphKeysWrapper } from './key-item.style'
 
 //* Components
 
 //* Styles
 
 interface IHieroglyphKeyProps {
-  hieroglyph: IHieroglyph;
-  isPinyin: boolean;
-  isTranslate: boolean;
+  hieroglyph: IHieroglyph
+  isPinyin: boolean
+  isTranslate: boolean
 }
 
 // HieroglyphKey component
 //* ------------------------------------------------------------------------------------------ *//
 const HieroglyphKey: FC<IHieroglyphKeyProps> = (props) => {
-  const { hieroglyph: h, isPinyin, isTranslate } = props;
+  const { hieroglyph: h, isPinyin, isTranslate } = props
 
-  const store = useNewStore(KeyItemStore);
-  const { setIsActive, state } = store;
+  const store = useNewStore(KeyItemStore)
+  const { setIsActive, state } = store
 
   return (
     <HieroglyphKeysWrapper>
@@ -36,7 +36,7 @@ const HieroglyphKey: FC<IHieroglyphKeyProps> = (props) => {
         <div className="translate">{h.translate}</div>
       </HieroglyphKeysItem>
     </HieroglyphKeysWrapper>
-  );
-};
+  )
+}
 
-export default observer(HieroglyphKey);
+export default observer(HieroglyphKey)

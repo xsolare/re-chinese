@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 interface IDialogWrapperStyle {
-  isNotAnimate: boolean;
-  isVisible: boolean;
-  isLock: boolean;
+  isNotAnimate: boolean
+  isVisible: boolean
+  isLock: boolean
 }
 
 export const DialogWrapperStyle = styled.div<IDialogWrapperStyle>`
@@ -54,4 +54,4 @@ export const DialogWrapperStyle = styled.div<IDialogWrapperStyle>`
             animation: dialog-close 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
     `}
-`;
+`

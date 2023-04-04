@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const DefaultStyled = styled.main`
   position: relative;
@@ -13,4 +13,4 @@ export const DefaultStyled = styled.main`
 
   padding: 10px;
   padding-top: ${({ theme }) => theme.sizes.header.height};
-`;
+`

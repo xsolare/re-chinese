@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils'
 
 export const GlossaryUrlLayoutStyled = styled.section`
   width: 100%;
@@ -9,4 +9,4 @@ export const GlossaryUrlLayoutStyled = styled.section`
   ${breakpoint('sm')} {
     margin-top: 10px;
   }
-`;
+`

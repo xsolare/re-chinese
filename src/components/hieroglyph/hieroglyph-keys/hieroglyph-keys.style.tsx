@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const HieroglyphKeysList = styled.div`
   max-width: 1200px;
@@ -9,7 +9,7 @@ export const HieroglyphKeysList = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-`;
+`
 
 export const HieroglyphKeysControl = styled.div`
   display: flex;
@@ -58,4 +58,4 @@ export const HieroglyphKeysControl = styled.div`
     transform: scale(0);
     transition: all 0.2s ease-out;
   }
-`;
+`

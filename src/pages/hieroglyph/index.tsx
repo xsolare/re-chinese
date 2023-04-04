@@ -1,22 +1,22 @@
-import type { NextPageWithLayout } from '#/pages/_app';
-import type { IHieroglyph } from '#/types/hieroglyph';
-import type { ReactElement } from 'react';
-import { NextSeo } from 'next-seo';
-import React from 'react';
+import type { NextPageWithLayout } from '#/pages/_app'
+import type { IHieroglyph } from '#/types/hieroglyph'
+import type { ReactElement } from 'react'
+import { NextSeo } from 'next-seo'
+import React from 'react'
 
 //* Components
-import HieroglyphKeys from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys';
-import HieroglyphLayout from '#/components/layouts/hieroglyph/hieroglyph.layout';
-import { mockHieroglyph } from '#/utils/mock/hieroglyph';
+import HieroglyphKeys from '#/components/hieroglyph/hieroglyph-keys/hieroglyph-keys'
+import HieroglyphLayout from '#/components/layouts/hieroglyph/hieroglyph.layout'
+import { mockHieroglyph } from '#/utils/mock/hieroglyph'
 
 interface IPinyinProps {
-  hieroglyphKeys: IHieroglyph[];
+  hieroglyphKeys: IHieroglyph[]
 }
 
 // Pinyin component
 //* ------------------------------------------------------------------------------------------ *//
 const Hieroglyph: NextPageWithLayout<IPinyinProps> = (props) => {
-  const { hieroglyphKeys } = props;
+  const { hieroglyphKeys } = props
 
   return (
     <>
@@ -47,17 +47,17 @@ const Hieroglyph: NextPageWithLayout<IPinyinProps> = (props) => {
       </div>
       <HieroglyphKeys hieroglyphKeys={hieroglyphKeys} />
     </>
-  );
-};
+  )
+}
 
 Hieroglyph.getInitialProps = async () => {
   return {
     hieroglyphKeys: mockHieroglyph
-  };
-};
+  }
+}
 
 Hieroglyph.getLayout = function getLayout(page: ReactElement) {
-  return <HieroglyphLayout>{page}</HieroglyphLayout>;
-};
+  return <HieroglyphLayout>{page}</HieroglyphLayout>
+}
 
-export default Hieroglyph;
+export default Hieroglyph

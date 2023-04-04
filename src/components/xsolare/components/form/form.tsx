@@ -1,6 +1,6 @@
 ﻿/* eslint-disable react/destructuring-assignment */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import type { FC, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes } from 'react'
 
 export const Form: FC = (props: HTMLAttributes<HTMLFormElement>) => {
   return (
@@ -8,13 +8,13 @@ export const Form: FC = (props: HTMLAttributes<HTMLFormElement>) => {
       {...props}
       onKeyPress={(e) => {
         if (e.charCode === 13) {
-          e.preventDefault();
+          e.preventDefault()
         }
         if (props.onKeyPress) {
-          props.onKeyPress(e);
+          props.onKeyPress(e)
         }
       }}>
       {props.children}
     </form>
-  );
-};
+  )
+}

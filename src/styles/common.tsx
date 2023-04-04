@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme/emotion-theme'
 
 export const GlobalStyles = css`
   /* noto-sans-sc-regular - latin_chinese-simplified */
@@ -379,7 +379,7 @@ export const GlobalStyles = css`
       opacity: 1;
     }
   }
-`;
+`
 
 export const RuleStyledHTML = styled.div`
   display: flex;
@@ -405,28 +405,28 @@ export const RuleStyledHTML = styled.div`
   > span > span {
     margin: 0 4px;
   }
-`;
+`
 
 export const PinyinStyledHTML = styled.span`
   color: ${({ theme }) => theme.palette.color.subText};
   font-family: ${({ theme }) => theme.font.family.pinyin};
   font-weight: 400;
   font-size: 1rem;
-`;
+`
 
 export const TextStyledHTML = styled.span`
   display: inline-block;
   color: ${({ theme }) => theme.palette.color.text};
   font-weight: 300;
   font-size: 1rem;
-`;
+`
 
 export const TextTabStyledHTML = styled.span`
   display: inline-block;
   color: ${({ theme }) => theme.palette.color.text};
   font-weight: 300;
   font-size: 1rem;
-`;
+`
 
 export const HrStyledHTML = styled.hr`
   width: 100%;
@@ -435,4 +435,4 @@ export const HrStyledHTML = styled.hr`
 
   background: none;
   background-color: ${({ theme }) => theme.palette.divider};
-`;
+`

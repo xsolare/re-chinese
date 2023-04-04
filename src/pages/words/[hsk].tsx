@@ -1,22 +1,23 @@
-import type { NextPageWithLayout } from '#/pages/_app';
-import type { HSK } from '#/types/word';
-import type { ReactElement } from 'react';
-import { NextSeo } from 'next-seo';
-import React from 'react';
-import WordsLayout from '#/components/layouts/words/words.layout';
-import { Word } from '#/components/xsolare';
-import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style';
-import { HSK1 } from '#/utils/mock/words/hsk1';
-import { parseWord } from '#/utils/parseTextToHtml';
+import type { NextPageWithLayout } from '#/pages/_app'
+import type { HSK } from '#/types/word'
+import type { ReactElement } from 'react'
+import { Pagination } from 'antd'
+import { NextSeo } from 'next-seo'
+import React from 'react'
+import WordsLayout from '#/components/layouts/words/words.layout'
+import { Word } from '#/components/xsolare'
+import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style'
+import { parseWord } from '#/utils/helpers/'
+import { HSK1 } from '#/utils/mock/words/hsk1'
 
 interface IWordsHSKProps {
-  words: HSK[];
+  words: HSK[]
 }
 
 // Words HSK component
 //* ------------------------------------------------------------------------------------------ *//
 const WordsHSK: NextPageWithLayout<IWordsHSKProps> = (props) => {
-  const { words } = props;
+  const { words } = props
 
   return (
     <>
@@ -29,17 +30,18 @@ const WordsHSK: NextPageWithLayout<IWordsHSKProps> = (props) => {
             </Word>
           ))}
         </WordsContentStyled>
+        <Pagination defaultCurrent={6} total={500} />
       </WordsStyled>
     </>
-  );
-};
+  )
+}
 
 WordsHSK.getInitialProps = async (ctx) => {
-  const { query } = ctx;
+  const { query } = ctx
   if (query.hsk === 'hsk-1') {
     return {
       words: HSK1
-    };
+    }
   }
 
   return {
@@ -48,11 +50,11 @@ WordsHSK.getInitialProps = async (ctx) => {
       permanent: true,
       destination: '/words'
     }
-  };
-};
+  }
+}
 
 WordsHSK.getLayout = function getLayout(page: ReactElement) {
-  return <WordsLayout>{page}</WordsLayout>;
-};
+  return <WordsLayout>{page}</WordsLayout>
+}
 
-export default WordsHSK;
+export default WordsHSK

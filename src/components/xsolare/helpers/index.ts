@@ -1,63 +1,63 @@
-import type { ControlStore } from '#/components/xsolare/components/control.store';
-import type { FormStore } from '#/components/xsolare/components/form/form.store';
-import type { MutableRefObject } from 'react';
-import { useEffect, useMemo, useRef } from 'react';
-import { v4 } from 'uuid';
+import type { ControlStore } from '#/components/xsolare/components/control.store'
+import type { FormStore } from '#/components/xsolare/components/form/form.store'
+import type { MutableRefObject } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
+import { v4 } from 'uuid'
 
-export type TControllerRef<T> = MutableRefObject<T | undefined>;
-export type Size = 's' | 'm' | 'l';
+export type TControllerRef<T> = MutableRefObject<T | undefined>
+export type Size = 's' | 'm' | 'l'
 export const getId = (): string => {
-  let uuid = v4();
-  const possible = 'abcdef';
-  uuid = uuid.replace(uuid.charAt(0), possible.charAt(Math.floor(Math.random() * possible.length)));
-  return uuid;
-};
+  let uuid = v4()
+  const possible = 'abcdef'
+  uuid = uuid.replace(uuid.charAt(0), possible.charAt(Math.floor(Math.random() * possible.length)))
+  return uuid
+}
 
 export const setupFormStores = (stores: unknown[], form: FormStore): void => {
-  stores.forEach((store) => form.addStore(store as ControlStore<unknown>));
-};
+  stores.forEach((store) => form.addStore(store as ControlStore<unknown>))
+}
 
 export const useNewStore = <T, P>(
   Store: new (args: P) => T,
   args: P = {} as P,
   dependencies: [] = []
-): T => useMemo(() => new Store(args), dependencies);
+): T => useMemo(() => new Store(args), dependencies)
 
 export const useGetController = <T>(store: { controller: T }): TControllerRef<T> => {
-  const controller = useRef<T>();
-  controller.current = store.controller;
-  return controller;
-};
+  const controller = useRef<T>()
+  controller.current = store.controller
+  return controller
+}
 
 export const setController = <T>(store: { controller: T }, controllerRef: TControllerRef<T>): T => {
-  const { controller } = store;
-  controllerRef.current = controller;
-  return controller;
-};
+  const { controller } = store
+  controllerRef.current = controller
+  return controller
+}
 
-type WithApiRequestAbortDestructor = () => void;
+type WithApiRequestAbortDestructor = () => void
 
 export const useEffectWithApiRequestAbort = <T>(
   callback: (requestId: string, dependencies: T[]) => void | WithApiRequestAbortDestructor,
   dependencies: T[],
   returnCallback?: () => void
 ): void => {
-  const requestId = useMemo(() => getId(), []);
+  const requestId = useMemo(() => getId(), [])
   useEffect(() => {
-    callback(requestId, dependencies);
+    callback(requestId, dependencies)
     return () => {
-      returnCallback?.();
+      returnCallback?.()
       //   ApiProxy.abort(requestId);
-    };
-  }, dependencies);
-};
+    }
+  }, dependencies)
+}
 
 export const useRequestIdAbort = (): string => {
-  const requestId = useMemo(() => getId(), []);
+  const requestId = useMemo(() => getId(), [])
   useEffect(() => {
     return () => {
       //   ApiProxy.abort(requestId);
-    };
-  }, []);
-  return requestId;
-};
+    }
+  }, [])
+  return requestId
+}

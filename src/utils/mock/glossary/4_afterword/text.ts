@@ -92,4 +92,4 @@ export const text = `
       <span type="h" p="bùyào zài chuáng shàng chī dōngxī" t="Не ешь в постели">不要在床上吃东西</span><br/>
     </div
 </div>
-`;
+`

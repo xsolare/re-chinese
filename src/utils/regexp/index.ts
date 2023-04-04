@@ -7,7 +7,7 @@ export const matchIsMobile = (navigator: string) => {
       navigator.substring(0, 4)
     )
   ) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}

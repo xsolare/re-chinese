@@ -1,4 +1,4 @@
-import type { HSK } from '#/types/word';
+import type { HSK } from '#/types/word'
 
 export const HSK1: HSK[] = [
   {
@@ -4429,4 +4429,4 @@ export const HSK1: HSK[] = [
     translate: '<div>учебник</div>',
     pinyin: 'kèběn'
   }
-];
+]

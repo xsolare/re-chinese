@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
-import { breakpoint } from '#/utils/theme';
+import styled from '@emotion/styled'
+import { breakpoint } from '#/utils/theme/emotion-theme'
 
 type IExampleStyled = {
-  row?: string;
-};
+  row?: string
+}
 export const ExampleStyled = styled.div<IExampleStyled>`
   margin: 10px 0;
 
@@ -22,4 +22,4 @@ export const ExampleStyled = styled.div<IExampleStyled>`
     };
   `
       : ''}
-`;
+`

@@ -1,28 +1,28 @@
-import type { ITooltipController, ITooltipProps } from './tooltip.store';
-import type { PropsWithChildren, MutableRefObject, FC } from 'react';
-import cn from 'classnames';
-import { observer } from 'mobx-react-lite';
-import React, { useState, useRef } from 'react';
-import { usePopper } from 'react-popper';
-import { TooltipStore } from './tooltip.store';
-import { TooltipStyled } from './tooltip.style';
+import type { ITooltipController, ITooltipProps } from './tooltip.store'
+import type { PropsWithChildren, MutableRefObject, FC } from 'react'
+import cn from 'classnames'
+import { observer } from 'mobx-react-lite'
+import React, { useState, useRef } from 'react'
+import { usePopper } from 'react-popper'
+import { TooltipStore } from './tooltip.store'
+import { TooltipStyled } from './tooltip.style'
 
 export const Tooltip: FC<
   PropsWithChildren<ITooltipProps> & {
-    controllerRef?: MutableRefObject<ITooltipController | undefined>;
+    controllerRef?: MutableRefObject<ITooltipController | undefined>
   }
 > = (props) => {
-  const { controllerRef, children, ...restProps } = props;
+  const { controllerRef, children, ...restProps } = props
 
-  const storeRef = useRef<TooltipStore>(new TooltipStore(restProps));
+  const storeRef = useRef<TooltipStore>(new TooltipStore(restProps))
 
   if (controllerRef) {
-    controllerRef.current = storeRef.current.controller;
+    controllerRef.current = storeRef.current.controller
   }
 
-  const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
+  const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null)
 
-  if (!restProps.title) return <>{children}</>;
+  if (!restProps.title) return <>{children}</>
 
   return (
     <TooltipStyled>
@@ -34,28 +34,28 @@ export const Tooltip: FC<
       </div>
       <InnerTooltip store={storeRef.current} referenceElement={referenceElement} />
     </TooltipStyled>
-  );
-};
+  )
+}
 
 const InnerTooltip = observer(
   (props: { store: TooltipStore; referenceElement: HTMLDivElement | null }) => {
-    const { isVisible } = props.store.state;
+    const { isVisible } = props.store.state
 
-    return !isVisible ? null : <PopperedTooltip {...props} />;
+    return !isVisible ? null : <PopperedTooltip {...props} />
   }
-);
+)
 
 interface IPopperedTooltipProps {
-  store: TooltipStore;
-  referenceElement: HTMLDivElement | null;
+  store: TooltipStore
+  referenceElement: HTMLDivElement | null
 }
 
 const PopperedTooltip: FC<IPopperedTooltipProps> = observer((props) => {
-  const { store, referenceElement } = props;
+  const { store, referenceElement } = props
 
-  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
-  const { placement } = store.props;
-  const { title, style } = store.state;
+  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null)
+  const { placement } = store.props
+  const { title, style } = store.state
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     placement,
     strategy: 'fixed',
@@ -67,7 +67,7 @@ const PopperedTooltip: FC<IPopperedTooltipProps> = observer((props) => {
         }
       }
     ]
-  });
+  })
 
   return (
     <div
@@ -77,5 +77,5 @@ const PopperedTooltip: FC<IPopperedTooltipProps> = observer((props) => {
       {...attributes.popper}>
       {title}
     </div>
-  );
-});
+  )
+})

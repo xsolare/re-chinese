@@ -1,10 +1,10 @@
-import type { IWordType } from '#/store/word';
-import type { Theme } from '@emotion/react';
-import styled from '@emotion/styled';
+import type { IWordType } from '#/store/common/word.store'
+import type { Theme } from '@emotion/react'
+import styled from '@emotion/styled'
 
 interface IWordStyledProps {
-  type: IWordType;
-  styleInvert: boolean;
+  type: IWordType
+  styleInvert: boolean
 }
 export const WordStyled = styled.div<IWordStyledProps>`
   display: inline-block;
@@ -43,7 +43,7 @@ export const WordStyled = styled.div<IWordStyledProps>`
   }
 
   ${({ type, theme }) => getWordStyle(type, theme)}
-`;
+`
 
 function getWordStyle(type: IWordType, theme: Theme): string {
   switch (type) {
@@ -51,14 +51,14 @@ function getWordStyle(type: IWordType, theme: Theme): string {
       return `
     display: inline-flex;
     gap: 10px;
-    `;
+    `
 
     case 3:
       return `
     .hieroglyph {
       margin: 0 5px;
     }
-    `;
+    `
 
     case 4:
       return `
@@ -87,7 +87,7 @@ function getWordStyle(type: IWordType, theme: Theme): string {
       text-align: center;
       padding: 5px 10px;
     }
-    `;
+    `
 
     case 5:
       return `
@@ -132,9 +132,9 @@ function getWordStyle(type: IWordType, theme: Theme): string {
 
       font-weight: 400;
     }
-    `;
+    `
 
     default:
-      return '';
+      return ''
   }
 }

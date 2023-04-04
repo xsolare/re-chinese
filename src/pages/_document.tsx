@@ -1,20 +1,20 @@
-import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document';
-import { Global } from '@emotion/react';
-import { extractCritical } from '@emotion/server';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import { GlobalStyles } from '#/styles/common';
+import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document'
+import { Global } from '@emotion/react'
+import { extractCritical } from '@emotion/server'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { GlobalStyles } from '#/styles/common'
 
 export default class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
-    const page = await ctx.renderPage();
-    const initialProps = await Document.getInitialProps(ctx);
-    const styles = extractCritical(page.html);
+    const page = await ctx.renderPage()
+    const initialProps = await Document.getInitialProps(ctx)
+    const styles = extractCritical(page.html)
 
     return {
       ...initialProps,
       ...page,
       ...styles
-    };
+    }
   }
 
   render() {
@@ -88,6 +88,6 @@ export default class MyDocument extends Document<DocumentProps> {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }

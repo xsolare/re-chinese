@@ -1,11 +1,11 @@
-import type { GetServerSideProps } from 'next';
-import { getServerSideSitemap } from 'next-sitemap';
-import { glossaryItems } from '#/utils/mock/glossary';
+import type { GetServerSideProps } from 'next'
+import { getServerSideSitemap } from 'next-sitemap'
+import { glossaryItems } from '#/utils/mock/glossary'
 
-type Changefreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+type Changefreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
 
 export const getServerSideProps: GetServerSideProps = (ctx) => {
-  const url = process.env.NEXT_SITE_URL ?? 'https://rechinese.ru';
+  const url = process.env.NEXT_SITE_URL ?? 'https://rechinese.ru'
 
   const fields = [
     {
@@ -20,11 +20,11 @@ export const getServerSideProps: GetServerSideProps = (ctx) => {
         lastmod: new Date().toISOString(),
         changefreq: 'daily' as Changefreq,
         priority: 0.6
-      };
+      }
     })
-  ];
+  ]
 
-  return getServerSideSitemap(ctx, fields);
-};
+  return getServerSideSitemap(ctx, fields)
+}
 
 export default function Sitemap() {}
