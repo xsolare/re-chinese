@@ -7,7 +7,7 @@ import React from 'react'
 
 //* Components
 import { TabsSlider } from '#/components/xsolare'
-import { isWindowExists } from '#/utils/helpers'
+import { isWindowExists } from '#/utils/helpers/'
 import { GlossaryLayoutStyled } from './glossary.style'
 
 // Glossary layout

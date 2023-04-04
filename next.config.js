@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-const dotenvLoad = require('dotenv-load');
+const dotenvLoad = require('dotenv-load')
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
-});
-const withPWA = require('next-pwa');
-dotenvLoad(process.env.NODE_ENV ?? 'development');
+})
+const withPWA = require('next-pwa')
+dotenvLoad(process.env.NODE_ENV ?? 'development')
 
 const nextConfig = {
   webpack5: true,
@@ -20,6 +20,7 @@ const nextConfig = {
   env: {
     NEXT_SITE_URL: process.env.NEXT_SITE_URL || 'https://rechinese.ru'
   },
+  transpilePackages: ['antd'],
   devIndicators: {
     autoPrerender: false
   },
@@ -32,12 +33,12 @@ const nextConfig = {
 
   webpack: (config, { dev }) => {
     if (dev) {
-      config.watchOptions.poll = 1000;
-      config.watchOptions.aggregateTimeout = 300;
+      config.watchOptions.poll = 1000
+      config.watchOptions.aggregateTimeout = 300
     }
 
-    return config;
+    return config
   }
-};
+}
 
-module.exports = withBundleAnalyzer(withPWA(nextConfig));
+module.exports = withBundleAnalyzer(withPWA(nextConfig))

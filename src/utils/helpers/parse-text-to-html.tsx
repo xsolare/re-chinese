@@ -1,4 +1,4 @@
-import type { IWordType } from '#/store/word'
+import type { IWordType } from '#/store/common/word.store'
 import type { HTMLReactParserOptions } from 'html-react-parser'
 import parse, { attributesToProps, Element, domToReact } from 'html-react-parser'
 import React from 'react'

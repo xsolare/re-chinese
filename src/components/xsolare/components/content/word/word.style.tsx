@@ -1,4 +1,4 @@
-import type { IWordType } from '#/store/word'
+import type { IWordType } from '#/store/common/word.store'
 import type { Theme } from '@emotion/react'
 import styled from '@emotion/styled'
 

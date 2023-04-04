@@ -1,13 +1,14 @@
 import type { NextPageWithLayout } from '#/pages/_app'
 import type { HSK } from '#/types/word'
 import type { ReactElement } from 'react'
+import { Pagination } from 'antd'
 import { NextSeo } from 'next-seo'
 import React from 'react'
 import WordsLayout from '#/components/layouts/words/words.layout'
 import { Word } from '#/components/xsolare'
 import { WordsContentStyled, WordsStyled } from '#/styles/words/words.style'
+import { parseWord } from '#/utils/helpers/'
 import { HSK1 } from '#/utils/mock/words/hsk1'
-import { parseWord } from '#/utils/parseTextToHtml'
 
 interface IWordsHSKProps {
   words: HSK[]
@@ -29,6 +30,7 @@ const WordsHSK: NextPageWithLayout<IWordsHSKProps> = (props) => {
             </Word>
           ))}
         </WordsContentStyled>
+        <Pagination defaultCurrent={6} total={500} />
       </WordsStyled>
     </>
   )

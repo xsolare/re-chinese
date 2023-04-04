@@ -1,15 +1,16 @@
 import type { ThemeVarious } from '#/contexts/theme'
-import type { ScrollRecord, ViewportRecord } from './types'
+import type { ScrollRecord, ViewportRecord } from '#/store/types'
 import axios from 'axios'
 import { setCookie } from 'cookies-next'
 import { action, computed, makeObservable, observable } from 'mobx'
-import { isClientSide } from '#/utils/env'
+import { isClientSide } from '#/utils/helpers/'
 
 interface IAppUIStore {
   theme: ThemeVarious
   scroll: ScrollRecord
   viewport: ViewportRecord
   mediaType: 'screen' | 'print'
+  loading: boolean
 }
 
 export default class AppUIStore {
@@ -17,7 +18,8 @@ export default class AppUIStore {
     theme: 'light',
     scroll: {} as ScrollRecord,
     viewport: {} as ViewportRecord,
-    mediaType: 'screen'
+    mediaType: 'screen',
+    loading: false
   } as IAppUIStore
 
   constructor() {
@@ -35,6 +37,7 @@ export default class AppUIStore {
     })
 
     makeObservable(this.state, {
+      loading: observable,
       theme: observable,
       mediaType: observable,
       scroll: observable,
@@ -42,6 +45,11 @@ export default class AppUIStore {
     })
   }
 
+  setLoading = (value: boolean): boolean => {
+    console.log('>', value)
+
+    return (this.state.loading = value)
+  }
   setScroll = (scroll: ScrollRecord): ScrollRecord => (this.state.scroll = scroll)
   setViewport = (viewport: ViewportRecord): ViewportRecord => (this.state.viewport = viewport)
   setTheme = (themeType: ThemeVarious): ThemeVarious => {

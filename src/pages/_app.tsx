@@ -43,9 +43,11 @@ const App: IAppProps = (props) => {
     <>
       <DefaultSeo {...nextSeoConfig} />
       <RootStoreProvider>
-        <InitialContextProvider value={initData}>
-          <AppWrapper>{Inner}</AppWrapper>
-        </InitialContextProvider>
+        <ThemeProvider>
+          <InitialContextProvider value={initData}>
+            <AppWrapper>{Inner}</AppWrapper>
+          </InitialContextProvider>
+        </ThemeProvider>
       </RootStoreProvider>
       <Analytics />
     </>
@@ -53,9 +55,7 @@ const App: IAppProps = (props) => {
 }
 
 const AppWrapper: FC<PropsWithChildren> = memo(({ children }) => (
-  <ThemeProvider>
-    <DefaultLayout>{children}</DefaultLayout>
-  </ThemeProvider>
+  <DefaultLayout>{children}</DefaultLayout>
 ))
 
 App.getInitialProps = async (props: AppContext) => {

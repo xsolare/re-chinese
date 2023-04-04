@@ -1,5 +1,5 @@
 import type { ITooltipProps } from '#/components/xsolare'
-import type { IWordType } from '#/store/word'
+import type { IWordType } from '#/store/common/word.store'
 import type { FC, PropsWithChildren } from 'react'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
